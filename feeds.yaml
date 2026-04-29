@@ -1,93 +1,280 @@
-practitioner_voices:
-  - name: Krebs on Security
-    url: https://krebsonsecurity.com/feed/
-  - name: Schneier on Security
-    url: https://www.schneier.com/feed/atom/
-  - name: Troy Hunt
-    url: https://www.troyhunt.com/rss/
-  - name: Daniel Miessler
-    url: https://danielmiessler.com/feed
-  - name: Graham Cluley
-    url: https://grahamcluley.com/feed/
+# ============================================================
+# SOURCE COHORTS
+# Purpose:
+# Curated RSS/source cohorts for threat intelligence, security research,
+# vulnerability analysis, policy context, AI security, and practitioner insight.
+#
+# Design principles:
+# - Prefer primary research over recycled commentary.
+# - Separate raw intel, detection engineering, policy, and market/news context.
+# - Use cohorts selectively depending on output type.
+# - Avoid treating all feeds as equal signal.
+# ============================================================
 
-threat_intelligence:
-  - name: Microsoft Security
-    url: https://www.microsoft.com/en-us/security/blog/feed/
-  - name: Google TAG
-    url: https://blog.google/threat-analysis-group/rss/
-  - name: Mandiant
-    url: https://www.mandiant.com/resources/blog/rss.xml
-  - name: Unit 42
-    url: https://unit42.paloaltonetworks.com/feed/
-  - name: Talos
-    url: https://blog.talosintelligence.com/feeds/posts/default
-  - name: CrowdStrike
-    url: https://www.crowdstrike.com/blog/feed/
-  - name: Recorded Future
-    url: https://www.recordedfuture.com/feed
-  - name: SentinelOne Labs
-    url: https://www.sentinelone.com/labs/feed/
-  - name: ESET WeLiveSecurity
-    url: https://www.welivesecurity.com/en/rss/feed/
+source_cohorts:
 
-detection_response:
-  - name: Red Canary
-    url: https://redcanary.com/feed/
-  - name: Huntress
-    url: https://www.huntress.com/blog/rss.xml
-  - name: SpecterOps
-    url: https://posts.specterops.io/feed
-  - name: Active Countermeasures
-    url: https://www.activecountermeasures.com/feed/
-  - name: TrustedSec
-    url: https://trustedsec.com/feed.xml
+  # ------------------------------------------------------------
+  # Tier 1: Primary Security Research and Threat Intelligence
+  # Use for: technical briefs, threat reports, detection writeups,
+  # adversary analysis, exploitation trends, campaign context.
+  # ------------------------------------------------------------
+  threat_research_primary:
+    description: "Primary vendor and research-team intelligence with strong technical depth."
+    sources:
+      - name: Microsoft Security Blog
+        url: https://www.microsoft.com/en-us/security/blog/feed/
+      - name: Microsoft Threat Intelligence
+        url: https://www.microsoft.com/en-us/security/blog/topic/threat-intelligence/feed/
+      - name: Google Threat Analysis Group
+        url: https://blog.google/threat-analysis-group/rss/
+      - name: Mandiant
+        url: https://www.mandiant.com/resources/blog/rss.xml
+      - name: Mandiant Advantage
+        url: https://www.mandiant.com/resources/insights/rss.xml
+      - name: Unit 42
+        url: https://unit42.paloaltonetworks.com/feed/
+      - name: Cisco Talos
+        url: https://feeds.feedburner.com/feedburner/Talos
+      - name: CrowdStrike
+        url: https://www.crowdstrike.com/blog/feed/
+      - name: Recorded Future
+        url: https://www.recordedfuture.com/feed
+      - name: Recorded Future Research
+        url: https://www.recordedfuture.com/research/feed
+      - name: SentinelOne Labs
+        url: https://www.sentinelone.com/labs/feed/
+      - name: ESET WeLiveSecurity
+        url: https://www.welivesecurity.com/en/rss/feed/
+      - name: Check Point Research
+        url: https://research.checkpoint.com/feed/
+      - name: Volexity
+        url: https://www.volexity.com/blog/feed/
+      - name: Trend Micro Research
+        url: https://www.trendmicro.com/en_us/research.xml
+      - name: Sekoia
+        url: https://blog.sekoia.io/feed/
 
-government_regulatory:
-  - name: CISA Advisories
-    url: https://www.cisa.gov/cybersecurity-advisories/all.xml
-  - name: NCSC UK
-    url: https://www.ncsc.gov.uk/api/1/services/v1/all-rss-feed.xml
-  - name: SANS ISC
-    url: https://isc.sans.edu/rssfeed_full.xml
-  - name: NIST Cybersecurity
-    url: https://www.nist.gov/news-events/cybersecurity/rss.xml
+  # ------------------------------------------------------------
+  # Tier 2: Government, KEV, Regulatory, and Public Interest Sources
+  # Use for: advisories, exploit urgency, customer-facing risk language,
+  # regulatory implications, public-sector validation.
+  # ------------------------------------------------------------
+  government_authoritative:
+    description: "Authoritative public-sector sources for advisories, exploited vulnerabilities, standards, and public guidance."
+    sources:
+      - name: CISA Cybersecurity Advisories
+        url: https://www.cisa.gov/cybersecurity-advisories/all.xml
+      - name: CISA Known Exploited Vulnerabilities Catalog
+        url: https://www.cisa.gov/known-exploited-vulnerabilities-catalog.xml
+      - name: NCSC UK
+        url: https://www.ncsc.gov.uk/api/1/services/v1/all-rss-feed.xml
+      - name: SANS Internet Storm Center
+        url: https://isc.sans.edu/rssfeed_full.xml
+      - name: ENISA
+        url: https://www.enisa.europa.eu/news/enisa-news/RSS
+      - name: Australian Cyber Security Centre
+        url: https://www.cyber.gov.au/rss/news.xml
+      - name: NIST Cybersecurity
+        url: https://www.nist.gov/news-events/cybersecurity/rss.xml
 
-offensive_research:
-  - name: Project Zero
-    url: https://googleprojectzero.blogspot.com/feeds/posts/default
-  - name: Trail of Bits
-    url: https://blog.trailofbits.com/feed/
-  - name: NCC Group Research
-    url: https://research.nccgroup.com/feed/
-  - name: PortSwigger Research
-    url: https://portswigger.net/research/rss
-  - name: Rapid7
-    url: https://www.rapid7.com/blog/rss/
+  # ------------------------------------------------------------
+  # Tier 3: Offensive Research, Vulnerability Discovery, and Exploitability
+  # Use for: exploitation analysis, vuln research, offensive tradecraft,
+  # proof-of-concept risk, attack path explanation.
+  # ------------------------------------------------------------
+  offensive_vulnerability_research:
+    description: "High-signal vulnerability research, offensive security analysis, and exploitability-focused sources."
+    sources:
+      - name: Google Project Zero
+        url: https://googleprojectzero.blogspot.com/feeds/posts/default
+      - name: Trail of Bits
+        url: https://blog.trailofbits.com/feed/
+      - name: PortSwigger Research
+        url: https://portswigger.net/research/rss
+      - name: GitHub Security Lab
+        url: https://github.blog/category/security/feed/
+      - name: watchTowr Labs
+        url: https://labs.watchtowr.com/rss/
+      - name: Assetnote
+        url: https://www.assetnote.io/resources/research/rss.xml
+      - name: Horizon3 Attack Research
+        url: https://www.horizon3.ai/attack-research/rss/
+      - name: Rapid7
+        url: https://www.rapid7.com/blog/rss/
 
-cloud_identity:
-  - name: AWS Security
-    url: https://aws.amazon.com/blogs/security/feed/
-  - name: Wiz
-    url: https://www.wiz.io/blog/rss.xml
-  - name: Datadog Security Labs
-    url: https://securitylabs.datadoghq.com/rss/articles/
+  # ------------------------------------------------------------
+  # Tier 4: Detection Engineering, SOC Operations, MDR, and Incident Response
+  # Use for: practical detection logic, SOC relevance, response playbooks,
+  # telemetry-driven analysis, operator-facing guidance.
+  # ------------------------------------------------------------
+  detection_response_operations:
+    description: "Practitioner-oriented sources focused on detection, response, hunting, MDR, and security operations."
+    sources:
+      - name: Red Canary
+        url: https://redcanary.com/feed/
+      - name: Huntress
+        url: https://www.huntress.com/blog/rss.xml
+      - name: SpecterOps
+        url: https://medium.com/feed/specter-ops-posts
+      - name: Elastic Security Labs
+        url: https://www.elastic.co/security-labs/rss/feed.xml
+      - name: Splunk Security
+        url: https://www.splunk.com/en_us/blog/security.rss
+      - name: TrustedSec
+        url: https://www.trustedsec.com/feed/
+      - name: Black Hills Information Security
+        url: https://www.blackhillsinfosec.com/feed/
+      - name: Active Countermeasures
+        url: https://www.activecountermeasures.com/feed/
+      - name: Sysdig
+        url: https://sysdig.com/blog/feed/
 
-industry_news:
-  - name: Dark Reading
-    url: https://www.darkreading.com/rss.xml
-  - name: The Record
-    url: https://therecord.media/feed
-  - name: BleepingComputer
-    url: https://www.bleepingcomputer.com/feed/
-  - name: The Hacker News
-    url: https://feeds.feedburner.com/TheHackersNews
-  - name: CSO Online
-    url: https://www.csoonline.com/index.rss
+  # ------------------------------------------------------------
+  # Tier 5: Cloud, Identity, SaaS, and Infrastructure Security
+  # Use for: cloud attack paths, identity posture, infrastructure exposure,
+  # SaaS risk, CI/CD and workload security.
+  # ------------------------------------------------------------
+  cloud_identity_infrastructure:
+    description: "Cloud, identity, SaaS, and infrastructure security research with emphasis on modern attack surfaces."
+    sources:
+      - name: AWS Security Blog
+        url: https://aws.amazon.com/blogs/security/feed/
+      - name: Google Cloud Security
+        url: https://cloud.google.com/blog/products/identity-security/rss
+      - name: Wiz Research
+        url: https://www.wiz.io/feed.xml
+      - name: Datadog Security Labs
+        url: https://securitylabs.datadoghq.com/rss/feed.xml
+      - name: Orca Security Research
+        url: https://orca.security/resources/blog/feed/
+      - name: Permiso Security
+        url: https://permiso.io/blog/rss.xml
 
-policy_strategy:
-  - name: Lawfare
-    url: https://www.lawfaremedia.org/feeds/topic/cybersecurity
-  - name: Just Security
-    url: https://www.justsecurity.org/feed/
-  - name: CFR Cyber
-    url: https://www.cfr.org/rss-feed/cyber-cybersecurity
+  # ------------------------------------------------------------
+  # Tier 6: AI Security, LLM Abuse, Agentic Risk, and Model Integrity
+  # Use for: AI threat research, prompt injection, model abuse,
+  # agentic system risk, AI governance, AI incident analysis.
+  # ------------------------------------------------------------
+  ai_security_agentic_risk:
+    description: "AI security, LLM exploitation, model integrity, agentic system risk, and AI governance sources."
+    sources:
+      - name: Anthropic News
+        url: https://www.anthropic.com/news/rss.xml
+      - name: OpenAI News
+        url: https://openai.com/news/rss.xml
+      - name: Google DeepMind Blog
+        url: https://deepmind.google/blog/rss.xml
+      - name: HiddenLayer Research
+        url: https://hiddenlayer.com/research/feed/
+      - name: Protect AI
+        url: https://protectai.com/blog/rss.xml
+      - name: Lakera AI
+        url: https://www.lakera.ai/blog/rss.xml
+      - name: Robust Intelligence
+        url: https://www.robustintelligence.com/blog/rss.xml
+      - name: Embrace the Red
+        url: https://embracethered.com/blog/index.xml
+      - name: Simon Willison
+        url: https://simonwillison.net/atom/everything/
+      - name: NIST AI
+        url: https://www.nist.gov/news-events/artificial-intelligence/rss.xml
+      - name: AI Incident Database
+        url: https://incidentdatabase.ai/rss.xml
+      - name: AI Snake Oil
+        url: https://www.aisnakeoil.com/feed
+      - name: Import AI
+        url: https://importai.substack.com/feed
+      - name: Interconnects
+        url: https://www.interconnects.ai/feed
+
+  # ------------------------------------------------------------
+  # Tier 7: Cybercrime, Ransomware, Fraud, and Financial Crime
+  # Use for: ransomware ecosystem analysis, criminal operations,
+  # extortion trends, crypto laundering, fraud infrastructure.
+  # ------------------------------------------------------------
+  ransomware_ecrime_financial_crime:
+    description: "Cybercrime, ransomware, extortion, fraud, and illicit financial ecosystem reporting."
+    sources:
+      - name: Coveware
+        url: https://www.coveware.com/blog?format=rss
+      - name: Chainalysis
+        url: https://www.chainalysis.com/blog/feed/
+      - name: TRM Labs
+        url: https://www.trmlabs.com/blog/rss.xml
+      - name: Group-IB
+        url: https://www.group-ib.com/blog/rss/
+      - name: Intel 471
+        url: https://intel471.com/blog/feed
+      - name: Team Cymru
+        url: https://www.team-cymru.com/post/rss.xml
+      - name: DomainTools Investigations
+        url: https://www.domaintools.com/resources/blog/feed/
+
+  # ------------------------------------------------------------
+  # Tier 8: Cyber News and Breach Reporting
+  # Use for: situational awareness, breach timelines, industry movement,
+  # broad threat landscape context. Validate against primary sources.
+  # ------------------------------------------------------------
+  cyber_news_breach_reporting:
+    description: "Cybersecurity news, breach reporting, and industry trend coverage. Useful for awareness, not sufficient alone for technical claims."
+    sources:
+      - name: BleepingComputer
+        url: https://www.bleepingcomputer.com/feed/
+      - name: The Record
+        url: https://therecord.media/feed
+      - name: Dark Reading
+        url: https://www.darkreading.com/rss.xml
+      - name: The Hacker News
+        url: https://feeds.feedburner.com/TheHackersNews
+      - name: SecurityWeek
+        url: https://www.securityweek.com/feed/
+      - name: CyberScoop
+        url: https://cyberscoop.com/feed/
+      - name: SC Media
+        url: https://www.scmagazine.com/feed
+      - name: Help Net Security
+        url: https://www.helpnetsecurity.com/feed/
+      - name: Infosecurity Magazine
+        url: https://www.infosecurity-magazine.com/rss/news/
+
+  # ------------------------------------------------------------
+  # Tier 9: Policy, Strategy, Geopolitics, and Cyber Norms
+  # Use for: executive memos, board context, cyber policy,
+  # national security implications, geopolitical framing.
+  # ------------------------------------------------------------
+  policy_strategy_geopolitics:
+    description: "Policy, strategy, cyber norms, geopolitics, national security, and regulatory interpretation."
+    sources:
+      - name: Lawfare
+        url: https://www.lawfaremedia.org/rss/site
+      - name: Just Security
+        url: https://www.justsecurity.org/feed/
+      - name: Council on Foreign Relations Cyber
+        url: https://www.cfr.org/rss-feeds/cyber-cybersecurity
+      - name: Atlantic Council Cyber Statecraft Initiative
+        url: https://www.atlanticcouncil.org/category/programs/scowcroft-center-for-strategy-and-security/cyber-statecraft-initiative/feed/
+      - name: CSIS Strategic Technologies
+        url: https://www.csis.org/topics/strategic-technologies/feed
+
+  # ------------------------------------------------------------
+  # Tier 10: Independent Practitioner Voices and Strategic Commentary
+  # Use for: thoughtful interpretation, sharp framing, security culture,
+  # practitioner-friendly context, but do not treat as primary validation.
+  # ------------------------------------------------------------
+  practitioner_analysis:
+    description: "Independent practitioner, researcher, and analyst voices. Best used for framing, interpretation, and reality checks."
+    sources:
+      - name: Krebs on Security
+        url: https://krebsonsecurity.com/feed/
+      - name: Schneier on Security
+        url: https://www.schneier.com/feed/atom/
+      - name: Troy Hunt
+        url: https://www.troyhunt.com/rss/
+      - name: Daniel Miessler
+        url: https://danielmiessler.com/feed
+      - name: Graham Cluley
+        url: https://grahamcluley.com/feed/
+      - name: Risky Business News
+        url: https://risky.biz/feeds/risky-business-news/
+      - name: tl;dr sec
+        url: https://tldrsec.com/feed.xml
