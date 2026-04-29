@@ -51,31 +51,51 @@ def main():
     with open(feeds_file) as f:
         config = yaml.safe_load(f)
 
+    # Detect structure: flat (legacy) or nested under source_cohorts (CYBER SAGE)
+    if "source_cohorts" in config:
+        cohorts = config["source_cohorts"]
+    else:
+        # Legacy flat structure: treat top-level keys as cohort names
+        cohorts = {
+            name: {"sources": feeds}
+            for name, feeds in config.items()
+            if isinstance(feeds, list)
+        }
+
     all_items = []
     feed_status = {}
+    cohort_metadata = {}
 
-    for category, feeds in config.items():
-        print(f"\nCategory: {category}")
-        for feed in feeds:
-            print(f"  Fetching {feed['name']}...")
-            items, status = parse_feed(feed["name"], feed["url"], category)
-            feed_status[feed["name"]] = {
-                "url": feed["url"],
-                "category": category,
+    for cohort_name, cohort_data in cohorts.items():
+        description = cohort_data.get("description", "")
+        sources = cohort_data.get("sources", [])
+
+        cohort_metadata[cohort_name] = {
+            "description": description,
+            "source_count": len(sources),
+        }
+
+        print(f"\nCohort: {cohort_name}")
+        if description:
+            print(f"  ({description})")
+
+        for source in sources:
+            print(f"  Fetching {source['name']}...")
+            items, status = parse_feed(source["name"], source["url"], cohort_name)
+            feed_status[source["name"]] = {
+                "url": source["url"],
+                "cohort": cohort_name,
                 "status": status,
                 "item_count": len(items),
             }
             all_items.extend(items)
 
-    # Sort newest first; items without dates go to the end
-    all_items.sort(
-        key=lambda x: x["published"] or "0",
-        reverse=True
-    )
+    all_items.sort(key=lambda x: x["published"] or "0", reverse=True)
 
     output = {
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "total_items": len(all_items),
+        "cohorts": cohort_metadata,
         "feed_status": feed_status,
         "items": all_items,
     }
