@@ -1,5 +1,5 @@
 # ============================================================
-# SOURCE COHORTS
+# SOURCE COHORTS — VALIDATED
 # Purpose:
 # Curated RSS/source cohorts for threat intelligence, security research,
 # vulnerability analysis, policy context, AI security, and practitioner insight.
@@ -9,6 +9,14 @@
 # - Separate raw intel, detection engineering, policy, and market/news context.
 # - Use cohorts selectively depending on output type.
 # - Avoid treating all feeds as equal signal.
+#
+# Validation notes:
+# - CISA discontinued public RSS feeds in May 2025; replaced with CERT-EU,
+#   CERT-FR, and existing NCSC UK / SANS ISC coverage.
+# - Some vendor feeds (Volexity, Trend Micro) are historically flaky; expect
+#   occasional parse errors and treat as known.
+# - Substack feeds (Import AI, Interconnects, AI Snake Oil) are CDN-dependent
+#   and may intermittently fail.
 # ============================================================
 
 source_cohorts:
@@ -29,8 +37,6 @@ source_cohorts:
         url: https://blog.google/threat-analysis-group/rss/
       - name: Mandiant
         url: https://www.mandiant.com/resources/blog/rss.xml
-      - name: Mandiant Advantage
-        url: https://www.mandiant.com/resources/insights/rss.xml
       - name: Unit 42
         url: https://unit42.paloaltonetworks.com/feed/
       - name: Cisco Talos
@@ -39,43 +45,44 @@ source_cohorts:
         url: https://www.crowdstrike.com/blog/feed/
       - name: Recorded Future
         url: https://www.recordedfuture.com/feed
-      - name: Recorded Future Research
-        url: https://www.recordedfuture.com/research/feed
       - name: SentinelOne Labs
         url: https://www.sentinelone.com/labs/feed/
       - name: ESET WeLiveSecurity
         url: https://www.welivesecurity.com/en/rss/feed/
       - name: Check Point Research
         url: https://research.checkpoint.com/feed/
+      - name: Kaspersky Securelist
+        url: https://securelist.com/feed/
       - name: Volexity
-        url: https://www.volexity.com/blog/feed/
+        url: https://www.volexity.com/feed/
       - name: Trend Micro Research
-        url: https://www.trendmicro.com/en_us/research.xml
+        url: https://newsroom.trendmicro.com/news-releases?pagetemplate=rss&category=787
       - name: Sekoia
         url: https://blog.sekoia.io/feed/
+      - name: Citizen Lab
+        url: https://citizenlab.ca/feed/
 
   # ------------------------------------------------------------
-  # Tier 2: Government, KEV, Regulatory, and Public Interest Sources
+  # Tier 2: Government, Regulatory, and Public Interest Sources
   # Use for: advisories, exploit urgency, customer-facing risk language,
   # regulatory implications, public-sector validation.
+  # Note: CISA discontinued public RSS feeds in May 2025.
   # ------------------------------------------------------------
   government_authoritative:
-    description: "Authoritative public-sector sources for advisories, exploited vulnerabilities, standards, and public guidance."
+    description: "Authoritative public-sector sources for advisories, vulnerabilities, standards, and public guidance. CISA RSS discontinued May 2025; coverage shifted to NCSC UK, CERT-EU, and CERT-FR."
     sources:
-      - name: CISA Cybersecurity Advisories
-        url: https://www.cisa.gov/cybersecurity-advisories/all.xml
-      - name: CISA Known Exploited Vulnerabilities Catalog
-        url: https://www.cisa.gov/known-exploited-vulnerabilities-catalog.xml
       - name: NCSC UK
         url: https://www.ncsc.gov.uk/api/1/services/v1/all-rss-feed.xml
       - name: SANS Internet Storm Center
         url: https://isc.sans.edu/rssfeed_full.xml
-      - name: ENISA
-        url: https://www.enisa.europa.eu/news/enisa-news/RSS
+      - name: CERT-EU
+        url: https://cert.europa.eu/publications/security-advisories/rss
+      - name: CERT-FR Avis
+        url: https://www.cert.ssi.gouv.fr/avis/feed/
+      - name: CERT-FR Alerts
+        url: https://www.cert.ssi.gouv.fr/alerte/feed/
       - name: Australian Cyber Security Centre
         url: https://www.cyber.gov.au/rss/news.xml
-      - name: NIST Cybersecurity
-        url: https://www.nist.gov/news-events/cybersecurity/rss.xml
 
   # ------------------------------------------------------------
   # Tier 3: Offensive Research, Vulnerability Discovery, and Exploitability
@@ -116,6 +123,8 @@ source_cohorts:
         url: https://www.huntress.com/blog/rss.xml
       - name: SpecterOps
         url: https://medium.com/feed/specter-ops-posts
+      - name: The DFIR Report
+        url: https://thedfirreport.com/feed/
       - name: Elastic Security Labs
         url: https://www.elastic.co/security-labs/rss/feed.xml
       - name: Splunk Security
@@ -170,14 +179,10 @@ source_cohorts:
         url: https://protectai.com/blog/rss.xml
       - name: Lakera AI
         url: https://www.lakera.ai/blog/rss.xml
-      - name: Robust Intelligence
-        url: https://www.robustintelligence.com/blog/rss.xml
       - name: Embrace the Red
         url: https://embracethered.com/blog/index.xml
       - name: Simon Willison
         url: https://simonwillison.net/atom/everything/
-      - name: NIST AI
-        url: https://www.nist.gov/news-events/artificial-intelligence/rss.xml
       - name: AI Incident Database
         url: https://incidentdatabase.ai/rss.xml
       - name: AI Snake Oil
@@ -270,11 +275,11 @@ source_cohorts:
         url: https://www.schneier.com/feed/atom/
       - name: Troy Hunt
         url: https://www.troyhunt.com/rss/
-      - name: Daniel Miessler
-        url: https://danielmiessler.com/feed
       - name: Graham Cluley
         url: https://grahamcluley.com/feed/
       - name: Risky Business News
         url: https://risky.biz/feeds/risky-business-news/
+      - name: Kim Zetter Zero Day
+        url: https://zetter.substack.com/feed
       - name: tl;dr sec
         url: https://tldrsec.com/feed.xml
