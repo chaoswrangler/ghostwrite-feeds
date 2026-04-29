@@ -2,12 +2,16 @@
 """Aggregate RSS feeds into a single JSON file."""
 
 import json
+import socket
 import sys
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone
 from pathlib import Path
 
 import feedparser
 import yaml
+
+socket.setdefaulttimeout(10)
 
 
 def parse_feed(name, url, category):
@@ -19,7 +23,6 @@ def parse_feed(name, url, category):
         return [], "fetch_error"
 
     if parsed.bozo and not parsed.entries:
-        print(f"  ERROR parsing {name}: {parsed.bozo_exception}", file=sys.stderr)
         return [], "parse_error"
 
     items = []
@@ -51,11 +54,9 @@ def main():
     with open(feeds_file) as f:
         config = yaml.safe_load(f)
 
-    # Detect structure: flat (legacy) or nested under source_cohorts (CYBER SAGE)
     if "source_cohorts" in config:
         cohorts = config["source_cohorts"]
     else:
-        # Legacy flat structure: treat top-level keys as cohort names
         cohorts = {
             name: {"sources": feeds}
             for name, feeds in config.items()
@@ -66,22 +67,37 @@ def main():
     feed_status = {}
     cohort_metadata = {}
 
+    fetch_tasks = []
     for cohort_name, cohort_data in cohorts.items():
         description = cohort_data.get("description", "")
         sources = cohort_data.get("sources", [])
-
         cohort_metadata[cohort_name] = {
             "description": description,
             "source_count": len(sources),
         }
-
-        print(f"\nCohort: {cohort_name}")
-        if description:
-            print(f"  ({description})")
-
         for source in sources:
-            print(f"  Fetching {source['name']}...")
-            items, status = parse_feed(source["name"], source["url"], cohort_name)
+            fetch_tasks.append((source, cohort_name))
+
+    print(f"Fetching {len(fetch_tasks)} feeds across {len(cohorts)} cohorts...")
+    print(f"Timeout: 10 seconds per feed, 10 concurrent workers\n")
+
+    with ThreadPoolExecutor(max_workers=10) as executor:
+        futures = {
+            executor.submit(parse_feed, source["name"], source["url"], cohort_name): (source, cohort_name)
+            for source, cohort_name in fetch_tasks
+        }
+
+        for future in as_completed(futures):
+            source, cohort_name = futures[future]
+            try:
+                items, status = future.result()
+            except Exception as e:
+                print(f"  ERROR: {source['name']}: {e}", file=sys.stderr)
+                items, status = [], "fetch_error"
+
+            symbol = "OK" if status == "ok" else "FAIL"
+            print(f"  [{symbol}] {source['name']} ({cohort_name}): {len(items)} items")
+
             feed_status[source["name"]] = {
                 "url": source["url"],
                 "cohort": cohort_name,
