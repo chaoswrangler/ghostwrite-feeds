@@ -2,8 +2,8 @@ name: Aggregate Feeds
 
 on:
   schedule:
-  - cron: "0 12 * * *"   # 9 AM EDT, 8 AM EST
-  - cron: "0 19 * * *"   # 3 PM EDT, 2 PM EST
+    - cron: "0 12 * * *"
+    - cron: "0 19 * * *"
   workflow_dispatch:
   push:
     paths:
