@@ -1,0 +1,40 @@
+name: Build GitHub Pages from Feed
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "docs/feed.json"
+      - "scripts/build-page.js"
+      - ".github/workflows/build-pages.yml"
+
+  schedule:
+    - cron: "0 12 * * *"
+
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Build index.html from feed.json
+        run: node scripts/build-page.js
+
+      - name: Commit generated page
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Build GitHub Pages feed"
+          file_pattern: docs/index.html
