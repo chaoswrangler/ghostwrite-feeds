@@ -856,7 +856,7 @@ const parseErrorBlock = parseErrors.length
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "ItemList",
-  name: "Wolfram Threatstream",
+  name: "Wolfram Threatstream Feed",
   description:
     "Curated English-language cyber threat intelligence feed. Items are limited to the last 7 days, filtered for CTI relevance, ordered newest first, and grouped by logical threat affinity.",
   dateModified: generatedAt,
@@ -882,7 +882,7 @@ const html = `<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Wolfram Threatstream</title>
+  <title>Wolfram Threatstream Feed</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Curated English-language cyber threat intelligence feed. Last 7 days only. CTI-relevant items only.">
   <meta name="robots" content="index, follow">
@@ -1284,7 +1284,7 @@ ${JSON.stringify(jsonLd, null, 2)}
   <main>
     <header class="hero">
       <div class="eyebrow">Strategic Cyber Threat Intelligence Feed</div>
-      <h1>Wolfram Threatstream< Feed/h1>
+      <h1>Wolfram Threatstream Feed</h1>
       <p class="subtitle">
         Curated English-language cyber threat intelligence insights from the last ${LOOKBACK_DAYS} days. Items are filtered for CTI relevance, ordered newest first, deduplicated across repeated coverage, and grouped by logical threat affinity.
       </p>
