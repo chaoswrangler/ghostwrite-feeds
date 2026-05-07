@@ -40,7 +40,8 @@ function formatCategory(value) {
     ransomware_ecrime_financial_crime: "Ransomware, eCrime & Financial Crime",
     cyber_news_breach_reporting: "Cyber News & Breach Reporting",
     policy_strategy_geopolitics: "Policy, Strategy & Geopolitics",
-    practitioner_analysis: "Practitioner Analysis"
+    practitioner_analysis: "Practitioner Analysis",
+    reddit_practitioner_osint: "Reddit Practitioner OSINT"
   };
 
   if (labels[value]) return labels[value];
@@ -145,6 +146,177 @@ function isEnglishEnoughItem(item) {
   return true;
 }
 
+function isThreatIntelRelevant(item) {
+  const title = String(item.title || "").toLowerCase();
+  const summary = stripHtml(item.summary || "").toLowerCase();
+  const category = String(item.category || "").toLowerCase();
+  const source = String(item.source || "").toLowerCase();
+  const text = `${title} ${summary} ${source}`;
+
+  const allowedCategories = [
+    "threat_research_primary",
+    "offensive_vulnerability_research",
+    "detection_response_operations",
+    "ransomware_ecrime_financial_crime",
+    "cyber_news_breach_reporting",
+    "reddit_practitioner_osint"
+  ];
+
+  const allowedAiSecurityTerms = [
+    "prompt injection",
+    "agentic",
+    "ai agent",
+    "ai agents",
+    "llm",
+    "model abuse",
+    "model exploitation",
+    "remote code execution",
+    "rce",
+    "vulnerability",
+    "exploit",
+    "exploitation",
+    "oauth",
+    "token theft",
+    "credential",
+    "malware",
+    "phishing",
+    "supply chain",
+    "mcp",
+    "coding agent",
+    "claude code",
+    "copilot cli",
+    "cursor",
+    "gemini cli"
+  ];
+
+  const ctiTerms = [
+    "active exploitation",
+    "actively exploited",
+    "exploited in the wild",
+    "in the wild",
+    "zero-day",
+    "zero day",
+    "0-day",
+    "rce",
+    "remote code execution",
+    "privilege escalation",
+    "vulnerability",
+    "cve-",
+    "cvss",
+    "exploit",
+    "exploitation",
+    "malware",
+    "ransomware",
+    "backdoor",
+    "stealer",
+    "infostealer",
+    "loader",
+    "worm",
+    "botnet",
+    "trojan",
+    "phishing",
+    "credential theft",
+    "credential stealer",
+    "token theft",
+    "oauth",
+    "apt",
+    "state-sponsored",
+    "state sponsored",
+    "nation-state",
+    "nation state",
+    "campaign",
+    "intrusion",
+    "breach",
+    "compromise",
+    "ioc",
+    "iocs",
+    "indicator",
+    "indicators",
+    "tactics",
+    "techniques",
+    "procedures",
+    "ttp",
+    "ttps",
+    "detection",
+    "hunting",
+    "threat actor",
+    "espionage",
+    "supply chain attack",
+    "supply-chain attack",
+    "cloud secrets",
+    "cloud credentials",
+    "initial access",
+    "persistence",
+    "lateral movement",
+    "command and control",
+    "c2",
+    "exfiltration",
+    "dll sideloading",
+    "webshell",
+    "web shell",
+    "implant",
+    "post-exploitation",
+    "post exploitation"
+  ];
+
+  const explicitNonCtiTerms = [
+    "world passkey day",
+    "passwordless authentication",
+    "generally available",
+    "now generally available",
+    "monthly digest",
+    "icymi",
+    "funding",
+    "raises $",
+    "trial pitting",
+    "risks to humanity",
+    "scholarship program",
+    "new leader",
+    "data center deal",
+    "sub-millisecond",
+    "certifications",
+    "supply chain decisions",
+    "customer service agents",
+    "big words",
+    "unplug your way to better code",
+    "presentation tool",
+    "keynote",
+    "conference",
+    "webinar today",
+    "announces",
+    "launches",
+    "partnership",
+    "trusted access",
+    "public good",
+    "board room",
+    "operator",
+    "socially cohesive",
+    "democracy",
+    "political violence",
+    "early edition",
+    "podcast",
+    "forecasting",
+    "prediction markets"
+  ];
+
+  if (explicitNonCtiTerms.some((term) => text.includes(term))) {
+    return false;
+  }
+
+  const categoryAllowed = allowedCategories.includes(category);
+  const hasCtiTerm = ctiTerms.some((term) => text.includes(term));
+
+  if (categoryAllowed && hasCtiTerm) {
+    return true;
+  }
+
+  if (category === "ai_security_agentic_risk") {
+    return allowedAiSecurityTerms.some((term) => text.includes(term));
+  }
+
+  return false;
+}
+
 function normalizeText(value) {
   return String(value ?? "")
     .toLowerCase()
@@ -212,6 +384,11 @@ function getThemeKey(item) {
       patterns: ["clickfix", "vidar", "fake captcha", "captcha-gated", "captcha gated"]
     },
     {
+      key: "ai_agent_framework_rce",
+      label: "AI Agent Framework RCE",
+      patterns: ["prompts become shells", "ai agent frameworks", "remote code execution", "rce vulnerabilities in ai agent"]
+    },
+    {
       key: "ai_coding_agent_risk",
       label: "AI Coding Agent Risk",
       patterns: ["claude code", "cursor", "copilot cli", "gemini cli", "ai coding", "coding agent", "trustfall", "cline", "mcp", "oauth tokens"]
@@ -227,14 +404,19 @@ function getThemeKey(item) {
       patterns: ["north korea", "north korean", "laptop farm", "it workers"]
     },
     {
+      key: "iran_muddywater_chaos_ransomware",
+      label: "Iran / MuddyWater / Chaos Ransomware",
+      patterns: ["iranian", "muddywater", "chaos ransomware", "mois"]
+    },
+    {
       key: "crypto_theft_financial_crime",
       label: "Crypto Theft / Financial Crime",
       patterns: ["crypto", "cryptocurrency", "blockchain", "heist", "laundering", "chainalysis", "wallet"]
     },
     {
-      key: "identity_passwordless_passkeys",
-      label: "Identity / Passwordless / Passkeys",
-      patterns: ["passkey", "passwordless", "identity", "oauth", "token", "credentials", "credential", "service account"]
+      key: "identity_credential_theft",
+      label: "Identity / Credential Theft",
+      patterns: ["credential", "credentials", "oauth", "token", "password", "service account", "suspicious login"]
     },
     {
       key: "browser_security",
@@ -242,19 +424,19 @@ function getThemeKey(item) {
       patterns: ["chrome", "firefox", "browser", "extension", "edge", "safari"]
     },
     {
-      key: "cloud_security_posture",
-      label: "Cloud Security Posture",
-      patterns: ["aws", "azure", "google cloud", "cloud", "container", "kubernetes", "saas", "multicloud", "infrastructure"]
+      key: "cloud_security_threats",
+      label: "Cloud Security Threats",
+      patterns: ["aws", "azure", "google cloud", "cloud", "container", "kubernetes", "saas", "multicloud", "cloud secrets", "cloud credentials"]
     },
     {
       key: "active_exploitation_vulnerabilities",
       label: "Active Exploitation / Vulnerabilities",
-      patterns: ["active exploitation", "zero-day", "0-day", "exploit", "exploitation", "rce", "privilege escalation", "cve", "critical-severity", "high-severity"]
+      patterns: ["active exploitation", "actively exploited", "zero-day", "0-day", "exploit", "exploitation", "rce", "privilege escalation", "cve", "critical-severity", "high-severity"]
     },
     {
       key: "ransomware_ecrime_malware",
       label: "Ransomware / eCrime / Malware",
-      patterns: ["ransomware", "extortion", "botnet", "malware", "stealer", "backdoor", "worm", "loader"]
+      patterns: ["ransomware", "extortion", "botnet", "malware", "stealer", "backdoor", "worm", "loader", "trojan"]
     },
     {
       key: "phishing_social_engineering",
@@ -262,14 +444,14 @@ function getThemeKey(item) {
       patterns: ["phishing", "social engineering", "qr code", "captcha", "tycoon", "bec", "business email compromise"]
     },
     {
-      key: "policy_government_strategy",
-      label: "Policy / Government / Strategy",
-      patterns: ["cisa", "government", "policy", "regulation", "congress", "national security", "scholarship", "public sector"]
-    },
-    {
       key: "data_security_dlp",
       label: "Data Security / DLP",
       patterns: ["dlp", "data protection", "data security", "sensitive data", "purview", "copy/paste"]
+    },
+    {
+      key: "reddit_practitioner_chatter",
+      label: "Reddit Practitioner Chatter",
+      patterns: ["reddit", "r/netsec", "r/cybersecurity", "r/sysadmin", "r/msp", "r/blueteamsec"]
     }
   ];
 
@@ -282,8 +464,8 @@ function getThemeKey(item) {
   }
 
   return {
-    key: "other_recent_signal",
-    label: "Other Recent Signal"
+    key: "other_recent_threat_signal",
+    label: "Other Recent Threat Signal"
   };
 }
 
@@ -335,14 +517,14 @@ function scoreItem(item) {
   }
 
   if (category.includes("threat")) score += 35;
-  if (category.includes("ai_security") || category.includes("ai security") || category.includes("agentic")) score += 32;
-  if (category.includes("vulnerability")) score += 24;
-  if (category.includes("detection")) score += 18;
-  if (category.includes("cloud") || category.includes("identity")) score += 16;
-  if (category.includes("ransomware") || category.includes("ecrime")) score += 16;
+  if (category.includes("offensive")) score += 28;
+  if (category.includes("ransomware") || category.includes("ecrime")) score += 26;
+  if (category.includes("detection")) score += 22;
+  if (category.includes("reddit")) score -= 25;
 
   const majorTerms = [
     "active exploitation",
+    "actively exploited",
     "zero-day",
     "0-day",
     "rce",
@@ -362,9 +544,10 @@ function scoreItem(item) {
     "critical",
     "state-sponsored",
     "apt",
-    "cloud",
-    "identity",
-    "incident"
+    "cloud credentials",
+    "incident",
+    "intrusion",
+    "threat actor"
   ];
 
   for (const term of majorTerms) {
@@ -380,7 +563,6 @@ function scoreItem(item) {
     "openai",
     "anthropic",
     "cisa",
-    "cloudflare",
     "crowdstrike",
     "sentinelone",
     "palo alto",
@@ -392,7 +574,9 @@ function scoreItem(item) {
     "the hacker news",
     "securityweek",
     "dark reading",
-    "help net security"
+    "help net security",
+    "the record",
+    "cyberscoop"
   ];
 
   for (const vendor of prioritySources) {
@@ -414,13 +598,7 @@ function selectTopUniqueInsights(items, limit = 10) {
       domain: domainFromUrl(item.link || item.url || ""),
       theme: getThemeKey(item).key
     }))
-    .sort((a, b) => {
-      if (b.score !== a.score) {
-        return b.score - a.score;
-      }
-
-      return getItemTime(b.item) - getItemTime(a.item);
-    });
+    .sort((a, b) => getItemTime(b.item) - getItemTime(a.item));
 
   const selected = [];
 
@@ -440,7 +618,7 @@ function selectTopUniqueInsights(items, limit = 10) {
         titleSimilarity >= 0.55 ||
         fullSimilarity >= 0.5 ||
         (sameDomain && fullSimilarity >= 0.38) ||
-        (sameTheme && fullSimilarity >= 0.36)
+        (sameTheme && fullSimilarity >= 0.42)
       );
     });
 
@@ -467,7 +645,7 @@ function buildInsight(item, index) {
 
   const insightText = summary
     ? summary.slice(0, 360)
-    : `Relevant signal from ${source} in ${formatCategory(category)}.`;
+    : `Relevant threat signal from ${source} in ${formatCategory(category)}.`;
 
   return `
     <article class="insight" data-category="${escapeHtml(category)}" data-source="${escapeHtml(source)}" data-theme="${escapeHtml(theme.key)}">
@@ -554,9 +732,11 @@ function renderThemeGroup(group, categoryIndex) {
 
 const allItems = Array.isArray(feed.items) ? feed.items : [];
 
-const items = allItems
-  .filter(isEnglishEnoughItem)
-  .filter((item) => isWithinLookbackWindow(item, LOOKBACK_DAYS))
+const languageFilteredItems = allItems.filter(isEnglishEnoughItem);
+const dateFilteredItems = languageFilteredItems.filter((item) => isWithinLookbackWindow(item, LOOKBACK_DAYS));
+
+const items = dateFilteredItems
+  .filter(isThreatIntelRelevant)
   .sort((a, b) => getItemTime(b) - getItemTime(a));
 
 const cohorts = feed.cohorts || {};
@@ -578,11 +758,12 @@ const parseErrors = Object.entries(feedStatus)
 
 const categoryPriority = [
   "threat_research_primary",
-  "threat research",
-  "ai_security_agentic_risk",
-  "ai_security",
-  "ai security",
-  "agentic_risk"
+  "offensive_vulnerability_research",
+  "detection_response_operations",
+  "ransomware_ecrime_financial_crime",
+  "cyber_news_breach_reporting",
+  "reddit_practitioner_osint",
+  "ai_security_agentic_risk"
 ];
 
 function sortCategories(a, b) {
@@ -606,7 +787,10 @@ const categories = [...new Set(items.map((item) => item.category).filter(Boolean
 const latestItems = items.slice().sort((a, b) => getItemTime(b) - getItemTime(a));
 const topInsights = selectTopUniqueInsights(latestItems, 10);
 
-const filteredOutCount = allItems.length - items.length;
+const languageFilteredOutCount = allItems.length - languageFilteredItems.length;
+const dateFilteredOutCount = languageFilteredItems.length - dateFilteredItems.length;
+const ctiFilteredOutCount = dateFilteredItems.length - items.length;
+const totalFilteredOutCount = allItems.length - items.length;
 
 const categoryNav = categories
   .map((category) => {
@@ -636,7 +820,7 @@ const sections = categories
       <section class="category-section" id="${escapeHtml(slugify(category))}">
         <div class="section-heading">
           <h2>${escapeHtml(formatCategory(category))}</h2>
-          <span>${categoryItems.length} items from the last ${LOOKBACK_DAYS} days</span>
+          <span>${categoryItems.length} CTI items from the last ${LOOKBACK_DAYS} days</span>
         </div>
 
         ${themeGroups.map((group) => renderThemeGroup(group, categoryIndex)).join("")}
@@ -672,9 +856,9 @@ const parseErrorBlock = parseErrors.length
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "ItemList",
-  name: "Ghostwrite Feed",
+  name: "Wolfram Threatstream",
   description:
-    "Curated English-language feed for threat intelligence, AI security, security research, cyber events, CFPs, and advisory workflows. Items are limited to the last 7 days.",
+    "Curated English-language cyber threat intelligence feed. Items are limited to the last 7 days, filtered for CTI relevance, ordered newest first, and grouped by logical threat affinity.",
   dateModified: generatedAt,
   numberOfItems: items.length,
   itemListElement: latestItems.map((item, index) => ({
@@ -698,9 +882,9 @@ const html = `<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Ghostwrite Feed</title>
+  <title>Wolfram Threatstream</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Curated English-language Ghostwrite feed for threat intelligence, AI security, security research, cyber events, CFPs, and advisory workflows. Last 7 days only.">
+  <meta name="description" content="Curated English-language cyber threat intelligence feed. Last 7 days only. CTI-relevant items only.">
   <meta name="robots" content="index, follow">
 
   <script type="application/ld+json">
@@ -1099,17 +1283,16 @@ ${JSON.stringify(jsonLd, null, 2)}
 <body>
   <main>
     <header class="hero">
-      <div class="eyebrow">Ghostwrite Strategic Feed</div>
-      <h1>Threat Signal, Source Intelligence, and Research Inputs</h1>
+      <div class="eyebrow">Strategic Cyber Threat Intelligence Feed</div>
+      <h1>Wolfram Threatstream< Feed/h1>
       <p class="subtitle">
-        Curated English-language feed for threat research, AI security, cyber news, vulnerability intelligence,
-        policy signal, practitioner analysis, and advisory workflows. This page only includes items published in the last ${LOOKBACK_DAYS} days, ordered newest first, and grouped by logical threat affinity.
+        Curated English-language cyber threat intelligence insights from the last ${LOOKBACK_DAYS} days. Items are filtered for CTI relevance, ordered newest first, deduplicated across repeated coverage, and grouped by logical threat affinity.
       </p>
 
       <div class="stats" aria-label="Feed status summary">
         <div class="stat">
           <strong>${escapeHtml(items.length)}</strong>
-          <span>Rendered items from last ${LOOKBACK_DAYS} days</span>
+          <span>Rendered CTI items from last ${LOOKBACK_DAYS} days</span>
         </div>
         <div class="stat">
           <strong>${escapeHtml(totalSources)}</strong>
@@ -1120,23 +1303,23 @@ ${JSON.stringify(jsonLd, null, 2)}
           <span>Healthy sources</span>
         </div>
         <div class="stat">
-          <strong>${escapeHtml(filteredOutCount)}</strong>
-          <span>Filtered out by date, language, or source rules</span>
+          <strong>${escapeHtml(totalFilteredOutCount)}</strong>
+          <span>Filtered out by language, date, or CTI relevance</span>
         </div>
       </div>
     </header>
 
     <nav class="utility-links" aria-label="Feed navigation">
       <a class="button-link" href="./feed.json">Raw JSON feed</a>
-      <a class="button-link" href="#top-insights">Top 10 insights</a>
+      <a class="button-link" href="#top-insights">Top 10 CTI insights</a>
       ${categoryNav}
       <a class="button-link" href="#source-health">Source health</a>
     </nav>
 
     <section class="insights-panel" id="top-insights">
-      <h2>Top 10 Major Unique Insights Across the Feed</h2>
+      <h2>Top 10 Major Unique CTI Insights</h2>
       <p class="panel-intro">
-        These items are selected from the last ${LOOKBACK_DAYS} days only, deduplicated across the full feed cohort, and grouped by logical threat affinity so repeated coverage of the same story does not crowd out distinct signal.
+        These items are selected from the last ${LOOKBACK_DAYS} days only, filtered for cyber threat intelligence relevance, deduplicated across the full feed cohort, and ordered newest first so stale but high-scoring stories do not outrank fresher signal.
       </p>
       <div class="insight-list">
         ${topInsights.map(buildInsight).join("")}
@@ -1146,7 +1329,7 @@ ${JSON.stringify(jsonLd, null, 2)}
     <section class="panel">
       <h2>Source Cohorts</h2>
       <p class="panel-intro">
-        Feed sources are grouped by cohort so humans and agents can understand the source mix behind the current briefing. Non-English sources are excluded from the rendered page.
+        Feed sources are grouped by cohort so humans and agents can understand the source mix behind the current briefing. The rendered page excludes non-English sources and non-CTI items.
       </p>
       <div class="cohort-grid">
         ${cohortCards}
@@ -1160,7 +1343,10 @@ ${JSON.stringify(jsonLd, null, 2)}
     <footer>
       <p>
         This page is generated from <code>docs/feed.json</code>. The rendered HTML is designed for human review,
-        search indexing, and M365 Agent Builder knowledge ingestion. The rendered page is English-only, limited to the last ${LOOKBACK_DAYS} days, ordered newest first, and grouped by logical affinity.
+        search indexing, and M365 Agent Builder knowledge ingestion. The rendered page is English-only, limited to the last ${LOOKBACK_DAYS} days, CTI-filtered, ordered newest first, and grouped by logical threat affinity.
+      </p>
+      <p>
+        Filter summary: ${escapeHtml(languageFilteredOutCount)} removed by language/source rules, ${escapeHtml(dateFilteredOutCount)} removed by date window, ${escapeHtml(ctiFilteredOutCount)} removed as non-CTI.
       </p>
       <p>
         Generated at: ${escapeHtml(formatDate(generatedAt))}
@@ -1173,7 +1359,9 @@ ${JSON.stringify(jsonLd, null, 2)}
 fs.writeFileSync(outputPath, html);
 
 console.log(`Generated ${outputPath}`);
-console.log(`Rendered ${items.length} items from the last ${LOOKBACK_DAYS} days.`);
-console.log(`Filtered out ${filteredOutCount} items by date, language, or source rules.`);
-console.log(`Selected ${topInsights.length} unique top insights.`);
+console.log(`Rendered ${items.length} CTI items from the last ${LOOKBACK_DAYS} days.`);
+console.log(`Filtered out ${languageFilteredOutCount} items by language/source rules.`);
+console.log(`Filtered out ${dateFilteredOutCount} items outside the date window.`);
+console.log(`Filtered out ${ctiFilteredOutCount} non-CTI items.`);
+console.log(`Selected ${topInsights.length} unique top CTI insights.`);
 console.log(`Detected ${parseErrors.length} source warnings.`);
