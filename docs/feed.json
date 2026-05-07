@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-05-07T22:33:27.310459+00:00",
-  "total_items": 675,
+  "generated_at": "2026-05-07T22:47:32.759366+00:00",
+  "total_items": 655,
   "cohorts": {
     "threat_research_primary": {
       "description": "Primary vendor and research-team intelligence with strong technical depth.",
       "source_count": 16
     },
     "government_authoritative": {
-      "description": "Authoritative public-sector sources for advisories, vulnerabilities, standards, and public guidance. CISA RSS discontinued May 2025; coverage shifted to NCSC UK, CERT-EU, and CERT-FR.",
-      "source_count": 4
+      "description": "Authoritative English-language public-sector sources for advisories, vulnerabilities, standards, and public guidance.",
+      "source_count": 2
     },
     "offensive_vulnerability_research": {
       "description": "High-signal vulnerability research, offensive security analysis, and exploitability-focused sources.",
@@ -50,14 +50,14 @@
       "status": "ok",
       "item_count": 10
     },
-    "ESET WeLiveSecurity": {
-      "url": "https://www.welivesecurity.com/en/rss/feed/",
+    "CrowdStrike": {
+      "url": "https://www.crowdstrike.com/blog/feed/",
       "cohort": "threat_research_primary",
       "status": "ok",
       "item_count": 10
     },
-    "CrowdStrike": {
-      "url": "https://www.crowdstrike.com/blog/feed/",
+    "ESET WeLiveSecurity": {
+      "url": "https://www.welivesecurity.com/en/rss/feed/",
       "cohort": "threat_research_primary",
       "status": "ok",
       "item_count": 10
@@ -68,56 +68,14 @@
       "status": "ok",
       "item_count": 10
     },
-    "Microsoft Security Blog": {
-      "url": "https://www.microsoft.com/en-us/security/blog/feed/",
-      "cohort": "threat_research_primary",
-      "status": "ok",
-      "item_count": 10
-    },
-    "Recorded Future": {
-      "url": "https://www.recordedfuture.com/feed",
-      "cohort": "threat_research_primary",
-      "status": "ok",
-      "item_count": 10
-    },
-    "Check Point Research": {
-      "url": "https://research.checkpoint.com/feed/",
-      "cohort": "threat_research_primary",
-      "status": "ok",
-      "item_count": 10
-    },
     "SentinelOne Labs": {
       "url": "https://www.sentinelone.com/labs/feed/",
       "cohort": "threat_research_primary",
       "status": "ok",
       "item_count": 10
     },
-    "NCSC UK": {
-      "url": "https://www.ncsc.gov.uk/api/1/services/v1/all-rss-feed.xml",
-      "cohort": "government_authoritative",
-      "status": "ok",
-      "item_count": 10
-    },
-    "Cisco Talos": {
-      "url": "https://feeds.feedburner.com/feedburner/Talos",
-      "cohort": "threat_research_primary",
-      "status": "ok",
-      "item_count": 10
-    },
-    "Trend Micro Research": {
-      "url": "https://newsroom.trendmicro.com/news-releases?pagetemplate=rss&category=787",
-      "cohort": "threat_research_primary",
-      "status": "ok",
-      "item_count": 10
-    },
-    "SANS Internet Storm Center": {
-      "url": "https://isc.sans.edu/rssfeed_full.xml",
-      "cohort": "government_authoritative",
-      "status": "ok",
-      "item_count": 10
-    },
-    "Citizen Lab": {
-      "url": "https://citizenlab.ca/feed/",
+    "Microsoft Security Blog": {
+      "url": "https://www.microsoft.com/en-us/security/blog/feed/",
       "cohort": "threat_research_primary",
       "status": "ok",
       "item_count": 10
@@ -128,9 +86,63 @@
       "status": "ok",
       "item_count": 10
     },
+    "Citizen Lab": {
+      "url": "https://citizenlab.ca/feed/",
+      "cohort": "threat_research_primary",
+      "status": "ok",
+      "item_count": 10
+    },
+    "Recorded Future": {
+      "url": "https://www.recordedfuture.com/feed",
+      "cohort": "threat_research_primary",
+      "status": "ok",
+      "item_count": 10
+    },
+    "Trend Micro Research": {
+      "url": "https://newsroom.trendmicro.com/news-releases?pagetemplate=rss&category=787",
+      "cohort": "threat_research_primary",
+      "status": "ok",
+      "item_count": 10
+    },
+    "NCSC UK": {
+      "url": "https://www.ncsc.gov.uk/api/1/services/v1/all-rss-feed.xml",
+      "cohort": "government_authoritative",
+      "status": "ok",
+      "item_count": 10
+    },
+    "Check Point Research": {
+      "url": "https://research.checkpoint.com/feed/",
+      "cohort": "threat_research_primary",
+      "status": "ok",
+      "item_count": 10
+    },
     "Sekoia": {
       "url": "https://blog.sekoia.io/feed/",
       "cohort": "threat_research_primary",
+      "status": "ok",
+      "item_count": 10
+    },
+    "Cisco Talos": {
+      "url": "https://feeds.feedburner.com/feedburner/Talos",
+      "cohort": "threat_research_primary",
+      "status": "ok",
+      "item_count": 10
+    },
+    "SANS Internet Storm Center": {
+      "url": "https://isc.sans.edu/rssfeed_full.xml",
+      "cohort": "government_authoritative",
+      "status": "ok",
+      "item_count": 10
+    },
+    "PortSwigger Research": {
+      "url": "https://portswigger.net/research/rss",
+      "cohort": "offensive_vulnerability_research",
+      "status": "ok",
+      "item_count": 10
+    },
+    "Assetnote": {
+      "url": "https://www.assetnote.io/resources/research/rss.xml",
+      "cohort": "offensive_vulnerability_research",
       "status": "ok",
       "item_count": 10
     },
@@ -142,18 +154,6 @@
     },
     "Horizon3 Attack Research": {
       "url": "https://horizon3.ai/feed/",
-      "cohort": "offensive_vulnerability_research",
-      "status": "ok",
-      "item_count": 10
-    },
-    "Assetnote": {
-      "url": "https://www.assetnote.io/resources/research/rss.xml",
-      "cohort": "offensive_vulnerability_research",
-      "status": "ok",
-      "item_count": 10
-    },
-    "PortSwigger Research": {
-      "url": "https://portswigger.net/research/rss",
       "cohort": "offensive_vulnerability_research",
       "status": "ok",
       "item_count": 10
@@ -170,8 +170,14 @@
       "status": "ok",
       "item_count": 10
     },
-    "Trail of Bits": {
-      "url": "https://blog.trailofbits.com/feed/",
+    "Kaspersky Securelist": {
+      "url": "https://securelist.com/feed/",
+      "cohort": "threat_research_primary",
+      "status": "ok",
+      "item_count": 10
+    },
+    "GitHub Security Lab": {
+      "url": "https://github.blog/category/security/feed/",
       "cohort": "offensive_vulnerability_research",
       "status": "ok",
       "item_count": 10
@@ -182,15 +188,9 @@
       "status": "ok",
       "item_count": 10
     },
-    "Kaspersky Securelist": {
-      "url": "https://securelist.com/feed/",
-      "cohort": "threat_research_primary",
-      "status": "ok",
-      "item_count": 10
-    },
-    "GitHub Security Lab": {
-      "url": "https://github.blog/category/security/feed/",
-      "cohort": "offensive_vulnerability_research",
+    "SpecterOps": {
+      "url": "https://medium.com/feed/specter-ops-posts",
+      "cohort": "detection_response_operations",
       "status": "ok",
       "item_count": 10
     },
@@ -206,8 +206,8 @@
       "status": "ok",
       "item_count": 10
     },
-    "SpecterOps": {
-      "url": "https://medium.com/feed/specter-ops-posts",
+    "TrustedSec": {
+      "url": "https://www.trustedsec.com/feed/",
       "cohort": "detection_response_operations",
       "status": "ok",
       "item_count": 10
@@ -218,15 +218,9 @@
       "status": "ok",
       "item_count": 10
     },
-    "TrustedSec": {
-      "url": "https://www.trustedsec.com/feed/",
-      "cohort": "detection_response_operations",
-      "status": "ok",
-      "item_count": 10
-    },
-    "Sysdig": {
-      "url": "https://sysdig.com/feed/",
-      "cohort": "detection_response_operations",
+    "Trail of Bits": {
+      "url": "https://blog.trailofbits.com/feed/",
+      "cohort": "offensive_vulnerability_research",
       "status": "ok",
       "item_count": 10
     },
@@ -248,21 +242,21 @@
       "status": "ok",
       "item_count": 10
     },
-    "Mandiant": {
-      "url": "https://www.mandiant.com/resources/blog/rss.xml",
-      "cohort": "threat_research_primary",
-      "status": "ok",
-      "item_count": 10
-    },
-    "Protect AI": {
-      "url": "https://protectai.com/blog/rss.xml",
-      "cohort": "ai_security_agentic_risk",
+    "Sysdig": {
+      "url": "https://sysdig.com/feed/",
+      "cohort": "detection_response_operations",
       "status": "ok",
       "item_count": 10
     },
     "Permiso Security": {
       "url": "https://permiso.io/blog/rss.xml",
       "cohort": "cloud_identity_infrastructure",
+      "status": "ok",
+      "item_count": 10
+    },
+    "Protect AI": {
+      "url": "https://protectai.com/blog/rss.xml",
+      "cohort": "ai_security_agentic_risk",
       "status": "ok",
       "item_count": 10
     },
@@ -278,18 +272,6 @@
       "status": "parse_error",
       "item_count": 0
     },
-    "Embrace the Red": {
-      "url": "https://embracethered.com/blog/index.xml",
-      "cohort": "ai_security_agentic_risk",
-      "status": "ok",
-      "item_count": 10
-    },
-    "Simon Willison": {
-      "url": "https://simonwillison.net/atom/everything/",
-      "cohort": "ai_security_agentic_risk",
-      "status": "ok",
-      "item_count": 10
-    },
     "Google DeepMind Blog": {
       "url": "https://deepmind.google/blog/rss.xml",
       "cohort": "ai_security_agentic_risk",
@@ -299,6 +281,18 @@
     "Wiz Research": {
       "url": "https://www.wiz.io/feed/rss.xml",
       "cohort": "cloud_identity_infrastructure",
+      "status": "ok",
+      "item_count": 10
+    },
+    "Embrace the Red": {
+      "url": "https://embracethered.com/blog/index.xml",
+      "cohort": "ai_security_agentic_risk",
+      "status": "ok",
+      "item_count": 10
+    },
+    "Simon Willison": {
+      "url": "https://simonwillison.net/atom/everything/",
+      "cohort": "ai_security_agentic_risk",
       "status": "ok",
       "item_count": 10
     },
@@ -314,23 +308,29 @@
       "status": "parse_error",
       "item_count": 0
     },
+    "Mandiant": {
+      "url": "https://www.mandiant.com/resources/blog/rss.xml",
+      "cohort": "threat_research_primary",
+      "status": "ok",
+      "item_count": 10
+    },
     "Team Cymru": {
       "url": "https://www.team-cymru.com/post/rss.xml",
       "cohort": "ransomware_ecrime_financial_crime",
       "status": "ok",
       "item_count": 10
     },
-    "Google Cloud Security": {
-      "url": "https://cloudblog.withgoogle.com/rss/",
-      "cohort": "cloud_identity_infrastructure",
+    "Coveware": {
+      "url": "https://www.coveware.com/blog?format=rss",
+      "cohort": "ransomware_ecrime_financial_crime",
       "status": "ok",
       "item_count": 10
     },
-    "BleepingComputer": {
-      "url": "https://www.bleepingcomputer.com/feed/",
-      "cohort": "cyber_news_breach_reporting",
-      "status": "ok",
-      "item_count": 10
+    "Group-IB": {
+      "url": "https://www.group-ib.com/blog/rss/",
+      "cohort": "ransomware_ecrime_financial_crime",
+      "status": "parse_error",
+      "item_count": 0
     },
     "The Record": {
       "url": "https://therecord.media/feed",
@@ -338,9 +338,9 @@
       "status": "ok",
       "item_count": 5
     },
-    "Coveware": {
-      "url": "https://www.coveware.com/blog?format=rss",
-      "cohort": "ransomware_ecrime_financial_crime",
+    "BleepingComputer": {
+      "url": "https://www.bleepingcomputer.com/feed/",
+      "cohort": "cyber_news_breach_reporting",
       "status": "ok",
       "item_count": 10
     },
@@ -356,20 +356,8 @@
       "status": "ok",
       "item_count": 10
     },
-    "Group-IB": {
-      "url": "https://www.group-ib.com/blog/rss/",
-      "cohort": "ransomware_ecrime_financial_crime",
-      "status": "parse_error",
-      "item_count": 0
-    },
-    "CyberScoop": {
-      "url": "https://cyberscoop.com/feed/",
-      "cohort": "cyber_news_breach_reporting",
-      "status": "ok",
-      "item_count": 10
-    },
-    "The Hacker News": {
-      "url": "https://feeds.feedburner.com/TheHackersNews",
+    "Dark Reading": {
+      "url": "https://www.darkreading.com/rss.xml",
       "cohort": "cyber_news_breach_reporting",
       "status": "ok",
       "item_count": 10
@@ -380,44 +368,8 @@
       "status": "ok",
       "item_count": 10
     },
-    "Dark Reading": {
-      "url": "https://www.darkreading.com/rss.xml",
-      "cohort": "cyber_news_breach_reporting",
-      "status": "ok",
-      "item_count": 10
-    },
-    "DomainTools Investigations": {
-      "url": "https://www.domaintools.com/resources/blog/feed/",
-      "cohort": "ransomware_ecrime_financial_crime",
-      "status": "parse_error",
-      "item_count": 0
-    },
-    "Black Hills Information Security": {
-      "url": "https://www.blackhillsinfosec.com/feed/",
-      "cohort": "detection_response_operations",
-      "status": "ok",
-      "item_count": 10
-    },
-    "Lawfare": {
-      "url": "https://www.lawfaremedia.org/rss/site",
-      "cohort": "policy_strategy_geopolitics",
-      "status": "parse_error",
-      "item_count": 0
-    },
-    "Schneier on Security": {
-      "url": "https://www.schneier.com/feed/atom/",
-      "cohort": "practitioner_analysis",
-      "status": "ok",
-      "item_count": 10
-    },
-    "Help Net Security": {
-      "url": "https://www.helpnetsecurity.com/feed/",
-      "cohort": "cyber_news_breach_reporting",
-      "status": "ok",
-      "item_count": 10
-    },
-    "Infosecurity Magazine": {
-      "url": "https://www.infosecurity-magazine.com/rss/news/",
+    "The Hacker News": {
+      "url": "https://feeds.feedburner.com/TheHackersNews",
       "cohort": "cyber_news_breach_reporting",
       "status": "ok",
       "item_count": 10
@@ -428,20 +380,50 @@
       "status": "ok",
       "item_count": 10
     },
-    "Troy Hunt": {
-      "url": "https://www.troyhunt.com/rss/",
+    "Black Hills Information Security": {
+      "url": "https://www.blackhillsinfosec.com/feed/",
+      "cohort": "detection_response_operations",
+      "status": "ok",
+      "item_count": 10
+    },
+    "CyberScoop": {
+      "url": "https://cyberscoop.com/feed/",
+      "cohort": "cyber_news_breach_reporting",
+      "status": "ok",
+      "item_count": 10
+    },
+    "Google Cloud Security": {
+      "url": "https://cloudblog.withgoogle.com/rss/",
+      "cohort": "cloud_identity_infrastructure",
+      "status": "ok",
+      "item_count": 10
+    },
+    "Lawfare": {
+      "url": "https://www.lawfaremedia.org/rss/site",
+      "cohort": "policy_strategy_geopolitics",
+      "status": "parse_error",
+      "item_count": 0
+    },
+    "DomainTools Investigations": {
+      "url": "https://www.domaintools.com/resources/blog/feed/",
+      "cohort": "ransomware_ecrime_financial_crime",
+      "status": "parse_error",
+      "item_count": 0
+    },
+    "Infosecurity Magazine": {
+      "url": "https://www.infosecurity-magazine.com/rss/news/",
+      "cohort": "cyber_news_breach_reporting",
+      "status": "ok",
+      "item_count": 10
+    },
+    "Schneier on Security": {
+      "url": "https://www.schneier.com/feed/atom/",
       "cohort": "practitioner_analysis",
       "status": "ok",
       "item_count": 10
     },
-    "Kim Zetter Zero Day": {
-      "url": "https://kimzetter.substack.com/feed",
-      "cohort": "practitioner_analysis",
-      "status": "parse_error",
-      "item_count": 0
-    },
-    "Graham Cluley": {
-      "url": "https://grahamcluley.com/feed/",
+    "Troy Hunt": {
+      "url": "https://www.troyhunt.com/rss/",
       "cohort": "practitioner_analysis",
       "status": "ok",
       "item_count": 10
@@ -452,17 +434,35 @@
       "status": "ok",
       "item_count": 10
     },
-    "Risky Business News": {
-      "url": "https://risky.biz/feeds/risky-business-news/",
+    "Kim Zetter Zero Day": {
+      "url": "https://kimzetter.substack.com/feed",
       "cohort": "practitioner_analysis",
-      "status": "ok",
-      "item_count": 10
+      "status": "parse_error",
+      "item_count": 0
     },
     "SC Media": {
       "url": "https://www.scmagazine.com/feed",
       "cohort": "cyber_news_breach_reporting",
       "status": "parse_error",
       "item_count": 0
+    },
+    "Graham Cluley": {
+      "url": "https://grahamcluley.com/feed/",
+      "cohort": "practitioner_analysis",
+      "status": "ok",
+      "item_count": 10
+    },
+    "Help Net Security": {
+      "url": "https://www.helpnetsecurity.com/feed/",
+      "cohort": "cyber_news_breach_reporting",
+      "status": "ok",
+      "item_count": 10
+    },
+    "Risky Business News": {
+      "url": "https://risky.biz/feeds/risky-business-news/",
+      "cohort": "practitioner_analysis",
+      "status": "ok",
+      "item_count": 10
     },
     "tl;dr sec": {
       "url": "https://tldrsec.com/feed.xml",
@@ -492,6 +492,15 @@
       "published": "2026-05-08T00:00:00+00:00",
       "summary": "This article shows how a customized Elastic Security ES|QL detection rule can identify web server probing and fuzzing activity in Traefik logs and automatically block the attacking IP via Cloudflare.",
       "author": ""
+    },
+    {
+      "source": "BleepingComputer",
+      "category": "cyber_news_breach_reporting",
+      "title": "Canvas login portals hacked in mass ShinyHunters extortion campaign",
+      "link": "https://www.bleepingcomputer.com/news/security/canvas-login-portals-hacked-in-mass-shinyhunters-extortion-campaign/",
+      "published": "2026-05-07T22:36:54+00:00",
+      "summary": "The ShinyHunters extortion gang has breached education technology giant Instructure again, this time exploiting another vulnerability to deface Canvas login portals for hundreds of colleges and universities. [...]",
+      "author": "Lawrence Abrams"
     },
     {
       "source": "BleepingComputer",
@@ -535,7 +544,7 @@
       "title": "When prompts become shells: RCE vulnerabilities in AI agent frameworks",
       "link": "https://www.microsoft.com/en-us/security/blog/2026/05/07/prompts-become-shells-rce-vulnerabilities-ai-agent-frameworks/",
       "published": "2026-05-07T20:22:39+00:00",
-      "summary": "<p>New research exposes how prompt injection in AI agent frameworks can lead to remote code execution. Learn how these vulnerabilities work, what’s impacted, and how to secure your agents.</p>\n<p>The post <a href=\"https://www.microsoft.com/en-us/security/blog/2026/05/07/prompts-become-shells-rce-vulnerabilities-ai-agent-frameworks/\">When prompts become shells: RCE vulnerabilities in AI agent frameworks</a> appeared first on <a href=\"https://www.microsoft.com/en-us/security/blog\">Microsoft Securi",
+      "summary": "<p>AI agents have fundamentally changed the threat model of AI model-based applications. By equipping these models with plugins (also called tools), your agents no longer just generate text; they now read files, search connected databases, run scripts, and perform other tasks to actively operate on your network.</p>\n<p>The post <a href=\"https://www.microsoft.com/en-us/security/blog/2026/05/07/prompts-become-shells-rce-vulnerabilities-ai-agent-frameworks/\">When prompts become shells: RCE vulnerab",
       "author": "Microsoft Defender Security Research Team, Uri Oren, Amit Eliahu and Dor Edry"
     },
     {
@@ -1104,15 +1113,6 @@
       "published": "2026-05-07T10:54:00+00:00",
       "summary": "Having an incident response retainer, or even a pre-approved external incident response firm, is not the same as being ready for an incident. A retainer means someone will answer the phone. Operational readiness determines whether that team can do meaningful work the moment they do.&nbsp;\nThat distinction matters far more than many organizations realize. In the first hours of a security incident",
       "author": "info@thehackernews.com (The Hacker News)"
-    },
-    {
-      "source": "BleepingComputer",
-      "category": "cyber_news_breach_reporting",
-      "title": "Fake Claude AI website delivers new 'Beagle' Windows malware",
-      "link": "https://www.bleepingcomputer.com/news/security/fake-claude-ai-website-delivers-new-beagle-windows-malware/",
-      "published": "2026-05-07T10:02:35+00:00",
-      "summary": "A fake version for the Claude AI website offers a malicious Claude-Pro Relay download that pushes a previously undocumented backdoor for Windows named Beagle. [...]",
-      "author": "Bill Toulas"
     },
     {
       "source": "Kaspersky Securelist",
@@ -2024,15 +2024,6 @@
       "author": ""
     },
     {
-      "source": "Sysdig",
-      "category": "detection_response_operations",
-      "title": "Security briefing: April 2026",
-      "link": "https://webflow.sysdig.com/blog/security-briefing-april-2026",
-      "published": "2026-05-05T00:00:00+00:00",
-      "summary": "Supply chain failure is the gift that keeps on giving, or should I say taking? The vulnerabilities, the exploitation, the breaches…these are inevitable, we know that. None of these are surprising anymore. The need for an “assume breach” mindset has become all too real.",
-      "author": ""
-    },
-    {
       "source": "Elastic Security Labs",
       "category": "detection_response_operations",
       "title": "Elastic Workflows GA: automation where your security data already lives",
@@ -2066,6 +2057,15 @@
       "link": "https://www.elastic.co/security-labs/ueba-entity-record-quality-analytics",
       "published": "2026-05-05T00:00:00+00:00",
       "summary": "Most entity analytics systems are confidently wrong. They track users who do not exist, generate risk scores built on noise, and call it behavioral analytics. Learn why the entities records you don't create matter as much as the ones you do and how a confidence-tiered model changes the game.",
+      "author": ""
+    },
+    {
+      "source": "Sysdig",
+      "category": "detection_response_operations",
+      "title": "Security briefing: April 2026",
+      "link": "https://webflow.sysdig.com/blog/security-briefing-april-2026",
+      "published": "2026-05-05T00:00:00+00:00",
+      "summary": "Supply chain failure is the gift that keeps on giving, or should I say taking? The vulnerabilities, the exploitation, the breaches…these are inevitable, we know that. None of these are surprising anymore. The need for an “assume breach” mindset has become all too real.",
       "author": ""
     },
     {
@@ -2645,78 +2645,6 @@
       "author": ""
     },
     {
-      "source": "CERT-FR Avis",
-      "category": "government_authoritative",
-      "title": "Multiples vulnérabilités dans MISP (30 avril 2026)",
-      "link": "https://www.cert.ssi.gouv.fr/avis/CERTFR-2026-AVI-0515/",
-      "published": "2026-04-30T00:00:00+00:00",
-      "summary": "De multiples vulnérabilités ont été découvertes dans MISP. Elles permettent à un attaquant de provoquer une élévation de privilèges, une injection SQL (SQLi) et un contournement de la politique de sécurité.",
-      "author": ""
-    },
-    {
-      "source": "CERT-FR Avis",
-      "category": "government_authoritative",
-      "title": "Vulnérabilité dans les produits Netgate (30 avril 2026)",
-      "link": "https://www.cert.ssi.gouv.fr/avis/CERTFR-2026-AVI-0516/",
-      "published": "2026-04-30T00:00:00+00:00",
-      "summary": "Une vulnérabilité a été découverte dans les produits Netgate. Elle permet à un attaquant de provoquer une injection de code indirecte à distance (XSS).",
-      "author": ""
-    },
-    {
-      "source": "CERT-FR Avis",
-      "category": "government_authoritative",
-      "title": "Multiples vulnérabilités dans les produits SonicWall (30 avril 2026)",
-      "link": "https://www.cert.ssi.gouv.fr/avis/CERTFR-2026-AVI-0517/",
-      "published": "2026-04-30T00:00:00+00:00",
-      "summary": "De multiples vulnérabilités ont été découvertes dans les produits SonicWall. Elles permettent à un attaquant de provoquer un déni de service à distance et un contournement de la politique de sécurité.",
-      "author": ""
-    },
-    {
-      "source": "CERT-FR Avis",
-      "category": "government_authoritative",
-      "title": "Multiples vulnérabilités dans Wireshark (30 avril 2026)",
-      "link": "https://www.cert.ssi.gouv.fr/avis/CERTFR-2026-AVI-0518/",
-      "published": "2026-04-30T00:00:00+00:00",
-      "summary": "De multiples vulnérabilités ont été découvertes dans Wireshark. Elles permettent à un attaquant de provoquer une exécution de code arbitraire à distance, un déni de service à distance et une atteinte à la confidentialité des données.",
-      "author": ""
-    },
-    {
-      "source": "CERT-FR Avis",
-      "category": "government_authoritative",
-      "title": "Multiples vulnérabilités dans Microsoft Azure Linux (30 avril 2026)",
-      "link": "https://www.cert.ssi.gouv.fr/avis/CERTFR-2026-AVI-0519/",
-      "published": "2026-04-30T00:00:00+00:00",
-      "summary": "De multiples vulnérabilités ont été découvertes dans Microsoft Azure Linux. Elles permettent à un attaquant de provoquer un problème de sécurité non spécifié par l'éditeur.",
-      "author": ""
-    },
-    {
-      "source": "CERT-FR Avis",
-      "category": "government_authoritative",
-      "title": "Multiples vulnérabilités dans le noyau Linux de SUSE (30 avril 2026)",
-      "link": "https://www.cert.ssi.gouv.fr/avis/CERTFR-2026-AVI-0520/",
-      "published": "2026-04-30T00:00:00+00:00",
-      "summary": "De multiples vulnérabilités ont été découvertes dans le noyau Linux de SUSE. Elles permettent à un attaquant de provoquer une élévation de privilèges, un déni de service et un problème de sécurité non spécifié par l'éditeur.",
-      "author": ""
-    },
-    {
-      "source": "CERT-FR Avis",
-      "category": "government_authoritative",
-      "title": "Multiples vulnérabilités dans le noyau Linux de Red Hat (30 avril 2026)",
-      "link": "https://www.cert.ssi.gouv.fr/avis/CERTFR-2026-AVI-0521/",
-      "published": "2026-04-30T00:00:00+00:00",
-      "summary": "De multiples vulnérabilités ont été découvertes dans le noyau Linux de Red Hat. Certaines d'entre elles permettent à un attaquant de provoquer une exécution de code arbitraire, une élévation de privilèges et un déni de service à distance.",
-      "author": ""
-    },
-    {
-      "source": "CERT-FR Avis",
-      "category": "government_authoritative",
-      "title": "Multiples vulnérabilités dans le noyau Linux d'Ubuntu (30 avril 2026)",
-      "link": "https://www.cert.ssi.gouv.fr/avis/CERTFR-2026-AVI-0522/",
-      "published": "2026-04-30T00:00:00+00:00",
-      "summary": "De multiples vulnérabilités ont été découvertes dans le noyau Linux d'Ubuntu. Certaines d'entre elles permettent à un attaquant de provoquer une élévation de privilèges, une atteinte à la confidentialité des données et une atteinte à l'intégrité des données.",
-      "author": ""
-    },
-    {
       "source": "Huntress",
       "category": "detection_response_operations",
       "title": "Komari Red: The Monitoring Tool with a Built-in Reverse Shell",
@@ -2903,24 +2831,6 @@
       "link": "https://risky.biz/RBNEWS557/",
       "published": "2026-04-29T02:04:31+00:00",
       "summary": "Ukrainians hack Russian satellites, Vimeo is being extorted, Greece wants to ban anonymity on social media, and a Scattered Spider hacker was arrested in Finland.",
-      "author": ""
-    },
-    {
-      "source": "CERT-FR Avis",
-      "category": "government_authoritative",
-      "title": "Multiples vulnérabilités dans les produits Microsoft (29 avril 2026)",
-      "link": "https://www.cert.ssi.gouv.fr/avis/CERTFR-2026-AVI-0513/",
-      "published": "2026-04-29T00:00:00+00:00",
-      "summary": "De multiples vulnérabilités ont été découvertes dans les produits Microsoft. Elles permettent à un attaquant de provoquer un problème de sécurité non spécifié par l'éditeur.",
-      "author": ""
-    },
-    {
-      "source": "CERT-FR Avis",
-      "category": "government_authoritative",
-      "title": "Multiples vulnérabilités dans Curl (29 avril 2026)",
-      "link": "https://www.cert.ssi.gouv.fr/avis/CERTFR-2026-AVI-0514/",
-      "published": "2026-04-29T00:00:00+00:00",
-      "summary": "De multiples vulnérabilités ont été découvertes dans Curl. Elles permettent à un attaquant de provoquer une atteinte à la confidentialité des données et un contournement de la politique de sécurité.",
       "author": ""
     },
     {
@@ -3419,6 +3329,15 @@
       "author": "Arnaud Dechoux"
     },
     {
+      "source": "TrustedSec",
+      "category": "detection_response_operations",
+      "title": "Kerberos with Titanis",
+      "link": "https://trustedsec.com/blog/kerberos-with-titanis",
+      "published": "2026-04-23T04:00:00+00:00",
+      "summary": "&lt;p&gt;In this article, I’ll walk you through the basics of Kerberos, how to use Titanis for the different parts, and how to mitigate some problems.Titanis SetupI use Titanis tools throughout this article to demonstrate…&lt;/p&gt;",
+      "author": "Alex Ball"
+    },
+    {
       "source": "Huntress",
       "category": "detection_response_operations",
       "title": "What Is Multi-Factor Authentication (MFA)? | How MFA Secures Businesses | Huntress",
@@ -3435,15 +3354,6 @@
       "published": "2026-04-23T04:00:00+00:00",
       "summary": "Learn cyber hygiene best practices with Huntress: from strong passwords and MFA to patching and security training.",
       "author": ""
-    },
-    {
-      "source": "TrustedSec",
-      "category": "detection_response_operations",
-      "title": "Kerberos with Titanis",
-      "link": "https://trustedsec.com/blog/kerberos-with-titanis",
-      "published": "2026-04-23T04:00:00+00:00",
-      "summary": "&lt;p&gt;In this article, I’ll walk you through the basics of Kerberos, how to use Titanis for the different parts, and how to mitigate some problems.Titanis SetupI use Titanis tools throughout this article to demonstrate…&lt;/p&gt;",
-      "author": "Alex Ball"
     },
     {
       "source": "Graham Cluley",
@@ -6378,96 +6288,6 @@
       "published": "2024-06-04T23:00:00+00:00",
       "summary": "Our bulletin covering coordinated influence operation campaigns terminated on our platforms in Q2 2024.",
       "author": "Billy Leonard"
-    },
-    {
-      "source": "CERT-FR Alerts",
-      "category": "government_authoritative",
-      "title": "[MàJ] Incident affectant les solutions AnyDesk (05 février 2024)",
-      "link": "https://www.cert.ssi.gouv.fr/alerte/CERTFR-2024-ALE-003/",
-      "published": "2024-02-05T00:00:00+00:00",
-      "summary": "\\[Mise à jour du 27 février 2024\\] Le 29 janvier 2024 l'ANSSI a été alertée par le BSI que l'éditeur AnyDesk Software GmbH a été victime d'une fuite de données. Le code source des applications développées par l'éditeur ainsi que des certificats et clés privées pourraient avoir été dérobés. De...",
-      "author": ""
-    },
-    {
-      "source": "CERT-FR Alerts",
-      "category": "government_authoritative",
-      "title": "[MàJ] Multiples Vulnérabilités dans GitLab (12 janvier 2024)",
-      "link": "https://www.cert.ssi.gouv.fr/alerte/CERTFR-2024-ALE-002/",
-      "published": "2024-01-12T00:00:00+00:00",
-      "summary": "\\[Mise à jour du 29 janvier 2024\\] Le 25 janvier 2024, l'éditeur a publié un avis de sécurité concernant plusieurs vulnérabilités affectant GitLab CE et EE. La vulnérabilité CVE-2024-0402 est considérée critique avec un score CVSSv3 de 9,9. Elle permet à un attaquant authentifié d'écrire des...",
-      "author": ""
-    },
-    {
-      "source": "CERT-FR Alerts",
-      "category": "government_authoritative",
-      "title": "[MàJ] Multiples vulnérabilités dans Ivanti Connect Secure et Policy Secure Gateways (11 janvier 2024)",
-      "link": "https://www.cert.ssi.gouv.fr/alerte/CERTFR-2024-ALE-001/",
-      "published": "2024-01-11T00:00:00+00:00",
-      "summary": "[Mise à jour du 4 mars 2024] Ivanti a publié le 29 février des recommandations de résolution pour les Ivanti Connect Secure ou Policy Secure en machine virtuelle [16]. [Mise à jour du 15 février 2024] l'éditeur a publié le 15 février des correctifs pour les versions suivantes, qui n'en...",
-      "author": ""
-    },
-    {
-      "source": "CERT-FR Alerts",
-      "category": "government_authoritative",
-      "title": "Vulnérabilité dans Apache Struts 2 (13 décembre 2023)",
-      "link": "https://www.cert.ssi.gouv.fr/alerte/CERTFR-2023-ALE-013/",
-      "published": "2023-12-13T00:00:00+00:00",
-      "summary": "Le 4 décembre 2023, Apache a publié un avis de sécurité concernant la vulnérabilité critique CVE-2023-50164 concernant le cadriciel Struts 2. Cette vulnérabilité permet à un attaquant non authentifié de téléverser une porte dérobée sur un serveur vulnérable, et ainsi exécuter du code arbitraire à...",
-      "author": ""
-    },
-    {
-      "source": "CERT-FR Alerts",
-      "category": "government_authoritative",
-      "title": "[MàJ] Vulnérabilité dans Citrix NetScaler ADC et NetScaler Gateway (23 octobre 2023)",
-      "link": "https://www.cert.ssi.gouv.fr/alerte/CERTFR-2023-ALE-012/",
-      "published": "2023-10-23T00:00:00+00:00",
-      "summary": "\\[Mise à jour du 22 novembre 2023\\] L'éditeur a publié un document \\[3\\] le 20 novembre 2023 listant les différents journaux à analyser ainsi que les éléments à rechercher pour identifier une activité pouvant être liée à une compromission. Par ailleurs, la CISA a publié un avis de sécurité le 21...",
-      "author": ""
-    },
-    {
-      "source": "CERT-FR Alerts",
-      "category": "government_authoritative",
-      "title": "[MàJ] Multiples vulnérabilités dans Cisco IOS XE (17 octobre 2023)",
-      "link": "https://www.cert.ssi.gouv.fr/alerte/CERTFR-2023-ALE-011/",
-      "published": "2023-10-17T00:00:00+00:00",
-      "summary": "\\[Mise à jour du 02 novembre 2023\\] La version 17.3.8a est disponible. \\[Mise à jour du 31 octobre 2023\\] Les détails techniques de la vulnérabilité CVE-2023-20198 sont désormais disponibles publiquement. Cette vulnérabilité était déjà massivement exploitée. Tous les équipements exposant...",
-      "author": ""
-    },
-    {
-      "source": "CERT-FR Alerts",
-      "category": "government_authoritative",
-      "title": "Multiples vulnérabilités dans Exim (02 octobre 2023)",
-      "link": "https://www.cert.ssi.gouv.fr/alerte/CERTFR-2023-ALE-010/",
-      "published": "2023-10-02T00:00:00+00:00",
-      "summary": "Le 27 septembre 2023, Zero Day Initiative (ZDI) a publié six avis de sécurité \\[1\\] concernant des vulnérabilités de type zéro-jour affectant les versions antérieures à 4.96.1 ou 4.97 de l'agent de transfert de courriels (*Mail Transfer Agent* ou *MTA*) Exim. Le 1er octobre 2023, l'éditeur a...",
-      "author": ""
-    },
-    {
-      "source": "CERT-FR Alerts",
-      "category": "government_authoritative",
-      "title": "[MàJ] Vulnérabilité dans Citrix NetScaler ADC et NetScaler Gateway (19 juillet 2023)",
-      "link": "https://www.cert.ssi.gouv.fr/alerte/CERTFR-2023-ALE-008/",
-      "published": "2023-07-19T00:00:00+00:00",
-      "summary": "Le 18 juillet 2023, Citrix a publié un avis de sécurité concernant plusieurs vulnérabilités. La plus critique, dont l'identifiant CVE est CVE-2023-3519, permet à un attaquant non authentifié d'exécuter du code arbitraire à distance. L'équipement est vulnérable s'il est configuré en tant que...",
-      "author": ""
-    },
-    {
-      "source": "CERT-FR Alerts",
-      "category": "government_authoritative",
-      "title": "[MàJ] Vulnérabilité dans Zimbra Collaboration Suite (17 juillet 2023)",
-      "link": "https://www.cert.ssi.gouv.fr/alerte/CERTFR-2023-ALE-007/",
-      "published": "2023-07-17T00:00:00+00:00",
-      "summary": "\\[Mise à jour du 26 juillet 2023\\] Publication du correctif de sécurité par l'éditeur Le 26 juillet 2023, l'éditeur a publié un correctif de sécurité \\[1\\] pour cette vulnérabilité immatriculée CVE-2023-37580. Il est donc fortement recommandé de déployer le correctif P41 pour toutes les versions...",
-      "author": ""
-    },
-    {
-      "source": "CERT-FR Alerts",
-      "category": "government_authoritative",
-      "title": "Vulnérabilité dans les produits Microsoft (12 juillet 2023)",
-      "link": "https://www.cert.ssi.gouv.fr/alerte/CERTFR-2023-ALE-006/",
-      "published": "2023-07-12T00:00:00+00:00",
-      "summary": "Dans le cadre de son *Patch Tuesday*, en date du 11 juillet 2023, Microsoft a indiqué l'existence d'une vulnérabilité référencée CVE-2023-36884 \\[1\\] au sein de plusieurs versions de Windows et produits Office. Un score CVSSv3 de 8.3 lui a été attribué. L'éditeur confirme qu'elle est activement...",
-      "author": ""
     },
     {
       "source": "CrowdStrike",
