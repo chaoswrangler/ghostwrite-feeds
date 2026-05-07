@@ -11,8 +11,8 @@
 # - Avoid treating all feeds as equal signal.
 #
 # Validation notes:
-# - CISA discontinued public RSS feeds in May 2025; replaced with CERT-EU,
-#   CERT-FR, and existing NCSC UK / SANS ISC coverage.
+# - CISA discontinued public RSS feeds in May 2025.
+# - English-language public-sector coverage currently uses NCSC UK and SANS ISC.
 # - Some vendor feeds (Volexity, Trend Micro) are historically flaky; expect
 #   occasional parse errors and treat as known.
 # - Substack feeds (Import AI, Interconnects, AI Snake Oil) are CDN-dependent
@@ -69,17 +69,13 @@ source_cohorts:
   # Note: CISA discontinued public RSS feeds in May 2025.
   # ------------------------------------------------------------
   government_authoritative:
-    description: "Authoritative public-sector sources for advisories, vulnerabilities, standards, and public guidance. CISA RSS discontinued May 2025; coverage shifted to NCSC UK, CERT-EU, and CERT-FR."
-    sources:
-      - name: NCSC UK
-        url: https://www.ncsc.gov.uk/api/1/services/v1/all-rss-feed.xml
-      - name: SANS Internet Storm Center
-        url: https://isc.sans.edu/rssfeed_full.xml
-      - name: CERT-FR Avis
-        url: https://www.cert.ssi.gouv.fr/avis/feed/
-      - name: CERT-FR Alerts
-        url: https://www.cert.ssi.gouv.fr/alerte/feed/
-
+  description: "Authoritative English-language public-sector sources for advisories, vulnerabilities, standards, and public guidance."
+  sources:
+    - name: NCSC UK
+      url: https://www.ncsc.gov.uk/api/1/services/v1/all-rss-feed.xml
+    - name: SANS Internet Storm Center
+      url: https://isc.sans.edu/rssfeed_full.xml
+      
   # ------------------------------------------------------------
   # Tier 3: Offensive Research, Vulnerability Discovery, and Exploitability
   # Use for: exploitation analysis, vuln research, offensive tradecraft,
