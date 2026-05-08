@@ -2,21 +2,25 @@
 # SOURCE COHORTS — VALIDATED
 # Purpose:
 # Curated RSS/source cohorts for threat intelligence, security research,
-# vulnerability analysis, policy context, AI security, and practitioner insight.
+# vulnerability analysis, policy context, AI security, practitioner insight,
+# internet-scale telemetry, exploitability, and sector-relevant context.
 #
 # Design principles:
 # - Prefer primary research over recycled commentary.
 # - Separate raw intel, detection engineering, policy, and market/news context.
 # - Use cohorts selectively depending on output type.
 # - Avoid treating all feeds as equal signal.
+# - Treat product/vendor content as usable only when it contains concrete
+#   threat research, exploit analysis, incident detail, detection logic,
+#   attacker behavior, or vulnerability intelligence.
 #
 # Validation notes:
-# - CISA discontinued public RSS feeds in May 2025.
+# - CISA discontinued or degraded public RSS-style alerting in May 2025.
+# - Do not depend on CISA RSS as a clean automation source.
 # - English-language public-sector coverage currently uses NCSC UK and SANS ISC.
-# - Some vendor feeds (Volexity, Trend Micro) are historically flaky; expect
-#   occasional parse errors and treat as known.
-# - Substack feeds (Import AI, Interconnects, AI Snake Oil) are CDN-dependent
-#   and may intermittently fail.
+# - Some vendor feeds are historically flaky; expect occasional parse errors.
+# - Substack feeds are CDN-dependent and may intermittently fail.
+# - Product-adjacent sources must be filtered aggressively for marketing language.
 # ============================================================
 
 source_cohorts:
@@ -35,6 +39,8 @@ source_cohorts:
         url: https://www.microsoft.com/en-us/security/blog/topic/threat-intelligence/feed/
       - name: Google Threat Analysis Group
         url: https://blog.google/threat-analysis-group/rss/
+      - name: Google Cloud Threat Intelligence
+        url: https://feeds.feedburner.com/threatintelligence/pvexyqv7v0v
       - name: Unit 42
         url: https://unit42.paloaltonetworks.com/feed/
       - name: Cisco Talos
@@ -59,12 +65,16 @@ source_cohorts:
         url: https://blog.sekoia.io/feed/
       - name: Citizen Lab
         url: https://citizenlab.ca/feed/
+      - name: Broadcom / Symantec Threat Hunter Team
+        url: https://symantec-enterprise-blogs.security.com/threat-intelligence/rss.xml
+      - name: FortiGuard Labs
+        url: https://www.fortinet.com/blog/threat-research/rss.xml
 
   # ------------------------------------------------------------
   # Tier 2: Government, Regulatory, and Public Interest Sources
   # Use for: advisories, exploit urgency, customer-facing risk language,
   # regulatory implications, public-sector validation.
-  # Note: CISA discontinued public RSS feeds in May 2025.
+  # Note: CISA public RSS should not be treated as reliable automation.
   # ------------------------------------------------------------
   government_authoritative:
     description: "Authoritative English-language public-sector sources for advisories, vulnerabilities, standards, and public guidance."
@@ -73,7 +83,9 @@ source_cohorts:
         url: https://www.ncsc.gov.uk/api/1/services/v1/all-rss-feed.xml
       - name: SANS Internet Storm Center
         url: https://isc.sans.edu/rssfeed_full.xml
-      
+      - name: Shadowserver
+        url: https://www.shadowserver.org/feed/
+
   # ------------------------------------------------------------
   # Tier 3: Offensive Research, Vulnerability Discovery, and Exploitability
   # Use for: exploitation analysis, vuln research, offensive tradecraft,
@@ -98,6 +110,12 @@ source_cohorts:
         url: https://horizon3.ai/feed/
       - name: Rapid7
         url: https://www.rapid7.com/blog/rss/
+      - name: VulnCheck
+        url: https://vulncheck.com/blog/feed
+      - name: Exploit-DB
+        url: https://www.exploit-db.com/rss.xml
+      - name: Packet Storm Security
+        url: https://packetstormsecurity.com/files/feed
 
   # ------------------------------------------------------------
   # Tier 4: Detection Engineering, SOC Operations, MDR, and Incident Response
@@ -125,6 +143,10 @@ source_cohorts:
         url: https://www.activecountermeasures.com/feed/
       - name: Sysdig
         url: https://sysdig.com/feed/
+      - name: Proofpoint Threat Insight
+        url: https://www.proofpoint.com/us/rss.xml
+      - name: Sophos X-Ops
+        url: https://news.sophos.com/en-us/category/threat-research/feed/
 
   # ------------------------------------------------------------
   # Tier 5: Cloud, Identity, SaaS, and Infrastructure Security
@@ -146,6 +168,14 @@ source_cohorts:
         url: https://orca.security/resources/blog/feed/
       - name: Permiso Security
         url: https://permiso.io/blog/rss.xml
+      - name: Akamai Security
+        url: https://www.akamai.com/blog/security/rss.xml
+      - name: Cloudflare Security
+        url: https://blog.cloudflare.com/tag/security/rss/
+      - name: Cloudflare Radar
+        url: https://blog.cloudflare.com/tag/cloudflare-radar/rss/
+      - name: GreyNoise
+        url: https://www.greynoise.io/blog/rss.xml
 
   # ------------------------------------------------------------
   # Tier 6: AI Security, LLM Abuse, Agentic Risk, and Model Integrity
@@ -159,7 +189,6 @@ source_cohorts:
         url: https://deepmind.google/blog/rss.xml
       - name: Protect AI
         url: https://protectai.com/blog/rss.xml
-    
       - name: Embrace the Red
         url: https://embracethered.com/blog/index.xml
       - name: Simon Willison
@@ -170,6 +199,8 @@ source_cohorts:
         url: https://importai.substack.com/feed
       - name: Interconnects
         url: https://www.interconnects.ai/feed
+      - name: OpenSSF Blog
+        url: https://openssf.org/feed/
 
   # ------------------------------------------------------------
   # Tier 7: Cybercrime, Ransomware, Fraud, and Financial Crime
@@ -233,7 +264,6 @@ source_cohorts:
         url: https://www.lawfaremedia.org/rss/site
       - name: Just Security
         url: https://www.justsecurity.org/feed/
-
 
   # ------------------------------------------------------------
   # Tier 10: Independent Practitioner Voices and Strategic Commentary
