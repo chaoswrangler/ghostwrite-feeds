@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-08T02:44:44.719463+00:00",
-  "total_items": 705,
+  "generated_at": "2026-05-08T02:49:28.769560+00:00",
+  "total_items": 725,
   "cohorts": {
     "threat_research_primary": {
       "description": "Primary vendor and research-team intelligence with strong technical depth.",
@@ -50,12 +50,6 @@
       "status": "ok",
       "item_count": 10
     },
-    "ESET WeLiveSecurity": {
-      "url": "https://www.welivesecurity.com/en/rss/feed/",
-      "cohort": "threat_research_primary",
-      "status": "ok",
-      "item_count": 10
-    },
     "Google Threat Analysis Group": {
       "url": "https://blog.google/threat-analysis-group/rss/",
       "cohort": "threat_research_primary",
@@ -64,6 +58,12 @@
     },
     "Microsoft Threat Intelligence": {
       "url": "https://www.microsoft.com/en-us/security/blog/topic/threat-intelligence/feed/",
+      "cohort": "threat_research_primary",
+      "status": "ok",
+      "item_count": 10
+    },
+    "ESET WeLiveSecurity": {
+      "url": "https://www.welivesecurity.com/en/rss/feed/",
       "cohort": "threat_research_primary",
       "status": "ok",
       "item_count": 10
@@ -80,20 +80,8 @@
       "status": "ok",
       "item_count": 10
     },
-    "Check Point Research": {
-      "url": "https://research.checkpoint.com/feed/",
-      "cohort": "threat_research_primary",
-      "status": "ok",
-      "item_count": 10
-    },
     "SentinelOne Labs": {
       "url": "https://www.sentinelone.com/labs/feed/",
-      "cohort": "threat_research_primary",
-      "status": "ok",
-      "item_count": 10
-    },
-    "Cisco Talos": {
-      "url": "https://feeds.feedburner.com/feedburner/Talos",
       "cohort": "threat_research_primary",
       "status": "ok",
       "item_count": 10
@@ -104,17 +92,29 @@
       "status": "ok",
       "item_count": 10
     },
+    "Check Point Research": {
+      "url": "https://research.checkpoint.com/feed/",
+      "cohort": "threat_research_primary",
+      "status": "ok",
+      "item_count": 10
+    },
     "Citizen Lab": {
       "url": "https://citizenlab.ca/feed/",
       "cohort": "threat_research_primary",
       "status": "ok",
       "item_count": 10
     },
-    "FortiGuard Labs": {
-      "url": "https://www.fortinet.com/blog/threat-research/rss.xml",
+    "Cisco Talos": {
+      "url": "https://feeds.feedburner.com/feedburner/Talos",
       "cohort": "threat_research_primary",
-      "status": "parse_error",
-      "item_count": 0
+      "status": "ok",
+      "item_count": 10
+    },
+    "Sekoia": {
+      "url": "https://blog.sekoia.io/feed/",
+      "cohort": "threat_research_primary",
+      "status": "ok",
+      "item_count": 10
     },
     "Recorded Future": {
       "url": "https://www.recordedfuture.com/feed",
@@ -122,11 +122,17 @@
       "status": "ok",
       "item_count": 10
     },
-    "NCSC UK": {
-      "url": "https://www.ncsc.gov.uk/api/1/services/v1/all-rss-feed.xml",
+    "Shadowserver": {
+      "url": "https://www.shadowserver.org/feed/",
       "cohort": "government_authoritative",
-      "status": "ok",
-      "item_count": 10
+      "status": "parse_error",
+      "item_count": 0
+    },
+    "FortiGuard Labs": {
+      "url": "https://www.fortinet.com/blog/threat-research/rss.xml",
+      "cohort": "threat_research_primary",
+      "status": "parse_error",
+      "item_count": 0
     },
     "SANS Internet Storm Center": {
       "url": "https://isc.sans.edu/rssfeed_full.xml",
@@ -134,15 +140,9 @@
       "status": "ok",
       "item_count": 10
     },
-    "Broadcom / Symantec Threat Hunter Team": {
-      "url": "https://symantec-enterprise-blogs.security.com/threat-intelligence/rss.xml",
-      "cohort": "threat_research_primary",
-      "status": "parse_error",
-      "item_count": 0
-    },
-    "Sekoia": {
-      "url": "https://blog.sekoia.io/feed/",
-      "cohort": "threat_research_primary",
+    "NCSC UK": {
+      "url": "https://www.ncsc.gov.uk/api/1/services/v1/all-rss-feed.xml",
+      "cohort": "government_authoritative",
       "status": "ok",
       "item_count": 10
     },
@@ -157,12 +157,6 @@
       "cohort": "threat_research_primary",
       "status": "ok",
       "item_count": 10
-    },
-    "Shadowserver": {
-      "url": "https://www.shadowserver.org/feed/",
-      "cohort": "government_authoritative",
-      "status": "parse_error",
-      "item_count": 0
     },
     "Assetnote": {
       "url": "https://www.assetnote.io/resources/research/rss.xml",
@@ -182,8 +176,32 @@
       "status": "ok",
       "item_count": 10
     },
+    "Exploit-DB": {
+      "url": "https://www.exploit-db.com/rss.xml",
+      "cohort": "offensive_vulnerability_research",
+      "status": "ok",
+      "item_count": 10
+    },
     "watchTowr Labs": {
       "url": "https://labs.watchtowr.com/rss/",
+      "cohort": "offensive_vulnerability_research",
+      "status": "ok",
+      "item_count": 10
+    },
+    "Broadcom / Symantec Threat Hunter Team": {
+      "url": "https://symantec-enterprise-blogs.security.com/threat-intelligence/rss.xml",
+      "cohort": "threat_research_primary",
+      "status": "parse_error",
+      "item_count": 0
+    },
+    "Red Canary": {
+      "url": "https://redcanary.com/feed/",
+      "cohort": "detection_response_operations",
+      "status": "ok",
+      "item_count": 10
+    },
+    "Rapid7": {
+      "url": "https://www.rapid7.com/blog/rss/",
       "cohort": "offensive_vulnerability_research",
       "status": "ok",
       "item_count": 10
@@ -194,17 +212,11 @@
       "status": "ok",
       "item_count": 10
     },
-    "Red Canary": {
-      "url": "https://redcanary.com/feed/",
-      "cohort": "detection_response_operations",
-      "status": "ok",
-      "item_count": 10
-    },
-    "The DFIR Report": {
-      "url": "https://thedfirreport.com/feed/",
-      "cohort": "detection_response_operations",
-      "status": "ok",
-      "item_count": 10
+    "Packet Storm Security": {
+      "url": "https://packetstormsecurity.com/files/feed",
+      "cohort": "offensive_vulnerability_research",
+      "status": "parse_error",
+      "item_count": 0
     },
     "VulnCheck": {
       "url": "https://vulncheck.com/blog/feed",
@@ -212,38 +224,8 @@
       "status": "parse_error",
       "item_count": 0
     },
-    "Packet Storm Security": {
-      "url": "https://packetstormsecurity.com/files/feed",
-      "cohort": "offensive_vulnerability_research",
-      "status": "parse_error",
-      "item_count": 0
-    },
-    "Rapid7": {
-      "url": "https://www.rapid7.com/blog/rss/",
-      "cohort": "offensive_vulnerability_research",
-      "status": "ok",
-      "item_count": 10
-    },
-    "Google Cloud Threat Intelligence": {
-      "url": "https://feeds.feedburner.com/threatintelligence/pvexyqv7v0v",
-      "cohort": "threat_research_primary",
-      "status": "ok",
-      "item_count": 10
-    },
-    "Active Countermeasures": {
-      "url": "https://www.activecountermeasures.com/feed/",
-      "cohort": "detection_response_operations",
-      "status": "ok",
-      "item_count": 10
-    },
-    "SpecterOps": {
-      "url": "https://medium.com/feed/specter-ops-posts",
-      "cohort": "detection_response_operations",
-      "status": "ok",
-      "item_count": 10
-    },
-    "Proofpoint Threat Insight": {
-      "url": "https://www.proofpoint.com/us/rss.xml",
+    "The DFIR Report": {
+      "url": "https://thedfirreport.com/feed/",
       "cohort": "detection_response_operations",
       "status": "ok",
       "item_count": 10
@@ -254,20 +236,32 @@
       "status": "ok",
       "item_count": 10
     },
+    "Active Countermeasures": {
+      "url": "https://www.activecountermeasures.com/feed/",
+      "cohort": "detection_response_operations",
+      "status": "ok",
+      "item_count": 10
+    },
+    "Proofpoint Threat Insight": {
+      "url": "https://www.proofpoint.com/us/rss.xml",
+      "cohort": "detection_response_operations",
+      "status": "ok",
+      "item_count": 10
+    },
+    "TrustedSec": {
+      "url": "https://www.trustedsec.com/feed/",
+      "cohort": "detection_response_operations",
+      "status": "ok",
+      "item_count": 10
+    },
+    "SpecterOps": {
+      "url": "https://medium.com/feed/specter-ops-posts",
+      "cohort": "detection_response_operations",
+      "status": "ok",
+      "item_count": 10
+    },
     "Sophos X-Ops": {
       "url": "https://news.sophos.com/en-us/category/threat-research/feed/",
-      "cohort": "detection_response_operations",
-      "status": "ok",
-      "item_count": 10
-    },
-    "Huntress": {
-      "url": "https://www.huntress.com/blog/rss.xml",
-      "cohort": "detection_response_operations",
-      "status": "ok",
-      "item_count": 10
-    },
-    "Elastic Security Labs": {
-      "url": "https://www.elastic.co/security-labs/rss/feed.xml",
       "cohort": "detection_response_operations",
       "status": "ok",
       "item_count": 10
@@ -278,26 +272,32 @@
       "status": "ok",
       "item_count": 10
     },
+    "Huntress": {
+      "url": "https://www.huntress.com/blog/rss.xml",
+      "cohort": "detection_response_operations",
+      "status": "ok",
+      "item_count": 10
+    },
+    "Google Cloud Threat Intelligence": {
+      "url": "https://feeds.feedburner.com/threatintelligence/pvexyqv7v0v",
+      "cohort": "threat_research_primary",
+      "status": "ok",
+      "item_count": 10
+    },
+    "Elastic Security Labs": {
+      "url": "https://www.elastic.co/security-labs/rss/feed.xml",
+      "cohort": "detection_response_operations",
+      "status": "ok",
+      "item_count": 10
+    },
     "Datadog Security Labs": {
       "url": "https://securitylabs.datadoghq.com/rss/feed.xml",
       "cohort": "cloud_identity_infrastructure",
       "status": "ok",
       "item_count": 10
     },
-    "TrustedSec": {
-      "url": "https://www.trustedsec.com/feed/",
-      "cohort": "detection_response_operations",
-      "status": "ok",
-      "item_count": 10
-    },
     "Orca Security Research": {
       "url": "https://orca.security/resources/blog/feed/",
-      "cohort": "cloud_identity_infrastructure",
-      "status": "ok",
-      "item_count": 10
-    },
-    "Permiso Security": {
-      "url": "https://permiso.io/blog/rss.xml",
       "cohort": "cloud_identity_infrastructure",
       "status": "ok",
       "item_count": 10
@@ -308,14 +308,14 @@
       "status": "parse_error",
       "item_count": 0
     },
-    "AWS Security Blog": {
-      "url": "https://aws.amazon.com/blogs/security/feed/",
+    "Permiso Security": {
+      "url": "https://permiso.io/blog/rss.xml",
       "cohort": "cloud_identity_infrastructure",
       "status": "ok",
       "item_count": 10
     },
-    "GreyNoise": {
-      "url": "https://www.greynoise.io/blog/rss.xml",
+    "AWS Security Blog": {
+      "url": "https://aws.amazon.com/blogs/security/feed/",
       "cohort": "cloud_identity_infrastructure",
       "status": "ok",
       "item_count": 10
@@ -323,6 +323,12 @@
     "Protect AI": {
       "url": "https://protectai.com/blog/rss.xml",
       "cohort": "ai_security_agentic_risk",
+      "status": "ok",
+      "item_count": 10
+    },
+    "GreyNoise": {
+      "url": "https://www.greynoise.io/blog/rss.xml",
+      "cohort": "cloud_identity_infrastructure",
       "status": "ok",
       "item_count": 10
     },
@@ -338,11 +344,11 @@
       "status": "ok",
       "item_count": 10
     },
-    "Embrace the Red": {
-      "url": "https://embracethered.com/blog/index.xml",
+    "Import AI": {
+      "url": "https://importai.substack.com/feed",
       "cohort": "ai_security_agentic_risk",
-      "status": "ok",
-      "item_count": 10
+      "status": "parse_error",
+      "item_count": 0
     },
     "Simon Willison": {
       "url": "https://simonwillison.net/atom/everything/",
@@ -350,26 +356,8 @@
       "status": "ok",
       "item_count": 10
     },
-    "Black Hills Information Security": {
-      "url": "https://www.blackhillsinfosec.com/feed/",
-      "cohort": "detection_response_operations",
-      "status": "ok",
-      "item_count": 10
-    },
-    "Import AI": {
-      "url": "https://importai.substack.com/feed",
-      "cohort": "ai_security_agentic_risk",
-      "status": "parse_error",
-      "item_count": 0
-    },
-    "Google Cloud Security": {
-      "url": "https://cloudblog.withgoogle.com/rss/",
-      "cohort": "cloud_identity_infrastructure",
-      "status": "ok",
-      "item_count": 10
-    },
-    "OpenSSF Blog": {
-      "url": "https://openssf.org/feed/",
+    "Embrace the Red": {
+      "url": "https://embracethered.com/blog/index.xml",
       "cohort": "ai_security_agentic_risk",
       "status": "ok",
       "item_count": 10
@@ -386,80 +374,20 @@
       "status": "ok",
       "item_count": 10
     },
-    "Interconnects": {
-      "url": "https://www.interconnects.ai/feed",
+    "OpenSSF Blog": {
+      "url": "https://openssf.org/feed/",
       "cohort": "ai_security_agentic_risk",
       "status": "ok",
       "item_count": 10
     },
-    "Team Cymru": {
-      "url": "https://www.team-cymru.com/post/rss.xml",
-      "cohort": "ransomware_ecrime_financial_crime",
-      "status": "ok",
-      "item_count": 10
-    },
-    "AI Snake Oil": {
-      "url": "https://www.aisnakeoil.com/feed",
-      "cohort": "ai_security_agentic_risk",
+    "Google Cloud Security": {
+      "url": "https://cloudblog.withgoogle.com/rss/",
+      "cohort": "cloud_identity_infrastructure",
       "status": "ok",
       "item_count": 10
     },
     "TRM Labs": {
       "url": "https://www.trmlabs.com/blog/rss.xml",
-      "cohort": "ransomware_ecrime_financial_crime",
-      "status": "parse_error",
-      "item_count": 0
-    },
-    "BleepingComputer": {
-      "url": "https://www.bleepingcomputer.com/feed/",
-      "cohort": "cyber_news_breach_reporting",
-      "status": "ok",
-      "item_count": 10
-    },
-    "Coveware": {
-      "url": "https://www.coveware.com/blog?format=rss",
-      "cohort": "ransomware_ecrime_financial_crime",
-      "status": "ok",
-      "item_count": 10
-    },
-    "Intel 471": {
-      "url": "https://intel471.com/blog/feed",
-      "cohort": "ransomware_ecrime_financial_crime",
-      "status": "ok",
-      "item_count": 10
-    },
-    "The Record": {
-      "url": "https://therecord.media/feed",
-      "cohort": "cyber_news_breach_reporting",
-      "status": "ok",
-      "item_count": 5
-    },
-    "SecurityWeek": {
-      "url": "https://www.securityweek.com/feed/",
-      "cohort": "cyber_news_breach_reporting",
-      "status": "ok",
-      "item_count": 10
-    },
-    "DomainTools Investigations": {
-      "url": "https://www.domaintools.com/resources/blog/feed/",
-      "cohort": "ransomware_ecrime_financial_crime",
-      "status": "parse_error",
-      "item_count": 0
-    },
-    "The Hacker News": {
-      "url": "https://feeds.feedburner.com/TheHackersNews",
-      "cohort": "cyber_news_breach_reporting",
-      "status": "ok",
-      "item_count": 10
-    },
-    "CyberScoop": {
-      "url": "https://cyberscoop.com/feed/",
-      "cohort": "cyber_news_breach_reporting",
-      "status": "ok",
-      "item_count": 10
-    },
-    "Group-IB": {
-      "url": "https://www.group-ib.com/blog/rss/",
       "cohort": "ransomware_ecrime_financial_crime",
       "status": "parse_error",
       "item_count": 0
@@ -470,8 +398,86 @@
       "status": "ok",
       "item_count": 10
     },
-    "Dark Reading": {
-      "url": "https://www.darkreading.com/rss.xml",
+    "Team Cymru": {
+      "url": "https://www.team-cymru.com/post/rss.xml",
+      "cohort": "ransomware_ecrime_financial_crime",
+      "status": "ok",
+      "item_count": 10
+    },
+    "Interconnects": {
+      "url": "https://www.interconnects.ai/feed",
+      "cohort": "ai_security_agentic_risk",
+      "status": "ok",
+      "item_count": 10
+    },
+    "Black Hills Information Security": {
+      "url": "https://www.blackhillsinfosec.com/feed/",
+      "cohort": "detection_response_operations",
+      "status": "ok",
+      "item_count": 10
+    },
+    "Group-IB": {
+      "url": "https://www.group-ib.com/blog/rss/",
+      "cohort": "ransomware_ecrime_financial_crime",
+      "status": "parse_error",
+      "item_count": 0
+    },
+    "BleepingComputer": {
+      "url": "https://www.bleepingcomputer.com/feed/",
+      "cohort": "cyber_news_breach_reporting",
+      "status": "ok",
+      "item_count": 10
+    },
+    "The Record": {
+      "url": "https://therecord.media/feed",
+      "cohort": "cyber_news_breach_reporting",
+      "status": "ok",
+      "item_count": 5
+    },
+    "Coveware": {
+      "url": "https://www.coveware.com/blog?format=rss",
+      "cohort": "ransomware_ecrime_financial_crime",
+      "status": "ok",
+      "item_count": 10
+    },
+    "SecurityWeek": {
+      "url": "https://www.securityweek.com/feed/",
+      "cohort": "cyber_news_breach_reporting",
+      "status": "ok",
+      "item_count": 10
+    },
+    "CyberScoop": {
+      "url": "https://cyberscoop.com/feed/",
+      "cohort": "cyber_news_breach_reporting",
+      "status": "ok",
+      "item_count": 10
+    },
+    "The Hacker News": {
+      "url": "https://feeds.feedburner.com/TheHackersNews",
+      "cohort": "cyber_news_breach_reporting",
+      "status": "ok",
+      "item_count": 10
+    },
+    "AI Snake Oil": {
+      "url": "https://www.aisnakeoil.com/feed",
+      "cohort": "ai_security_agentic_risk",
+      "status": "ok",
+      "item_count": 10
+    },
+    "Intel 471": {
+      "url": "https://intel471.com/blog/feed",
+      "cohort": "ransomware_ecrime_financial_crime",
+      "status": "ok",
+      "item_count": 10
+    },
+    "DomainTools Investigations": {
+      "url": "https://www.domaintools.com/resources/blog/feed/",
+      "cohort": "ransomware_ecrime_financial_crime",
+      "status": "parse_error",
+      "item_count": 0
+    },
+    "Infosecurity Magazine": {
+      "url": "https://www.infosecurity-magazine.com/rss/news/",
       "cohort": "cyber_news_breach_reporting",
       "status": "ok",
       "item_count": 10
@@ -482,9 +488,9 @@
       "status": "parse_error",
       "item_count": 0
     },
-    "Krebs on Security": {
-      "url": "https://krebsonsecurity.com/feed/",
-      "cohort": "practitioner_analysis",
+    "Dark Reading": {
+      "url": "https://www.darkreading.com/rss.xml",
+      "cohort": "cyber_news_breach_reporting",
       "status": "ok",
       "item_count": 10
     },
@@ -494,8 +500,14 @@
       "status": "ok",
       "item_count": 10
     },
-    "Risky Business News": {
-      "url": "https://risky.biz/feeds/risky-business-news/",
+    "Troy Hunt": {
+      "url": "https://www.troyhunt.com/rss/",
+      "cohort": "practitioner_analysis",
+      "status": "ok",
+      "item_count": 10
+    },
+    "Krebs on Security": {
+      "url": "https://krebsonsecurity.com/feed/",
       "cohort": "practitioner_analysis",
       "status": "ok",
       "item_count": 10
@@ -506,29 +518,11 @@
       "status": "parse_error",
       "item_count": 0
     },
-    "Troy Hunt": {
-      "url": "https://www.troyhunt.com/rss/",
-      "cohort": "practitioner_analysis",
-      "status": "ok",
-      "item_count": 10
-    },
     "SC Media": {
       "url": "https://www.scmagazine.com/feed",
       "cohort": "cyber_news_breach_reporting",
       "status": "parse_error",
       "item_count": 0
-    },
-    "Graham Cluley": {
-      "url": "https://grahamcluley.com/feed/",
-      "cohort": "practitioner_analysis",
-      "status": "ok",
-      "item_count": 10
-    },
-    "Infosecurity Magazine": {
-      "url": "https://www.infosecurity-magazine.com/rss/news/",
-      "cohort": "cyber_news_breach_reporting",
-      "status": "ok",
-      "item_count": 10
     },
     "Help Net Security": {
       "url": "https://www.helpnetsecurity.com/feed/",
@@ -536,9 +530,21 @@
       "status": "ok",
       "item_count": 10
     },
-    "Google Project Zero": {
-      "url": "https://googleprojectzero.blogspot.com/feeds/posts/default",
-      "cohort": "offensive_vulnerability_research",
+    "Graham Cluley": {
+      "url": "https://grahamcluley.com/feed/",
+      "cohort": "practitioner_analysis",
+      "status": "ok",
+      "item_count": 10
+    },
+    "Risky Business News": {
+      "url": "https://risky.biz/feeds/risky-business-news/",
+      "cohort": "practitioner_analysis",
+      "status": "ok",
+      "item_count": 10
+    },
+    "tl;dr sec": {
+      "url": "https://tldrsec.com/feed.xml",
+      "cohort": "practitioner_analysis",
       "status": "ok",
       "item_count": 10
     },
@@ -548,17 +554,11 @@
       "status": "ok",
       "item_count": 10
     },
-    "Exploit-DB": {
-      "url": "https://www.exploit-db.com/rss.xml",
+    "Google Project Zero": {
+      "url": "https://googleprojectzero.blogspot.com/feeds/posts/default",
       "cohort": "offensive_vulnerability_research",
-      "status": "parse_error",
-      "item_count": 0
-    },
-    "tl;dr sec": {
-      "url": "https://tldrsec.com/feed.xml",
-      "cohort": "practitioner_analysis",
-      "status": "fetch_error",
-      "item_count": 0
+      "status": "ok",
+      "item_count": 10
     }
   },
   "items": [
@@ -912,6 +912,15 @@
       "published": "2026-05-07T14:30:00+00:00",
       "summary": "Oasis Security finds critical Cline kanban WebSocket flaw exposing AI coding agents to hijack",
       "author": ""
+    },
+    {
+      "source": "tl;dr sec",
+      "category": "practitioner_analysis",
+      "title": "[tl;dr sec] #327 - Finding Zero-days with Any Model, Practical Package Security, Measuring the AI Offense-Defense Gap",
+      "link": "https://tldrsec.com/p/tldr-sec-327",
+      "published": "2026-05-07T14:30:00+00:00",
+      "summary": "Niels Provos on finding 0-days with public models, a guide to securing your use of third party packages, two open source tools to measure AI hacking vs defense (+ dynamic lab environment)",
+      "author": "Clint Gibler"
     },
     {
       "source": "Red Canary",
@@ -1424,6 +1433,60 @@
       "link": "https://www.recordedfuture.com/research/quantum-risk-explained",
       "published": "2026-05-07T00:00:00+00:00",
       "summary": "Learn how the \"Harvest Now, Decrypt Later\" (HNDL) risk exposes long-lived sensitive data today, regardless of when Cryptographically Relevant Quantum Computers (CRQCs) arrive.",
+      "author": ""
+    },
+    {
+      "source": "Exploit-DB",
+      "category": "offensive_vulnerability_research",
+      "title": "[remote] telnetd 2.7 - Buffer Overflow",
+      "link": "https://www.exploit-db.com/exploits/52556",
+      "published": "2026-05-07T00:00:00+00:00",
+      "summary": "telnetd 2.7 - Buffer Overflow",
+      "author": ""
+    },
+    {
+      "source": "Exploit-DB",
+      "category": "offensive_vulnerability_research",
+      "title": "[webapps] Ghost CMS 6.19.0 - SQLi",
+      "link": "https://www.exploit-db.com/exploits/52555",
+      "published": "2026-05-07T00:00:00+00:00",
+      "summary": "Ghost CMS 6.19.0 - SQLi",
+      "author": ""
+    },
+    {
+      "source": "Exploit-DB",
+      "category": "offensive_vulnerability_research",
+      "title": "[webapps] LuaJIT 2.1.1774638290 - Arbitrary Code Execution",
+      "link": "https://www.exploit-db.com/exploits/52554",
+      "published": "2026-05-07T00:00:00+00:00",
+      "summary": "LuaJIT 2.1.1774638290 - Arbitrary Code Execution",
+      "author": ""
+    },
+    {
+      "source": "Exploit-DB",
+      "category": "offensive_vulnerability_research",
+      "title": "[webapps] Bludit CMS 3.18.4 -  RCE",
+      "link": "https://www.exploit-db.com/exploits/52553",
+      "published": "2026-05-07T00:00:00+00:00",
+      "summary": "Bludit CMS 3.18.4 -  RCE",
+      "author": ""
+    },
+    {
+      "source": "Exploit-DB",
+      "category": "offensive_vulnerability_research",
+      "title": "[local] NocoBase  2.0.27 - VM Sandbox Escape",
+      "link": "https://www.exploit-db.com/exploits/52552",
+      "published": "2026-05-07T00:00:00+00:00",
+      "summary": "NocoBase  2.0.27 - VM Sandbox Escape",
+      "author": ""
+    },
+    {
+      "source": "Exploit-DB",
+      "category": "offensive_vulnerability_research",
+      "title": "[webapps] ThingsBoard IoT Platform 4.2.0 - Server-Side Request Forgery (SSRF)",
+      "link": "https://www.exploit-db.com/exploits/52551",
+      "published": "2026-05-07T00:00:00+00:00",
+      "summary": "ThingsBoard IoT Platform 4.2.0 - Server-Side Request Forgery (SSRF)",
       "author": ""
     },
     {
@@ -2165,6 +2228,15 @@
       "author": ""
     },
     {
+      "source": "Sysdig",
+      "category": "detection_response_operations",
+      "title": "Security briefing: April 2026",
+      "link": "https://webflow.sysdig.com/blog/security-briefing-april-2026",
+      "published": "2026-05-05T00:00:00+00:00",
+      "summary": "Supply chain failure is the gift that keeps on giving, or should I say taking? The vulnerabilities, the exploitation, the breaches…these are inevitable, we know that. None of these are surprising anymore. The need for an “assume breach” mindset has become all too real.",
+      "author": ""
+    },
+    {
       "source": "Elastic Security Labs",
       "category": "detection_response_operations",
       "title": "Elastic Workflows GA: automation where your security data already lives",
@@ -2198,15 +2270,6 @@
       "link": "https://www.elastic.co/security-labs/ueba-entity-record-quality-analytics",
       "published": "2026-05-05T00:00:00+00:00",
       "summary": "Most entity analytics systems are confidently wrong. They track users who do not exist, generate risk scores built on noise, and call it behavioral analytics. Learn why the entities records you don't create matter as much as the ones you do and how a confidence-tiered model changes the game.",
-      "author": ""
-    },
-    {
-      "source": "Sysdig",
-      "category": "detection_response_operations",
-      "title": "Security briefing: April 2026",
-      "link": "https://webflow.sysdig.com/blog/security-briefing-april-2026",
-      "published": "2026-05-05T00:00:00+00:00",
-      "summary": "Supply chain failure is the gift that keeps on giving, or should I say taking? The vulnerabilities, the exploitation, the breaches…these are inevitable, we know that. None of these are surprising anymore. The need for an “assume breach” mindset has become all too real.",
       "author": ""
     },
     {
@@ -2396,6 +2459,42 @@
       "link": "https://isc.sans.edu/diary/rss/32946",
       "published": "2026-05-04T02:00:03+00:00",
       "summary": "(c) SANS Internet Storm Center. https://isc.sans.edu Creative Commons Attribution-Noncommercial 3.0 United States License.",
+      "author": ""
+    },
+    {
+      "source": "Exploit-DB",
+      "category": "offensive_vulnerability_research",
+      "title": "[local] Linux Kernel proc_readdir_de() 6.18-rc5 - Local Privilege Escalation",
+      "link": "https://www.exploit-db.com/exploits/52550",
+      "published": "2026-05-04T00:00:00+00:00",
+      "summary": "Linux Kernel proc_readdir_de() 6.18-rc5 - Local Privilege Escalation",
+      "author": ""
+    },
+    {
+      "source": "Exploit-DB",
+      "category": "offensive_vulnerability_research",
+      "title": "[local] Linux nf_tables 6.19.3 - Local Privilege Escalation",
+      "link": "https://www.exploit-db.com/exploits/52549",
+      "published": "2026-05-04T00:00:00+00:00",
+      "summary": "Linux nf_tables 6.19.3 - Local Privilege Escalation",
+      "author": ""
+    },
+    {
+      "source": "Exploit-DB",
+      "category": "offensive_vulnerability_research",
+      "title": "[hardware] Linksys E1200 2.0.04 - Authenticated Stack Buffer Overflow (RCE)",
+      "link": "https://www.exploit-db.com/exploits/52548",
+      "published": "2026-05-04T00:00:00+00:00",
+      "summary": "Linksys E1200 2.0.04 - Authenticated Stack Buffer Overflow (RCE)",
+      "author": ""
+    },
+    {
+      "source": "Exploit-DB",
+      "category": "offensive_vulnerability_research",
+      "title": "[webapps] MindsDB  25.9.1.1 - Path Traversal",
+      "link": "https://www.exploit-db.com/exploits/52547",
+      "published": "2026-05-04T00:00:00+00:00",
+      "summary": "MindsDB  25.9.1.1 - Path Traversal",
       "author": ""
     },
     {
@@ -2678,6 +2777,15 @@
       "author": ""
     },
     {
+      "source": "tl;dr sec",
+      "category": "practitioner_analysis",
+      "title": "[tl;dr sec] #326 - AI Auto Exploiting Vulnerabilities, GitHub RCE, Autonomous Cloud Hacking Agent",
+      "link": "https://tldrsec.com/p/tldr-sec-326",
+      "published": "2026-04-30T14:30:00+00:00",
+      "summary": "Automatically creating PoCs for vulnerabilities, git push → code execution on github.com, how well can an AI agent system hack your cloud?",
+      "author": "Clint Gibler"
+    },
+    {
       "source": "Krebs on Security",
       "category": "practitioner_analysis",
       "title": "Anti-DDoS Firm Heaped Attacks on Brazilian ISPs",
@@ -2786,15 +2894,6 @@
       "author": ""
     },
     {
-      "source": "Huntress",
-      "category": "detection_response_operations",
-      "title": "Komari Red: The Monitoring Tool with a Built-in Reverse Shell",
-      "link": "https://www.huntress.com/blog/komari-c2-agent-abuse",
-      "published": "2026-04-30T00:00:00+00:00",
-      "summary": "Huntress found threat actors using the Komari monitoring agent as a SYSTEM-level backdoor. Learn how they abused GitHub and what defenders should hunt for.",
-      "author": ""
-    },
-    {
       "source": "Sysdig",
       "category": "detection_response_operations",
       "title": "CVE-2026-31431: “Copy Fail” Linux kernel flaw lets local users gain root in seconds",
@@ -2819,6 +2918,15 @@
       "link": "https://webflow.sysdig.com/blog/pci-dss-v4-0-1-compliance-in-the-cloud-and-kubernetes-with-sysdig",
       "published": "2026-04-30T00:00:00+00:00",
       "summary": "",
+      "author": ""
+    },
+    {
+      "source": "Huntress",
+      "category": "detection_response_operations",
+      "title": "Komari Red: The Monitoring Tool with a Built-in Reverse Shell",
+      "link": "https://www.huntress.com/blog/komari-c2-agent-abuse",
+      "published": "2026-04-30T00:00:00+00:00",
+      "summary": "Huntress found threat actors using the Komari monitoring agent as a SYSTEM-level backdoor. Learn how they abused GitHub and what defenders should hunt for.",
       "author": ""
     },
     {
@@ -3416,6 +3524,15 @@
       "author": "Cisco Talos"
     },
     {
+      "source": "tl;dr sec",
+      "category": "practitioner_analysis",
+      "title": "[tl;dr sec] #325 - Dissecting Mythos, The $0 Security Stack, GitHub Action Red Team Framework",
+      "link": "https://tldrsec.com/p/tldr-sec-325",
+      "published": "2026-04-23T14:30:00+00:00",
+      "summary": "Replicating Mythos bugs with public models and more, building a useful security program for free, new post-exploitation framework for CI/CD pipelines that can replicate the full TeamPCP attack kill chain",
+      "author": "Clint Gibler"
+    },
+    {
       "source": "Google Cloud Threat Intelligence",
       "category": "threat_research_primary",
       "title": "Snow Flurries: How UNC6692 Employed Social Engineering to Deploy a Custom Malware Suite",
@@ -3524,6 +3641,15 @@
       "author": "Arnaud Dechoux"
     },
     {
+      "source": "TrustedSec",
+      "category": "detection_response_operations",
+      "title": "Kerberos with Titanis",
+      "link": "https://trustedsec.com/blog/kerberos-with-titanis",
+      "published": "2026-04-23T04:00:00+00:00",
+      "summary": "&lt;p&gt;In this article, I’ll walk you through the basics of Kerberos, how to use Titanis for the different parts, and how to mitigate some problems.Titanis SetupI use Titanis tools throughout this article to demonstrate…&lt;/p&gt;",
+      "author": "Alex Ball"
+    },
+    {
       "source": "Huntress",
       "category": "detection_response_operations",
       "title": "What Is Multi-Factor Authentication (MFA)? | How MFA Secures Businesses | Huntress",
@@ -3540,15 +3666,6 @@
       "published": "2026-04-23T04:00:00+00:00",
       "summary": "Learn cyber hygiene best practices with Huntress: from strong passwords and MFA to patching and security training.",
       "author": ""
-    },
-    {
-      "source": "TrustedSec",
-      "category": "detection_response_operations",
-      "title": "Kerberos with Titanis",
-      "link": "https://trustedsec.com/blog/kerberos-with-titanis",
-      "published": "2026-04-23T04:00:00+00:00",
-      "summary": "&lt;p&gt;In this article, I’ll walk you through the basics of Kerberos, how to use Titanis for the different parts, and how to mitigate some problems.Titanis SetupI use Titanis tools throughout this article to demonstrate…&lt;/p&gt;",
-      "author": "Alex Ball"
     },
     {
       "source": "Graham Cluley",
@@ -4010,6 +4127,15 @@
       "author": "Microsoft Threat Intelligence and Microsoft Defender Security Research Team"
     },
     {
+      "source": "tl;dr sec",
+      "category": "practitioner_analysis",
+      "title": "[tl;dr sec] #324 - OpenAI's GPT-5.4-Cyber, Solve by Default, GitHub Action Security",
+      "link": "https://tldrsec.com/p/tldr-sec-324",
+      "published": "2026-04-16T14:30:00+00:00",
+      "summary": "OpenAI's new cyber-focused model and early access program, how to solve instead of defer tasks, securing GitHub Actions",
+      "author": "Clint Gibler"
+    },
+    {
       "source": "Google Cloud Threat Intelligence",
       "category": "threat_research_primary",
       "title": "Defending Your Enterprise When AI Models Can Find Vulnerabilities Faster Than Ever",
@@ -4370,6 +4496,15 @@
       "author": "Microsoft Incident Response"
     },
     {
+      "source": "tl;dr sec",
+      "category": "practitioner_analysis",
+      "title": "[tl;dr sec] #323 - Anthropic Mythos, Security Program Politics, Vulnerability Research is Cooked",
+      "link": "https://tldrsec.com/p/tldr-sec-323",
+      "published": "2026-04-09T14:30:00+00:00",
+      "summary": "New model finds thousands of 0-days and writes exploits, lessons and how to be influential from decades of being a CISO, why LLMs will democratize elite vuln hunting",
+      "author": "Clint Gibler"
+    },
+    {
       "source": "Trail of Bits",
       "category": "offensive_vulnerability_research",
       "title": "Master C and C++ with our new Testing Handbook chapter",
@@ -4631,6 +4766,15 @@
       "author": ""
     },
     {
+      "source": "tl;dr sec",
+      "category": "practitioner_analysis",
+      "title": "[tl;dr sec] #322 - GitHub's Supply Chain Roadmap, Scaling Vulnerability Management with AI, Finding Vulnerabilities Across Repos",
+      "link": "https://tldrsec.com/p/tldr-sec-322",
+      "published": "2026-04-02T14:30:00+00:00",
+      "summary": "GitHub's plan to harden GitHub Actions and supply chain security, automating and scaling SAST and SCA vuln management, OSS tool that uses AI agents to reason about vulns across repos",
+      "author": "Clint Gibler"
+    },
+    {
       "source": "Google Cloud Threat Intelligence",
       "category": "threat_research_primary",
       "title": "vSphere and BRICKSTORM Malware: A Defender's Guide",
@@ -4764,6 +4908,15 @@
       "published": "2026-03-31T13:16:50+00:00",
       "summary": "<p>Key Points Introduction At the beginning of 2026, Check Point Research observed a series of targeted attacks against government entities in Southeast Asia carried out via a legitimate TrueConf software installed in the targets’ environment. The investigation led to the discovery of a zero-day vulnerability in the TrueConf client, tracked as&#160;CVE-2026-3502&#160;with a&#160;CVSS score of 7.8. [&#8230;]</p>\n<p>The post <a href=\"https://research.checkpoint.com/2026/operation-truechaos-0-day-e",
       "author": "stcpresearch"
+    },
+    {
+      "source": "tl;dr sec",
+      "category": "practitioner_analysis",
+      "title": "How we made Trail of Bits AI-native (so far)",
+      "link": "https://tldrsec.com/p/how-we-made-trail-of-bits-ai-native-so-far",
+      "published": "2026-03-31T11:30:00+00:00",
+      "summary": "We had 5% buy-in and 95% resistance. A year later, AI-augmented auditors are finding 200 bugs a week on the right engagements. Here's the six-part operating system we built, open sourced, and are giving away.",
+      "author": "Dan Guido"
     },
     {
       "source": "Trail of Bits",
@@ -4926,6 +5079,15 @@
       "published": "2026-03-26T15:23:35+00:00",
       "summary": "Our latest voice model has improved precision and lower latency to make voice interactions more fluid, natural and precise.",
       "author": ""
+    },
+    {
+      "source": "tl;dr sec",
+      "category": "practitioner_analysis",
+      "title": "[tl;dr sec] #321 - Sandboxing AI Agents, Trivy Compromised, Pentesting AWS' AI Pentester",
+      "link": "https://tldrsec.com/p/tldr-sec-321",
+      "published": "2026-03-26T14:30:00+00:00",
+      "summary": "Sandbox approaches by NVIDIA and Niel Provos, moar supply chain compromises, vulnerabilities in AWS Security Agent",
+      "author": "Clint Gibler"
     },
     {
       "source": "Google DeepMind Blog",
@@ -5126,6 +5288,15 @@
       "author": "Microsoft Threat Intelligence and Microsoft Defender Security Research Team"
     },
     {
+      "source": "tl;dr sec",
+      "category": "practitioner_analysis",
+      "title": "[tl;dr sec] #320 - Ramp's Security Agents, How Datadog Caught Malicious OSS Contributions, Obliterating Model Refusals",
+      "link": "https://tldrsec.com/p/tldr-sec-320",
+      "published": "2026-03-19T14:30:00+00:00",
+      "summary": "How Ramp fixed ~100 security issues in 6 days, detecting and mitigating GitHub supply chain attacks, two tools to automatically remove censorship from models",
+      "author": "Clint Gibler"
+    },
+    {
       "source": "SentinelOne Labs",
       "category": "threat_research_primary",
       "title": "Building an Adversarial Consensus Engine | Multi-Agent LLMs for Automated Malware Analysis",
@@ -5268,6 +5439,15 @@
       "published": "2026-03-12T17:00:00+00:00",
       "summary": "<p>Storm-2561 uses SEO poisoning to push fake VPN downloads that install signed trojans and steal VPN credentials. Active since 2025, Storm-2561 mimics trusted brands and abuses legitimate services. This post reviews TTPs, IOCs, and mitigation guidance.</p>\n<p>The post <a href=\"https://www.microsoft.com/en-us/security/blog/2026/03/12/storm-2561-uses-seo-poisoning-to-distribute-fake-vpn-clients-for-credential-theft/\">Storm-2561 uses SEO poisoning to distribute fake VPN clients for credential thef",
       "author": "Microsoft Threat Intelligence and Microsoft Defender Experts"
+    },
+    {
+      "source": "tl;dr sec",
+      "category": "practitioner_analysis",
+      "title": "[tl;dr sec] #319 - AI is Eating Security, BSidesSF & RSA, Claude Finds Firefox 0-days",
+      "link": "https://tldrsec.com/p/tldr-sec-319",
+      "published": "2026-03-12T14:30:00+00:00",
+      "summary": "What does security look like in 5 years? Let's hang out in San Francisco and avoid badge scans, Opus 4.6 finds 22 vulns and auto-writes 2 exploits",
+      "author": "Clint Gibler"
     },
     {
       "source": "Permiso Security",
