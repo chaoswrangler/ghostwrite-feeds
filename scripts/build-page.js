@@ -500,7 +500,6 @@ function isBreachOrThreatInsight(item) {
     "bleepingcomputer",
     "the hacker news",
     "securityweek",
-    "dark reading",
     "the record",
     "cyberscoop",
     "mandiant",
@@ -523,13 +522,9 @@ function isBreachOrThreatInsight(item) {
     "elastic",
     "zscaler",
     "cloudflare",
-    "akamai",
     "sucuri",
     "malwarebytes",
     "greynoise",
-    "shadowserver",
-    "vulncheck",
-    "packet storm",
     "exploit-db"
   ];
 
@@ -1582,7 +1577,6 @@ function scoreItem(item) {
     "bleepingcomputer",
     "the hacker news",
     "securityweek",
-    "dark reading",
     "help net security",
     "the record",
     "cyberscoop",
@@ -1591,9 +1585,6 @@ function scoreItem(item) {
     "rapid7",
     "watchtowr",
     "greynoise",
-    "shadowserver",
-    "vulncheck",
-    "akamai",
     "cloudflare"
   ];
 
@@ -1978,6 +1969,7 @@ ${JSON.stringify(jsonLd, null, 2)}
 
     html {
       scroll-behavior: smooth;
+      scroll-padding-top: 74px;
     }
 
     body {
@@ -2006,6 +1998,58 @@ ${JSON.stringify(jsonLd, null, 2)}
 
     button {
       font: inherit;
+    }
+
+    .sticky-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      width: 100%;
+      backdrop-filter: blur(18px);
+      background: rgba(6, 16, 29, 0.88);
+      border-bottom: 1px solid rgba(139, 176, 230, 0.22);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 12px max(16px, calc((100vw - 1180px) / 2));
+    }
+
+    .sticky-title {
+      color: var(--text);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .sticky-title:hover {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .sticky-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 10px;
+    }
+
+    .sticky-actions a {
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.055);
+      color: var(--text);
+      border-radius: 999px;
+      padding: 6px 10px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .sticky-actions a:hover {
+      border-color: rgba(107, 231, 255, 0.5);
+      background: rgba(107, 231, 255, 0.1);
+      text-decoration: none;
     }
 
     main {
@@ -2354,6 +2398,20 @@ ${JSON.stringify(jsonLd, null, 2)}
     }
 
     @media (max-width: 640px) {
+      html {
+        scroll-padding-top: 116px;
+      }
+
+      .sticky-header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .sticky-actions {
+        justify-content: flex-start;
+      }
+
       .hero {
         padding: 24px;
       }
@@ -2367,9 +2425,20 @@ ${JSON.stringify(jsonLd, null, 2)}
 </head>
 
 <body>
-  <main>
+  <div class="sticky-header">
+    <a href="#top" class="sticky-title">Wolfram Threatstream Feed</a>
+    <div class="sticky-actions">
+      <a href="./feed.json" target="_blank" rel="noopener noreferrer">Raw JSON</a>
+      <a href="#top-insights">Top 10</a>
+      <a href="#source-cohorts">Sources</a>
+      <a href="#article-corpus">Corpus</a>
+      <a href="#source-health">Health</a>
+    </div>
+  </div>
+
+  <main id="top">
     <header class="hero">
-      <div class="eyebrow">Cyber News & Threat Insights Feed</div>
+      <div class="eyebrow">Strategic Cyber Threat Intelligence Feed</div>
       <h1>Wolfram Threatstream Feed</h1>
       <p class="subtitle">
         Curated English-language cyber threat intelligence insights from the last ${LOOKBACK_DAYS} days. Items are filtered for CTI relevance, aggressively deduplicated, tagged by threat category and likely affected industry, and dynamically assembled by filter.
