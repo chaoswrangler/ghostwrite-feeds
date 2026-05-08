@@ -1,30 +1,30 @@
 {
-  "generated_at": "2026-05-08T02:32:02.523515+00:00",
-  "total_items": 645,
+  "generated_at": "2026-05-08T02:44:44.719463+00:00",
+  "total_items": 705,
   "cohorts": {
     "threat_research_primary": {
       "description": "Primary vendor and research-team intelligence with strong technical depth.",
-      "source_count": 15
+      "source_count": 18
     },
     "government_authoritative": {
       "description": "Authoritative English-language public-sector sources for advisories, vulnerabilities, standards, and public guidance.",
-      "source_count": 2
+      "source_count": 3
     },
     "offensive_vulnerability_research": {
       "description": "High-signal vulnerability research, offensive security analysis, and exploitability-focused sources.",
-      "source_count": 8
+      "source_count": 11
     },
     "detection_response_operations": {
       "description": "Practitioner-oriented sources focused on detection, response, hunting, MDR, and security operations.",
-      "source_count": 9
+      "source_count": 11
     },
     "cloud_identity_infrastructure": {
       "description": "Cloud, identity, SaaS, and infrastructure security research with emphasis on modern attack surfaces.",
-      "source_count": 6
+      "source_count": 10
     },
     "ai_security_agentic_risk": {
       "description": "AI security, LLM exploitation, model integrity, agentic system risk, and AI governance sources.",
-      "source_count": 7
+      "source_count": 8
     },
     "ransomware_ecrime_financial_crime": {
       "description": "Cybercrime, ransomware, extortion, fraud, and illicit financial ecosystem reporting.",
@@ -50,14 +50,20 @@
       "status": "ok",
       "item_count": 10
     },
-    "SentinelOne Labs": {
-      "url": "https://www.sentinelone.com/labs/feed/",
+    "ESET WeLiveSecurity": {
+      "url": "https://www.welivesecurity.com/en/rss/feed/",
       "cohort": "threat_research_primary",
       "status": "ok",
       "item_count": 10
     },
     "Google Threat Analysis Group": {
       "url": "https://blog.google/threat-analysis-group/rss/",
+      "cohort": "threat_research_primary",
+      "status": "ok",
+      "item_count": 10
+    },
+    "Microsoft Threat Intelligence": {
+      "url": "https://www.microsoft.com/en-us/security/blog/topic/threat-intelligence/feed/",
       "cohort": "threat_research_primary",
       "status": "ok",
       "item_count": 10
@@ -74,20 +80,20 @@
       "status": "ok",
       "item_count": 10
     },
-    "ESET WeLiveSecurity": {
-      "url": "https://www.welivesecurity.com/en/rss/feed/",
-      "cohort": "threat_research_primary",
-      "status": "ok",
-      "item_count": 10
-    },
     "Check Point Research": {
       "url": "https://research.checkpoint.com/feed/",
       "cohort": "threat_research_primary",
       "status": "ok",
       "item_count": 10
     },
-    "Microsoft Threat Intelligence": {
-      "url": "https://www.microsoft.com/en-us/security/blog/topic/threat-intelligence/feed/",
+    "SentinelOne Labs": {
+      "url": "https://www.sentinelone.com/labs/feed/",
+      "cohort": "threat_research_primary",
+      "status": "ok",
+      "item_count": 10
+    },
+    "Cisco Talos": {
+      "url": "https://feeds.feedburner.com/feedburner/Talos",
       "cohort": "threat_research_primary",
       "status": "ok",
       "item_count": 10
@@ -104,6 +110,18 @@
       "status": "ok",
       "item_count": 10
     },
+    "FortiGuard Labs": {
+      "url": "https://www.fortinet.com/blog/threat-research/rss.xml",
+      "cohort": "threat_research_primary",
+      "status": "parse_error",
+      "item_count": 0
+    },
+    "Recorded Future": {
+      "url": "https://www.recordedfuture.com/feed",
+      "cohort": "threat_research_primary",
+      "status": "ok",
+      "item_count": 10
+    },
     "NCSC UK": {
       "url": "https://www.ncsc.gov.uk/api/1/services/v1/all-rss-feed.xml",
       "cohort": "government_authoritative",
@@ -116,27 +134,15 @@
       "status": "ok",
       "item_count": 10
     },
-    "Recorded Future": {
-      "url": "https://www.recordedfuture.com/feed",
+    "Broadcom / Symantec Threat Hunter Team": {
+      "url": "https://symantec-enterprise-blogs.security.com/threat-intelligence/rss.xml",
       "cohort": "threat_research_primary",
-      "status": "ok",
-      "item_count": 10
-    },
-    "Cisco Talos": {
-      "url": "https://feeds.feedburner.com/feedburner/Talos",
-      "cohort": "threat_research_primary",
-      "status": "ok",
-      "item_count": 10
+      "status": "parse_error",
+      "item_count": 0
     },
     "Sekoia": {
       "url": "https://blog.sekoia.io/feed/",
       "cohort": "threat_research_primary",
-      "status": "ok",
-      "item_count": 10
-    },
-    "Assetnote": {
-      "url": "https://www.assetnote.io/resources/research/rss.xml",
-      "cohort": "offensive_vulnerability_research",
       "status": "ok",
       "item_count": 10
     },
@@ -146,15 +152,45 @@
       "status": "ok",
       "item_count": 10
     },
+    "Volexity": {
+      "url": "https://www.volexity.com/feed/",
+      "cohort": "threat_research_primary",
+      "status": "ok",
+      "item_count": 10
+    },
+    "Shadowserver": {
+      "url": "https://www.shadowserver.org/feed/",
+      "cohort": "government_authoritative",
+      "status": "parse_error",
+      "item_count": 0
+    },
+    "Assetnote": {
+      "url": "https://www.assetnote.io/resources/research/rss.xml",
+      "cohort": "offensive_vulnerability_research",
+      "status": "ok",
+      "item_count": 10
+    },
+    "Kaspersky Securelist": {
+      "url": "https://securelist.com/feed/",
+      "cohort": "threat_research_primary",
+      "status": "ok",
+      "item_count": 10
+    },
     "Horizon3 Attack Research": {
       "url": "https://horizon3.ai/feed/",
       "cohort": "offensive_vulnerability_research",
       "status": "ok",
       "item_count": 10
     },
-    "Volexity": {
-      "url": "https://www.volexity.com/feed/",
-      "cohort": "threat_research_primary",
+    "watchTowr Labs": {
+      "url": "https://labs.watchtowr.com/rss/",
+      "cohort": "offensive_vulnerability_research",
+      "status": "ok",
+      "item_count": 10
+    },
+    "GitHub Security Lab": {
+      "url": "https://github.blog/category/security/feed/",
+      "cohort": "offensive_vulnerability_research",
       "status": "ok",
       "item_count": 10
     },
@@ -170,21 +206,27 @@
       "status": "ok",
       "item_count": 10
     },
-    "watchTowr Labs": {
-      "url": "https://labs.watchtowr.com/rss/",
+    "VulnCheck": {
+      "url": "https://vulncheck.com/blog/feed",
+      "cohort": "offensive_vulnerability_research",
+      "status": "parse_error",
+      "item_count": 0
+    },
+    "Packet Storm Security": {
+      "url": "https://packetstormsecurity.com/files/feed",
+      "cohort": "offensive_vulnerability_research",
+      "status": "parse_error",
+      "item_count": 0
+    },
+    "Rapid7": {
+      "url": "https://www.rapid7.com/blog/rss/",
       "cohort": "offensive_vulnerability_research",
       "status": "ok",
       "item_count": 10
     },
-    "Kaspersky Securelist": {
-      "url": "https://securelist.com/feed/",
+    "Google Cloud Threat Intelligence": {
+      "url": "https://feeds.feedburner.com/threatintelligence/pvexyqv7v0v",
       "cohort": "threat_research_primary",
-      "status": "ok",
-      "item_count": 10
-    },
-    "GitHub Security Lab": {
-      "url": "https://github.blog/category/security/feed/",
-      "cohort": "offensive_vulnerability_research",
       "status": "ok",
       "item_count": 10
     },
@@ -194,9 +236,15 @@
       "status": "ok",
       "item_count": 10
     },
-    "Rapid7": {
-      "url": "https://www.rapid7.com/blog/rss/",
-      "cohort": "offensive_vulnerability_research",
+    "SpecterOps": {
+      "url": "https://medium.com/feed/specter-ops-posts",
+      "cohort": "detection_response_operations",
+      "status": "ok",
+      "item_count": 10
+    },
+    "Proofpoint Threat Insight": {
+      "url": "https://www.proofpoint.com/us/rss.xml",
+      "cohort": "detection_response_operations",
       "status": "ok",
       "item_count": 10
     },
@@ -206,8 +254,26 @@
       "status": "ok",
       "item_count": 10
     },
-    "SpecterOps": {
-      "url": "https://medium.com/feed/specter-ops-posts",
+    "Sophos X-Ops": {
+      "url": "https://news.sophos.com/en-us/category/threat-research/feed/",
+      "cohort": "detection_response_operations",
+      "status": "ok",
+      "item_count": 10
+    },
+    "Huntress": {
+      "url": "https://www.huntress.com/blog/rss.xml",
+      "cohort": "detection_response_operations",
+      "status": "ok",
+      "item_count": 10
+    },
+    "Elastic Security Labs": {
+      "url": "https://www.elastic.co/security-labs/rss/feed.xml",
+      "cohort": "detection_response_operations",
+      "status": "ok",
+      "item_count": 10
+    },
+    "Sysdig": {
+      "url": "https://sysdig.com/feed/",
       "cohort": "detection_response_operations",
       "status": "ok",
       "item_count": 10
@@ -218,20 +284,8 @@
       "status": "ok",
       "item_count": 10
     },
-    "Sysdig": {
-      "url": "https://sysdig.com/feed/",
-      "cohort": "detection_response_operations",
-      "status": "ok",
-      "item_count": 10
-    },
     "TrustedSec": {
       "url": "https://www.trustedsec.com/feed/",
-      "cohort": "detection_response_operations",
-      "status": "ok",
-      "item_count": 10
-    },
-    "Elastic Security Labs": {
-      "url": "https://www.elastic.co/security-labs/rss/feed.xml",
       "cohort": "detection_response_operations",
       "status": "ok",
       "item_count": 10
@@ -248,14 +302,20 @@
       "status": "ok",
       "item_count": 10
     },
-    "Huntress": {
-      "url": "https://www.huntress.com/blog/rss.xml",
-      "cohort": "detection_response_operations",
-      "status": "ok",
-      "item_count": 10
+    "Akamai Security": {
+      "url": "https://www.akamai.com/blog/security/rss.xml",
+      "cohort": "cloud_identity_infrastructure",
+      "status": "parse_error",
+      "item_count": 0
     },
     "AWS Security Blog": {
       "url": "https://aws.amazon.com/blogs/security/feed/",
+      "cohort": "cloud_identity_infrastructure",
+      "status": "ok",
+      "item_count": 10
+    },
+    "GreyNoise": {
+      "url": "https://www.greynoise.io/blog/rss.xml",
       "cohort": "cloud_identity_infrastructure",
       "status": "ok",
       "item_count": 10
@@ -266,9 +326,33 @@
       "status": "ok",
       "item_count": 10
     },
+    "Wiz Research": {
+      "url": "https://www.wiz.io/feed/rss.xml",
+      "cohort": "cloud_identity_infrastructure",
+      "status": "ok",
+      "item_count": 10
+    },
     "Google DeepMind Blog": {
       "url": "https://deepmind.google/blog/rss.xml",
       "cohort": "ai_security_agentic_risk",
+      "status": "ok",
+      "item_count": 10
+    },
+    "Embrace the Red": {
+      "url": "https://embracethered.com/blog/index.xml",
+      "cohort": "ai_security_agentic_risk",
+      "status": "ok",
+      "item_count": 10
+    },
+    "Simon Willison": {
+      "url": "https://simonwillison.net/atom/everything/",
+      "cohort": "ai_security_agentic_risk",
+      "status": "ok",
+      "item_count": 10
+    },
+    "Black Hills Information Security": {
+      "url": "https://www.blackhillsinfosec.com/feed/",
+      "cohort": "detection_response_operations",
       "status": "ok",
       "item_count": 10
     },
@@ -278,15 +362,15 @@
       "status": "parse_error",
       "item_count": 0
     },
-    "Simon Willison": {
-      "url": "https://simonwillison.net/atom/everything/",
-      "cohort": "ai_security_agentic_risk",
+    "Google Cloud Security": {
+      "url": "https://cloudblog.withgoogle.com/rss/",
+      "cohort": "cloud_identity_infrastructure",
       "status": "ok",
       "item_count": 10
     },
-    "Wiz Research": {
-      "url": "https://www.wiz.io/feed/rss.xml",
-      "cohort": "cloud_identity_infrastructure",
+    "OpenSSF Blog": {
+      "url": "https://openssf.org/feed/",
+      "cohort": "ai_security_agentic_risk",
       "status": "ok",
       "item_count": 10
     },
@@ -296,8 +380,26 @@
       "status": "ok",
       "item_count": 10
     },
-    "Embrace the Red": {
-      "url": "https://embracethered.com/blog/index.xml",
+    "Cloudflare Security": {
+      "url": "https://blog.cloudflare.com/tag/security/rss/",
+      "cohort": "cloud_identity_infrastructure",
+      "status": "ok",
+      "item_count": 10
+    },
+    "Interconnects": {
+      "url": "https://www.interconnects.ai/feed",
+      "cohort": "ai_security_agentic_risk",
+      "status": "ok",
+      "item_count": 10
+    },
+    "Team Cymru": {
+      "url": "https://www.team-cymru.com/post/rss.xml",
+      "cohort": "ransomware_ecrime_financial_crime",
+      "status": "ok",
+      "item_count": 10
+    },
+    "AI Snake Oil": {
+      "url": "https://www.aisnakeoil.com/feed",
       "cohort": "ai_security_agentic_risk",
       "status": "ok",
       "item_count": 10
@@ -308,45 +410,15 @@
       "status": "parse_error",
       "item_count": 0
     },
-    "Team Cymru": {
-      "url": "https://www.team-cymru.com/post/rss.xml",
-      "cohort": "ransomware_ecrime_financial_crime",
-      "status": "ok",
-      "item_count": 10
-    },
-    "Interconnects": {
-      "url": "https://www.interconnects.ai/feed",
-      "cohort": "ai_security_agentic_risk",
-      "status": "ok",
-      "item_count": 10
-    },
     "BleepingComputer": {
       "url": "https://www.bleepingcomputer.com/feed/",
       "cohort": "cyber_news_breach_reporting",
       "status": "ok",
       "item_count": 10
     },
-    "Google Cloud Security": {
-      "url": "https://cloudblog.withgoogle.com/rss/",
-      "cohort": "cloud_identity_infrastructure",
-      "status": "ok",
-      "item_count": 10
-    },
-    "The Record": {
-      "url": "https://therecord.media/feed",
-      "cohort": "cyber_news_breach_reporting",
-      "status": "ok",
-      "item_count": 5
-    },
     "Coveware": {
       "url": "https://www.coveware.com/blog?format=rss",
       "cohort": "ransomware_ecrime_financial_crime",
-      "status": "ok",
-      "item_count": 10
-    },
-    "Black Hills Information Security": {
-      "url": "https://www.blackhillsinfosec.com/feed/",
-      "cohort": "detection_response_operations",
       "status": "ok",
       "item_count": 10
     },
@@ -356,23 +428,17 @@
       "status": "ok",
       "item_count": 10
     },
-    "The Hacker News": {
-      "url": "https://feeds.feedburner.com/TheHackersNews",
+    "The Record": {
+      "url": "https://therecord.media/feed",
+      "cohort": "cyber_news_breach_reporting",
+      "status": "ok",
+      "item_count": 5
+    },
+    "SecurityWeek": {
+      "url": "https://www.securityweek.com/feed/",
       "cohort": "cyber_news_breach_reporting",
       "status": "ok",
       "item_count": 10
-    },
-    "Dark Reading": {
-      "url": "https://www.darkreading.com/rss.xml",
-      "cohort": "cyber_news_breach_reporting",
-      "status": "ok",
-      "item_count": 10
-    },
-    "Group-IB": {
-      "url": "https://www.group-ib.com/blog/rss/",
-      "cohort": "ransomware_ecrime_financial_crime",
-      "status": "parse_error",
-      "item_count": 0
     },
     "DomainTools Investigations": {
       "url": "https://www.domaintools.com/resources/blog/feed/",
@@ -380,8 +446,8 @@
       "status": "parse_error",
       "item_count": 0
     },
-    "SecurityWeek": {
-      "url": "https://www.securityweek.com/feed/",
+    "The Hacker News": {
+      "url": "https://feeds.feedburner.com/TheHackersNews",
       "cohort": "cyber_news_breach_reporting",
       "status": "ok",
       "item_count": 10
@@ -392,11 +458,35 @@
       "status": "ok",
       "item_count": 10
     },
+    "Group-IB": {
+      "url": "https://www.group-ib.com/blog/rss/",
+      "cohort": "ransomware_ecrime_financial_crime",
+      "status": "parse_error",
+      "item_count": 0
+    },
+    "Cloudflare Radar": {
+      "url": "https://blog.cloudflare.com/tag/cloudflare-radar/rss/",
+      "cohort": "cloud_identity_infrastructure",
+      "status": "ok",
+      "item_count": 10
+    },
+    "Dark Reading": {
+      "url": "https://www.darkreading.com/rss.xml",
+      "cohort": "cyber_news_breach_reporting",
+      "status": "ok",
+      "item_count": 10
+    },
     "Lawfare": {
       "url": "https://www.lawfaremedia.org/rss/site",
       "cohort": "policy_strategy_geopolitics",
       "status": "parse_error",
       "item_count": 0
+    },
+    "Krebs on Security": {
+      "url": "https://krebsonsecurity.com/feed/",
+      "cohort": "practitioner_analysis",
+      "status": "ok",
+      "item_count": 10
     },
     "Schneier on Security": {
       "url": "https://www.schneier.com/feed/atom/",
@@ -404,14 +494,8 @@
       "status": "ok",
       "item_count": 10
     },
-    "AI Snake Oil": {
-      "url": "https://www.aisnakeoil.com/feed",
-      "cohort": "ai_security_agentic_risk",
-      "status": "ok",
-      "item_count": 10
-    },
-    "Krebs on Security": {
-      "url": "https://krebsonsecurity.com/feed/",
+    "Risky Business News": {
+      "url": "https://risky.biz/feeds/risky-business-news/",
       "cohort": "practitioner_analysis",
       "status": "ok",
       "item_count": 10
@@ -428,18 +512,6 @@
       "status": "ok",
       "item_count": 10
     },
-    "Infosecurity Magazine": {
-      "url": "https://www.infosecurity-magazine.com/rss/news/",
-      "cohort": "cyber_news_breach_reporting",
-      "status": "ok",
-      "item_count": 10
-    },
-    "Risky Business News": {
-      "url": "https://risky.biz/feeds/risky-business-news/",
-      "cohort": "practitioner_analysis",
-      "status": "ok",
-      "item_count": 10
-    },
     "SC Media": {
       "url": "https://www.scmagazine.com/feed",
       "cohort": "cyber_news_breach_reporting",
@@ -452,15 +524,21 @@
       "status": "ok",
       "item_count": 10
     },
+    "Infosecurity Magazine": {
+      "url": "https://www.infosecurity-magazine.com/rss/news/",
+      "cohort": "cyber_news_breach_reporting",
+      "status": "ok",
+      "item_count": 10
+    },
     "Help Net Security": {
       "url": "https://www.helpnetsecurity.com/feed/",
       "cohort": "cyber_news_breach_reporting",
       "status": "ok",
       "item_count": 10
     },
-    "tl;dr sec": {
-      "url": "https://tldrsec.com/feed.xml",
-      "cohort": "practitioner_analysis",
+    "Google Project Zero": {
+      "url": "https://googleprojectzero.blogspot.com/feeds/posts/default",
+      "cohort": "offensive_vulnerability_research",
       "status": "ok",
       "item_count": 10
     },
@@ -470,11 +548,17 @@
       "status": "ok",
       "item_count": 10
     },
-    "Google Project Zero": {
-      "url": "https://googleprojectzero.blogspot.com/feeds/posts/default",
+    "Exploit-DB": {
+      "url": "https://www.exploit-db.com/rss.xml",
       "cohort": "offensive_vulnerability_research",
-      "status": "ok",
-      "item_count": 10
+      "status": "parse_error",
+      "item_count": 0
+    },
+    "tl;dr sec": {
+      "url": "https://tldrsec.com/feed.xml",
+      "cohort": "practitioner_analysis",
+      "status": "fetch_error",
+      "item_count": 0
     }
   },
   "items": [
@@ -603,6 +687,15 @@
       "published": "2026-05-07T19:07:17+00:00",
       "summary": "Dark Reading investigates rumors that Tom Parker, a board room &quot;operator&quot; and longtime cyber exec, could be next in line to take over CISA.",
       "author": "Becky Bracken"
+    },
+    {
+      "source": "OpenSSF Blog",
+      "category": "ai_security_agentic_risk",
+      "title": "The Road to Gold: How CPS Set a New Standard for Security and Quality in Open Source",
+      "link": "https://openssf.org/blog/2026/05/07/the-road-to-gold-how-cps-set-a-new-standard-for-security-and-quality-in-open-source/",
+      "published": "2026-05-07T18:58:17+00:00",
+      "summary": "In the world of open source, trust is our most valuable currency. ONAP is a “collection of individual, semi-standalone network automation functions that provide design, orchestration, observability, and automation of network and edge services for operators, cloud providers, and enterprises” (per ONAP).",
+      "author": "OpenSSF"
     },
     {
       "source": "AWS Security Blog",
@@ -821,15 +914,6 @@
       "author": ""
     },
     {
-      "source": "tl;dr sec",
-      "category": "practitioner_analysis",
-      "title": "[tl;dr sec] #327 - Finding Zero-days with Any Model, Practical Package Security, Measuring the AI Offense-Defense Gap",
-      "link": "https://tldrsec.com/p/tldr-sec-327",
-      "published": "2026-05-07T14:30:00+00:00",
-      "summary": "Niels Provos on finding 0-days with public models, a guide to securing your use of third party packages, two open source tools to measure AI hacking vs defense (+ dynamic lab environment)",
-      "author": "Clint Gibler"
-    },
-    {
       "source": "Red Canary",
       "category": "detection_response_operations",
       "title": "Spring cleaning your browser",
@@ -983,6 +1067,24 @@
       "author": "Roi Kessler"
     },
     {
+      "source": "Cloudflare Security",
+      "category": "cloud_identity_infrastructure",
+      "title": "How Cloudflare responded to the “Copy Fail” Linux vulnerability",
+      "link": "https://blog.cloudflare.com/copy-fail-linux-vulnerability-mitigation/",
+      "published": "2026-05-07T13:00:00+00:00",
+      "summary": "When a critical Linux kernel privilege escalation was publicly disclosed, Cloudflare's security and engineering teams detected, investigated, and mitigated the threat across our global fleet, confirming zero customer impact and no malicious exploitation.",
+      "author": "Rian Islam"
+    },
+    {
+      "source": "SecurityWeek",
+      "category": "cyber_news_breach_reporting",
+      "title": "AI Coding Agents Could Fuel Next Supply Chain Crisis",
+      "link": "https://www.securityweek.com/ai-coding-agents-could-fuel-next-supply-chain-crisis/",
+      "published": "2026-05-07T13:00:00+00:00",
+      "summary": "<p>“TrustFall” attack shows how AI coding agents can be manipulated into launching stealthy supply chain compromises.</p>\n<p>The post <a href=\"https://www.securityweek.com/ai-coding-agents-could-fuel-next-supply-chain-crisis/\">AI Coding Agents Could Fuel Next Supply Chain Crisis</a> appeared first on <a href=\"https://www.securityweek.com\">SecurityWeek</a>.</p>",
+      "author": "Kevin Townsend"
+    },
+    {
       "source": "Dark Reading",
       "category": "cyber_news_breach_reporting",
       "title": "'TrustFall' Convention Exposes Claude Code Execution Risk",
@@ -999,15 +1101,6 @@
       "published": "2026-05-07T13:00:00+00:00",
       "summary": "The most sophisticated AI-integrated campaign to date hit a brick wall in the form of a SCADA login screen.",
       "author": "Nate Nelson"
-    },
-    {
-      "source": "SecurityWeek",
-      "category": "cyber_news_breach_reporting",
-      "title": "AI Coding Agents Could Fuel Next Supply Chain Crisis",
-      "link": "https://www.securityweek.com/ai-coding-agents-could-fuel-next-supply-chain-crisis/",
-      "published": "2026-05-07T13:00:00+00:00",
-      "summary": "<p>“TrustFall” attack shows how AI coding agents can be manipulated into launching stealthy supply chain compromises.</p>\n<p>The post <a href=\"https://www.securityweek.com/ai-coding-agents-could-fuel-next-supply-chain-crisis/\">AI Coding Agents Could Fuel Next Supply Chain Crisis</a> appeared first on <a href=\"https://www.securityweek.com\">SecurityWeek</a>.</p>",
-      "author": "Kevin Townsend"
     },
     {
       "source": "Just Security",
@@ -1331,6 +1424,15 @@
       "link": "https://www.recordedfuture.com/research/quantum-risk-explained",
       "published": "2026-05-07T00:00:00+00:00",
       "summary": "Learn how the \"Harvest Now, Decrypt Later\" (HNDL) risk exposes long-lived sensitive data today, regardless of when Cryptographically Relevant Quantum Computers (CRQCs) arrive.",
+      "author": ""
+    },
+    {
+      "source": "Sophos X-Ops",
+      "category": "detection_response_operations",
+      "title": "Donuts and Beagles: Fake Claude site spreads backdoor",
+      "link": "https://www.sophos.com/en-us/blog/donuts-and-beagles-fake-claude-site-spreads-backdoor",
+      "published": "2026-05-07T00:00:00+00:00",
+      "summary": "<p>&lt;p&gt;A malicious imitation of&amp;nbsp;Anthropic’s&amp;nbsp;Claude&amp;nbsp;site leads to&amp;nbsp;DLL sideloading&amp;nbsp;– and&amp;nbsp;a backdoor&lt;/p&gt;</p><p><strong>Categories:</strong> Threat Research</p><p><strong>Tags:</strong> Claude, Beagle, Backdoor, malvertising, AI, DONUT, DLL sideloading, Sophos X-Ops</p>",
       "author": ""
     },
     {
@@ -1703,12 +1805,30 @@
       "author": "Lama Saqqour, Anna Larkina"
     },
     {
+      "source": "OpenSSF Blog",
+      "category": "ai_security_agentic_risk",
+      "title": "Open Infrastructure Is Not Free, Part II: The Hidden Cost of Running Package Registries",
+      "link": "https://openssf.org/blog/2026/05/06/open-infrastructure-is-not-free-part-ii-the-hidden-cost-of-running-package-registries/",
+      "published": "2026-05-06T09:00:16+00:00",
+      "summary": "",
+      "author": "OpenSSF"
+    },
+    {
       "source": "Infosecurity Magazine",
       "category": "cyber_news_breach_reporting",
       "title": "One in Eight Workers Has Sold Their Corporate Logins",
       "link": "https://www.infosecurity-magazine.com/news/one-eight-workers-sold-corporate/",
       "published": "2026-05-06T08:40:00+00:00",
       "summary": "Cifas says that 13% of employees admit selling company credentials to a former colleague",
+      "author": ""
+    },
+    {
+      "source": "Proofpoint Threat Insight",
+      "category": "detection_response_operations",
+      "title": "Proofpoint Establishes Innovation Precedent for Source-Agnostic Modern Enterprise Investigations",
+      "link": "https://www.proofpoint.com/us/newsroom/press-releases/proofpoint-establishes-innovation-precedent-source-agnostic-modern",
+      "published": "2026-05-06T06:26:29+00:00",
+      "summary": "",
       "author": ""
     },
     {
@@ -1946,6 +2066,15 @@
       "author": "Emma Burdett"
     },
     {
+      "source": "OpenSSF Blog",
+      "category": "ai_security_agentic_risk",
+      "title": "What’s in the SOSS? Podcast #60 – S3E12 Packaging, Transferring, and Deploying Software in Air-Gapped Environments with Zarf",
+      "link": "https://openssf.org/podcast/2026/05/05/whats-in-the-soss-podcast-60-s3e12-packaging-transferring-and-deploying-software-in-air-gapped-environments-with-zarf/",
+      "published": "2026-05-05T12:13:37+00:00",
+      "summary": "",
+      "author": "Jeff Diecks"
+    },
+    {
       "source": "SANS Internet Storm Center",
       "category": "government_authoritative",
       "title": "SSL.com rotates their root certificate today, (Tue, May 5th)",
@@ -2036,15 +2165,6 @@
       "author": ""
     },
     {
-      "source": "Sysdig",
-      "category": "detection_response_operations",
-      "title": "Security briefing: April 2026",
-      "link": "https://webflow.sysdig.com/blog/security-briefing-april-2026",
-      "published": "2026-05-05T00:00:00+00:00",
-      "summary": "Supply chain failure is the gift that keeps on giving, or should I say taking? The vulnerabilities, the exploitation, the breaches…these are inevitable, we know that. None of these are surprising anymore. The need for an “assume breach” mindset has become all too real.",
-      "author": ""
-    },
-    {
       "source": "Elastic Security Labs",
       "category": "detection_response_operations",
       "title": "Elastic Workflows GA: automation where your security data already lives",
@@ -2078,6 +2198,15 @@
       "link": "https://www.elastic.co/security-labs/ueba-entity-record-quality-analytics",
       "published": "2026-05-05T00:00:00+00:00",
       "summary": "Most entity analytics systems are confidently wrong. They track users who do not exist, generate risk scores built on noise, and call it behavioral analytics. Learn why the entities records you don't create matter as much as the ones you do and how a confidence-tiered model changes the game.",
+      "author": ""
+    },
+    {
+      "source": "Sysdig",
+      "category": "detection_response_operations",
+      "title": "Security briefing: April 2026",
+      "link": "https://webflow.sysdig.com/blog/security-briefing-april-2026",
+      "published": "2026-05-05T00:00:00+00:00",
+      "summary": "Supply chain failure is the gift that keeps on giving, or should I say taking? The vulnerabilities, the exploitation, the breaches…these are inevitable, we know that. None of these are surprising anymore. The need for an “assume breach” mindset has become all too real.",
       "author": ""
     },
     {
@@ -2153,7 +2282,7 @@
       "author": "The Orca Security Team"
     },
     {
-      "source": "Microsoft Security Blog",
+      "source": "Microsoft Threat Intelligence",
       "category": "threat_research_primary",
       "title": "Breaking the code: Multi-stage ‘code of conduct’ phishing campaign leads to AiTM token compromise",
       "link": "https://www.microsoft.com/en-us/security/blog/2026/05/04/breaking-the-code-multi-stage-code-of-conduct-phishing-campaign-leads-to-aitm-token-compromise/",
@@ -2162,7 +2291,7 @@
       "author": "Microsoft Defender Security Research Team and Microsoft Threat Intelligence"
     },
     {
-      "source": "Microsoft Threat Intelligence",
+      "source": "Microsoft Security Blog",
       "category": "threat_research_primary",
       "title": "Breaking the code: Multi-stage ‘code of conduct’ phishing campaign leads to AiTM token compromise",
       "link": "https://www.microsoft.com/en-us/security/blog/2026/05/04/breaking-the-code-multi-stage-code-of-conduct-phishing-campaign-leads-to-aitm-token-compromise/",
@@ -2432,6 +2561,15 @@
       "author": ""
     },
     {
+      "source": "Sophos X-Ops",
+      "category": "detection_response_operations",
+      "title": "Proof-of-concept exploit available for Linux 'Copy Fail' vulnerability (CVE-2026-31431)",
+      "link": "https://www.sophos.com/en-us/blog/proof-of-concept-exploit-available-for-linux-copy-fail-cve-2026-31431",
+      "published": "2026-05-01T00:00:00+00:00",
+      "summary": "<p><strong>Categories:</strong> Threat Research</p><p><strong>Tags:</strong> advisory, Linux, Copy Fail</p>",
+      "author": ""
+    },
+    {
       "source": "Elastic Security Labs",
       "category": "detection_response_operations",
       "title": "DFIR: From alert to root cause using Osquery without leaving Elastic Security",
@@ -2513,7 +2651,7 @@
       "author": "Tohar Braun"
     },
     {
-      "source": "Microsoft Security Blog",
+      "source": "Microsoft Threat Intelligence",
       "category": "threat_research_primary",
       "title": "Email threat landscape: Q1 2026 trends and insights",
       "link": "https://www.microsoft.com/en-us/security/blog/2026/04/30/email-threat-landscape-q1-2026-trends-and-insights/",
@@ -2522,7 +2660,7 @@
       "author": "Microsoft Threat Intelligence and Microsoft Defender Security Research Team"
     },
     {
-      "source": "Microsoft Threat Intelligence",
+      "source": "Microsoft Security Blog",
       "category": "threat_research_primary",
       "title": "Email threat landscape: Q1 2026 trends and insights",
       "link": "https://www.microsoft.com/en-us/security/blog/2026/04/30/email-threat-landscape-q1-2026-trends-and-insights/",
@@ -2540,15 +2678,6 @@
       "author": ""
     },
     {
-      "source": "tl;dr sec",
-      "category": "practitioner_analysis",
-      "title": "[tl;dr sec] #326 - AI Auto Exploiting Vulnerabilities, GitHub RCE, Autonomous Cloud Hacking Agent",
-      "link": "https://tldrsec.com/p/tldr-sec-326",
-      "published": "2026-04-30T14:30:00+00:00",
-      "summary": "Automatically creating PoCs for vulnerabilities, git push → code execution on github.com, how well can an AI agent system hack your cloud?",
-      "author": "Clint Gibler"
-    },
-    {
       "source": "Krebs on Security",
       "category": "practitioner_analysis",
       "title": "Anti-DDoS Firm Heaped Attacks on Brazilian ISPs",
@@ -2556,6 +2685,15 @@
       "published": "2026-04-30T14:04:26+00:00",
       "summary": "A Brazilian tech firm that specializes in protecting networks from distributed denial-of-service (DDoS) attacks has been enabling a botnet responsible for an extended campaign of massive DDoS attacks against other network operators in Brazil, KrebsOnSecurity has learned. The firm's chief executive says the malicious activity resulted from a security breach and was likely the work of a competitor trying to tarnish his company's public image.",
       "author": "BrianKrebs"
+    },
+    {
+      "source": "Cloudflare Security",
+      "category": "cloud_identity_infrastructure",
+      "title": "Post-quantum encryption for Cloudflare IPsec is generally available",
+      "link": "https://blog.cloudflare.com/post-quantum-ipsec/",
+      "published": "2026-04-30T14:00:00+00:00",
+      "summary": "Cloudflare IPsec now has generally available support for post-quantum encryption via hybrid ML-KEM. We’ve confirmed interoperability with Cisco and Fortinet.",
+      "author": "Amos Paul"
     },
     {
       "source": "Huntress",
@@ -2648,6 +2786,15 @@
       "author": ""
     },
     {
+      "source": "Huntress",
+      "category": "detection_response_operations",
+      "title": "Komari Red: The Monitoring Tool with a Built-in Reverse Shell",
+      "link": "https://www.huntress.com/blog/komari-c2-agent-abuse",
+      "published": "2026-04-30T00:00:00+00:00",
+      "summary": "Huntress found threat actors using the Komari monitoring agent as a SYSTEM-level backdoor. Learn how they abused GitHub and what defenders should hunt for.",
+      "author": ""
+    },
+    {
       "source": "Sysdig",
       "category": "detection_response_operations",
       "title": "CVE-2026-31431: “Copy Fail” Linux kernel flaw lets local users gain root in seconds",
@@ -2672,15 +2819,6 @@
       "link": "https://webflow.sysdig.com/blog/pci-dss-v4-0-1-compliance-in-the-cloud-and-kubernetes-with-sysdig",
       "published": "2026-04-30T00:00:00+00:00",
       "summary": "",
-      "author": ""
-    },
-    {
-      "source": "Huntress",
-      "category": "detection_response_operations",
-      "title": "Komari Red: The Monitoring Tool with a Built-in Reverse Shell",
-      "link": "https://www.huntress.com/blog/komari-c2-agent-abuse",
-      "published": "2026-04-30T00:00:00+00:00",
-      "summary": "Huntress found threat actors using the Komari monitoring agent as a SYSTEM-level backdoor. Learn how they abused GitHub and what defenders should hunt for.",
       "author": ""
     },
     {
@@ -2801,6 +2939,15 @@
       "author": "Graham Cluley"
     },
     {
+      "source": "Proofpoint Threat Insight",
+      "category": "detection_response_operations",
+      "title": "Claude Mythos Fears Startle Japan's Financial Services Sector",
+      "link": "https://www.proofpoint.com/us/newsroom/news/claude-mythos-fears-startle-japans-financial-services-sector",
+      "published": "2026-04-29T11:59:38+00:00",
+      "summary": "",
+      "author": ""
+    },
+    {
       "source": "Trail of Bits",
       "category": "offensive_vulnerability_research",
       "title": "Extending Ruzzy with LibAFL",
@@ -2837,12 +2984,30 @@
       "author": ""
     },
     {
+      "source": "Sophos X-Ops",
+      "category": "detection_response_operations",
+      "title": "'Mini Shai-Hulud' supply chain attack targets SAP npm packages",
+      "link": "https://www.sophos.com/en-us/blog/-mini-shai-hulud-supply-chain-attack-targets-sap-npm-packages",
+      "published": "2026-04-29T00:00:00+00:00",
+      "summary": "<p><strong>Categories:</strong> Threat Research</p><p><strong>Tags:</strong> advisory, NPM, SAP</p>",
+      "author": ""
+    },
+    {
       "source": "Sysdig",
       "category": "detection_response_operations",
       "title": "How to secure workloads, containers, and Kubernetes the right way",
       "link": "https://webflow.sysdig.com/blog/how-to-secure-workloads-containers-and-kubernetes-the-right-way",
       "published": "2026-04-29T00:00:00+00:00",
       "summary": "To build a security program that will tell you what’s a real threat in your containerized infrastructure right now, start with these 3 key pillars.",
+      "author": ""
+    },
+    {
+      "source": "GreyNoise",
+      "category": "cloud_identity_infrastructure",
+      "title": "Project Swarm: Join the Collective. Defend the Edge",
+      "link": "https://www.greynoise.io/blog/project-swarm-join-the-collective-defend-the-edge",
+      "published": "2026-04-29T00:00:00+00:00",
+      "summary": "Today, we're launching Project Swarm — a research initiative that opens the GreyNoise deception platform to the global security community. Project Swarm transforms GreyNoise from a proprietary sensor network into a collective intelligence platform.",
       "author": ""
     },
     {
@@ -2909,6 +3074,15 @@
       "author": "pedrod@checkpoint.com"
     },
     {
+      "source": "Cloudflare Radar",
+      "category": "cloud_identity_infrastructure",
+      "title": "Shutdowns, power outages, and conflict: a review of Q1 2026 Internet disruptions",
+      "link": "https://blog.cloudflare.com/q1-2026-internet-disruption-summary/",
+      "published": "2026-04-28T13:00:00+00:00",
+      "summary": "The first quarter of 2026 saw a surge in Internet disruptions, from nationwide shutdowns in Uganda and Iran to unprecedented drone strikes on cloud infrastructure. We explore the data behind these events using Cloudflare Radar.",
+      "author": "David Belson"
+    },
+    {
       "source": "Horizon3 Attack Research",
       "category": "offensive_vulnerability_research",
       "title": "Horizon3.ai Research Reveals Growing Divide Between Security Leaders and Practitioners",
@@ -2916,6 +3090,15 @@
       "published": "2026-04-28T12:05:00+00:00",
       "summary": "New Horizon3.ai research reveals a disconnect between executive confidence and real-world security risk as validation lags behind activity.",
       "author": "Horizon3.ai"
+    },
+    {
+      "source": "Proofpoint Threat Insight",
+      "category": "detection_response_operations",
+      "title": "AI-Era Threats Spread Beyond Email Into SaaS, Collaboration Apps, and AI Assistants",
+      "link": "https://www.proofpoint.com/us/newsroom/news/ai-era-threats-spread-beyond-email-saas-collaboration-apps-and-ai-assistants",
+      "published": "2026-04-28T12:01:12+00:00",
+      "summary": "",
+      "author": ""
     },
     {
       "source": "Horizon3 Attack Research",
@@ -2943,6 +3126,15 @@
       "published": "2026-04-28T08:43:16+00:00",
       "summary": "A 21-year-old man suspected of conducting approximately 100 data breaches since late 2025 - including a hack of the French Ministry of National Education that exposed records on almost a quarter of a million employees - has been arrested at his home in western France.\n\nRead more in my article on the Hot for Security blog.",
       "author": "Graham Cluley"
+    },
+    {
+      "source": "Proofpoint Threat Insight",
+      "category": "detection_response_operations",
+      "title": "Proofpoint Research Reveals Half of Global Organizations Experienced AI Incidents Despite Having AI Security Controls in Place",
+      "link": "https://www.proofpoint.com/us/newsroom/press-releases/proofpoint-research-reveals-half-global-organizations-experienced-ai",
+      "published": "2026-04-28T08:34:13+00:00",
+      "summary": "",
+      "author": ""
     },
     {
       "source": "Troy Hunt",
@@ -3107,6 +3299,15 @@
       "author": ""
     },
     {
+      "source": "Sophos X-Ops",
+      "category": "detection_response_operations",
+      "title": "Supply chain attacks hit Checkmarx and Bitwarden developer tools",
+      "link": "https://www.sophos.com/en-us/blog/supply-chain-attacks-hit-checkmarx-and-bitwarden-developer-tools",
+      "published": "2026-04-24T00:00:00+00:00",
+      "summary": "<p>&lt;p&gt;Two supply chain attacks, same day, same command-and-control domain&lt;/p&gt;</p><p><strong>Categories:</strong> Threat Research</p><p><strong>Tags:</strong> Supply chain, Sophos X-Ops, pipeline, Bitwarden, Checkmarx</p>",
+      "author": ""
+    },
+    {
       "source": "Sysdig",
       "category": "detection_response_operations",
       "title": "Sysdig named a Leader in GigaOm Radar for Cloud Workload Security",
@@ -3170,6 +3371,15 @@
       "author": "Joe Marshall"
     },
     {
+      "source": "Proofpoint Threat Insight",
+      "category": "detection_response_operations",
+      "title": "Clear market trend for software providers to help with AI: Proofpoint CEO",
+      "link": "https://www.proofpoint.com/us/newsroom/news/clear-market-trend-software-providers-help-ai-proofpoint-ceo",
+      "published": "2026-04-23T16:31:49+00:00",
+      "summary": "",
+      "author": ""
+    },
+    {
       "source": "Red Canary",
       "category": "detection_response_operations",
       "title": "Intelligence Insights: April 2026",
@@ -3206,13 +3416,13 @@
       "author": "Cisco Talos"
     },
     {
-      "source": "tl;dr sec",
-      "category": "practitioner_analysis",
-      "title": "[tl;dr sec] #325 - Dissecting Mythos, The $0 Security Stack, GitHub Action Red Team Framework",
-      "link": "https://tldrsec.com/p/tldr-sec-325",
-      "published": "2026-04-23T14:30:00+00:00",
-      "summary": "Replicating Mythos bugs with public models and more, building a useful security program for free, new post-exploitation framework for CI/CD pipelines that can replicate the full TeamPCP attack kill chain",
-      "author": "Clint Gibler"
+      "source": "Google Cloud Threat Intelligence",
+      "category": "threat_research_primary",
+      "title": "Snow Flurries: How UNC6692 Employed Social Engineering to Deploy a Custom Malware Suite",
+      "link": "https://cloud.google.com/blog/topics/threat-intelligence/unc6692-social-engineering-custom-malware/",
+      "published": "2026-04-23T14:00:00+00:00",
+      "summary": "<div class=\"block-paragraph_advanced\"><p>Written by: JP Glab, Tufail Ahmed, Josh Kelley, Muhammad Umair</p>\n<hr /></div>\n<div class=\"block-paragraph_advanced\"><h3><span style=\"vertical-align: baseline;\">Introduction</span><strong style=\"vertical-align: baseline;\"> </strong></h3>\n<p><span style=\"vertical-align: baseline;\">Google Threat Intelligence Group (GTIG) identified a multistage intrusion campaign by a newly tracked threat group, UNC6692, that leveraged persistent social engineering, a cust",
+      "author": "Mandiant"
     },
     {
       "source": "NCSC UK",
@@ -3314,15 +3524,6 @@
       "author": "Arnaud Dechoux"
     },
     {
-      "source": "TrustedSec",
-      "category": "detection_response_operations",
-      "title": "Kerberos with Titanis",
-      "link": "https://trustedsec.com/blog/kerberos-with-titanis",
-      "published": "2026-04-23T04:00:00+00:00",
-      "summary": "&lt;p&gt;In this article, I’ll walk you through the basics of Kerberos, how to use Titanis for the different parts, and how to mitigate some problems.Titanis SetupI use Titanis tools throughout this article to demonstrate…&lt;/p&gt;",
-      "author": "Alex Ball"
-    },
-    {
       "source": "Huntress",
       "category": "detection_response_operations",
       "title": "What Is Multi-Factor Authentication (MFA)? | How MFA Secures Businesses | Huntress",
@@ -3339,6 +3540,15 @@
       "published": "2026-04-23T04:00:00+00:00",
       "summary": "Learn cyber hygiene best practices with Huntress: from strong passwords and MFA to patching and security training.",
       "author": ""
+    },
+    {
+      "source": "TrustedSec",
+      "category": "detection_response_operations",
+      "title": "Kerberos with Titanis",
+      "link": "https://trustedsec.com/blog/kerberos-with-titanis",
+      "published": "2026-04-23T04:00:00+00:00",
+      "summary": "&lt;p&gt;In this article, I’ll walk you through the basics of Kerberos, how to use Titanis for the different parts, and how to mitigate some problems.Titanis SetupI use Titanis tools throughout this article to demonstrate…&lt;/p&gt;",
+      "author": "Alex Ball"
     },
     {
       "source": "Graham Cluley",
@@ -3440,6 +3650,15 @@
       "author": ""
     },
     {
+      "source": "Proofpoint Threat Insight",
+      "category": "detection_response_operations",
+      "title": "Proofpoint CEO on AI Security Innovations | Nasdaq at RSAC 2026",
+      "link": "https://www.proofpoint.com/us/newsroom/news/proofpoint-ceo-ai-security-innovations-nasdaq-rsac-2026",
+      "published": "2026-04-22T11:19:52+00:00",
+      "summary": "",
+      "author": ""
+    },
+    {
       "source": "Google DeepMind Blog",
       "category": "ai_security_agentic_risk",
       "title": "Decoupled DiLoCo: A new frontier for resilient, distributed AI training",
@@ -3485,6 +3704,15 @@
       "author": "Troy Hunt"
     },
     {
+      "source": "OpenSSF Blog",
+      "category": "ai_security_agentic_risk",
+      "title": "OpenSSF Newsletter – April 2026",
+      "link": "https://openssf.org/newsletter/2026/04/21/openssf-newsletter-april-2026/",
+      "published": "2026-04-21T20:06:13+00:00",
+      "summary": "TL;DR:\n🚀 OpenSSF Community Day NA → Agenda live, read the session highlights.\n⚖️ TPN &#038; SBOM Evolution → New frameworks aim to turn \"dead\" PDF notices and static SBOMs into active security intelligence. \n🤖 Agentic AI Security → OpenSSF welcomes OSS-CRS and examines using SAFE-MCP to secure non-deterministic AI agents. \n📦 Project Milestones → Gemara v1.0.0 released; Security Slam 2026 honors projects meeting rigorous security baselines. \n🎓 Policy &#038; Skills → CRA Readiness Guide for Mainta",
+      "author": "OpenSSF"
+    },
+    {
       "source": "Horizon3 Attack Research",
       "category": "offensive_vulnerability_research",
       "title": "CVE-2026-3324 | ManageEngine Log360 Authentication Bypass Vulnerability",
@@ -3512,6 +3740,15 @@
       "author": "BrianKrebs"
     },
     {
+      "source": "OpenSSF Blog",
+      "category": "ai_security_agentic_risk",
+      "title": "What’s in the SOSS? Podcast #59 – S3E11 Building a Connected Africa: The Origin Story of OSSAfrica with Prince Asiedu",
+      "link": "https://openssf.org/podcast/2026/04/21/whats-in-the-soss-podcast-59-s3e11-building-a-connected-africa-the-origin-story-of-ossafrica-with-prince-asiedu/",
+      "published": "2026-04-21T13:15:22+00:00",
+      "summary": "",
+      "author": "Jeff Diecks"
+    },
+    {
       "source": "Huntress",
       "category": "detection_response_operations",
       "title": "Tradecraft Tuesday Recap: axios npm Supply Chain Compromise",
@@ -3537,6 +3774,15 @@
       "published": "2026-04-21T08:55:00+00:00",
       "summary": "ESET researchers discover another iteration of NGate malware, this time possibly developed with the assistance of AI",
       "author": ""
+    },
+    {
+      "source": "OpenSSF Blog",
+      "category": "ai_security_agentic_risk",
+      "title": "Secure Your Spot: The OpenSSF Community Day North America 2026 Agenda is Live!",
+      "link": "https://openssf.org/blog/2026/04/20/secure-your-spot-the-openssf-community-day-north-america-2026-agenda-is-live/",
+      "published": "2026-04-20T19:26:25+00:00",
+      "summary": "The 2026 OpenSSF Community Day North America agenda is live, and we invite the open source community to join us on Thursday, May 21, in Minneapolis, MN. Co-located with Open Source Summit North America, this event will serve as a collaborative space for maintainers, security researchers, and industry leaders to discuss the state and future of software supply chain security.",
+      "author": "OpenSSF"
     },
     {
       "source": "Interconnects",
@@ -3611,6 +3857,15 @@
       "author": ""
     },
     {
+      "source": "GreyNoise",
+      "category": "cloud_identity_infrastructure",
+      "title": "The Internet Changes Before the Advisory Drops",
+      "link": "https://www.greynoise.io/blog/the-internet-changes-before-the-advisory-drops",
+      "published": "2026-04-20T00:00:00+00:00",
+      "summary": "Before Cisco disclosed a CVSS 10.0 zero-day, GreyNoise sensors had already observed eight surges of targeting activity compressing from 39 days to 2 days. A new study finds this pattern repeated across 33 CVEs and 16 vendor families — with a median lead time of 11 days. Read the full findings.",
+      "author": ""
+    },
+    {
       "source": "Embrace the Red",
       "category": "ai_security_agentic_risk",
       "title": "Breaking Opus 4.7 with ChatGPT (Hacking Claude's Memory)",
@@ -3636,6 +3891,33 @@
       "published": "2026-04-17T19:05:57+00:00",
       "summary": "Mythos shows that finding vulnerabilities isn’t the problem—understanding exploitability and impact is what security teams are missing.",
       "author": "Horizon3.ai"
+    },
+    {
+      "source": "OpenSSF Blog",
+      "category": "ai_security_agentic_risk",
+      "title": "Why Third-Party Notices Are Breaking at Scale: What the Ecosystem Needs Next",
+      "link": "https://openssf.org/blog/2026/04/17/why-third-party-notices-are-breaking-at-scale-what-the-ecosystem-needs-next/",
+      "published": "2026-04-17T13:44:55+00:00",
+      "summary": "",
+      "author": "OpenSSF"
+    },
+    {
+      "source": "Cloudflare Radar",
+      "category": "cloud_identity_infrastructure",
+      "title": "Introducing the Agent Readiness score. Is your site agent-ready?",
+      "link": "https://blog.cloudflare.com/agent-readiness/",
+      "published": "2026-04-17T13:05:00+00:00",
+      "summary": "The Agent Readiness score can help site owners understand how well their websites support AI agents. Here we explore new standards, share Radar data, and detail how we made Cloudflare’s docs the most agent-friendly on the web.",
+      "author": "Vance Morrison"
+    },
+    {
+      "source": "Cloudflare Radar",
+      "category": "cloud_identity_infrastructure",
+      "title": "Redirects for AI Training enforces canonical content",
+      "link": "https://blog.cloudflare.com/ai-redirects/",
+      "published": "2026-04-17T13:00:00+00:00",
+      "summary": "Soft directives don’t stop crawlers from ingesting deprecated content. Redirects for AI Training allows anybody on Cloudflare to redirect verified crawlers to canonical pages with one toggle and no origin changes.",
+      "author": "André Cruz"
     },
     {
       "source": "Graham Cluley",
@@ -3674,6 +3956,15 @@
       "author": "Justin Elze"
     },
     {
+      "source": "Sophos X-Ops",
+      "category": "detection_response_operations",
+      "title": "Microsoft addresses 163 CVEs, 88 advisories for April Patch Tuesday",
+      "link": "https://www.sophos.com/en-us/blog/april-2026-microsoft-patch-tuesday",
+      "published": "2026-04-17T00:00:00+00:00",
+      "summary": "<p>Following a long-established pattern, the fourth month of the year is one of the cruelest</p><p><strong>Categories:</strong> X-ops, Threat Research</p><p><strong>Tags:</strong> Patch Tuesday</p>",
+      "author": ""
+    },
+    {
       "source": "Troy Hunt",
       "category": "practitioner_analysis",
       "title": "Here's What Agentic AI Can Do With Have I Been Pwned's APIs",
@@ -3690,6 +3981,15 @@
       "published": "2026-04-16T17:47:29+00:00",
       "summary": "Introducing CRUX, a new project for evaluating AI on long, messy tasks",
       "author": "Sayash Kapoor"
+    },
+    {
+      "source": "Proofpoint Threat Insight",
+      "category": "detection_response_operations",
+      "title": "Cargo thieving hackers running sophisticated remote access campaigns, researchers find",
+      "link": "https://www.proofpoint.com/us/newsroom/news/cargo-thieving-hackers-running-sophisticated-remote-access-campaigns-researchers-find",
+      "published": "2026-04-16T16:50:17+00:00",
+      "summary": "",
+      "author": ""
     },
     {
       "source": "Graham Cluley",
@@ -3710,13 +4010,13 @@
       "author": "Microsoft Threat Intelligence and Microsoft Defender Security Research Team"
     },
     {
-      "source": "tl;dr sec",
-      "category": "practitioner_analysis",
-      "title": "[tl;dr sec] #324 - OpenAI's GPT-5.4-Cyber, Solve by Default, GitHub Action Security",
-      "link": "https://tldrsec.com/p/tldr-sec-324",
-      "published": "2026-04-16T14:30:00+00:00",
-      "summary": "OpenAI's new cyber-focused model and early access program, how to solve instead of defer tasks, securing GitHub Actions",
-      "author": "Clint Gibler"
+      "source": "Google Cloud Threat Intelligence",
+      "category": "threat_research_primary",
+      "title": "Defending Your Enterprise When AI Models Can Find Vulnerabilities Faster Than Ever",
+      "link": "https://cloud.google.com/blog/topics/threat-intelligence/defending-enterprise-ai-vulnerabilities/",
+      "published": "2026-04-16T14:00:00+00:00",
+      "summary": "<div class=\"block-paragraph_advanced\"><h3><span style=\"vertical-align: baseline;\">Introduction</span><strong style=\"vertical-align: baseline;\"> </strong></h3>\n<p><span style=\"vertical-align: baseline;\">Advances in AI model-powered exploitation have demonstrated that general-purpose AI models can excel at vulnerability discovery, even without being purpose-built for the task. Eventually, capabilities such as these will be integrated directly into the development cycle, and code will be more diffi",
+      "author": "Mandiant and Google Threat Intelligence Group"
     },
     {
       "source": "Orca Security Research",
@@ -3737,6 +4037,15 @@
       "author": ""
     },
     {
+      "source": "Proofpoint Threat Insight",
+      "category": "detection_response_operations",
+      "title": "Freight Hacker Wields Code-Signing Service to Evade Defenses",
+      "link": "https://www.proofpoint.com/us/newsroom/news/freight-hacker-wields-code-signing-service-evade-defenses",
+      "published": "2026-04-16T11:13:19+00:00",
+      "summary": "",
+      "author": ""
+    },
+    {
       "source": "Sekoia",
       "category": "threat_research_primary",
       "title": "From APT28 to RePythonNET: automating .NET malware analysis",
@@ -3753,6 +4062,15 @@
       "published": "2026-04-16T04:00:00+00:00",
       "summary": "&lt;p&gt;Play Roll for Initiative. Hack the Planet.Dungeons &amp;amp; Daemons is a cybersecurity RPG that drops you into the boots of a Red Team operator on a live engagement. Your mission: infiltrate a corporate facility,…&lt;/p&gt;",
       "author": "Travis Kaun"
+    },
+    {
+      "source": "Sophos X-Ops",
+      "category": "detection_response_operations",
+      "title": "QEMU abused to evade detection and enable ransomware delivery",
+      "link": "https://www.sophos.com/en-us/blog/qemu-abused-to-evade-detection-and-enable-ransomware-delivery",
+      "published": "2026-04-16T00:00:00+00:00",
+      "summary": "<p>The use of hidden virtual machines (VMs) enables long-term access, credential harvesting, data exfiltration, and PayoutsKing ransomware deployment</p><p><strong>Categories:</strong> Threat Research</p><p><strong>Tags:</strong> virtual machine, QEMU, PayoutsKing, GOLD ENCOUNTER, CitrixBleed2</p>",
+      "author": ""
     },
     {
       "source": "Datadog Security Labs",
@@ -3782,6 +4100,15 @@
       "author": "Nathan Lambert"
     },
     {
+      "source": "Proofpoint Threat Insight",
+      "category": "detection_response_operations",
+      "title": "Sumit Dhawan on NYSE Floor Talk | Proofpoint AI Security",
+      "link": "https://www.proofpoint.com/us/newsroom/news/sumit-dhawan-nyse-floor-talk-proofpoint-ai-security",
+      "published": "2026-04-15T16:44:59+00:00",
+      "summary": "",
+      "author": ""
+    },
+    {
       "source": "Google DeepMind Blog",
       "category": "ai_security_agentic_risk",
       "title": "Gemini 3.1 Flash TTS: the next generation of expressive AI speech",
@@ -3791,6 +4118,15 @@
       "author": ""
     },
     {
+      "source": "OpenSSF Blog",
+      "category": "ai_security_agentic_risk",
+      "title": "From Noise to Signal: Using Runtime Context to Win the Vulnerability Management Battle",
+      "link": "https://openssf.org/blog/2026/04/15/from-noise-to-signal-using-runtime-context-to-win-the-vulnerability-management-battle/",
+      "published": "2026-04-15T14:28:48+00:00",
+      "summary": "",
+      "author": "OpenSSF"
+    },
+    {
       "source": "Citizen Lab",
       "category": "threat_research_primary",
       "title": "From Stuxnet to Operation Epic Fury: The China-Iran Intelligence Nexus",
@@ -3798,6 +4134,15 @@
       "published": "2026-04-15T14:17:05+00:00",
       "summary": "<p>Senior research associate Emile Dirks spoke with Domino Theory about Xi Jinping’s view on national security.</p>\n<p>The post <a href=\"https://citizenlab.ca/from-stuxnet-to-operation-epic-fury-the-china-iran-intelligence-nexus/\">From Stuxnet to Operation Epic Fury: The China-Iran Intelligence Nexus</a> appeared first on <a href=\"https://citizenlab.ca\">The Citizen Lab</a>.</p>",
       "author": "Anna Mackay"
+    },
+    {
+      "source": "Google Cloud Threat Intelligence",
+      "category": "threat_research_primary",
+      "title": "The German Cyber Criminal Überfall: Shifts in Europe's Data Leak Landscape",
+      "link": "https://cloud.google.com/blog/topics/threat-intelligence/europe-data-leak-landscape/",
+      "published": "2026-04-15T14:00:00+00:00",
+      "summary": "<div class=\"block-paragraph_advanced\"><p>Written by: Jamie Collier, Robin Grunewald</p>\n<hr /></div>\n<div class=\"block-paragraph_advanced\"><p><span style=\"vertical-align: baseline;\">Germany has reclaimed its position as a primary focus for cyber extortion in Europe. While data leak site (DLS) posts rose almost 50% globally in 2025, Google Threat Intelligence (GTI) data shows that the surge is hitting German infrastructure harder and faster than its regional neighbors, marking a significant retur",
+      "author": "Google Threat Intelligence Group"
     },
     {
       "source": "Black Hills Information Security",
@@ -3872,6 +4217,33 @@
       "author": "Dorothy Pearce"
     },
     {
+      "source": "Cloudflare Security",
+      "category": "cloud_identity_infrastructure",
+      "title": "Securing non-human identities: automated revocation, OAuth, and scoped permissions",
+      "link": "https://blog.cloudflare.com/improved-developer-security/",
+      "published": "2026-04-14T13:00:10+00:00",
+      "summary": "Cloudflare is introducing scannable API tokens, enhanced OAuth visibility, and GA for resource-scoped permissions. These tools help developers implement a true least-privilege architecture while protecting against credential leakage.",
+      "author": "Rebecca Varley"
+    },
+    {
+      "source": "Cloudflare Security",
+      "category": "cloud_identity_infrastructure",
+      "title": "Scaling MCP adoption: Our reference architecture for simpler, safer and cheaper enterprise deployments of MCP",
+      "link": "https://blog.cloudflare.com/enterprise-mcp/",
+      "published": "2026-04-14T13:00:10+00:00",
+      "summary": "We share Cloudflare's internal strategy for governing MCP using Access, AI Gateway, and MCP server portals. We also launch Code Mode to slash token costs and recommend new rules for detecting Shadow MCP in Cloudflare Gateway.",
+      "author": "Ivan Anguiano"
+    },
+    {
+      "source": "Cloudflare Security",
+      "category": "cloud_identity_infrastructure",
+      "title": "Managed OAuth for Access: make internal apps agent-ready in one click",
+      "link": "https://blog.cloudflare.com/managed-oauth-for-access/",
+      "published": "2026-04-14T13:00:10+00:00",
+      "summary": "Managed OAuth for Cloudflare Access helps AI agents securely navigate internal applications. By adopting RFC 9728, agents can authenticate on behalf of users without using insecure service accounts.",
+      "author": "Ann Ming Samborski"
+    },
+    {
       "source": "Red Canary",
       "category": "detection_response_operations",
       "title": "New: Use response actions to update Zscaler policies and block threats",
@@ -3879,6 +4251,15 @@
       "published": "2026-04-14T12:55:58+00:00",
       "summary": "A new integration gives teams an easy way to update Zscaler Internet Access (ZIA) network policies using Red Canary response actions.",
       "author": "Dylan Solomon"
+    },
+    {
+      "source": "Proofpoint Threat Insight",
+      "category": "detection_response_operations",
+      "title": "FIFA World Cup 2026: More than One-Third of Official Partners Expose the Public to the Risk of Email Fraud",
+      "link": "https://www.proofpoint.com/us/newsroom/press-releases/fifa-world-cup-2026-more-one-third-official-partners-expose-public-risk",
+      "published": "2026-04-14T08:46:17+00:00",
+      "summary": "",
+      "author": ""
     },
     {
       "source": "Troy Hunt",
@@ -3935,6 +4316,15 @@
       "author": "Nathan Lambert"
     },
     {
+      "source": "OpenSSF Blog",
+      "category": "ai_security_agentic_risk",
+      "title": "Security Slam 2026: Celebrating Our Security Champions and Project Milestones",
+      "link": "https://openssf.org/blog/2026/04/10/security-slam-2026-celebrating-our-security-champions-and-project-milestones/",
+      "published": "2026-04-10T19:36:20+00:00",
+      "summary": "The 2026 Security Slam has officially concluded, and we couldn't be more proud of the progress made across the open source ecosystem. From automated baseline evaluations to comprehensive threat modeling, our participating projects and contributors have taken significant steps to “secure open source at the source.\"",
+      "author": "OpenSSF"
+    },
+    {
       "source": "Chainalysis",
       "category": "ransomware_ecrime_financial_crime",
       "title": "Iran’s Strait of Hormuz Crypto Toll: An Evolution of Tehran’s Expanding Use of Digital Assets",
@@ -3950,6 +4340,15 @@
       "link": "https://www.welivesecurity.com/en/scams/recovery-scammers-hit-when-down-avoid-second-strike/",
       "published": "2026-04-10T09:00:00+00:00",
       "summary": "If you’ve been a victim of fraud, you’re likely already a lead on a ‘sucker list’ – and if you’re not careful, your ordeal may be about to get worse.",
+      "author": ""
+    },
+    {
+      "source": "GreyNoise",
+      "category": "cloud_identity_infrastructure",
+      "title": "Just 21 IP Addresses Are Now Behind Nearly Half of All RDP Scanning on the Internet",
+      "link": "https://www.greynoise.io/blog/ip-addresses-behind-nearly-half-rdp-internet-scanning",
+      "published": "2026-04-10T00:00:00+00:00",
+      "summary": "GreyNoise uncovers a concentrated RDP scanning campaign, revealing infrastructure patterns, rapid traffic shifts that impact detection, and recommendations for defenders.",
       "author": ""
     },
     {
@@ -3969,15 +4368,6 @@
       "published": "2026-04-09T15:00:00+00:00",
       "summary": "<p>Microsoft Incident Response – Detection and Response Team (DART) researchers observed an emerging, financially motivated threat actor, tracked as Storm-2755, compromising Canadian employee accounts to gain unauthorized access to employee profiles and divert salary payments to attacker-controlled accounts.</p>\n<p>The post <a href=\"https://www.microsoft.com/en-us/security/blog/2026/04/09/investigating-storm-2755-payroll-pirate-attacks-targeting-canadian-employees/\">Investigating Storm-2755: “Pa",
       "author": "Microsoft Incident Response"
-    },
-    {
-      "source": "tl;dr sec",
-      "category": "practitioner_analysis",
-      "title": "[tl;dr sec] #323 - Anthropic Mythos, Security Program Politics, Vulnerability Research is Cooked",
-      "link": "https://tldrsec.com/p/tldr-sec-323",
-      "published": "2026-04-09T14:30:00+00:00",
-      "summary": "New model finds thousands of 0-days and writes exploits, lessons and how to be influential from decades of being a CISO, why LLMs will democratize elite vuln hunting",
-      "author": "Clint Gibler"
     },
     {
       "source": "Trail of Bits",
@@ -4007,6 +4397,24 @@
       "author": "Justin Mahon"
     },
     {
+      "source": "Sophos X-Ops",
+      "category": "detection_response_operations",
+      "title": "We let OpenClaw loose on an internal network. Here’s what it found",
+      "link": "https://www.sophos.com/en-us/blog/we-let-openclaw-loose-on-an-internal-network-heres-what-it-found",
+      "published": "2026-04-09T00:00:00+00:00",
+      "summary": "<p>&lt;p&gt;Following our article on the challenges posed by agentic AI, we gave OpenClaw access to one of our legacy networks&lt;/p&gt;</p><p><strong>Categories:</strong> Threat Research</p><p><strong>Tags:</strong> OpenClaw, LLM, AI, penetration testing, Red Team, CISO, Sophos X-Ops</p>",
+      "author": ""
+    },
+    {
+      "source": "Sophos X-Ops",
+      "category": "detection_response_operations",
+      "title": "Adobe Reader zero-day vulnerability in active exploitation",
+      "link": "https://www.sophos.com/en-us/blog/adobe-reader-zero-day-vulnerability-in-active-exploitation",
+      "published": "2026-04-09T00:00:00+00:00",
+      "summary": "<p><strong>Categories:</strong> Threat Research</p><p><strong>Tags:</strong> advisory, vulnerability, Adobe Reader</p>",
+      "author": ""
+    },
+    {
       "source": "Datadog Security Labs",
       "category": "cloud_identity_infrastructure",
       "title": "Unpatchable Vulnerabilities of Kubernetes: CVE-2020-8562",
@@ -4014,6 +4422,15 @@
       "published": "2026-04-09T00:00:00+00:00",
       "summary": "A look at how Kubernetes CVE-2020-8562 allows attackers to bypass API server proxy protections using DNS rebinding",
       "author": ""
+    },
+    {
+      "source": "OpenSSF Blog",
+      "category": "ai_security_agentic_risk",
+      "title": "OpenSSF Tech Talk Recap: Securing Agentic AI",
+      "link": "https://openssf.org/blog/2026/04/08/openssf-tech-talk-recap-securing-agentic-ai/",
+      "published": "2026-04-08T20:13:25+00:00",
+      "summary": "At our recent Open Source Security Foundation (OpenSSF) Tech Talk, experts from Microsoft, Thread AI, Canonical, and the OpenSSF AI/ML Security Working Group joined forces to dismantle the \"black box\" of AI security.",
+      "author": "OpenSSF"
     },
     {
       "source": "Black Hills Information Security",
@@ -4059,6 +4476,15 @@
       "published": "2026-04-08T06:58:58+00:00",
       "summary": "<p>Agents are becoming extremely effective at finding security vulnerabilities. They are relentless in analyzing code and you can spin up multiple of them to go through source code quickly.</p>\n<blockquote class=\"twitter-tweet\"><p dir=\"ltr\" lang=\"en\">given enough agents, all bugs are shallow</p>&mdash; Johann Rehberger (@wunderwuzzi23) <a href=\"https://twitter.com/wunderwuzzi23/status/2021046801630101595?ref_src=twsrc%5Etfw\">February 10, 2026</a></blockquote>\n\n\n\n<p>It is an emerging capability t",
       "author": ""
+    },
+    {
+      "source": "Cloudflare Security",
+      "category": "cloud_identity_infrastructure",
+      "title": "Cloudflare targets 2029 for full post-quantum security",
+      "link": "https://blog.cloudflare.com/post-quantum-roadmap/",
+      "published": "2026-04-07T21:00:00+00:00",
+      "summary": "Recent advances in quantum hardware and software have accelerated the timeline on which quantum attack might happen. Cloudflare is responding by moving our target for full post-quantum security to 2029.",
+      "author": "Bas Westerbaan"
     },
     {
       "source": "Krebs on Security",
@@ -4122,6 +4548,15 @@
       "published": "2026-04-07T01:53:05+00:00",
       "summary": "<p>This week, more time than I&apos;d have liked to spend went on talking about the trials of chasing invoices. This is off the back of a customer (who, for now, will remain unnamed), who had invoices stacking back more than 6 months overdue and despite payment terms of</p>",
       "author": "Troy Hunt"
+    },
+    {
+      "source": "GreyNoise",
+      "category": "cloud_identity_infrastructure",
+      "title": "Introducing C2 Detection: Know When Your Edge Devices Are Calling Home to Attackers",
+      "link": "https://www.greynoise.io/blog/introducing-c2-detection",
+      "published": "2026-04-07T00:00:00+00:00",
+      "summary": "We're launching C2 Detection — a new GreyNoise intelligence module that gives you two distinct, high-confidence signals that a device in your environment has been compromised.",
+      "author": ""
     },
     {
       "source": "Microsoft Threat Intelligence",
@@ -4196,13 +4631,13 @@
       "author": ""
     },
     {
-      "source": "tl;dr sec",
-      "category": "practitioner_analysis",
-      "title": "[tl;dr sec] #322 - GitHub's Supply Chain Roadmap, Scaling Vulnerability Management with AI, Finding Vulnerabilities Across Repos",
-      "link": "https://tldrsec.com/p/tldr-sec-322",
-      "published": "2026-04-02T14:30:00+00:00",
-      "summary": "GitHub's plan to harden GitHub Actions and supply chain security, automating and scaling SAST and SCA vuln management, OSS tool that uses AI agents to reason about vulns across repos",
-      "author": "Clint Gibler"
+      "source": "Google Cloud Threat Intelligence",
+      "category": "threat_research_primary",
+      "title": "vSphere and BRICKSTORM Malware: A Defender's Guide",
+      "link": "https://cloud.google.com/blog/topics/threat-intelligence/vsphere-brickstorm-defender-guide/",
+      "published": "2026-04-02T14:00:00+00:00",
+      "summary": "<div class=\"block-paragraph_advanced\"><p>Written by: Stuart Carrera</p>\n<hr /></div>\n<div class=\"block-paragraph_advanced\"><h3><span style=\"vertical-align: baseline;\">Introduction</span><strong style=\"vertical-align: baseline;\"> </strong></h3>\n<p><span style=\"vertical-align: baseline;\">Building on </span><a href=\"https://cloud.google.com/blog/topics/threat-intelligence/brickstorm-espionage-campaign?e=48754805\"><span style=\"text-decoration: underline; vertical-align: baseline;\">recent BRICKSTORM",
+      "author": "Mandiant"
     },
     {
       "source": "Permiso Security",
@@ -4230,6 +4665,15 @@
       "published": "2026-04-02T04:00:00+00:00",
       "summary": "&lt;p&gt;If you do the same thing three times, automate it. Introducing Mobile Data Extractor, a Python tool that handles the repetitive work of mobile app data extraction so testers can focus on what matters.&lt;/p&gt;",
       "author": "Kurt Muhl"
+    },
+    {
+      "source": "GreyNoise",
+      "category": "cloud_identity_infrastructure",
+      "title": "The Invisible Army: Why IP Reputation Fails Against the Rotation Economy",
+      "link": "https://www.greynoise.io/blog/invisible-army-why-ip-reputation-fails-against-rotation-economy",
+      "published": "2026-04-02T00:00:00+00:00",
+      "summary": "Attackers route malicious traffic through ordinary home internet connections — and to a reputation feed, the source IP is indistinguishable from a legitimate user's connection. GreyNoise analyzed 4 billion sessions over 90 days and found that 39% of unique IPs targeting the edge come from residential address space. 78% vanish after just 1–2 sessions, before any reputation system can flag them. The report documents why detection must shift from where the traffic comes from to what it is doing.",
+      "author": ""
     },
     {
       "source": "Microsoft Threat Intelligence",
@@ -4304,6 +4748,15 @@
       "author": ""
     },
     {
+      "source": "Google Cloud Threat Intelligence",
+      "category": "threat_research_primary",
+      "title": "North Korea-Nexus Threat Actor Compromises Widely Used Axios NPM Package in Supply Chain Attack",
+      "link": "https://cloud.google.com/blog/topics/threat-intelligence/north-korea-threat-actor-targets-axios-npm-package/",
+      "published": "2026-03-31T14:00:00+00:00",
+      "summary": "<div class=\"block-paragraph_advanced\"><p>Written by: Austin Larsen, Dima Lenz, Adrian Hernandez, Tyler McLellan, Christopher Gardner, Ashley Zaya, Michael Rudden, Mon Liclican, Muhammad Umair</p>\n<hr /></div>\n<div class=\"block-paragraph_advanced\"><h3><span style=\"vertical-align: baseline;\">Introduction</span><strong style=\"vertical-align: baseline;\"> </strong></h3>\n<p><span style=\"vertical-align: baseline;\">Google Threat Intelligence Group (GTIG) is tracking an active software supply chain attac",
+      "author": "Mandiant"
+    },
+    {
       "source": "Check Point Research",
       "category": "threat_research_primary",
       "title": "Operation TrueChaos: 0-Day Exploitation Against Southeast Asian Government Targets",
@@ -4311,15 +4764,6 @@
       "published": "2026-03-31T13:16:50+00:00",
       "summary": "<p>Key Points Introduction At the beginning of 2026, Check Point Research observed a series of targeted attacks against government entities in Southeast Asia carried out via a legitimate TrueConf software installed in the targets’ environment. The investigation led to the discovery of a zero-day vulnerability in the TrueConf client, tracked as&#160;CVE-2026-3502&#160;with a&#160;CVSS score of 7.8. [&#8230;]</p>\n<p>The post <a href=\"https://research.checkpoint.com/2026/operation-truechaos-0-day-e",
       "author": "stcpresearch"
-    },
-    {
-      "source": "tl;dr sec",
-      "category": "practitioner_analysis",
-      "title": "How we made Trail of Bits AI-native (so far)",
-      "link": "https://tldrsec.com/p/how-we-made-trail-of-bits-ai-native-so-far",
-      "published": "2026-03-31T11:30:00+00:00",
-      "summary": "We had 5% buy-in and 95% resistance. A year later, AI-augmented auditors are finding 200 bugs a week on the right engagements. Here's the six-part operating system we built, open sourced, and are giving away.",
-      "author": "Dan Guido"
     },
     {
       "source": "Trail of Bits",
@@ -4347,6 +4791,15 @@
       "published": "2026-03-31T00:41:44+00:00",
       "summary": "<p>Day by day, I find we&apos;re eeking more goodness out of OpenClaw and finding the sweet spot between what the humans do well and the agent can run off and do on its own. Significantly, we&apos;re shifting more and more of the workload to the latter</p>",
       "author": "Troy Hunt"
+    },
+    {
+      "source": "Sophos X-Ops",
+      "category": "detection_response_operations",
+      "title": "Axios npm package compromised to deploy malware",
+      "link": "https://www.sophos.com/en-us/blog/axios-npm-package-compromised-to-deploy-malware",
+      "published": "2026-03-31T00:00:00+00:00",
+      "summary": "<p><strong>Categories:</strong> Threat Research</p><p><strong>Tags:</strong> advisory, NPM, Axios</p>",
+      "author": ""
     },
     {
       "source": "Datadog Security Labs",
@@ -4403,6 +4856,24 @@
       "author": "Quentin Bourgue&nbsp;and&nbsp;Sekoia TDR"
     },
     {
+      "source": "Cloudflare Security",
+      "category": "cloud_identity_infrastructure",
+      "title": "Cloudflare Client-Side Security: smarter detection, now open to everyone",
+      "link": "https://blog.cloudflare.com/client-side-security-open-to-everyone/",
+      "published": "2026-03-30T06:00:00+00:00",
+      "summary": "We are opening our advanced Client-Side Security tools to all users, featuring a new cascading AI detection system. By combining graph neural networks and LLMs, we've reduced false positives by up to 200x while catching sophisticated zero-day exploits.",
+      "author": "Juan Miguel Cejuela"
+    },
+    {
+      "source": "Sophos X-Ops",
+      "category": "detection_response_operations",
+      "title": "Incident responders, s'il vous plait: Invites lead to odd malware events",
+      "link": "https://www.sophos.com/en-us/blog/incident-responders-s-il-vous-plait",
+      "published": "2026-03-30T00:00:00+00:00",
+      "summary": "<p>&lt;p&gt;A phishing campaign targeting multiple organizations led to RMM installations – but not much else (yet). A threat actor experimenting, or an access-as-a-service attack underway?&lt;/p&gt;</p><p><strong>Categories:</strong> Threat Research</p><p><strong>Tags:</strong> STAC6405, infostealer, RMM, Phishing</p>",
+      "author": ""
+    },
+    {
       "source": "watchTowr Labs",
       "category": "offensive_vulnerability_research",
       "title": "Please, We Beg, Just One Weekend Free Of Appliances (Citrix NetScaler CVE-2026-3055 Memory Overread Part 2)",
@@ -4455,15 +4926,6 @@
       "published": "2026-03-26T15:23:35+00:00",
       "summary": "Our latest voice model has improved precision and lower latency to make voice interactions more fluid, natural and precise.",
       "author": ""
-    },
-    {
-      "source": "tl;dr sec",
-      "category": "practitioner_analysis",
-      "title": "[tl;dr sec] #321 - Sandboxing AI Agents, Trivy Compromised, Pentesting AWS' AI Pentester",
-      "link": "https://tldrsec.com/p/tldr-sec-321",
-      "published": "2026-03-26T14:30:00+00:00",
-      "summary": "Sandbox approaches by NVIDIA and Niel Provos, moar supply chain compromises, vulnerabilities in AWS Security Agent",
-      "author": "Clint Gibler"
     },
     {
       "source": "Google DeepMind Blog",
@@ -4526,6 +4988,15 @@
       "link": "https://blog.trailofbits.com/2026/03/25/try-our-new-dimensional-analysis-claude-plugin/",
       "published": "2026-03-25T11:00:00+00:00",
       "summary": "<p>We’re releasing a new <a href=\"https://github.com/trailofbits/skills/tree/main/plugins/dimensional-analysis\">Claude plugin</a> for developing and auditing code that implements dimensional analysis, a technique we explored in our most recent <a href=\"https://blog.trailofbits.com/2026/03/24/spotting-issues-in-defi-with-dimensional-analysis/\">blog post</a>. Most LLM-based security skills ask the model to find bugs. Our new dimensional-analysis plugin for Claude Code takes a different approach: i",
+      "author": ""
+    },
+    {
+      "source": "GreyNoise",
+      "category": "cloud_identity_infrastructure",
+      "title": "Ghost Fleet: Half of All New Scanning IPs Last Week Geolocated to Hong Kong — Nearly None Completed a Connection",
+      "link": "https://www.greynoise.io/blog/ghost-fleet-half-new-scanning-ips-geolocated-to-hong-kong",
+      "published": "2026-03-25T00:00:00+00:00",
+      "summary": "Last week, the GreyNoise Observation Grid observed something unusual: 242,666 new scanning IPs geolocating to Hong Kong appeared in seven days and 99.7% of them never completed a single TCP connection.",
       "author": ""
     },
     {
@@ -4592,6 +5063,15 @@
       "author": "BrianKrebs"
     },
     {
+      "source": "Google Cloud Threat Intelligence",
+      "category": "threat_research_primary",
+      "title": "M-Trends 2026: Data, Insights, and Strategies From the Frontlines",
+      "link": "https://cloud.google.com/blog/topics/threat-intelligence/m-trends-2026/",
+      "published": "2026-03-23T14:00:00+00:00",
+      "summary": "<div class=\"block-paragraph_advanced\"><p><span style=\"vertical-align: baseline;\">Every year, the cyber threat landscape forces defenders to adapt to evolving adversary tactics, techniques, and procedures (TTPs). In 2025, Mandiant observed a clear divergence in adversary pacing that closely aligns with the trends we have been </span><a href=\"http://cloud.google.com/blog/topics/threat-intelligence\"><span style=\"text-decoration: underline; vertical-align: baseline;\">documenting for defenders</span>",
+      "author": "Jurgen Kutscher"
+    },
+    {
       "source": "Interconnects",
       "category": "ai_security_agentic_risk",
       "title": "Lossy self-improvement",
@@ -4646,15 +5126,6 @@
       "author": "Microsoft Threat Intelligence and Microsoft Defender Security Research Team"
     },
     {
-      "source": "tl;dr sec",
-      "category": "practitioner_analysis",
-      "title": "[tl;dr sec] #320 - Ramp's Security Agents, How Datadog Caught Malicious OSS Contributions, Obliterating Model Refusals",
-      "link": "https://tldrsec.com/p/tldr-sec-320",
-      "published": "2026-03-19T14:30:00+00:00",
-      "summary": "How Ramp fixed ~100 security issues in 6 days, detecting and mitigating GitHub supply chain attacks, two tools to automatically remove censorship from models",
-      "author": "Clint Gibler"
-    },
-    {
       "source": "SentinelOne Labs",
       "category": "threat_research_primary",
       "title": "Building an Adversarial Consensus Engine | Multi-Agent LLMs for Automated Malware Analysis",
@@ -4662,6 +5133,15 @@
       "published": "2026-03-19T10:00:07+00:00",
       "summary": "Single-tool LLM analysis produces reports that look authoritative but aren't. A serial consensus pipeline catches artifacts and hallucinations at source.",
       "author": "Phil Stokes"
+    },
+    {
+      "source": "Google Cloud Threat Intelligence",
+      "category": "threat_research_primary",
+      "title": "The Proliferation of DarkSword: iOS Exploit Chain Adopted by Multiple Threat Actors",
+      "link": "https://cloud.google.com/blog/topics/threat-intelligence/darksword-ios-exploit-chain/",
+      "published": "2026-03-18T14:00:00+00:00",
+      "summary": "<div class=\"block-paragraph_advanced\"><h3><span style=\"vertical-align: baseline;\">Introduction</span><strong style=\"vertical-align: baseline;\"> </strong></h3>\n<p><span style=\"vertical-align: baseline;\">Google Threat Intelligence Group (GTIG) has identified a new iOS full-chain exploit that leveraged multiple zero-day vulnerabilities to fully compromise devices. Based on toolmarks in recovered payloads, we believe the exploit chain to be called DarkSword. Since at least November 2025, GTIG has ob",
+      "author": "Google Threat Intelligence Group"
     },
     {
       "source": "Black Hills Information Security",
@@ -4736,6 +5216,15 @@
       "author": ""
     },
     {
+      "source": "Google Cloud Threat Intelligence",
+      "category": "threat_research_primary",
+      "title": "Ransomware Under Pressure: Tactics, Techniques, and Procedures in a Shifting Threat Landscape",
+      "link": "https://cloud.google.com/blog/topics/threat-intelligence/ransomware-ttps-shifting-threat-landscape/",
+      "published": "2026-03-16T14:00:00+00:00",
+      "summary": "<div class=\"block-paragraph_advanced\"><p>Written by: Bavi Sadayappan, Zach Riddle, Ioana Teaca, Kimberly Goody, Genevieve Stark</p>\n<hr /></div>\n<div class=\"block-paragraph_advanced\"><h3><span style=\"vertical-align: baseline;\">Introduction</span><strong style=\"vertical-align: baseline;\"> </strong></h3>\n<p><span style=\"vertical-align: baseline;\">Since 2018, when many financially motivated threat actors began shifting their monetization strategy to post-compromise ransomware deployments, ransomwar",
+      "author": "Google Threat Intelligence Group"
+    },
+    {
       "source": "Intel 471",
       "category": "ransomware_ecrime_financial_crime",
       "title": "CVE-2026-20127: Critical Cisco SD-WAN vulnerability exploited in wild",
@@ -4781,15 +5270,6 @@
       "author": "Microsoft Threat Intelligence and Microsoft Defender Experts"
     },
     {
-      "source": "tl;dr sec",
-      "category": "practitioner_analysis",
-      "title": "[tl;dr sec] #319 - AI is Eating Security, BSidesSF & RSA, Claude Finds Firefox 0-days",
-      "link": "https://tldrsec.com/p/tldr-sec-319",
-      "published": "2026-03-12T14:30:00+00:00",
-      "summary": "What does security look like in 5 years? Let's hang out in San Francisco and avoid badge scans, Opus 4.6 finds 22 vulns and auto-writes 2 exploits",
-      "author": "Clint Gibler"
-    },
-    {
       "source": "Permiso Security",
       "category": "cloud_identity_infrastructure",
       "title": "CO-PILOT, DISENGAGE AUTOPHISH: The New Phishing Surface Hiding Inside AI Email Summaries",
@@ -4797,6 +5277,15 @@
       "published": "2026-03-12T13:00:33+00:00",
       "summary": "<div class=\"hs-featured-image-wrapper\"> \n <a class=\"hs-featured-image-link\" href=\"https://permiso.io/blog/copilot-prompt-injection-ai-email-phishing\" title=\"\"> <img alt=\"CO-PILOT, DISENGAGE AUTOPHISH: The New Phishing Surface Hiding Inside AI Email Summaries\" class=\"hs-featured-image\" src=\"https://permiso.io/hubfs/image%20(7)-1.png\" style=\"width: auto !important; float: left; margin: 0 15px 15px 0;\" /> </a> \n</div> \n<p>AI assistants have genuinely improved day-to-day operations for teams buried",
       "author": "andi.ahmeti@permiso.io (Andi Ahmeti)"
+    },
+    {
+      "source": "Cloudflare Security",
+      "category": "cloud_identity_infrastructure",
+      "title": "Announcing Cloudflare Account Abuse Protection: prevent fraudulent attacks from bots and humans",
+      "link": "https://blog.cloudflare.com/account-abuse-protection/",
+      "published": "2026-03-12T05:00:00+00:00",
+      "summary": "Blocking bots isn’t enough anymore. Cloudflare’s new fraud prevention capabilities — now available in Early Access — help stop account abuse before it starts.",
+      "author": "Jin-Hee Lee"
     },
     {
       "source": "Permiso Security",
@@ -4826,6 +5315,15 @@
       "author": "BHIS"
     },
     {
+      "source": "Cloudflare Security",
+      "category": "cloud_identity_infrastructure",
+      "title": "AI Security for Apps is now generally available",
+      "link": "https://blog.cloudflare.com/ai-security-for-apps-ga/",
+      "published": "2026-03-11T13:00:00+00:00",
+      "summary": "Cloudflare AI Security for Apps is now generally available, providing a security layer to discover and protect AI-powered applications, regardless of the model or hosting provider. We are also making AI discovery free for all plans, to help teams find and secure shadow AI deployments.",
+      "author": "Catherine Newcomb"
+    },
+    {
       "source": "Krebs on Security",
       "category": "practitioner_analysis",
       "title": "Microsoft Patch Tuesday, March 2026 Edition",
@@ -4835,12 +5333,30 @@
       "author": "BrianKrebs"
     },
     {
+      "source": "Cloudflare Security",
+      "category": "cloud_identity_infrastructure",
+      "title": "Investigating multi-vector attacks in Log Explorer",
+      "link": "https://blog.cloudflare.com/investigating-multi-vector-attacks-in-log-explorer/",
+      "published": "2026-03-10T13:00:00+00:00",
+      "summary": "Log Explorer customers can now identify and investigate multi-vector attacks. Log Explorer supports 14 additional Cloudflare datasets, enabling users to have a 360-degree view of their network.",
+      "author": "Nico Gutierrez"
+    },
+    {
       "source": "Datadog Security Labs",
       "category": "cloud_identity_infrastructure",
       "title": "Uncovering agent logging gaps in Copilot Studio",
       "link": "https://securitylabs.datadoghq.com/articles/copilot-studio-logging-gaps/",
       "published": "2026-03-10T00:00:00+00:00",
       "summary": "During research, we sometimes encounter scenarios that remind us that it's a good idea to trust but verify. In September 2025, we noticed that certain Microsoft Copilot Studio agent settings did not log certain administrative actions related to sharing, authentication, logging, and publication of Copilot Studio agents.",
+      "author": ""
+    },
+    {
+      "source": "GreyNoise",
+      "category": "cloud_identity_infrastructure",
+      "title": "New GreyNoise Integrations Enhance Detection and Response Capabilities in Google Security Operations",
+      "link": "https://www.greynoise.io/blog/greynoise-google-secops-integration",
+      "published": "2026-03-10T00:00:00+00:00",
+      "summary": "GreyNoise's new and improved integration with Google Security Operations delivers standardized indicator ingestion, pre-built dashboards, YARA-L detection rules, saved searches, SOAR response actions, webhook support, and ready-to-deploy playbooks.‍",
       "author": ""
     },
     {
@@ -4898,6 +5414,15 @@
       "author": "Microsoft Threat Intelligence"
     },
     {
+      "source": "Google Cloud Threat Intelligence",
+      "category": "threat_research_primary",
+      "title": "Proactive Preparation and Hardening Against Destructive Attacks: 2026 Edition",
+      "link": "https://cloud.google.com/blog/topics/threat-intelligence/preparation-hardening-destructive-attacks/",
+      "published": "2026-03-06T14:00:00+00:00",
+      "summary": "<div class=\"block-paragraph_advanced\"><p>Written by: Matthew McWhirt, Bhavesh Dhake, Emilio Oropeza, Gautam Krishnan, Stuart Carrera, Greg Blaum, Michael Rudden</p>\n<hr /></div>\n<div class=\"block-paragraph_advanced\"><p><em>UPDATE (March 13): <span style=\"vertical-align: baseline;\">Added guidance around abuse or misuse of endpoint / MDM platforms</span>.</em></p>\n<h3><span style=\"vertical-align: baseline;\">Background</span></h3>\n<p><span style=\"vertical-align: baseline;\">Threat actors leverage de",
+      "author": "Mandiant"
+    },
+    {
       "source": "Sekoia",
       "category": "threat_research_primary",
       "title": "Shadow IT: The Initial Access You Didn’t Log",
@@ -4905,6 +5430,15 @@
       "published": "2026-03-06T10:42:34+00:00",
       "summary": "<p>In multiple incident response engagements over the past few years, one detail keeps repeating: the first compromised system wasn’t the one the SOC was watching. It wasn’t visible in the EDR console, it wasn’t tracked in the CMDB, and it wasn’t in scope for vulnerability management. It was real infrastructure owned by the organization but [&#8230;]</p>\n<p>La publication suivante <a href=\"https://blog.sekoia.io/shadow-it-the-initial-access-you-didnt-log/\">Shadow IT: The Initial Access You Didn’",
       "author": "David Greenwood"
+    },
+    {
+      "source": "Google Cloud Threat Intelligence",
+      "category": "threat_research_primary",
+      "title": "Look What You Made Us Patch: 2025 Zero-Days in Review",
+      "link": "https://cloud.google.com/blog/topics/threat-intelligence/2025-zero-day-review/",
+      "published": "2026-03-05T14:00:00+00:00",
+      "summary": "<div class=\"block-paragraph_advanced\"><p>Written by: Casey Charrier, James Sadowski, Zander Work, Clement Lecigne, Benoît Sevens, Fred Plan</p>\n<hr /></div>\n<div class=\"block-paragraph_advanced\"><h3><span style=\"vertical-align: baseline;\">Executive Summary</span></h3>\n<p><span style=\"vertical-align: baseline;\">Google Threat Intelligence Group (GTIG) tracked 90 zero-day vulnerabilities exploited in-the-wild in 2025. Although that volume of zero-days is lower than the record high observed in 2023",
+      "author": "Google Threat Intelligence Group"
     },
     {
       "source": "Google Project Zero",
@@ -4923,6 +5457,15 @@
       "published": "2026-03-04T14:00:00+00:00",
       "summary": "<p><img alt=\"Linux Persistence For Pentesters\" class=\"attachment-full size-full wp-post-image\" height=\"720\" src=\"https://www.blackhillsinfosec.com/wp-content/uploads/2026/02/pam_persistence_header.png\" width=\"1280\" /></p>\n<p>Learn about a pentesting tool using the Pluggable Authentication Module for privilege escalation, lateral movement, and persistence in Linux.</p>\n<p>The post <a href=\"https://www.blackhillsinfosec.com/the-p-in-pam-is-for-persistence-linux-persistence-technique/\">The &#8220;P",
       "author": "BHIS"
+    },
+    {
+      "source": "GreyNoise",
+      "category": "cloud_identity_infrastructure",
+      "title": "GreyNoise Intelligence Is Available Across the CrowdStrike Falcon Platform",
+      "link": "https://www.greynoise.io/blog/greynoise-intelligence-available-across-crowdstrike-falcon-platform",
+      "published": "2026-03-04T00:00:00+00:00",
+      "summary": "GreyNoise intelligence is now available across the CrowdStrike Falcon platform, bringing internet-wide scanning context to SIEM queries, SOAR workflows, and AI-driven triage.",
+      "author": ""
     },
     {
       "source": "Permiso Security",
@@ -4952,12 +5495,39 @@
       "author": "Maxime Arandel"
     },
     {
+      "source": "Cloudflare Radar",
+      "category": "cloud_identity_infrastructure",
+      "title": "Bringing more transparency to post-quantum usage, encrypted messaging, and routing security",
+      "link": "https://blog.cloudflare.com/radar-origin-pq-key-transparency-aspa/",
+      "published": "2026-02-27T06:00:00+00:00",
+      "summary": "Cloudflare Radar has added new tools for monitoring PQ adoption, KT logs for messaging, and ASPA routing records to track the Internet's migration toward more secure encryption and routing standards.",
+      "author": "Mari Galicer"
+    },
+    {
+      "source": "Cloudflare Radar",
+      "category": "cloud_identity_infrastructure",
+      "title": "ASPA: making Internet routing more secure",
+      "link": "https://blog.cloudflare.com/aspa-secure-internet/",
+      "published": "2026-02-27T06:00:00+00:00",
+      "summary": "ASPA is the cryptographic upgrade for BGP that helps prevent route leaks by verifying the path network traffic takes. New features in Cloudflare Radar make tracking its adoption easy.",
+      "author": "Bryton Herdes"
+    },
+    {
       "source": "Datadog Security Labs",
       "category": "cloud_identity_infrastructure",
       "title": "Hook, line, and vault: A technical deep dive into the 1Phish kit",
       "link": "https://securitylabs.datadoghq.com/articles/hook-line-vault-a-deep-dive-into-1phish/",
       "published": "2026-02-27T00:00:00+00:00",
       "summary": "We analyze the evolution of the 1Phish phishing kit from a basic credential harvester into an MFA-aware, multi-stage phishing kit targeting 1Password users.",
+      "author": ""
+    },
+    {
+      "source": "GreyNoise",
+      "category": "cloud_identity_infrastructure",
+      "title": "Active Reconnaissance Campaign Targets SonicWall Firewalls Through Commercial Proxy Infrastructure",
+      "link": "https://www.greynoise.io/blog/active-reconnaissance-campaign-targets-sonicwall-firewalls-through-commercial-proxy-infrastructure",
+      "published": "2026-02-27T00:00:00+00:00",
+      "summary": "84,000+ scanning sessions targeting SonicWall SonicOS infrastructure in four days. GreyNoise details a coordinated reconnaissance campaign using rotating proxy infrastructure.",
       "author": ""
     },
     {
@@ -4986,6 +5556,15 @@
       "published": "2026-02-24T13:07:19+00:00",
       "summary": "Quantifying the capability-reliability gap",
       "author": "Sayash Kapoor"
+    },
+    {
+      "source": "GreyNoise",
+      "category": "cloud_identity_infrastructure",
+      "title": "2026 GreyNoise State of the Edge Report: Where Attacks Concentrate and Defenses Fall Short",
+      "link": "https://www.greynoise.io/blog/2026-greynoise-state-of-the-edge-report-where-attacks-concentrate-defenses-fall-short",
+      "published": "2026-02-24T00:00:00+00:00",
+      "summary": "GreyNoise analyzed 2.97 billion malicious sessions over 162 days — and the patterns challenge assumptions about where edge defenses are strongest. From VPN targeting to infrastructure concentration to attackers rapidly rotating through fresh IPs, new research quantifies where the gaps are and what to do about it. Read the full findings.",
+      "author": ""
     },
     {
       "source": "The DFIR Report",
@@ -5159,6 +5738,15 @@
       "author": "Gabriel Bernadett-Shapiro &amp; Silas Cutler (Censys)"
     },
     {
+      "source": "Cloudflare Radar",
+      "category": "cloud_identity_infrastructure",
+      "title": "Cable cuts, storms, and DNS: a look at Internet disruptions in Q4 2025",
+      "link": "https://blog.cloudflare.com/q4-2025-internet-disruption-summary/",
+      "published": "2026-01-26T14:00:00+00:00",
+      "summary": "The last quarter of 2025 brought several notable disruptions to Internet connectivity. Cloudflare Radar data reveals the impact of cable cuts, power outages, extreme weather, technical problems, and more.",
+      "author": "David Belson"
+    },
+    {
       "source": "Google Project Zero",
       "category": "offensive_vulnerability_research",
       "title": "Bypassing Windows Administrator Protection",
@@ -5276,6 +5864,15 @@
       "author": "Natalie Silvanovich"
     },
     {
+      "source": "Cloudflare Radar",
+      "category": "cloud_identity_infrastructure",
+      "title": "What we know about Iran’s Internet shutdown",
+      "link": "https://blog.cloudflare.com/iran-protests-internet-shutdown/",
+      "published": "2026-01-13T00:00:00+00:00",
+      "summary": "Cloudflare Radar data shows Internet traffic from Iran has effectively dropped to zero since January 8, signaling a complete shutdown in the country and disconnection from the global Internet.",
+      "author": "David Belson"
+    },
+    {
       "source": "Active Countermeasures",
       "category": "detection_response_operations",
       "title": "Context Over Code: The Irreplaceable Role of Human Hunters",
@@ -5337,6 +5934,24 @@
       "published": "2025-12-16T09:00:00+00:00",
       "summary": "Preface Hello from the future! This is a blogpost I originally drafted in early 2017. I wrote what I intended to be the first half of this post (about escaping from the VM to the VirtualBox host userspace process with CVE-2017-3558), but I never got around to writing the second half (going from the VirtualBox host userspace process to the host kernel), and eventually sorta forgot about this old post draft… But it seems a bit sad to just leave this old draft rotting around forever, so I decided t",
       "author": "Jann Horn"
+    },
+    {
+      "source": "Cloudflare Radar",
+      "category": "cloud_identity_infrastructure",
+      "title": "The 2025 Cloudflare Radar Year in Review: The rise of AI, post-quantum, and record-breaking DDoS attacks",
+      "link": "https://blog.cloudflare.com/radar-2025-year-in-review/",
+      "published": "2025-12-15T14:00:00+00:00",
+      "summary": "We present our 6th annual review of Internet trends and patterns observed across the globe, revealing the disruptions, advances and metrics that defined 2025.",
+      "author": "David Belson"
+    },
+    {
+      "source": "Cloudflare Radar",
+      "category": "cloud_identity_infrastructure",
+      "title": "ChatGPT's rivals, Kwai's quiet rise: the top Internet services of 2025",
+      "link": "https://blog.cloudflare.com/radar-2025-year-in-review-internet-services/",
+      "published": "2025-12-15T14:00:00+00:00",
+      "summary": "AI competition intensified in 2025 as ChatGPT gained strong challengers. Instagram climbed, X declined, and platforms like Shopee, Temu, and Kwai reshaped global Internet usage. Our 2025 DNS data shows how Internet patterns evolved.",
+      "author": "João Tomé"
     },
     {
       "source": "Active Countermeasures",
@@ -5454,6 +6069,15 @@
       "published": "2025-11-04T21:30:27+00:00",
       "summary": "<p>Overview Bumblebee malware has been an initial access tool used by threat actors since late 2021. In 2023 the malware was first reported as using SEO poisoning as a delivery mechanism. Recently in May of 2025 Cyjax reported on a campaign using this method again, impersonating various IT tools. We observed a similar campaign in [&#8230;]</p>\n<p>The post <a href=\"https://thedfirreport.com/2025/11/04/from-bing-search-to-ransomware-bumblebee-and-adaptixc2-deliver-akira-2/\">From Bing Search to Ran",
       "author": "editor"
+    },
+    {
+      "source": "Cloudflare Radar",
+      "category": "cloud_identity_infrastructure",
+      "title": "Fresh insights from old data: corroborating reports of Turkmenistan IP unblocking and firewall testing",
+      "link": "https://blog.cloudflare.com/fresh-insights-from-old-data-corroborating-reports-of-turkmenistan-ip/",
+      "published": "2025-11-03T13:00:00+00:00",
+      "summary": "Cloudflare used historical data to investigate reports of potential new firewall tests in Turkmenistan. Shifts in TCP resets/timeouts across ASNs corroborate large-scale network control system changes.",
+      "author": "Marwan Fayed"
     },
     {
       "source": "Active Countermeasures",
