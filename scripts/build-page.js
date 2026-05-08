@@ -698,6 +698,217 @@ function getThemeKey(item) {
   };
 }
 
+function getIndustryTags(item) {
+  const title = String(item.title || "").toLowerCase();
+  const summary = stripHtml(item.summary || "").toLowerCase();
+  const source = String(item.source || "").toLowerCase();
+  const category = String(item.category || "").toLowerCase();
+  const text = `${title} ${summary} ${source} ${category}`;
+
+  const industryRules = [
+    {
+      key: "financial_services",
+      label: "Financial Services",
+      patterns: [
+        "bank",
+        "banks",
+        "banking",
+        "credit union",
+        "fintech",
+        "payment",
+        "payments",
+        "swift",
+        "atm",
+        "insurance",
+        "brokerage",
+        "crypto",
+        "cryptocurrency",
+        "exchange",
+        "wallet",
+        "trading",
+        "financial"
+      ]
+    },
+    {
+      key: "healthcare",
+      label: "Healthcare",
+      patterns: [
+        "hospital",
+        "healthcare",
+        "health care",
+        "clinic",
+        "patient",
+        "medical",
+        "pharma",
+        "pharmaceutical",
+        "biotech",
+        "hipaa",
+        "ehr",
+        "electronic health record"
+      ]
+    },
+    {
+      key: "government_public_sector",
+      label: "Government & Public Sector",
+      patterns: [
+        "government",
+        "federal",
+        "state agency",
+        "municipal",
+        "city government",
+        "public sector",
+        "defense",
+        "military",
+        "dod",
+        "election",
+        "embassy",
+        "ministry",
+        "public administration"
+      ]
+    },
+    {
+      key: "education",
+      label: "Education",
+      patterns: [
+        "school",
+        "schools",
+        "university",
+        "universities",
+        "college",
+        "campus",
+        "student",
+        "students",
+        "k-12",
+        "district",
+        "education"
+      ]
+    },
+    {
+      key: "critical_infrastructure",
+      label: "Critical Infrastructure",
+      patterns: [
+        "critical infrastructure",
+        "energy",
+        "utility",
+        "utilities",
+        "electric",
+        "power grid",
+        "water",
+        "wastewater",
+        "pipeline",
+        "oil",
+        "gas",
+        "telecom",
+        "transportation",
+        "rail",
+        "airport",
+        "aviation",
+        "maritime",
+        "port"
+      ]
+    },
+    {
+      key: "technology_saas",
+      label: "Technology & SaaS",
+      patterns: [
+        "saas",
+        "software",
+        "developer",
+        "developers",
+        "github",
+        "npm",
+        "pypi",
+        "open source",
+        "cloud",
+        "aws",
+        "azure",
+        "google cloud",
+        "kubernetes",
+        "container",
+        "api",
+        "oauth",
+        "token",
+        "identity provider",
+        "idp",
+        "msp",
+        "managed service provider"
+      ]
+    },
+    {
+      key: "retail_ecommerce",
+      label: "Retail & eCommerce",
+      patterns: [
+        "retail",
+        "ecommerce",
+        "e-commerce",
+        "merchant",
+        "pos",
+        "point of sale",
+        "shopping",
+        "customer data",
+        "payment card",
+        "loyalty program"
+      ]
+    },
+    {
+      key: "manufacturing_industrial",
+      label: "Manufacturing & Industrial",
+      patterns: [
+        "manufacturing",
+        "manufacturer",
+        "industrial",
+        "factory",
+        "plant",
+        "ot",
+        "ics",
+        "scada",
+        "plc",
+        "supply chain",
+        "automotive",
+        "aerospace"
+      ]
+    },
+    {
+      key: "media_communications",
+      label: "Media & Communications",
+      patterns: [
+        "media",
+        "journalist",
+        "newsroom",
+        "broadcast",
+        "telecommunications",
+        "telecom",
+        "isp",
+        "mobile carrier",
+        "satellite"
+      ]
+    },
+    {
+      key: "legal_professional_services",
+      label: "Legal & Professional Services",
+      patterns: [
+        "law firm",
+        "legal",
+        "consulting",
+        "consultancy",
+        "accounting",
+        "audit firm",
+        "professional services"
+      ]
+    }
+  ];
+
+  const matched = industryRules.filter((rule) =>
+    rule.patterns.some((pattern) => text.includes(pattern))
+  );
+
+  if (matched.length) {
+    return matched.map(({ key, label }) => ({ key, label }));
+  }
+
+  return [{ key: "cross_industry", label: "Cross-Industry" }];
+}
+
 function groupItemsByTheme(items) {
   const groups = new Map();
 
@@ -722,6 +933,40 @@ function groupItemsByTheme(items) {
       newest: Math.max(...group.items.map(getItemTime))
     }))
     .sort((a, b) => b.newest - a.newest);
+}
+
+function groupItemsByIndustry(items) {
+  const groups = new Map();
+
+  for (const item of items) {
+    const industries = getIndustryTags(item);
+
+    for (const industry of industries) {
+      if (!groups.has(industry.key)) {
+        groups.set(industry.key, {
+          key: industry.key,
+          label: industry.label,
+          items: []
+        });
+      }
+
+      groups.get(industry.key).items.push(item);
+    }
+  }
+
+  return Array.from(groups.values())
+    .map((group) => ({
+      ...group,
+      items: group.items.sort((a, b) => getItemTime(b) - getItemTime(a)),
+      newest: Math.max(...group.items.map(getItemTime))
+    }))
+    .sort((a, b) => {
+      if (b.items.length !== a.items.length) {
+        return b.items.length - a.items.length;
+      }
+
+      return b.newest - a.newest;
+    });
 }
 
 function scoreItem(item) {
@@ -920,13 +1165,14 @@ function buildInsight(item, index) {
   const link = item.link || item.url || "";
   const published = item.published || "";
   const theme = getThemeKey(item);
+  const industries = getIndustryTags(item);
 
   const insightText = summary
     ? summary.slice(0, 360)
     : `Relevant threat signal from ${source} in ${formatCategory(category)}.`;
 
   return `
-    <article class="insight" data-category="${escapeHtml(category)}" data-source="${escapeHtml(source)}" data-theme="${escapeHtml(theme.key)}">
+    <article class="insight" data-category="${escapeHtml(category)}" data-source="${escapeHtml(source)}" data-theme="${escapeHtml(theme.key)}" data-industries="${escapeHtml(industries.map((industry) => industry.key).join(" "))}">
       <div class="rank">#${index + 1}</div>
       <div class="insight-body">
         <div class="insight-meta">
@@ -934,6 +1180,11 @@ function buildInsight(item, index) {
           <span>${escapeHtml(formatCategory(category))}</span>
           <span>${escapeHtml(source)}</span>
           ${published ? `<time datetime="${escapeHtml(published)}">${escapeHtml(formatDate(published))}</time>` : ""}
+        </div>
+        <div class="tag-row">
+          ${industries
+            .map((industry) => `<a class="industry-tag" href="#industry-${escapeHtml(industry.key)}">${escapeHtml(industry.label)}</a>`)
+            .join("")}
         </div>
         <h3>${link ? `<a href="${escapeHtml(link)}" ${externalLinkAttrs()}>${escapeHtml(title)}</a>` : escapeHtml(title)}</h3>
         <p>${escapeHtml(insightText)}</p>
@@ -952,6 +1203,7 @@ function renderLineItem(item, index) {
   const summary = stripHtml(item.summary || "");
   const compactSummary = summary.length > 280 ? `${summary.slice(0, 280)}...` : summary;
   const theme = getThemeKey(item);
+  const industries = getIndustryTags(item);
 
   return `
     <li
@@ -960,6 +1212,7 @@ function renderLineItem(item, index) {
       data-source="${escapeHtml(source)}"
       data-category="${escapeHtml(category)}"
       data-theme="${escapeHtml(theme.key)}"
+      data-industries="${escapeHtml(industries.map((industry) => industry.key).join(" "))}"
       data-published="${escapeHtml(published)}"
       itemscope
       itemtype="https://schema.org/Article"
@@ -969,6 +1222,11 @@ function renderLineItem(item, index) {
           ${link ? `<a href="${escapeHtml(link)}" itemprop="url" ${externalLinkAttrs()}>${escapeHtml(title)}</a>` : escapeHtml(title)}
         </h4>
         ${compactSummary ? `<p itemprop="description">${escapeHtml(compactSummary)}</p>` : ""}
+        <div class="tag-row">
+          ${industries
+            .map((industry) => `<a class="industry-tag" href="#industry-${escapeHtml(industry.key)}">${escapeHtml(industry.label)}</a>`)
+            .join("")}
+        </div>
       </div>
 
       <dl class="line-meta">
@@ -1064,11 +1322,18 @@ function sortCategories(a, b) {
 const categories = [...new Set(items.map((item) => item.category).filter(Boolean))].sort(sortCategories);
 const latestItems = items.slice().sort((a, b) => getItemTime(b) - getItemTime(a));
 const topInsights = selectTopUniqueInsights(latestItems, 10);
+const industryGroups = groupItemsByIndustry(latestItems);
 
 const languageFilteredOutCount = allItems.length - languageFilteredItems.length;
 const dateFilteredOutCount = languageFilteredItems.length - dateFilteredItems.length;
 const ctiFilteredOutCount = dateFilteredItems.length - items.length;
 const totalFilteredOutCount = allItems.length - items.length;
+
+const industryNav = industryGroups
+  .map((industry) => {
+    return `<a class="chip" href="#industry-${escapeHtml(industry.key)}">${escapeHtml(industry.label)} <span>${industry.items.length}</span></a>`;
+  })
+  .join("");
 
 const categoryNav = categories
   .map((category) => {
@@ -1090,6 +1355,34 @@ const cohortCards = Object.entries(cohorts)
     `;
   })
   .join("");
+
+const industrySections = `
+  <section class="panel" id="industry-view">
+    <h2>Industry View</h2>
+    <p class="panel-intro">
+      Items are mapped to likely affected industries based on title, summary, source, category, and threat context. Tags are heuristic, intended for triage and briefing workflows, not definitive sector attribution.
+    </p>
+
+    ${industryGroups
+      .map((industry) => {
+        return `
+          <section class="theme-group" id="industry-${escapeHtml(industry.key)}">
+            <div class="theme-heading">
+              <h3>${escapeHtml(industry.label)}</h3>
+              <span>${industry.items.length} related item${industry.items.length === 1 ? "" : "s"}</span>
+            </div>
+            <ol class="feed-lines">
+              ${industry.items
+                .slice(0, 12)
+                .map((item, index) => renderLineItem(item, `${industry.key}-${index}`))
+                .join("")}
+            </ol>
+          </section>
+        `;
+      })
+      .join("")}
+  </section>
+`;
 
 const sections = categories
   .map((category, categoryIndex) => {
@@ -1154,7 +1447,7 @@ const jsonLd = {
   "@type": "ItemList",
   name: "Wolfram Threatstream Feed",
   description:
-    "Curated cyber news and threat insight feed. Items are limited to the last 7 days, filtered for CTI relevance, ordered newest first, and grouped by logical threat affinity.",
+    "Curated cyber news and threat insight feed. Items are limited to the last 7 days, filtered for CTI relevance, mapped to likely affected industries, ordered newest first, and grouped by logical threat affinity.",
   dateModified: generatedAt,
   numberOfItems: items.length,
   itemListElement: latestItems.map((item, index) => ({
@@ -1169,7 +1462,10 @@ const jsonLd = {
       publisher: item.source || "",
       articleSection: item.category || "",
       description: stripHtml(item.summary || ""),
-      keywords: getKeywords(item).join(", ")
+      keywords: [
+        ...getKeywords(item),
+        ...getIndustryTags(item).map((industry) => industry.label)
+      ].join(", ")
     }
   }))
 };
@@ -1180,7 +1476,7 @@ const html = `<!doctype html>
   <meta charset="utf-8">
   <title>Wolfram Threatstream Feed</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Curated English-language cyber threat intelligence feed. Last 7 days only. CTI-relevant items only.">
+  <meta name="description" content="Curated English-language cyber threat intelligence feed. Last 7 days only. CTI-relevant items only. Mapped by likely affected industry.">
   <meta name="robots" content="index, follow">
 
   <script type="application/ld+json">
@@ -1436,6 +1732,31 @@ ${JSON.stringify(jsonLd, null, 2)}
       color: #dbe8fb;
     }
 
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin: 8px 0 10px;
+    }
+
+    .industry-tag {
+      border: 1px solid rgba(107, 231, 255, 0.28);
+      background: rgba(107, 231, 255, 0.08);
+      color: #c9f6ff;
+      border-radius: 999px;
+      padding: 4px 8px;
+      font-size: 0.74rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      text-decoration: none;
+    }
+
+    .industry-tag:hover {
+      border-color: rgba(107, 231, 255, 0.55);
+      background: rgba(107, 231, 255, 0.14);
+      text-decoration: none;
+    }
+
     .category-section {
       margin-top: 30px;
     }
@@ -1601,7 +1922,7 @@ ${JSON.stringify(jsonLd, null, 2)}
       <div class="eyebrow">Strategic Cyber Threat Intelligence Feed</div>
       <h1>Wolfram Threatstream Feed</h1>
       <p class="subtitle">
-        Curated English-language cyber threat intelligence insights from the last ${LOOKBACK_DAYS} days. Items are filtered for CTI relevance, ordered newest first, deduplicated across repeated coverage, and grouped by logical threat affinity.
+        Curated English-language cyber threat intelligence insights from the last ${LOOKBACK_DAYS} days. Items are filtered for CTI relevance, mapped by likely affected industry, ordered newest first, deduplicated across repeated coverage, and grouped by logical threat affinity.
       </p>
 
       <div class="stats" aria-label="Feed status summary">
@@ -1623,6 +1944,8 @@ ${JSON.stringify(jsonLd, null, 2)}
     <nav class="utility-links" aria-label="Feed navigation">
       <a class="button-link" href="./feed.json" ${externalLinkAttrs()}>Raw JSON feed</a>
       <a class="button-link" href="#top-insights">Top 10 Breaches and Threat Insights</a>
+      <a class="button-link" href="#industry-view">Industry View</a>
+      ${industryNav}
       ${categoryNav}
       <a class="button-link" href="#source-health">Source health</a>
     </nav>
@@ -1647,6 +1970,8 @@ ${JSON.stringify(jsonLd, null, 2)}
       </div>
     </section>
 
+    ${industrySections}
+
     ${sections}
 
     ${parseErrorBlock}
@@ -1654,7 +1979,7 @@ ${JSON.stringify(jsonLd, null, 2)}
     <footer>
       <p>
         This page is generated from <code>docs/feed.json</code>. The rendered HTML is designed for human review,
-        search indexing, and M365 Agent Builder knowledge ingestion. The rendered page is English-only, limited to the last ${LOOKBACK_DAYS} days, CTI-filtered, ordered newest first, and grouped by logical threat affinity.
+        search indexing, and agent knowledge ingestion. The rendered page is English-only, limited to the last ${LOOKBACK_DAYS} days, CTI-filtered, industry-mapped, ordered newest first, and grouped by logical threat affinity.
       </p>
       <p>
         Generated at: ${escapeHtml(formatDate(generatedAt))}
@@ -1668,6 +1993,7 @@ fs.writeFileSync(outputPath, html);
 
 console.log(`Generated ${outputPath}`);
 console.log(`Rendered ${items.length} CTI items from the last ${LOOKBACK_DAYS} days.`);
+console.log(`Mapped items across ${industryGroups.length} industry groupings.`);
 console.log(`Filtered out ${languageFilteredOutCount} items by language/source rules.`);
 console.log(`Filtered out ${dateFilteredOutCount} items outside the date window.`);
 console.log(`Filtered out ${ctiFilteredOutCount} non-CTI items.`);
