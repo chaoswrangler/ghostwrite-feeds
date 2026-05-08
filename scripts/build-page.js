@@ -858,7 +858,7 @@ const jsonLd = {
   "@type": "ItemList",
   name: "Wolfram Threatstream Feed",
   description:
-    "Curated English-language cyber threat intelligence feed. Items are limited to the last 7 days, filtered for CTI relevance, ordered newest first, and grouped by logical threat affinity.",
+    "Curated cyber news and threat insight feed. Items are limited to the last 7 days, filtered for CTI relevance, ordered newest first, and grouped by logical threat affinity.",
   dateModified: generatedAt,
   numberOfItems: items.length,
   itemListElement: latestItems.map((item, index) => ({
