@@ -2369,7 +2369,7 @@ ${JSON.stringify(jsonLd, null, 2)}
 <body>
   <main>
     <header class="hero">
-      <div class="eyebrow">Strategic Cyber Threat Intelligence Feed</div>
+      <div class="eyebrow">Cyber News & Threat Insights Feed</div>
       <h1>Wolfram Threatstream Feed</h1>
       <p class="subtitle">
         Curated English-language cyber threat intelligence insights from the last ${LOOKBACK_DAYS} days. Items are filtered for CTI relevance, aggressively deduplicated, tagged by threat category and likely affected industry, and dynamically assembled by filter.
