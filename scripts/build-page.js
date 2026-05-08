@@ -525,7 +525,12 @@ function isBreachOrThreatInsight(item) {
     "cloudflare",
     "akamai",
     "sucuri",
-    "malwarebytes"
+    "malwarebytes",
+    "greynoise",
+    "shadowserver",
+    "vulncheck",
+    "packet storm",
+    "exploit-db"
   ];
 
   const hasBreachSignal = breachTerms.some((term) => text.includes(term));
@@ -537,7 +542,9 @@ function isBreachOrThreatInsight(item) {
     category.includes("ecrime") ||
     category.includes("offensive") ||
     category.includes("breach") ||
-    category.includes("detection");
+    category.includes("detection") ||
+    category.includes("cloud") ||
+    category.includes("identity");
 
   const isCredibleInsightSource = insightSources.some((sourceName) =>
     source.includes(sourceName)
@@ -556,6 +563,24 @@ function normalizeText(value) {
     .trim();
 }
 
+function normalizeForDedupe(value) {
+  return String(value ?? "")
+    .toLowerCase()
+    .replace(/https?:\/\/\S+/g, " ")
+    .replace(/\bcve-\d{4}-\d{4,7}\b/g, " CVE_TOKEN ")
+    .replace(/\bzero[-\s]?day\b/g, "zero day")
+    .replace(/\brce\b/g, "remote code execution")
+    .replace(/\biocs?\b/g, "indicator")
+    .replace(/\bttps?\b/g, "tactics techniques procedures")
+    .replace(/\bmalware campaign\b/g, "campaign")
+    .replace(/\bransomware attack\b/g, "ransomware")
+    .replace(/\bdata breach\b/g, "breach")
+    .replace(/[^a-z0-9\s]/g, " ")
+    .replace(/\b(the|a|an|and|or|to|of|in|on|for|with|from|by|at|is|are|was|were|as|this|that|it|its|into|about|after|before|new|how|why|what|will|can|could|should|would|their|there|they|them|your|you|our|out|over|under|says|said|report|reports|reported|researcher|researchers|warn|warns|warning|analysis|blog|post|article|security|cyber|cybersecurity)\b/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
 function getKeywords(item) {
   const text = normalizeText(`${item.title || ""} ${stripHtml(item.summary || "")}`);
 
@@ -563,6 +588,111 @@ function getKeywords(item) {
     .split(" ")
     .filter((word) => word.length > 4)
     .slice(0, 24);
+}
+
+function getDedupeTokens(item) {
+  const text = normalizeForDedupe(`${item.title || ""} ${stripHtml(item.summary || "")}`);
+
+  return text
+    .split(" ")
+    .filter((word) => word.length > 3)
+    .slice(0, 80);
+}
+
+function extractCves(item) {
+  const text = `${item.title || ""} ${stripHtml(item.summary || "")}`.toLowerCase();
+  return [...new Set(text.match(/\bcve-\d{4}-\d{4,7}\b/g) || [])];
+}
+
+function extractNamedSignals(item) {
+  const text = `${item.title || ""} ${stripHtml(item.summary || "")}`.toLowerCase();
+
+  const patterns = [
+    "ivanti",
+    "citrix",
+    "fortinet",
+    "palo alto",
+    "pan-os",
+    "sonicwall",
+    "sharepoint",
+    "exchange",
+    "confluence",
+    "jira",
+    "chrome",
+    "firefox",
+    "windows",
+    "linux",
+    "vmware",
+    "esxi",
+    "microsoft",
+    "google",
+    "aws",
+    "azure",
+    "okta",
+    "entra",
+    "duo",
+    "salesforce",
+    "github",
+    "npm",
+    "pypi",
+    "docker",
+    "kubernetes",
+    "north korea",
+    "north korean",
+    "lazarus",
+    "kimsuky",
+    "muddywater",
+    "sandworm",
+    "volt typhoon",
+    "lockbit",
+    "akira",
+    "clop",
+    "black basta",
+    "ransomhub",
+    "scattered spider",
+    "shinyhunters",
+    "clickfix",
+    "vidar",
+    "lumma",
+    "redline",
+    "remcos",
+    "qakbot",
+    "emotet",
+    "cobalt strike",
+    "asyncrat",
+    "darkgate",
+    "amadyey",
+    "latrodectus"
+  ];
+
+  return patterns.filter((pattern) => text.includes(pattern));
+}
+
+function canonicalUrl(url) {
+  try {
+    const parsed = new URL(url);
+    parsed.hash = "";
+
+    const removableParams = [
+      "utm_source",
+      "utm_medium",
+      "utm_campaign",
+      "utm_term",
+      "utm_content",
+      "fbclid",
+      "gclid",
+      "mc_cid",
+      "mc_eid"
+    ];
+
+    for (const param of removableParams) {
+      parsed.searchParams.delete(param);
+    }
+
+    return parsed.toString().replace(/\/$/, "");
+  } catch {
+    return "";
+  }
 }
 
 function jaccardSimilarity(a, b) {
@@ -583,6 +713,125 @@ function jaccardSimilarity(a, b) {
 
   const union = new Set([...setA, ...setB]).size;
   return intersection / union;
+}
+
+function tokenOverlapScore(aTokens, bTokens) {
+  const a = new Set(aTokens);
+  const b = new Set(bTokens);
+
+  if (!a.size || !b.size) {
+    return 0;
+  }
+
+  let intersection = 0;
+
+  for (const token of a) {
+    if (b.has(token)) {
+      intersection++;
+    }
+  }
+
+  const smaller = Math.min(a.size, b.size);
+  return intersection / smaller;
+}
+
+function jaccardTokenScore(aTokens, bTokens) {
+  const a = new Set(aTokens);
+  const b = new Set(bTokens);
+
+  if (!a.size || !b.size) {
+    return 0;
+  }
+
+  let intersection = 0;
+
+  for (const token of a) {
+    if (b.has(token)) {
+      intersection++;
+    }
+  }
+
+  const union = new Set([...a, ...b]).size;
+  return intersection / union;
+}
+
+function areLikelyDuplicateItems(a, b) {
+  const aUrl = canonicalUrl(a.link || a.url || "");
+  const bUrl = canonicalUrl(b.link || b.url || "");
+
+  if (aUrl && bUrl && aUrl === bUrl) {
+    return true;
+  }
+
+  const aTitle = normalizeForDedupe(a.title || "");
+  const bTitle = normalizeForDedupe(b.title || "");
+
+  if (aTitle && bTitle && aTitle === bTitle) {
+    return true;
+  }
+
+  const aCves = extractCves(a);
+  const bCves = extractCves(b);
+  const sharedCves = aCves.filter((cve) => bCves.includes(cve));
+
+  const aSignals = extractNamedSignals(a);
+  const bSignals = extractNamedSignals(b);
+  const sharedSignals = aSignals.filter((signal) => bSignals.includes(signal));
+
+  const aTokens = getDedupeTokens(a);
+  const bTokens = getDedupeTokens(b);
+
+  const titleSimilarity = jaccardTokenScore(
+    getDedupeTokens({ title: a.title || "", summary: "" }),
+    getDedupeTokens({ title: b.title || "", summary: "" })
+  );
+
+  const fullJaccard = jaccardTokenScore(aTokens, bTokens);
+  const overlap = tokenOverlapScore(aTokens, bTokens);
+
+  if (sharedCves.length && (titleSimilarity >= 0.25 || fullJaccard >= 0.22 || overlap >= 0.45)) {
+    return true;
+  }
+
+  if (sharedSignals.length >= 2 && (titleSimilarity >= 0.32 || fullJaccard >= 0.28 || overlap >= 0.5)) {
+    return true;
+  }
+
+  if (titleSimilarity >= 0.62) {
+    return true;
+  }
+
+  if (fullJaccard >= 0.48 || overlap >= 0.72) {
+    return true;
+  }
+
+  return false;
+}
+
+function dedupeItems(items) {
+  const sorted = items
+    .slice()
+    .sort((a, b) => {
+      const scoreDiff = scoreItem(b) - scoreItem(a);
+
+      if (scoreDiff !== 0) {
+        return scoreDiff;
+      }
+
+      return getItemTime(b) - getItemTime(a);
+    });
+
+  const selected = [];
+
+  for (const item of sorted) {
+    const duplicate = selected.some((existing) => areLikelyDuplicateItems(item, existing));
+
+    if (!duplicate) {
+      selected.push(item);
+    }
+  }
+
+  return selected;
 }
 
 function getThemeKey(item) {
@@ -695,6 +944,220 @@ function getThemeKey(item) {
   return {
     key: "other_recent_threat_signal",
     label: "Other Recent Threat Signal"
+  };
+}
+
+function getThreatCategory(item) {
+  const title = String(item.title || "").toLowerCase();
+  const summary = stripHtml(item.summary || "").toLowerCase();
+  const category = String(item.category || "").toLowerCase();
+  const source = String(item.source || "").toLowerCase();
+  const text = `${title} ${summary} ${category} ${source}`;
+
+  const rules = [
+    {
+      key: "breach_incident",
+      label: "Breach / Incident",
+      priority: 100,
+      patterns: [
+        "breach",
+        "data breach",
+        "data leak",
+        "leaked",
+        "exposed",
+        "stolen",
+        "unauthorized access",
+        "intrusion",
+        "incident",
+        "compromised",
+        "exfiltration"
+      ]
+    },
+    {
+      key: "active_exploitation",
+      label: "Active Exploitation",
+      priority: 95,
+      patterns: [
+        "active exploitation",
+        "actively exploited",
+        "exploited in the wild",
+        "in the wild",
+        "zero-day",
+        "zero day",
+        "0-day",
+        "weaponized",
+        "mass exploitation"
+      ]
+    },
+    {
+      key: "vulnerability_exploitability",
+      label: "Vulnerability / Exploitability",
+      priority: 85,
+      patterns: [
+        "cve-",
+        "rce",
+        "remote code execution",
+        "privilege escalation",
+        "proof-of-concept",
+        "poc exploit",
+        "exploit",
+        "exploitation",
+        "critical vulnerability",
+        "high-severity vulnerability"
+      ]
+    },
+    {
+      key: "ransomware_extortion",
+      label: "Ransomware / Extortion",
+      priority: 80,
+      patterns: [
+        "ransomware",
+        "extortion",
+        "double extortion",
+        "encryptor",
+        "ransom note",
+        "leak site",
+        "victim"
+      ]
+    },
+    {
+      key: "malware_infrastructure",
+      label: "Malware / Infrastructure",
+      priority: 75,
+      patterns: [
+        "malware",
+        "backdoor",
+        "loader",
+        "stealer",
+        "infostealer",
+        "trojan",
+        "botnet",
+        "worm",
+        "implant",
+        "command and control",
+        "c2"
+      ]
+    },
+    {
+      key: "phishing_social_engineering",
+      label: "Phishing / Social Engineering",
+      priority: 70,
+      patterns: [
+        "phishing",
+        "social engineering",
+        "bec",
+        "business email compromise",
+        "clickfix",
+        "fake captcha",
+        "qr code",
+        "credential harvesting"
+      ]
+    },
+    {
+      key: "identity_cloud_abuse",
+      label: "Identity / Cloud Abuse",
+      priority: 65,
+      patterns: [
+        "credential theft",
+        "token theft",
+        "oauth",
+        "session hijacking",
+        "cloud credentials",
+        "service account",
+        "identity provider",
+        "idp",
+        "sso",
+        "mfa bypass",
+        "aws",
+        "azure",
+        "google cloud",
+        "kubernetes"
+      ]
+    },
+    {
+      key: "apt_geopolitical",
+      label: "APT / Geopolitical",
+      priority: 60,
+      patterns: [
+        "apt",
+        "state-sponsored",
+        "state sponsored",
+        "nation-state",
+        "nation state",
+        "espionage",
+        "china-linked",
+        "russia-linked",
+        "iran-linked",
+        "north korea",
+        "north korean"
+      ]
+    },
+    {
+      key: "ai_security",
+      label: "AI Security",
+      priority: 55,
+      patterns: [
+        "prompt injection",
+        "llm",
+        "agentic",
+        "ai agent",
+        "model exploitation",
+        "model abuse",
+        "mcp",
+        "coding agent",
+        "claude code",
+        "copilot cli",
+        "cursor",
+        "gemini cli"
+      ]
+    },
+    {
+      key: "detection_response",
+      label: "Detection / Response",
+      priority: 45,
+      patterns: [
+        "detection",
+        "hunting",
+        "sigma",
+        "yara",
+        "suricata",
+        "incident response",
+        "dfir",
+        "forensics",
+        "telemetry"
+      ]
+    },
+    {
+      key: "policy_strategy",
+      label: "Policy / Strategy",
+      priority: 20,
+      patterns: [
+        "regulation",
+        "policy",
+        "law",
+        "sanctions",
+        "advisory",
+        "guidance",
+        "framework",
+        "strategy"
+      ]
+    }
+  ];
+
+  const matches = rules
+    .filter((rule) => rule.patterns.some((pattern) => text.includes(pattern)))
+    .sort((a, b) => b.priority - a.priority);
+
+  if (matches.length) {
+    return {
+      key: matches[0].key,
+      label: matches[0].label
+    };
+  }
+
+  return {
+    key: "other_threat_signal",
+    label: "Other Threat Signal"
   };
 }
 
@@ -909,32 +1372,6 @@ function getIndustryTags(item) {
   return [{ key: "cross_industry", label: "Cross-Industry" }];
 }
 
-function groupItemsByTheme(items) {
-  const groups = new Map();
-
-  for (const item of items) {
-    const theme = getThemeKey(item);
-
-    if (!groups.has(theme.key)) {
-      groups.set(theme.key, {
-        key: theme.key,
-        label: theme.label,
-        items: []
-      });
-    }
-
-    groups.get(theme.key).items.push(item);
-  }
-
-  return Array.from(groups.values())
-    .map((group) => ({
-      ...group,
-      items: group.items.sort((a, b) => getItemTime(b) - getItemTime(a)),
-      newest: Math.max(...group.items.map(getItemTime))
-    }))
-    .sort((a, b) => b.newest - a.newest);
-}
-
 function groupItemsByIndustry(items) {
   const groups = new Map();
 
@@ -957,7 +1394,72 @@ function groupItemsByIndustry(items) {
   return Array.from(groups.values())
     .map((group) => ({
       ...group,
-      items: group.items.sort((a, b) => getItemTime(b) - getItemTime(a)),
+      items: group.items.sort((a, b) => scoreItem(b) - scoreItem(a)),
+      newest: Math.max(...group.items.map(getItemTime))
+    }))
+    .sort((a, b) => {
+      if (b.items.length !== a.items.length) {
+        return b.items.length - a.items.length;
+      }
+
+      return b.newest - a.newest;
+    });
+}
+
+function groupItemsByThreatCategory(items) {
+  const groups = new Map();
+
+  for (const item of items) {
+    const threatCategory = getThreatCategory(item);
+
+    if (!groups.has(threatCategory.key)) {
+      groups.set(threatCategory.key, {
+        key: threatCategory.key,
+        label: threatCategory.label,
+        items: []
+      });
+    }
+
+    groups.get(threatCategory.key).items.push(item);
+  }
+
+  return Array.from(groups.values())
+    .map((group) => ({
+      ...group,
+      items: group.items.sort((a, b) => scoreItem(b) - scoreItem(a)),
+      newest: Math.max(...group.items.map(getItemTime))
+    }))
+    .sort((a, b) => {
+      if (b.items.length !== a.items.length) {
+        return b.items.length - a.items.length;
+      }
+
+      return b.newest - a.newest;
+    });
+}
+
+function groupItemsBySourceCohort(items) {
+  const groups = new Map();
+
+  for (const item of items) {
+    const key = item.category || "uncategorized";
+    const label = formatCategory(key);
+
+    if (!groups.has(key)) {
+      groups.set(key, {
+        key,
+        label,
+        items: []
+      });
+    }
+
+    groups.get(key).items.push(item);
+  }
+
+  return Array.from(groups.values())
+    .map((group) => ({
+      ...group,
+      items: group.items.sort((a, b) => scoreItem(b) - scoreItem(a)),
       newest: Math.max(...group.items.map(getItemTime))
     }))
     .sort((a, b) => {
@@ -994,6 +1496,7 @@ function scoreItem(item) {
   if (category.includes("offensive")) score += 28;
   if (category.includes("ransomware") || category.includes("ecrime")) score += 26;
   if (category.includes("detection")) score += 22;
+  if (category.includes("cloud") || category.includes("identity")) score += 14;
   if (category.includes("reddit")) score -= 25;
 
   const highImpactTerms = [
@@ -1086,7 +1589,12 @@ function scoreItem(item) {
     "talos",
     "sophos",
     "rapid7",
-    "watchtowr"
+    "watchtowr",
+    "greynoise",
+    "shadowserver",
+    "vulncheck",
+    "akamai",
+    "cloudflare"
   ];
 
   for (const vendor of prioritySources) {
@@ -1107,54 +1615,43 @@ function selectTopUniqueInsights(items, limit = 10) {
     .filter((item) => item.title || item.summary)
     .filter(isThreatIntelRelevant)
     .filter(isBreachOrThreatInsight)
-    .filter((item) => !isProductMarketingOrPositioning(item))
-    .map((item) => ({
-      item,
-      score: scoreItem(item),
-      keywords: getKeywords(item),
-      domain: domainFromUrl(item.link || item.url || ""),
-      theme: getThemeKey(item).key
-    }))
-    .sort((a, b) => {
-      if (b.score !== a.score) {
-        return b.score - a.score;
-      }
+    .filter((item) => !isProductMarketingOrPositioning(item));
 
-      return getItemTime(b.item) - getItemTime(a.item);
-    });
+  const deduped = dedupeItems(candidates);
 
   const selected = [];
+  const threatCategoryCounts = new Map();
+  const themeCounts = new Map();
 
-  for (const candidate of candidates) {
-    const isDuplicate = selected.some((chosen) => {
-      const sameDomain = candidate.domain && candidate.domain === chosen.domain;
-      const sameTheme = candidate.theme === chosen.theme;
+  for (const item of deduped) {
+    const threatCategory = getThreatCategory(item).key;
+    const theme = getThemeKey(item).key;
 
-      const titleSimilarity = jaccardSimilarity(
-        getKeywords({ title: candidate.item.title, summary: "" }),
-        getKeywords({ title: chosen.item.title, summary: "" })
-      );
+    const threatCategoryCount = threatCategoryCounts.get(threatCategory) || 0;
+    const themeCount = themeCounts.get(theme) || 0;
 
-      const fullSimilarity = jaccardSimilarity(candidate.keywords, chosen.keywords);
-
-      return (
-        titleSimilarity >= 0.55 ||
-        fullSimilarity >= 0.5 ||
-        (sameDomain && fullSimilarity >= 0.38) ||
-        (sameTheme && fullSimilarity >= 0.42)
-      );
-    });
-
-    if (!isDuplicate) {
-      selected.push(candidate);
+    if (threatCategoryCount >= 3) {
+      continue;
     }
+
+    if (themeCount >= 2) {
+      continue;
+    }
+
+    selected.push(item);
+    threatCategoryCounts.set(threatCategory, threatCategoryCount + 1);
+    themeCounts.set(theme, themeCount + 1);
 
     if (selected.length >= limit) {
       break;
     }
   }
 
-  return selected.map((entry) => entry.item);
+  return selected;
+}
+
+function renderFilterChip({ label, key, type, count }) {
+  return `<button class="filter-chip" type="button" data-filter-type="${escapeHtml(type)}" data-filter-key="${escapeHtml(key)}">${escapeHtml(label)} <span>${escapeHtml(count)}</span></button>`;
 }
 
 function buildInsight(item, index) {
@@ -1165,6 +1662,7 @@ function buildInsight(item, index) {
   const link = item.link || item.url || "";
   const published = item.published || "";
   const theme = getThemeKey(item);
+  const threatCategory = getThreatCategory(item);
   const industries = getIndustryTags(item);
 
   const insightText = summary
@@ -1172,18 +1670,26 @@ function buildInsight(item, index) {
     : `Relevant threat signal from ${source} in ${formatCategory(category)}.`;
 
   return `
-    <article class="insight" data-category="${escapeHtml(category)}" data-source="${escapeHtml(source)}" data-theme="${escapeHtml(theme.key)}" data-industries="${escapeHtml(industries.map((industry) => industry.key).join(" "))}">
+    <article
+      class="insight"
+      data-category="${escapeHtml(category)}"
+      data-source="${escapeHtml(source)}"
+      data-theme="${escapeHtml(theme.key)}"
+      data-threat-category="${escapeHtml(threatCategory.key)}"
+      data-industries="${escapeHtml(industries.map((industry) => industry.key).join(" "))}"
+    >
       <div class="rank">#${index + 1}</div>
       <div class="insight-body">
         <div class="insight-meta">
+          <span>${escapeHtml(threatCategory.label)}</span>
           <span>${escapeHtml(theme.label)}</span>
-          <span>${escapeHtml(formatCategory(category))}</span>
           <span>${escapeHtml(source)}</span>
           ${published ? `<time datetime="${escapeHtml(published)}">${escapeHtml(formatDate(published))}</time>` : ""}
         </div>
         <div class="tag-row">
+          <button class="threat-tag" type="button" data-filter-type="threat" data-filter-key="${escapeHtml(threatCategory.key)}">${escapeHtml(threatCategory.label)}</button>
           ${industries
-            .map((industry) => `<a class="industry-tag" href="#industry-${escapeHtml(industry.key)}">${escapeHtml(industry.label)}</a>`)
+            .map((industry) => `<button class="industry-tag" type="button" data-filter-type="industry" data-filter-key="${escapeHtml(industry.key)}">${escapeHtml(industry.label)}</button>`)
             .join("")}
         </div>
         <h3>${link ? `<a href="${escapeHtml(link)}" ${externalLinkAttrs()}>${escapeHtml(title)}</a>` : escapeHtml(title)}</h3>
@@ -1203,6 +1709,7 @@ function renderLineItem(item, index) {
   const summary = stripHtml(item.summary || "");
   const compactSummary = summary.length > 280 ? `${summary.slice(0, 280)}...` : summary;
   const theme = getThemeKey(item);
+  const threatCategory = getThreatCategory(item);
   const industries = getIndustryTags(item);
 
   return `
@@ -1212,6 +1719,7 @@ function renderLineItem(item, index) {
       data-source="${escapeHtml(source)}"
       data-category="${escapeHtml(category)}"
       data-theme="${escapeHtml(theme.key)}"
+      data-threat-category="${escapeHtml(threatCategory.key)}"
       data-industries="${escapeHtml(industries.map((industry) => industry.key).join(" "))}"
       data-published="${escapeHtml(published)}"
       itemscope
@@ -1223,8 +1731,9 @@ function renderLineItem(item, index) {
         </h4>
         ${compactSummary ? `<p itemprop="description">${escapeHtml(compactSummary)}</p>` : ""}
         <div class="tag-row">
+          <button class="threat-tag" type="button" data-filter-type="threat" data-filter-key="${escapeHtml(threatCategory.key)}">${escapeHtml(threatCategory.label)}</button>
           ${industries
-            .map((industry) => `<a class="industry-tag" href="#industry-${escapeHtml(industry.key)}">${escapeHtml(industry.label)}</a>`)
+            .map((industry) => `<button class="industry-tag" type="button" data-filter-type="industry" data-filter-key="${escapeHtml(industry.key)}">${escapeHtml(industry.label)}</button>`)
             .join("")}
         </div>
       </div>
@@ -1233,6 +1742,10 @@ function renderLineItem(item, index) {
         <div>
           <dt>Source</dt>
           <dd itemprop="publisher">${escapeHtml(source)}</dd>
+        </div>
+        <div>
+          <dt>Cohort</dt>
+          <dd>${escapeHtml(formatCategory(category))}</dd>
         </div>
         ${author ? `
         <div>
@@ -1249,20 +1762,6 @@ function renderLineItem(item, index) {
         </div>
       </dl>
     </li>
-  `;
-}
-
-function renderThemeGroup(group, categoryIndex) {
-  return `
-    <section class="theme-group" data-theme="${escapeHtml(group.key)}">
-      <div class="theme-heading">
-        <h3>${escapeHtml(group.label)}</h3>
-        <span>${group.items.length} related item${group.items.length === 1 ? "" : "s"}</span>
-      </div>
-      <ol class="feed-lines">
-        ${group.items.map((item, index) => renderLineItem(item, `${categoryIndex}-${index}`)).join("")}
-      </ol>
-    </section>
   `;
 }
 
@@ -1292,115 +1791,87 @@ const parseErrors = Object.entries(feedStatus)
   .filter(([, source]) => source.status && source.status !== "ok")
   .map(([name, source]) => ({ name, ...source }));
 
-const categoryPriority = [
-  "threat_research_primary",
-  "offensive_vulnerability_research",
-  "detection_response_operations",
-  "ransomware_ecrime_financial_crime",
-  "cyber_news_breach_reporting",
-  "reddit_practitioner_osint",
-  "ai_security_agentic_risk"
-];
-
-function sortCategories(a, b) {
-  const aLower = String(a).toLowerCase();
-  const bLower = String(b).toLowerCase();
-
-  const aPriority = categoryPriority.findIndex((priority) => aLower === priority);
-  const bPriority = categoryPriority.findIndex((priority) => bLower === priority);
-
-  const normalizedAPriority = aPriority === -1 ? 999 : aPriority;
-  const normalizedBPriority = bPriority === -1 ? 999 : bPriority;
-
-  if (normalizedAPriority !== normalizedBPriority) {
-    return normalizedAPriority - normalizedBPriority;
-  }
-
-  return aLower.localeCompare(bLower);
-}
-
-const categories = [...new Set(items.map((item) => item.category).filter(Boolean))].sort(sortCategories);
 const latestItems = items.slice().sort((a, b) => getItemTime(b) - getItemTime(a));
-const topInsights = selectTopUniqueInsights(latestItems, 10);
-const industryGroups = groupItemsByIndustry(latestItems);
+const dedupedLatestItems = dedupeItems(latestItems);
+const topInsights = selectTopUniqueInsights(dedupedLatestItems, 10);
+const industryGroups = groupItemsByIndustry(dedupedLatestItems);
+const threatCategoryGroups = groupItemsByThreatCategory(dedupedLatestItems);
+const sourceCohortGroups = groupItemsBySourceCohort(dedupedLatestItems);
 
 const languageFilteredOutCount = allItems.length - languageFilteredItems.length;
 const dateFilteredOutCount = languageFilteredItems.length - dateFilteredItems.length;
 const ctiFilteredOutCount = dateFilteredItems.length - items.length;
-const totalFilteredOutCount = allItems.length - items.length;
+const dedupeFilteredOutCount = items.length - dedupedLatestItems.length;
+const totalFilteredOutCount = allItems.length - dedupedLatestItems.length;
 
-const industryNav = industryGroups
-  .map((industry) => {
-    return `<a class="chip" href="#industry-${escapeHtml(industry.key)}">${escapeHtml(industry.label)} <span>${industry.items.length}</span></a>`;
-  })
+const threatCategoryNav = threatCategoryGroups
+  .map((threatCategory) =>
+    renderFilterChip({
+      label: threatCategory.label,
+      key: threatCategory.key,
+      type: "threat",
+      count: threatCategory.items.length
+    })
+  )
   .join("");
 
-const categoryNav = categories
-  .map((category) => {
-    const count = items.filter((item) => item.category === category).length;
-    return `<a class="chip" href="#${escapeHtml(slugify(category))}">${escapeHtml(formatCategory(category))} <span>${count}</span></a>`;
-  })
+const industryNav = industryGroups
+  .map((industry) =>
+    renderFilterChip({
+      label: industry.label,
+      key: industry.key,
+      type: "industry",
+      count: industry.items.length
+    })
+  )
+  .join("");
+
+const cohortFilterNav = sourceCohortGroups
+  .map((cohort) =>
+    renderFilterChip({
+      label: cohort.label,
+      key: cohort.key,
+      type: "cohort",
+      count: cohort.items.length
+    })
+  )
   .join("");
 
 const cohortCards = Object.entries(cohorts)
   .map(([key, cohort]) => {
-    const sectionId = slugify(key);
+    const count = dedupedLatestItems.filter((item) => item.category === key).length;
 
     return `
-      <a class="cohort-card" href="#${escapeHtml(sectionId)}" data-cohort="${escapeHtml(key)}">
+      <button class="cohort-card" type="button" data-filter-type="cohort" data-filter-key="${escapeHtml(key)}">
         <h3>${escapeHtml(formatCategory(key))}</h3>
         <p>${escapeHtml(cohort.description || "")}</p>
-        <div class="small-meta">${escapeHtml(cohort.source_count || 0)} configured sources</div>
-      </a>
+        <div class="small-meta">${escapeHtml(cohort.source_count || 0)} configured sources · ${escapeHtml(count)} rendered items</div>
+      </button>
     `;
   })
   .join("");
 
-const industrySections = `
-  <section class="panel" id="industry-view">
-    <h2>Industry View</h2>
-    <p class="panel-intro">
-      Items are mapped to likely affected industries based on title, summary, source, category, and threat context. Tags are heuristic, intended for triage and briefing workflows, not definitive sector attribution.
+const articleCorpus = `
+  <section class="panel" id="article-corpus">
+    <h2>Article Corpus</h2>
+    <p class="panel-intro" id="active-filter-label">
+      Showing ${dedupedLatestItems.length} deduplicated CTI items from the last ${LOOKBACK_DAYS} days. Use the filters to assemble views by threat category, industry, or source cohort.
     </p>
 
-    ${industryGroups
-      .map((industry) => {
-        return `
-          <section class="theme-group" id="industry-${escapeHtml(industry.key)}">
-            <div class="theme-heading">
-              <h3>${escapeHtml(industry.label)}</h3>
-              <span>${industry.items.length} related item${industry.items.length === 1 ? "" : "s"}</span>
-            </div>
-            <ol class="feed-lines">
-              ${industry.items
-                .slice(0, 12)
-                .map((item, index) => renderLineItem(item, `${industry.key}-${index}`))
-                .join("")}
-            </ol>
-          </section>
-        `;
-      })
-      .join("")}
+    <div class="filter-toolbar" aria-label="Dynamic filters">
+      <button class="filter-chip active" type="button" data-filter-type="all" data-filter-key="all">All <span>${dedupedLatestItems.length}</span></button>
+      ${threatCategoryNav}
+      ${industryNav}
+      ${cohortFilterNav}
+    </div>
+
+    <ol class="feed-lines dynamic-feed-lines" id="dynamic-feed-lines">
+      ${dedupedLatestItems
+        .map((item, index) => renderLineItem(item, `deduped-${index}`))
+        .join("")}
+    </ol>
   </section>
 `;
-
-const sections = categories
-  .map((category, categoryIndex) => {
-    const categoryItems = latestItems.filter((item) => item.category === category);
-    const themeGroups = groupItemsByTheme(categoryItems);
-
-    return `
-      <section class="category-section" id="${escapeHtml(slugify(category))}">
-        <div class="section-heading">
-          <h2>${escapeHtml(formatCategory(category))}</h2>
-          <span>${categoryItems.length} CTI items from the last ${LOOKBACK_DAYS} days</span>
-        </div>
-
-        ${themeGroups.map((group) => renderThemeGroup(group, categoryIndex)).join("")}
-      </section>
-    `;
-  })
-  .join("");
 
 const parseErrorBlock = parseErrors.length
   ? `
@@ -1423,7 +1894,8 @@ const parseErrorBlock = parseErrors.length
         <li>${escapeHtml(languageFilteredOutCount)} removed by language/source rules.</li>
         <li>${escapeHtml(dateFilteredOutCount)} removed by date window.</li>
         <li>${escapeHtml(ctiFilteredOutCount)} removed as non-CTI.</li>
-        <li>${escapeHtml(totalFilteredOutCount)} total items filtered out.</li>
+        <li>${escapeHtml(dedupeFilteredOutCount)} removed by deduplication.</li>
+        <li>${escapeHtml(totalFilteredOutCount)} total items filtered out before rendering.</li>
       </ul>
     </section>
   `
@@ -1437,7 +1909,8 @@ const parseErrorBlock = parseErrors.length
         <li>${escapeHtml(languageFilteredOutCount)} removed by language/source rules.</li>
         <li>${escapeHtml(dateFilteredOutCount)} removed by date window.</li>
         <li>${escapeHtml(ctiFilteredOutCount)} removed as non-CTI.</li>
-        <li>${escapeHtml(totalFilteredOutCount)} total items filtered out.</li>
+        <li>${escapeHtml(dedupeFilteredOutCount)} removed by deduplication.</li>
+        <li>${escapeHtml(totalFilteredOutCount)} total items filtered out before rendering.</li>
       </ul>
     </section>
   `;
@@ -1447,10 +1920,10 @@ const jsonLd = {
   "@type": "ItemList",
   name: "Wolfram Threatstream Feed",
   description:
-    "Curated cyber news and threat insight feed. Items are limited to the last 7 days, filtered for CTI relevance, mapped to likely affected industries, ordered newest first, and grouped by logical threat affinity.",
+    "Curated cyber news and threat insight feed. Items are limited to the last 7 days, filtered for CTI relevance, deduplicated, tagged by likely affected industry and threat category, and dynamically filterable.",
   dateModified: generatedAt,
-  numberOfItems: items.length,
-  itemListElement: latestItems.map((item, index) => ({
+  numberOfItems: dedupedLatestItems.length,
+  itemListElement: dedupedLatestItems.map((item, index) => ({
     "@type": "ListItem",
     position: index + 1,
     item: {
@@ -1460,10 +1933,11 @@ const jsonLd = {
       datePublished: item.published || "",
       author: item.author || "",
       publisher: item.source || "",
-      articleSection: item.category || "",
+      articleSection: getThreatCategory(item).label,
       description: stripHtml(item.summary || ""),
       keywords: [
         ...getKeywords(item),
+        getThreatCategory(item).label,
         ...getIndustryTags(item).map((industry) => industry.label)
       ].join(", ")
     }
@@ -1476,7 +1950,7 @@ const html = `<!doctype html>
   <meta charset="utf-8">
   <title>Wolfram Threatstream Feed</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Curated English-language cyber threat intelligence feed. Last 7 days only. CTI-relevant items only. Mapped by likely affected industry.">
+  <meta name="description" content="Curated English-language cyber threat intelligence feed. Last 7 days only. CTI-relevant items only. Deduplicated and dynamically filterable by threat category, industry, and source cohort.">
   <meta name="robots" content="index, follow">
 
   <script type="application/ld+json">
@@ -1528,6 +2002,10 @@ ${JSON.stringify(jsonLd, null, 2)}
 
     code {
       color: var(--accent);
+    }
+
+    button {
+      font: inherit;
     }
 
     main {
@@ -1626,8 +2104,7 @@ ${JSON.stringify(jsonLd, null, 2)}
 
     .panel h2,
     .insights-panel h2,
-    .status-panel h2,
-    .category-section h2 {
+    .status-panel h2 {
       margin: 0 0 12px;
       letter-spacing: -0.035em;
     }
@@ -1646,23 +2123,25 @@ ${JSON.stringify(jsonLd, null, 2)}
 
     .cohort-card {
       display: block;
+      text-align: left;
+      width: 100%;
       border: 1px solid var(--line);
       background: rgba(255, 255, 255, 0.045);
       border-radius: 18px;
       padding: 16px;
       color: var(--text);
-      text-decoration: none;
+      cursor: pointer;
       transition:
         transform 140ms ease,
         border-color 140ms ease,
         background 140ms ease;
     }
 
-    .cohort-card:hover {
+    .cohort-card:hover,
+    .cohort-card.active {
       transform: translateY(-2px);
       border-color: rgba(107, 231, 255, 0.45);
       background: rgba(107, 231, 255, 0.07);
-      text-decoration: none;
     }
 
     .cohort-card h3 {
@@ -1732,6 +2211,13 @@ ${JSON.stringify(jsonLd, null, 2)}
       color: #dbe8fb;
     }
 
+    .filter-toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin: 18px 0 20px;
+    }
+
     .tag-row {
       display: flex;
       flex-wrap: wrap;
@@ -1739,72 +2225,37 @@ ${JSON.stringify(jsonLd, null, 2)}
       margin: 8px 0 10px;
     }
 
+    .filter-chip,
+    .threat-tag,
     .industry-tag {
       border: 1px solid rgba(107, 231, 255, 0.28);
       background: rgba(107, 231, 255, 0.08);
       color: #c9f6ff;
       border-radius: 999px;
-      padding: 4px 8px;
-      font-size: 0.74rem;
+      padding: 7px 10px;
+      font-size: 0.78rem;
       font-weight: 700;
       letter-spacing: 0.03em;
-      text-decoration: none;
+      cursor: pointer;
     }
 
-    .industry-tag:hover {
-      border-color: rgba(107, 231, 255, 0.55);
-      background: rgba(107, 231, 255, 0.14);
-      text-decoration: none;
-    }
-
-    .category-section {
-      margin-top: 30px;
-    }
-
-    .section-heading {
-      display: flex;
-      align-items: baseline;
-      justify-content: space-between;
-      gap: 18px;
-      border-bottom: 1px solid var(--line);
-      padding-bottom: 12px;
-      margin-bottom: 16px;
-    }
-
-    .section-heading span {
-      color: var(--muted);
-      white-space: nowrap;
-    }
-
-    .theme-group {
-      border: 1px solid var(--line);
-      background: rgba(255, 255, 255, 0.035);
-      border-radius: 20px;
-      padding: 16px;
-      margin-bottom: 16px;
-    }
-
-    .theme-heading {
-      display: flex;
-      align-items: baseline;
-      justify-content: space-between;
-      gap: 16px;
-      border-bottom: 1px solid var(--line);
-      padding-bottom: 10px;
-      margin-bottom: 12px;
-    }
-
-    .theme-heading h3 {
-      margin: 0;
+    .filter-chip span {
       color: var(--accent);
-      font-size: 1rem;
-      letter-spacing: -0.02em;
+      margin-left: 5px;
     }
 
-    .theme-heading span {
-      color: var(--muted);
-      font-size: 0.86rem;
-      white-space: nowrap;
+    .filter-chip:hover,
+    .filter-chip.active,
+    .threat-tag:hover,
+    .industry-tag:hover {
+      border-color: rgba(107, 231, 255, 0.58);
+      background: rgba(107, 231, 255, 0.16);
+    }
+
+    .threat-tag {
+      border-color: rgba(120, 170, 255, 0.32);
+      background: rgba(120, 170, 255, 0.1);
+      color: #d8e6ff;
     }
 
     .feed-lines {
@@ -1823,6 +2274,10 @@ ${JSON.stringify(jsonLd, null, 2)}
       display: grid;
       grid-template-columns: minmax(0, 1fr) minmax(260px, 34%);
       gap: 18px;
+    }
+
+    .feed-line[hidden] {
+      display: none;
     }
 
     .feed-line h4 {
@@ -1896,11 +2351,6 @@ ${JSON.stringify(jsonLd, null, 2)}
       .insight {
         grid-template-columns: 1fr;
       }
-
-      .section-heading,
-      .theme-heading {
-        display: block;
-      }
     }
 
     @media (max-width: 640px) {
@@ -1922,13 +2372,13 @@ ${JSON.stringify(jsonLd, null, 2)}
       <div class="eyebrow">Strategic Cyber Threat Intelligence Feed</div>
       <h1>Wolfram Threatstream Feed</h1>
       <p class="subtitle">
-        Curated English-language cyber threat intelligence insights from the last ${LOOKBACK_DAYS} days. Items are filtered for CTI relevance, mapped by likely affected industry, ordered newest first, deduplicated across repeated coverage, and grouped by logical threat affinity.
+        Curated English-language cyber threat intelligence insights from the last ${LOOKBACK_DAYS} days. Items are filtered for CTI relevance, aggressively deduplicated, tagged by threat category and likely affected industry, and dynamically assembled by filter.
       </p>
 
       <div class="stats" aria-label="Feed status summary">
         <div class="stat">
-          <strong>${escapeHtml(items.length)}</strong>
-          <span>Rendered CTI items from last ${LOOKBACK_DAYS} days</span>
+          <strong>${escapeHtml(dedupedLatestItems.length)}</strong>
+          <span>Deduplicated CTI items from last ${LOOKBACK_DAYS} days</span>
         </div>
         <div class="stat">
           <strong>${escapeHtml(totalSources)}</strong>
@@ -1944,9 +2394,8 @@ ${JSON.stringify(jsonLd, null, 2)}
     <nav class="utility-links" aria-label="Feed navigation">
       <a class="button-link" href="./feed.json" ${externalLinkAttrs()}>Raw JSON feed</a>
       <a class="button-link" href="#top-insights">Top 10 Breaches and Threat Insights</a>
-      <a class="button-link" href="#industry-view">Industry View</a>
-      ${industryNav}
-      ${categoryNav}
+      <a class="button-link" href="#source-cohorts">Source Cohorts</a>
+      <a class="button-link" href="#article-corpus">Article Corpus</a>
       <a class="button-link" href="#source-health">Source health</a>
     </nav>
 
@@ -1960,42 +2409,110 @@ ${JSON.stringify(jsonLd, null, 2)}
       </div>
     </section>
 
-    <section class="panel">
+    <section class="panel" id="source-cohorts">
       <h2>Source Cohorts</h2>
       <p class="panel-intro">
-        Feed sources are grouped by cohort so humans and agents can understand the source mix behind the current briefing. The rendered page excludes non-English sources and non-CTI items.
+        Source cohorts describe where the signal came from. Click a tile to assemble the matching deduplicated articles below. Cohorts are ingestion lanes, not the article taxonomy.
       </p>
       <div class="cohort-grid">
         ${cohortCards}
       </div>
     </section>
 
-    ${industrySections}
-
-    ${sections}
+    ${articleCorpus}
 
     ${parseErrorBlock}
 
     <footer>
       <p>
         This page is generated from <code>docs/feed.json</code>. The rendered HTML is designed for human review,
-        search indexing, and agent knowledge ingestion. The rendered page is English-only, limited to the last ${LOOKBACK_DAYS} days, CTI-filtered, industry-mapped, ordered newest first, and grouped by logical threat affinity.
+        search indexing, and M365 Agent Builder knowledge ingestion. The rendered page is English-only, limited to the last ${LOOKBACK_DAYS} days, CTI-filtered, deduplicated, industry-tagged, threat-categorized, and dynamically filterable.
       </p>
       <p>
         Generated at: ${escapeHtml(formatDate(generatedAt))}
       </p>
     </footer>
   </main>
+
+  <script>
+    const filterButtons = Array.from(document.querySelectorAll("[data-filter-type][data-filter-key]"));
+    const feedItems = Array.from(document.querySelectorAll("#dynamic-feed-lines .feed-line"));
+    const activeFilterLabel = document.getElementById("active-filter-label");
+
+    function labelForButton(button) {
+      if (!button) {
+        return "All";
+      }
+
+      return button.textContent.replace(/\\s+\\d+$/, "").trim();
+    }
+
+    function applyFilter(type, key, button) {
+      let visibleCount = 0;
+
+      for (const item of feedItems) {
+        const itemThreatCategory = item.dataset.threatCategory || "";
+        const itemCohort = item.dataset.category || "";
+        const itemIndustries = (item.dataset.industries || "").split(" ").filter(Boolean);
+
+        const shouldShow =
+          type === "all" ||
+          (type === "threat" && itemThreatCategory === key) ||
+          (type === "industry" && itemIndustries.includes(key)) ||
+          (type === "cohort" && itemCohort === key);
+
+        item.hidden = !shouldShow;
+
+        if (shouldShow) {
+          visibleCount++;
+        }
+      }
+
+      for (const candidate of filterButtons) {
+        candidate.classList.remove("active");
+      }
+
+      for (const candidate of filterButtons) {
+        if (candidate.dataset.filterType === type && candidate.dataset.filterKey === key) {
+          candidate.classList.add("active");
+        }
+      }
+
+      if (activeFilterLabel) {
+        const label = labelForButton(button);
+
+        activeFilterLabel.textContent =
+          type === "all"
+            ? "Showing all deduplicated CTI items from the last ${LOOKBACK_DAYS} days."
+            : \`Showing \${visibleCount} deduplicated item\${visibleCount === 1 ? "" : "s"} for \${label}.\`;
+      }
+
+      const corpus = document.getElementById("article-corpus");
+
+      if (corpus) {
+        corpus.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }
+
+    for (const button of filterButtons) {
+      button.addEventListener("click", () => {
+        applyFilter(button.dataset.filterType, button.dataset.filterKey, button);
+      });
+    }
+  </script>
 </body>
 </html>`;
 
 fs.writeFileSync(outputPath, html);
 
 console.log(`Generated ${outputPath}`);
-console.log(`Rendered ${items.length} CTI items from the last ${LOOKBACK_DAYS} days.`);
+console.log(`Rendered ${dedupedLatestItems.length} deduplicated CTI items from the last ${LOOKBACK_DAYS} days.`);
+console.log(`Selected ${topInsights.length} unique breach/threat insights.`);
 console.log(`Mapped items across ${industryGroups.length} industry groupings.`);
+console.log(`Mapped items across ${threatCategoryGroups.length} threat categories.`);
+console.log(`Mapped items across ${sourceCohortGroups.length} source cohorts.`);
 console.log(`Filtered out ${languageFilteredOutCount} items by language/source rules.`);
 console.log(`Filtered out ${dateFilteredOutCount} items outside the date window.`);
 console.log(`Filtered out ${ctiFilteredOutCount} non-CTI items.`);
-console.log(`Selected ${topInsights.length} unique breach/threat insights.`);
+console.log(`Removed ${dedupeFilteredOutCount} duplicate or near-duplicate items.`);
 console.log(`Detected ${parseErrors.length} source warnings.`);
