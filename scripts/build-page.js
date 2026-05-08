@@ -87,6 +87,10 @@ function domainFromUrl(url) {
   }
 }
 
+function externalLinkAttrs() {
+  return 'target="_blank" rel="noopener noreferrer"';
+}
+
 function getCutoffDate(days = LOOKBACK_DAYS) {
   const cutoff = new Date();
   cutoff.setDate(cutoff.getDate() - days);
@@ -144,6 +148,100 @@ function isEnglishEnoughItem(item) {
   }
 
   return true;
+}
+
+function isProductMarketingOrPositioning(item) {
+  const title = String(item.title || "").toLowerCase();
+  const summary = stripHtml(item.summary || "").toLowerCase();
+  const source = String(item.source || "").toLowerCase();
+  const category = String(item.category || "").toLowerCase();
+  const text = `${title} ${summary} ${source} ${category}`;
+
+  const productMarketingTerms = [
+    "announcing",
+    "announces",
+    "announcement",
+    "launches",
+    "launched",
+    "introducing",
+    "introduced",
+    "general availability",
+    "generally available",
+    "now available",
+    "available now",
+    "new feature",
+    "new features",
+    "product update",
+    "platform update",
+    "monthly update",
+    "release notes",
+    "roadmap",
+    "preview",
+    "public preview",
+    "private preview",
+    "customer story",
+    "case study",
+    "partner",
+    "partners with",
+    "partnership",
+    "integrated with",
+    "integration",
+    "webinar",
+    "event recap",
+    "conference",
+    "keynote",
+    "award",
+    "recognition",
+    "magic quadrant",
+    "market guide",
+    "buyers guide",
+    "best practices for using",
+    "how to get started",
+    "how we help",
+    "protect your business with",
+    "modernize your security",
+    "transform your security",
+    "accelerate your security",
+    "secure your ai journey",
+    "trusted ai",
+    "responsible ai",
+    "customer success",
+    "business value",
+    "roi",
+    "total economic impact",
+    "forrester",
+    "gartner",
+    "leader in",
+    "named a leader",
+    "wins award",
+    "named winner",
+    "product-led",
+    "product led"
+  ];
+
+  const productNounTerms = [
+    "our platform",
+    "our product",
+    "our solution",
+    "our customers",
+    "our partners",
+    "our latest",
+    "new capability",
+    "new capabilities",
+    "security solution",
+    "security platform",
+    "cloud security platform",
+    "ai security platform",
+    "this release",
+    "this update",
+    "this feature",
+    "this capability"
+  ];
+
+  return (
+    productMarketingTerms.some((term) => text.includes(term)) ||
+    productNounTerms.some((term) => text.includes(term))
+  );
 }
 
 function isThreatIntelRelevant(item) {
@@ -262,8 +360,6 @@ function isThreatIntelRelevant(item) {
   const explicitNonCtiTerms = [
     "world passkey day",
     "passwordless authentication",
-    "generally available",
-    "now generally available",
     "monthly digest",
     "icymi",
     "funding",
@@ -283,10 +379,6 @@ function isThreatIntelRelevant(item) {
     "keynote",
     "conference",
     "webinar today",
-    "announces",
-    "launches",
-    "partnership",
-    "trusted access",
     "public good",
     "board room",
     "operator",
@@ -298,6 +390,10 @@ function isThreatIntelRelevant(item) {
     "forecasting",
     "prediction markets"
   ];
+
+  if (isProductMarketingOrPositioning(item)) {
+    return false;
+  }
 
   if (explicitNonCtiTerms.some((term) => text.includes(term))) {
     return false;
@@ -315,6 +411,139 @@ function isThreatIntelRelevant(item) {
   }
 
   return false;
+}
+
+function isBreachOrThreatInsight(item) {
+  const title = String(item.title || "").toLowerCase();
+  const summary = stripHtml(item.summary || "").toLowerCase();
+  const category = String(item.category || "").toLowerCase();
+  const source = String(item.source || "").toLowerCase();
+  const text = `${title} ${summary} ${category} ${source}`;
+
+  const breachTerms = [
+    "breach",
+    "breached",
+    "data breach",
+    "data leak",
+    "leaked",
+    "leak",
+    "exposed",
+    "exposure",
+    "stolen",
+    "stole",
+    "theft",
+    "compromised",
+    "compromise",
+    "intrusion",
+    "incident",
+    "unauthorized access",
+    "exfiltration",
+    "extortion",
+    "ransomware",
+    "victim",
+    "victims"
+  ];
+
+  const threatTerms = [
+    "active exploitation",
+    "actively exploited",
+    "exploited in the wild",
+    "in the wild",
+    "zero-day",
+    "zero day",
+    "0-day",
+    "cve-",
+    "rce",
+    "remote code execution",
+    "privilege escalation",
+    "exploit",
+    "exploitation",
+    "malware",
+    "backdoor",
+    "stealer",
+    "infostealer",
+    "loader",
+    "trojan",
+    "botnet",
+    "phishing",
+    "credential theft",
+    "credential stealer",
+    "token theft",
+    "oauth abuse",
+    "supply chain attack",
+    "supply-chain attack",
+    "campaign",
+    "threat actor",
+    "apt",
+    "state-sponsored",
+    "state sponsored",
+    "nation-state",
+    "nation state",
+    "initial access",
+    "persistence",
+    "lateral movement",
+    "command and control",
+    "c2",
+    "webshell",
+    "web shell",
+    "implant",
+    "post-exploitation",
+    "post exploitation",
+    "iocs",
+    "indicator of compromise",
+    "indicators of compromise",
+    "ttps",
+    "tactics techniques and procedures"
+  ];
+
+  const insightSources = [
+    "bleepingcomputer",
+    "the hacker news",
+    "securityweek",
+    "dark reading",
+    "the record",
+    "cyberscoop",
+    "mandiant",
+    "unit 42",
+    "crowdstrike",
+    "sentinelone",
+    "red canary",
+    "huntress",
+    "cisa",
+    "microsoft",
+    "google",
+    "wiz",
+    "expel",
+    "proofpoint",
+    "talos",
+    "sophos",
+    "rapid7",
+    "watchtowr",
+    "arctic wolf",
+    "elastic",
+    "zscaler",
+    "cloudflare",
+    "akamai",
+    "sucuri",
+    "malwarebytes"
+  ];
+
+  const hasBreachSignal = breachTerms.some((term) => text.includes(term));
+  const hasThreatSignal = threatTerms.some((term) => text.includes(term));
+
+  const isThreatCategory =
+    category.includes("threat") ||
+    category.includes("ransomware") ||
+    category.includes("ecrime") ||
+    category.includes("offensive") ||
+    category.includes("breach") ||
+    category.includes("detection");
+
+  const isCredibleInsightSource = insightSources.some((sourceName) =>
+    source.includes(sourceName)
+  );
+
+  return (hasBreachSignal || hasThreatSignal) && (isThreatCategory || isCredibleInsightSource);
 }
 
 function normalizeText(value) {
@@ -522,32 +751,64 @@ function scoreItem(item) {
   if (category.includes("detection")) score += 22;
   if (category.includes("reddit")) score -= 25;
 
-  const majorTerms = [
+  const highImpactTerms = [
+    "breach",
+    "data breach",
+    "data leak",
+    "stolen",
+    "compromised",
+    "intrusion",
+    "incident",
+    "unauthorized access",
+    "exfiltration",
+    "extortion",
     "active exploitation",
     "actively exploited",
+    "exploited in the wild",
     "zero-day",
     "0-day",
     "rce",
-    "credential",
-    "token",
-    "oauth",
+    "remote code execution",
     "ransomware",
     "malware",
     "stealer",
+    "infostealer",
     "backdoor",
+    "supply chain attack",
+    "campaign",
+    "threat actor",
+    "apt",
+    "state-sponsored",
+    "nation-state"
+  ];
+
+  for (const term of highImpactTerms) {
+    if (text.includes(term)) {
+      score += 14;
+    }
+  }
+
+  const majorTerms = [
+    "credential",
+    "token",
+    "oauth",
     "phishing",
-    "supply chain",
-    "prompt injection",
-    "agentic",
     "mcp",
     "cve",
     "critical",
-    "state-sponsored",
-    "apt",
     "cloud credentials",
-    "incident",
-    "intrusion",
-    "threat actor"
+    "initial access",
+    "persistence",
+    "lateral movement",
+    "command and control",
+    "c2",
+    "webshell",
+    "implant",
+    "iocs",
+    "indicators",
+    "ttps",
+    "detection",
+    "hunting"
   ];
 
   for (const term of majorTerms) {
@@ -576,7 +837,11 @@ function scoreItem(item) {
     "dark reading",
     "help net security",
     "the record",
-    "cyberscoop"
+    "cyberscoop",
+    "talos",
+    "sophos",
+    "rapid7",
+    "watchtowr"
   ];
 
   for (const vendor of prioritySources) {
@@ -585,12 +850,19 @@ function scoreItem(item) {
     }
   }
 
+  if (isProductMarketingOrPositioning(item)) {
+    score -= 200;
+  }
+
   return score;
 }
 
 function selectTopUniqueInsights(items, limit = 10) {
   const candidates = items
     .filter((item) => item.title || item.summary)
+    .filter(isThreatIntelRelevant)
+    .filter(isBreachOrThreatInsight)
+    .filter((item) => !isProductMarketingOrPositioning(item))
     .map((item) => ({
       item,
       score: scoreItem(item),
@@ -598,7 +870,13 @@ function selectTopUniqueInsights(items, limit = 10) {
       domain: domainFromUrl(item.link || item.url || ""),
       theme: getThemeKey(item).key
     }))
-    .sort((a, b) => getItemTime(b.item) - getItemTime(a.item));
+    .sort((a, b) => {
+      if (b.score !== a.score) {
+        return b.score - a.score;
+      }
+
+      return getItemTime(b.item) - getItemTime(a.item);
+    });
 
   const selected = [];
 
@@ -657,7 +935,7 @@ function buildInsight(item, index) {
           <span>${escapeHtml(source)}</span>
           ${published ? `<time datetime="${escapeHtml(published)}">${escapeHtml(formatDate(published))}</time>` : ""}
         </div>
-        <h3>${link ? `<a href="${escapeHtml(link)}">${escapeHtml(title)}</a>` : escapeHtml(title)}</h3>
+        <h3>${link ? `<a href="${escapeHtml(link)}" ${externalLinkAttrs()}>${escapeHtml(title)}</a>` : escapeHtml(title)}</h3>
         <p>${escapeHtml(insightText)}</p>
       </div>
     </article>
@@ -688,7 +966,7 @@ function renderLineItem(item, index) {
     >
       <div class="line-main">
         <h4 itemprop="headline">
-          ${link ? `<a href="${escapeHtml(link)}" itemprop="url">${escapeHtml(title)}</a>` : escapeHtml(title)}
+          ${link ? `<a href="${escapeHtml(link)}" itemprop="url" ${externalLinkAttrs()}>${escapeHtml(title)}</a>` : escapeHtml(title)}
         </h4>
         ${compactSummary ? `<p itemprop="description">${escapeHtml(compactSummary)}</p>` : ""}
       </div>
@@ -709,7 +987,7 @@ function renderLineItem(item, index) {
         </div>
         <div>
           <dt>URL</dt>
-          <dd>${link ? `<a href="${escapeHtml(link)}">${escapeHtml(domainFromUrl(link) || link)}</a>` : "None"}</dd>
+          <dd>${link ? `<a href="${escapeHtml(link)}" ${externalLinkAttrs()}>${escapeHtml(domainFromUrl(link) || link)}</a>` : "None"}</dd>
         </div>
       </dl>
     </li>
@@ -801,12 +1079,14 @@ const categoryNav = categories
 
 const cohortCards = Object.entries(cohorts)
   .map(([key, cohort]) => {
+    const sectionId = slugify(key);
+
     return `
-      <article class="cohort-card" data-cohort="${escapeHtml(key)}">
+      <a class="cohort-card" href="#${escapeHtml(sectionId)}" data-cohort="${escapeHtml(key)}">
         <h3>${escapeHtml(formatCategory(key))}</h3>
         <p>${escapeHtml(cohort.description || "")}</p>
         <div class="small-meta">${escapeHtml(cohort.source_count || 0)} configured sources</div>
-      </article>
+      </a>
     `;
   })
   .join("");
@@ -832,7 +1112,7 @@ const sections = categories
 const parseErrorBlock = parseErrors.length
   ? `
     <section class="status-panel warning" id="source-health">
-      <h2>Source Health and Parse Warnings</h2>
+      <h2>Source Health and Filter Summary</h2>
       <p>
         These sources did not parse successfully during the last feed build. This section is placed at the bottom so the page reads as an intelligence brief first.
       </p>
@@ -840,16 +1120,32 @@ const parseErrorBlock = parseErrors.length
         ${parseErrors
           .map((source) => {
             const url = source.url || "";
-            return `<li><strong>${escapeHtml(source.name)}</strong>: ${escapeHtml(source.status)}${url ? ` · <a href="${escapeHtml(url)}">${escapeHtml(url)}</a>` : ""}</li>`;
+            return `<li><strong>${escapeHtml(source.name)}</strong>: ${escapeHtml(source.status)}${url ? ` · <a href="${escapeHtml(url)}" ${externalLinkAttrs()}>${escapeHtml(url)}</a>` : ""}</li>`;
           })
           .join("")}
+      </ul>
+
+      <h3>Filter Summary</h3>
+      <ul>
+        <li>${escapeHtml(languageFilteredOutCount)} removed by language/source rules.</li>
+        <li>${escapeHtml(dateFilteredOutCount)} removed by date window.</li>
+        <li>${escapeHtml(ctiFilteredOutCount)} removed as non-CTI.</li>
+        <li>${escapeHtml(totalFilteredOutCount)} total items filtered out.</li>
       </ul>
     </section>
   `
   : `
     <section class="status-panel" id="source-health">
-      <h2>Source Health</h2>
+      <h2>Source Health and Filter Summary</h2>
       <p>No parse warnings were reported during the last feed build.</p>
+
+      <h3>Filter Summary</h3>
+      <ul>
+        <li>${escapeHtml(languageFilteredOutCount)} removed by language/source rules.</li>
+        <li>${escapeHtml(dateFilteredOutCount)} removed by date window.</li>
+        <li>${escapeHtml(ctiFilteredOutCount)} removed as non-CTI.</li>
+        <li>${escapeHtml(totalFilteredOutCount)} total items filtered out.</li>
+      </ul>
     </section>
   `;
 
@@ -1053,10 +1349,24 @@ ${JSON.stringify(jsonLd, null, 2)}
     }
 
     .cohort-card {
+      display: block;
       border: 1px solid var(--line);
       background: rgba(255, 255, 255, 0.045);
       border-radius: 18px;
       padding: 16px;
+      color: var(--text);
+      text-decoration: none;
+      transition:
+        transform 140ms ease,
+        border-color 140ms ease,
+        background 140ms ease;
+    }
+
+    .cohort-card:hover {
+      transform: translateY(-2px);
+      border-color: rgba(107, 231, 255, 0.45);
+      background: rgba(107, 231, 255, 0.07);
+      text-decoration: none;
     }
 
     .cohort-card h3 {
@@ -1239,6 +1549,11 @@ ${JSON.stringify(jsonLd, null, 2)}
       margin-top: 42px;
     }
 
+    .status-panel h3 {
+      margin: 22px 0 10px;
+      letter-spacing: -0.02em;
+    }
+
     .status-panel p,
     .status-panel li {
       color: #ffe7af;
@@ -1302,24 +1617,20 @@ ${JSON.stringify(jsonLd, null, 2)}
           <strong>${escapeHtml(okSources)}</strong>
           <span>Healthy sources</span>
         </div>
-        <div class="stat">
-          <strong>${escapeHtml(totalFilteredOutCount)}</strong>
-          <span>Filtered out by language, date, or CTI relevance</span>
-        </div>
       </div>
     </header>
 
     <nav class="utility-links" aria-label="Feed navigation">
-      <a class="button-link" href="./feed.json">Raw JSON feed</a>
-      <a class="button-link" href="#top-insights">Top 10 CTI insights</a>
+      <a class="button-link" href="./feed.json" ${externalLinkAttrs()}>Raw JSON feed</a>
+      <a class="button-link" href="#top-insights">Top 10 Breaches and Threat Insights</a>
       ${categoryNav}
       <a class="button-link" href="#source-health">Source health</a>
     </nav>
 
     <section class="insights-panel" id="top-insights">
-      <h2>Top 10 Major Unique CTI Insights</h2>
+      <h2>Top 10 Breaches and Threat Insights</h2>
       <p class="panel-intro">
-        These items are selected from the last ${LOOKBACK_DAYS} days only, filtered for cyber threat intelligence relevance, deduplicated across the full feed cohort, and ordered newest first so stale but high-scoring stories do not outrank fresher signal.
+        These items are selected from the last ${LOOKBACK_DAYS} days only, filtered for breach activity, active exploitation, malware, intrusion activity, vulnerability exploitation, credential theft, ransomware, phishing, or other concrete threat signal. Product announcements, positioning posts, launch content, partnerships, webinars, and generic platform messaging are excluded.
       </p>
       <div class="insight-list">
         ${topInsights.map(buildInsight).join("")}
@@ -1346,9 +1657,6 @@ ${JSON.stringify(jsonLd, null, 2)}
         search indexing, and M365 Agent Builder knowledge ingestion. The rendered page is English-only, limited to the last ${LOOKBACK_DAYS} days, CTI-filtered, ordered newest first, and grouped by logical threat affinity.
       </p>
       <p>
-        Filter summary: ${escapeHtml(languageFilteredOutCount)} removed by language/source rules, ${escapeHtml(dateFilteredOutCount)} removed by date window, ${escapeHtml(ctiFilteredOutCount)} removed as non-CTI.
-      </p>
-      <p>
         Generated at: ${escapeHtml(formatDate(generatedAt))}
       </p>
     </footer>
@@ -1363,5 +1671,5 @@ console.log(`Rendered ${items.length} CTI items from the last ${LOOKBACK_DAYS} d
 console.log(`Filtered out ${languageFilteredOutCount} items by language/source rules.`);
 console.log(`Filtered out ${dateFilteredOutCount} items outside the date window.`);
 console.log(`Filtered out ${ctiFilteredOutCount} non-CTI items.`);
-console.log(`Selected ${topInsights.length} unique top CTI insights.`);
+console.log(`Selected ${topInsights.length} unique breach/threat insights.`);
 console.log(`Detected ${parseErrors.length} source warnings.`);
