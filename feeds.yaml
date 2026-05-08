@@ -21,6 +21,7 @@
 # - Some vendor feeds are historically flaky; expect occasional parse errors.
 # - Substack feeds are CDN-dependent and may intermittently fail.
 # - Product-adjacent sources must be filtered aggressively for marketing language.
+# - Reddit RSS feeds are practitioner-chatter inputs, not primary validation.
 # ============================================================
 
 source_cohorts:
@@ -65,10 +66,6 @@ source_cohorts:
         url: https://blog.sekoia.io/feed/
       - name: Citizen Lab
         url: https://citizenlab.ca/feed/
-      - name: Broadcom / Symantec Threat Hunter Team
-        url: https://symantec-enterprise-blogs.security.com/threat-intelligence/rss.xml
-      - name: FortiGuard Labs
-        url: https://www.fortinet.com/blog/threat-research/rss.xml
 
   # ------------------------------------------------------------
   # Tier 2: Government, Regulatory, and Public Interest Sources
@@ -83,8 +80,6 @@ source_cohorts:
         url: https://www.ncsc.gov.uk/api/1/services/v1/all-rss-feed.xml
       - name: SANS Internet Storm Center
         url: https://isc.sans.edu/rssfeed_full.xml
-      - name: Shadowserver
-        url: https://www.shadowserver.org/feed/
 
   # ------------------------------------------------------------
   # Tier 3: Offensive Research, Vulnerability Discovery, and Exploitability
@@ -110,12 +105,8 @@ source_cohorts:
         url: https://horizon3.ai/feed/
       - name: Rapid7
         url: https://www.rapid7.com/blog/rss/
-      - name: VulnCheck
-        url: https://vulncheck.com/blog/feed
       - name: Exploit-DB
         url: https://www.exploit-db.com/rss.xml
-      - name: Packet Storm Security
-        url: https://packetstormsecurity.com/files/feed
 
   # ------------------------------------------------------------
   # Tier 4: Detection Engineering, SOC Operations, MDR, and Incident Response
@@ -168,8 +159,6 @@ source_cohorts:
         url: https://orca.security/resources/blog/feed/
       - name: Permiso Security
         url: https://permiso.io/blog/rss.xml
-      - name: Akamai Security
-        url: https://www.akamai.com/blog/security/rss.xml
       - name: Cloudflare Security
         url: https://blog.cloudflare.com/tag/security/rss/
       - name: Cloudflare Radar
@@ -195,8 +184,6 @@ source_cohorts:
         url: https://simonwillison.net/atom/everything/
       - name: AI Snake Oil
         url: https://www.aisnakeoil.com/feed
-      - name: Import AI
-        url: https://importai.substack.com/feed
       - name: Interconnects
         url: https://www.interconnects.ai/feed
       - name: OpenSSF Blog
@@ -214,16 +201,10 @@ source_cohorts:
         url: https://www.coveware.com/blog?format=rss
       - name: Chainalysis
         url: https://www.chainalysis.com/blog/feed/
-      - name: TRM Labs
-        url: https://www.trmlabs.com/blog/rss.xml
-      - name: Group-IB
-        url: https://www.group-ib.com/blog/rss/
       - name: Intel 471
         url: https://intel471.com/blog/feed
       - name: Team Cymru
         url: https://www.team-cymru.com/post/rss.xml
-      - name: DomainTools Investigations
-        url: https://www.domaintools.com/resources/blog/feed/
 
   # ------------------------------------------------------------
   # Tier 8: Cyber News and Breach Reporting
@@ -245,8 +226,6 @@ source_cohorts:
         url: https://www.securityweek.com/feed/
       - name: CyberScoop
         url: https://cyberscoop.com/feed/
-      - name: SC Media
-        url: https://www.scmagazine.com/feed
       - name: Help Net Security
         url: https://www.helpnetsecurity.com/feed/
       - name: Infosecurity Magazine
@@ -260,8 +239,6 @@ source_cohorts:
   policy_strategy_geopolitics:
     description: "Policy, strategy, cyber norms, geopolitics, national security, and regulatory interpretation."
     sources:
-      - name: Lawfare
-        url: https://www.lawfaremedia.org/rss/site
       - name: Just Security
         url: https://www.justsecurity.org/feed/
 
@@ -283,7 +260,29 @@ source_cohorts:
         url: https://grahamcluley.com/feed/
       - name: Risky Business News
         url: https://risky.biz/feeds/risky-business-news/
-      - name: Kim Zetter Zero Day
-        url: https://kimzetter.substack.com/feed
       - name: tl;dr sec
         url: https://tldrsec.com/feed.xml
+
+  # ------------------------------------------------------------
+  # Tier 11: Reddit Practitioner OSINT
+  # Use for: practitioner chatter, early operational anecdotes,
+  # community signal, tool issues, vendor complaints, blue-team reality checks.
+  # Do not use as primary validation for technical claims.
+  # ------------------------------------------------------------
+  reddit_practitioner_osint:
+    description: "Reddit-based practitioner chatter and operational OSINT. Useful for weak signals, field texture, and reality checks, but never sufficient alone for technical claims."
+    sources:
+      - name: Reddit r/netsec
+        url: https://www.reddit.com/r/netsec/.rss
+      - name: Reddit r/cybersecurity
+        url: https://www.reddit.com/r/cybersecurity/.rss
+      - name: Reddit r/blueteamsec
+        url: https://www.reddit.com/r/blueteamsec/.rss
+      - name: Reddit r/sysadmin
+        url: https://www.reddit.com/r/sysadmin/.rss
+      - name: Reddit r/msp
+        url: https://www.reddit.com/r/msp/.rss
+      - name: Reddit r/netsecstudents
+        url: https://www.reddit.com/r/netsecstudents/.rss
+      - name: Reddit r/AskNetsec
+        url: https://www.reddit.com/r/AskNetsec/.rss
