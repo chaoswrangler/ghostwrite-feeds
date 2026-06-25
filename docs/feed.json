@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-25T15:43:26.289044+00:00",
+  "generated_at": "2026-06-25T21:01:14.369367+00:00",
   "total_items": 705,
   "cohorts": {
     "threat_research_primary": {
@@ -54,6 +54,18 @@
       "status": "ok",
       "item_count": 10
     },
+    "Microsoft Security Blog": {
+      "url": "https://www.microsoft.com/en-us/security/blog/feed/",
+      "cohort": "threat_research_primary",
+      "status": "ok",
+      "item_count": 10
+    },
+    "CrowdStrike": {
+      "url": "https://www.crowdstrike.com/blog/feed/",
+      "cohort": "threat_research_primary",
+      "status": "ok",
+      "item_count": 10
+    },
     "ESET WeLiveSecurity": {
       "url": "https://www.welivesecurity.com/en/rss/feed/",
       "cohort": "threat_research_primary",
@@ -66,26 +78,14 @@
       "status": "ok",
       "item_count": 10
     },
-    "CrowdStrike": {
-      "url": "https://www.crowdstrike.com/blog/feed/",
-      "cohort": "threat_research_primary",
-      "status": "ok",
-      "item_count": 10
-    },
     "SentinelOne Labs": {
       "url": "https://www.sentinelone.com/labs/feed/",
       "cohort": "threat_research_primary",
       "status": "ok",
       "item_count": 10
     },
-    "Microsoft Security Blog": {
-      "url": "https://www.microsoft.com/en-us/security/blog/feed/",
-      "cohort": "threat_research_primary",
-      "status": "ok",
-      "item_count": 10
-    },
-    "Check Point Research": {
-      "url": "https://research.checkpoint.com/feed/",
+    "Trend Micro Research": {
+      "url": "https://newsroom.trendmicro.com/news-releases?pagetemplate=rss&category=787",
       "cohort": "threat_research_primary",
       "status": "ok",
       "item_count": 10
@@ -102,20 +102,20 @@
       "status": "ok",
       "item_count": 10
     },
-    "Trend Micro Research": {
-      "url": "https://newsroom.trendmicro.com/news-releases?pagetemplate=rss&category=787",
-      "cohort": "threat_research_primary",
-      "status": "ok",
-      "item_count": 10
-    },
     "Google Threat Analysis Group": {
       "url": "https://blog.google/threat-analysis-group/rss/",
       "cohort": "threat_research_primary",
       "status": "parse_error",
       "item_count": 0
     },
-    "Recorded Future": {
-      "url": "https://www.recordedfuture.com/feed",
+    "Check Point Research": {
+      "url": "https://research.checkpoint.com/feed/",
+      "cohort": "threat_research_primary",
+      "status": "ok",
+      "item_count": 10
+    },
+    "Citizen Lab": {
+      "url": "https://citizenlab.ca/feed/",
       "cohort": "threat_research_primary",
       "status": "ok",
       "item_count": 10
@@ -126,14 +126,8 @@
       "status": "ok",
       "item_count": 10
     },
-    "Citizen Lab": {
-      "url": "https://citizenlab.ca/feed/",
-      "cohort": "threat_research_primary",
-      "status": "ok",
-      "item_count": 10
-    },
-    "Volexity": {
-      "url": "https://www.volexity.com/feed/",
+    "Recorded Future": {
+      "url": "https://www.recordedfuture.com/feed",
       "cohort": "threat_research_primary",
       "status": "ok",
       "item_count": 10
@@ -144,14 +138,20 @@
       "status": "ok",
       "item_count": 10
     },
-    "GitHub Security Lab": {
-      "url": "https://github.blog/category/security/feed/",
+    "Assetnote": {
+      "url": "https://www.assetnote.io/resources/research/rss.xml",
       "cohort": "offensive_vulnerability_research",
       "status": "ok",
       "item_count": 10
     },
-    "Assetnote": {
-      "url": "https://www.assetnote.io/resources/research/rss.xml",
+    "Volexity": {
+      "url": "https://www.volexity.com/feed/",
+      "cohort": "threat_research_primary",
+      "status": "ok",
+      "item_count": 10
+    },
+    "GitHub Security Lab": {
+      "url": "https://github.blog/category/security/feed/",
       "cohort": "offensive_vulnerability_research",
       "status": "ok",
       "item_count": 10
@@ -162,17 +162,17 @@
       "status": "ok",
       "item_count": 10
     },
-    "watchTowr Labs": {
-      "url": "https://labs.watchtowr.com/rss/",
-      "cohort": "offensive_vulnerability_research",
-      "status": "ok",
-      "item_count": 10
-    },
     "Sekoia": {
       "url": "https://blog.sekoia.io/feed/",
       "cohort": "threat_research_primary",
       "status": "parse_error",
       "item_count": 0
+    },
+    "watchTowr Labs": {
+      "url": "https://labs.watchtowr.com/rss/",
+      "cohort": "offensive_vulnerability_research",
+      "status": "ok",
+      "item_count": 10
     },
     "Exploit-DB": {
       "url": "https://www.exploit-db.com/rss.xml",
@@ -204,14 +204,26 @@
       "status": "ok",
       "item_count": 10
     },
-    "SpecterOps": {
-      "url": "https://medium.com/feed/specter-ops-posts",
-      "cohort": "detection_response_operations",
+    "Rapid7": {
+      "url": "https://www.rapid7.com/blog/rss/",
+      "cohort": "offensive_vulnerability_research",
       "status": "ok",
       "item_count": 10
     },
     "Proofpoint Threat Insight": {
       "url": "https://www.proofpoint.com/us/rss.xml",
+      "cohort": "detection_response_operations",
+      "status": "ok",
+      "item_count": 10
+    },
+    "TrustedSec": {
+      "url": "https://www.trustedsec.com/feed/",
+      "cohort": "detection_response_operations",
+      "status": "ok",
+      "item_count": 10
+    },
+    "SpecterOps": {
+      "url": "https://medium.com/feed/specter-ops-posts",
       "cohort": "detection_response_operations",
       "status": "ok",
       "item_count": 10
@@ -222,15 +234,21 @@
       "status": "ok",
       "item_count": 10
     },
+    "Sophos X-Ops": {
+      "url": "https://news.sophos.com/en-us/category/threat-research/feed/",
+      "cohort": "detection_response_operations",
+      "status": "ok",
+      "item_count": 10
+    },
     "Elastic Security Labs": {
       "url": "https://www.elastic.co/security-labs/rss/feed.xml",
       "cohort": "detection_response_operations",
       "status": "ok",
       "item_count": 10
     },
-    "TrustedSec": {
-      "url": "https://www.trustedsec.com/feed/",
-      "cohort": "detection_response_operations",
+    "Datadog Security Labs": {
+      "url": "https://securitylabs.datadoghq.com/rss/feed.xml",
+      "cohort": "cloud_identity_infrastructure",
       "status": "ok",
       "item_count": 10
     },
@@ -246,21 +264,9 @@
       "status": "ok",
       "item_count": 10
     },
-    "Rapid7": {
-      "url": "https://www.rapid7.com/blog/rss/",
-      "cohort": "offensive_vulnerability_research",
-      "status": "ok",
-      "item_count": 10
-    },
-    "Datadog Security Labs": {
-      "url": "https://securitylabs.datadoghq.com/rss/feed.xml",
-      "cohort": "cloud_identity_infrastructure",
-      "status": "ok",
-      "item_count": 10
-    },
-    "Sophos X-Ops": {
-      "url": "https://news.sophos.com/en-us/category/threat-research/feed/",
-      "cohort": "detection_response_operations",
+    "Google Cloud Threat Intelligence": {
+      "url": "https://feeds.feedburner.com/threatintelligence/pvexyqv7v0v",
+      "cohort": "threat_research_primary",
       "status": "ok",
       "item_count": 10
     },
@@ -282,21 +288,15 @@
       "status": "ok",
       "item_count": 10
     },
-    "AWS Security Blog": {
-      "url": "https://aws.amazon.com/blogs/security/feed/",
-      "cohort": "cloud_identity_infrastructure",
-      "status": "ok",
-      "item_count": 10
-    },
     "Protect AI": {
       "url": "https://protectai.com/blog/rss.xml",
       "cohort": "ai_security_agentic_risk",
       "status": "ok",
       "item_count": 10
     },
-    "Google Cloud Threat Intelligence": {
-      "url": "https://feeds.feedburner.com/threatintelligence/pvexyqv7v0v",
-      "cohort": "threat_research_primary",
+    "AWS Security Blog": {
+      "url": "https://aws.amazon.com/blogs/security/feed/",
+      "cohort": "cloud_identity_infrastructure",
       "status": "ok",
       "item_count": 10
     },
@@ -318,15 +318,21 @@
       "status": "ok",
       "item_count": 10
     },
+    "Embrace the Red": {
+      "url": "https://embracethered.com/blog/index.xml",
+      "cohort": "ai_security_agentic_risk",
+      "status": "ok",
+      "item_count": 10
+    },
     "Cloudflare Security": {
       "url": "https://blog.cloudflare.com/tag/security/rss/",
       "cohort": "cloud_identity_infrastructure",
       "status": "ok",
       "item_count": 10
     },
-    "Embrace the Red": {
-      "url": "https://embracethered.com/blog/index.xml",
-      "cohort": "ai_security_agentic_risk",
+    "Chainalysis": {
+      "url": "https://www.chainalysis.com/blog/feed/",
+      "cohort": "ransomware_ecrime_financial_crime",
       "status": "ok",
       "item_count": 10
     },
@@ -339,18 +345,6 @@
     "OpenSSF Blog": {
       "url": "https://openssf.org/feed/",
       "cohort": "ai_security_agentic_risk",
-      "status": "ok",
-      "item_count": 10
-    },
-    "Chainalysis": {
-      "url": "https://www.chainalysis.com/blog/feed/",
-      "cohort": "ransomware_ecrime_financial_crime",
-      "status": "ok",
-      "item_count": 10
-    },
-    "Black Hills Information Security": {
-      "url": "https://www.blackhillsinfosec.com/feed/",
-      "cohort": "detection_response_operations",
       "status": "ok",
       "item_count": 10
     },
@@ -372,6 +366,18 @@
       "status": "ok",
       "item_count": 10
     },
+    "Team Cymru": {
+      "url": "https://www.team-cymru.com/post/rss.xml",
+      "cohort": "ransomware_ecrime_financial_crime",
+      "status": "ok",
+      "item_count": 10
+    },
+    "Black Hills Information Security": {
+      "url": "https://www.blackhillsinfosec.com/feed/",
+      "cohort": "detection_response_operations",
+      "status": "ok",
+      "item_count": 10
+    },
     "The Record": {
       "url": "https://therecord.media/feed",
       "cohort": "cyber_news_breach_reporting",
@@ -384,26 +390,8 @@
       "status": "ok",
       "item_count": 10
     },
-    "Team Cymru": {
-      "url": "https://www.team-cymru.com/post/rss.xml",
-      "cohort": "ransomware_ecrime_financial_crime",
-      "status": "ok",
-      "item_count": 10
-    },
-    "CyberScoop": {
-      "url": "https://cyberscoop.com/feed/",
-      "cohort": "cyber_news_breach_reporting",
-      "status": "ok",
-      "item_count": 10
-    },
     "Help Net Security": {
       "url": "https://www.helpnetsecurity.com/feed/",
-      "cohort": "cyber_news_breach_reporting",
-      "status": "ok",
-      "item_count": 10
-    },
-    "Dark Reading": {
-      "url": "https://www.darkreading.com/rss.xml",
       "cohort": "cyber_news_breach_reporting",
       "status": "ok",
       "item_count": 10
@@ -414,9 +402,9 @@
       "status": "ok",
       "item_count": 10
     },
-    "Google Cloud Security": {
-      "url": "https://cloudblog.withgoogle.com/rss/",
-      "cohort": "cloud_identity_infrastructure",
+    "CyberScoop": {
+      "url": "https://cyberscoop.com/feed/",
+      "cohort": "cyber_news_breach_reporting",
       "status": "ok",
       "item_count": 10
     },
@@ -426,20 +414,26 @@
       "status": "ok",
       "item_count": 10
     },
+    "Dark Reading": {
+      "url": "https://www.darkreading.com/rss.xml",
+      "cohort": "cyber_news_breach_reporting",
+      "status": "ok",
+      "item_count": 10
+    },
     "Schneier on Security": {
       "url": "https://www.schneier.com/feed/atom/",
       "cohort": "practitioner_analysis",
       "status": "ok",
       "item_count": 10
     },
-    "AI Snake Oil": {
-      "url": "https://www.aisnakeoil.com/feed",
-      "cohort": "ai_security_agentic_risk",
+    "Graham Cluley": {
+      "url": "https://grahamcluley.com/feed/",
+      "cohort": "practitioner_analysis",
       "status": "ok",
       "item_count": 10
     },
-    "Graham Cluley": {
-      "url": "https://grahamcluley.com/feed/",
+    "Troy Hunt": {
+      "url": "https://www.troyhunt.com/rss/",
       "cohort": "practitioner_analysis",
       "status": "ok",
       "item_count": 10
@@ -450,26 +444,32 @@
       "status": "ok",
       "item_count": 10
     },
-    "Troy Hunt": {
-      "url": "https://www.troyhunt.com/rss/",
-      "cohort": "practitioner_analysis",
-      "status": "ok",
-      "item_count": 10
-    },
     "Reddit r/cybersecurity": {
       "url": "https://www.reddit.com/r/cybersecurity/.rss",
       "cohort": "reddit_practitioner_osint",
       "status": "ok",
       "item_count": 0
     },
-    "Reddit r/blueteamsec": {
-      "url": "https://www.reddit.com/r/blueteamsec/.rss",
+    "Reddit r/netsec": {
+      "url": "https://www.reddit.com/r/netsec/.rss",
       "cohort": "reddit_practitioner_osint",
       "status": "ok",
       "item_count": 0
     },
-    "Risky Business News": {
-      "url": "https://risky.biz/feeds/risky-business-news/",
+    "Google Cloud Security": {
+      "url": "https://cloudblog.withgoogle.com/rss/",
+      "cohort": "cloud_identity_infrastructure",
+      "status": "ok",
+      "item_count": 10
+    },
+    "AI Snake Oil": {
+      "url": "https://www.aisnakeoil.com/feed",
+      "cohort": "ai_security_agentic_risk",
+      "status": "ok",
+      "item_count": 10
+    },
+    "Krebs on Security": {
+      "url": "https://krebsonsecurity.com/feed/",
       "cohort": "practitioner_analysis",
       "status": "ok",
       "item_count": 10
@@ -480,17 +480,17 @@
       "status": "ok",
       "item_count": 0
     },
+    "Risky Business News": {
+      "url": "https://risky.biz/feeds/risky-business-news/",
+      "cohort": "practitioner_analysis",
+      "status": "ok",
+      "item_count": 10
+    },
     "Reddit r/msp": {
       "url": "https://www.reddit.com/r/msp/.rss",
       "cohort": "reddit_practitioner_osint",
       "status": "ok",
       "item_count": 0
-    },
-    "Krebs on Security": {
-      "url": "https://krebsonsecurity.com/feed/",
-      "cohort": "practitioner_analysis",
-      "status": "ok",
-      "item_count": 10
     },
     "Reddit r/netsecstudents": {
       "url": "https://www.reddit.com/r/netsecstudents/.rss",
@@ -504,15 +504,9 @@
       "status": "ok",
       "item_count": 0
     },
-    "Reddit r/netsec": {
-      "url": "https://www.reddit.com/r/netsec/.rss",
+    "Reddit r/blueteamsec": {
+      "url": "https://www.reddit.com/r/blueteamsec/.rss",
       "cohort": "reddit_practitioner_osint",
-      "status": "ok",
-      "item_count": 10
-    },
-    "Google Project Zero": {
-      "url": "https://googleprojectzero.blogspot.com/feeds/posts/default",
-      "cohort": "offensive_vulnerability_research",
       "status": "ok",
       "item_count": 10
     },
@@ -527,9 +521,150 @@
       "cohort": "policy_strategy_geopolitics",
       "status": "ok",
       "item_count": 10
+    },
+    "Google Project Zero": {
+      "url": "https://googleprojectzero.blogspot.com/feeds/posts/default",
+      "cohort": "offensive_vulnerability_research",
+      "status": "ok",
+      "item_count": 10
     }
   },
   "items": [
+    {
+      "source": "CyberScoop",
+      "category": "cyber_news_breach_reporting",
+      "title": "FCC passes new cybersecurity rules for emergency systems, undersea cables",
+      "link": "https://cyberscoop.com/fcc-undersea-cable-regulations-national-security/",
+      "published": "2026-06-25T19:55:16+00:00",
+      "summary": "<p>The new rules would overhaul national emergency systems to protect against hijacking and update federal security review rules for undersea cables providers</p>\n<p>The post <a href=\"https://cyberscoop.com/fcc-undersea-cable-regulations-national-security/\">FCC passes new cybersecurity rules for emergency systems, undersea cables</a> appeared first on <a href=\"https://cyberscoop.com\">CyberScoop</a>.</p>",
+      "author": "djohnson"
+    },
+    {
+      "source": "Orca Security Research",
+      "category": "cloud_identity_infrastructure",
+      "title": "What Is Generative AI in Cybersecurity?",
+      "link": "https://orca.security/resources/blog/what-is-generative-ai-in-cybersecurity/",
+      "published": "2026-06-25T19:47:09+00:00",
+      "summary": "Key Takeaways Generative AI in cybersecurity applies LLMs and other generative systems to security operations, from triaging alerts and writing detections to summarizing investigations and generating reports. The same technology that helps defenders move faster also helps attackers, which is why the topic carries both promise and risk. The useful framing is not “is GenAI [&#8230;]",
+      "author": "Devonte Grant"
+    },
+    {
+      "source": "BleepingComputer",
+      "category": "cyber_news_breach_reporting",
+      "title": "Order-tracking app Shop abused to push callback phishing attacks",
+      "link": "https://www.bleepingcomputer.com/news/security/order-tracking-app-shop-abused-to-push-callback-phishing-attacks/",
+      "published": "2026-06-25T19:45:48+00:00",
+      "summary": "Threat actors are increasingly abusing Shop, the order-tracking app from Shopify, by adding fake purchase receipts in users' order histories to trick them into providing sensitive data or installing remote access software. [...]",
+      "author": "Bill Toulas"
+    },
+    {
+      "source": "OpenSSF Blog",
+      "category": "ai_security_agentic_risk",
+      "title": "The CRA Readiness Reality: What Changed (and What Didn’t) Between 2025 and 2026?",
+      "link": "https://openssf.org/blog/2026/06/25/the-cra-readiness-reality-what-changed-and-what-didnt-between-2025-and-2026/",
+      "published": "2026-06-25T19:12:23+00:00",
+      "summary": "In 2025, Linux Foundation Research, Linux Foundation Europe, and Open Source Security Foundation (OpenSSF) published Unaware and Uncertain: The Stark Realities of Cyber Resilience Act Readiness in Open Source. It took a survey-based look at how prepared the open source ecosystem was for the European Union's Cyber Resilience Act (EU CRA). The headline finding was blunt: 62% of respondents had little to no familiarity with a regulation that would reshape how software gets built, shipped, and maint",
+      "author": "OpenSSF"
+    },
+    {
+      "source": "Dark Reading",
+      "category": "cyber_news_breach_reporting",
+      "title": "Local Police Collusion Hampers Crackdown on Asian Scam Centers",
+      "link": "https://www.darkreading.com/threat-intelligence/police-collusion-crackdown-asian-scam-centers",
+      "published": "2026-06-25T19:07:41+00:00",
+      "summary": "With tens of billions of dollars flowing into regional economies from cybercrime, scam centers continue to flourish, despite international and law-enforcement efforts.",
+      "author": "Robert Lemos"
+    },
+    {
+      "source": "Orca Security Research",
+      "category": "cloud_identity_infrastructure",
+      "title": "Best Vulnerability Management Tools and Software in 2026",
+      "link": "https://orca.security/resources/blog/best-vulnerability-management-tools/",
+      "published": "2026-06-25T18:48:48+00:00",
+      "summary": "Key Takeaways Security teams cannot patch everything. Published vulnerabilities crossed 40,000 in 2024 and climbed past 48,000 in 2025 (CVE Program / NVD data). The challenge isn’t finding vulnerabilities. It’s knowing which ones matter most.  That’s why choosing the right vulnerability management tool is critical: the best platforms prioritize real risk instead of overwhelming teams [&#8230;]",
+      "author": "Devonte Grant"
+    },
+    {
+      "source": "The Record",
+      "category": "cyber_news_breach_reporting",
+      "title": "DHS chief says president has met with potential CISA nominee; agency plans to hire 600",
+      "link": "https://therecord.media/cisa-director-nominee-workforce-hires-mullin-house-hearing",
+      "published": "2026-06-25T18:47:51+00:00",
+      "summary": "Once a new CISA director is in place, the agency will ramp up hiring efforts, Homeland Security Secretary Markwayne Mullin told lawmakers. The White House has not yet announced a nominee.",
+      "author": ""
+    },
+    {
+      "source": "BleepingComputer",
+      "category": "cyber_news_breach_reporting",
+      "title": "Microsoft quietly extends free Windows 10 ESU support to October 2027",
+      "link": "https://www.bleepingcomputer.com/news/microsoft/microsoft-quietly-extends-free-windows-10-esu-support-to-october-2027/",
+      "published": "2026-06-25T18:29:20+00:00",
+      "summary": "Microsoft has quietly extended its free Windows 10 Extended Security Updates (ESU) program for consumers by an additional year, allowing enrolled devices to continue receiving security updates until October 12, 2027. [...]",
+      "author": "Lawrence Abrams"
+    },
+    {
+      "source": "Cisco Talos",
+      "category": "threat_research_primary",
+      "title": "Beyond IOCs: AI-enabled threat intelligence",
+      "link": "https://blog.talosintelligence.com/beyond-iocs-ai-enabled-threat-intelligence/",
+      "published": "2026-06-25T18:00:26+00:00",
+      "summary": "In this week’s newsletter, Martin considers how AI will help threat intelligence by creating an easily queryable data source of intelligence reports.",
+      "author": "Martin Lee"
+    },
+    {
+      "source": "Reddit r/blueteamsec",
+      "category": "reddit_practitioner_osint",
+      "title": "codfish/semantic-release-action GitHub Action has been compromised - StepSecurity",
+      "link": "https://www.reddit.com/r/blueteamsec/comments/1ufgs5a/codfishsemanticreleaseaction_github_action_has/",
+      "published": "2026-06-25T17:34:13+00:00",
+      "summary": "&#32; submitted by &#32; <a href=\"https://www.reddit.com/user/digicat\"> /u/digicat </a> <br /> <span><a href=\"https://www.stepsecurity.io/blog/supply-chain-compromise-codfish-semantic-release-action\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/blueteamsec/comments/1ufgs5a/codfishsemanticreleaseaction_github_action_has/\">[comments]</a></span>",
+      "author": "/u/digicat"
+    },
+    {
+      "source": "Citizen Lab",
+      "category": "threat_research_primary",
+      "title": "Emile Dirks Elected to PEN Canada’s Board of Directors",
+      "link": "https://citizenlab.ca/emile-dirks-elected-to-pen-canadas-board-of-directors/",
+      "published": "2026-06-25T17:26:08+00:00",
+      "summary": "<p>Senior research associate Emile Dirks has been elected to serve as a member of PEN Canada's board of directors. </p>\n<p>The post <a href=\"https://citizenlab.ca/emile-dirks-elected-to-pen-canadas-board-of-directors/\">Emile Dirks Elected to PEN Canada’s Board of Directors</a> appeared first on <a href=\"https://citizenlab.ca\">The Citizen Lab</a>.</p>",
+      "author": "Anna Mackay"
+    },
+    {
+      "source": "Schneier on Security",
+      "category": "practitioner_analysis",
+      "title": "AI and Liability",
+      "link": "https://www.schneier.com/blog/archives/2026/06/ai-and-liability.html",
+      "published": "2026-06-25T17:03:15+00:00",
+      "summary": "<p>Earlier this month, a German court <a href=\"https://the-decoder.com/landmark-german-ruling-declares-googles-ai-overviews-are-googles-own-words-and-makes-it-liable-for-false-answers/\">ruled</a> that Google is liable for its AI search summaries. Rejecting defenses like &#8220;users can check for themselves,&#8221; and that they generally know &#8220;that information generated with AI should not be blindly trusted,&#8221; the court held that the AI&#8217;s summaries are reflections of the compan",
+      "author": "Bruce Schneier"
+    },
+    {
+      "source": "BleepingComputer",
+      "category": "cyber_news_breach_reporting",
+      "title": "New macOS malware embeds fake errors to confuse AI analysis tools",
+      "link": "https://www.bleepingcomputer.com/news/security/new-macos-malware-embeds-fake-errors-to-confuse-ai-analysis-tools/",
+      "published": "2026-06-25T16:23:19+00:00",
+      "summary": "A newly discovered macOS malware dubbed \"Gaslight\" is designed to confuse AI-assisted malware analysis tools by hiding prompt injection strings and fake debugging data within the executable. [...]",
+      "author": "Lawrence Abrams"
+    },
+    {
+      "source": "CyberScoop",
+      "category": "cyber_news_breach_reporting",
+      "title": "Federal court rules Trump election-focused executive order illegal",
+      "link": "https://cyberscoop.com/judge-strikes-down-trump-election-executive-order/",
+      "published": "2026-06-25T16:16:20+00:00",
+      "summary": "<p>Provisions setting up federal voter lists for each state and restricting mail ballots through USPS were declared unconstitutional.</p>\n<p>The post <a href=\"https://cyberscoop.com/judge-strikes-down-trump-election-executive-order/\">Federal court rules Trump election-focused executive order illegal</a> appeared first on <a href=\"https://cyberscoop.com\">CyberScoop</a>.</p>",
+      "author": "djohnson"
+    },
+    {
+      "source": "Microsoft Security Blog",
+      "category": "threat_research_primary",
+      "title": "Microsoft a Leader in The Forrester Wave™ for Endpoint Management Platforms",
+      "link": "https://www.microsoft.com/en-us/security/blog/2026/06/25/microsoft-a-leader-in-the-forrester-wave-for-endpoint-management-platforms/",
+      "published": "2026-06-25T16:00:00+00:00",
+      "summary": "<p>Microsoft named a Leader in the Forrester Wave™: Endpoint Management Platforms, Q2 2026, with the highest scores in the current offering and strategy categories.</p>\n<p>The post <a href=\"https://www.microsoft.com/en-us/security/blog/2026/06/25/microsoft-a-leader-in-the-forrester-wave-for-endpoint-management-platforms/\">Microsoft a Leader in The Forrester Wave™ for Endpoint Management Platforms</a> appeared first on <a href=\"https://www.microsoft.com/en-us/security/blog\">Microsoft Security Blo",
+      "author": "Jason Roszak"
+    },
     {
       "source": "BleepingComputer",
       "category": "cyber_news_breach_reporting",
@@ -538,15 +673,6 @@
       "published": "2026-06-25T15:36:56+00:00",
       "summary": "A major sports piracy ring linked to the illegal PirloTV streaming platform has been disrupted in an action that targeted 44 domains. [...]",
       "author": "Bill Toulas"
-    },
-    {
-      "source": "Reddit r/netsec",
-      "category": "reddit_practitioner_osint",
-      "title": "CVE-2025-52465 geoserver arbitrary file write vulnerability",
-      "link": "https://www.reddit.com/r/netsec/comments/1ufdc3k/cve202552465_geoserver_arbitrary_file_write/",
-      "published": "2026-06-25T15:30:44+00:00",
-      "summary": "&#32; submitted by &#32; <a href=\"https://www.reddit.com/user/AlbatrossMaximum4489\"> /u/AlbatrossMaximum4489 </a> <br /> <span><a href=\"https://www.partywave.site/show/research/cve-2025-52465-geolocate-geoserver\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/netsec/comments/1ufdc3k/cve202552465_geoserver_arbitrary_file_write/\">[comments]</a></span>",
-      "author": "/u/AlbatrossMaximum4489"
     },
     {
       "source": "BleepingComputer",
@@ -738,6 +864,15 @@
       "author": "Ionut Arghire"
     },
     {
+      "source": "Reddit r/blueteamsec",
+      "category": "reddit_practitioner_osint",
+      "title": "Exclusion Auditor — open-source, read-only tool to find risky NGAV exclusions (CrowdStrike-first, vendor-agnostic)",
+      "link": "https://www.reddit.com/r/blueteamsec/comments/1uf8r08/exclusion_auditor_opensource_readonly_tool_to/",
+      "published": "2026-06-25T12:34:40+00:00",
+      "summary": "<!-- SC_OFF --><div class=\"md\"><p>Built this to solve an ops problem I kept hitting: people rarely audit NGAV exclusions,</p> <p>and they pile up into ungoverned blind spots (T1562.001). It's a free, read-only</p> <p>CLI that scores your exclusions for security risk and hygiene.</p> <p>- Rules for executable-extension / root &amp; writable-path / LOLBin-interpreter /</p> <p>wildcard / scope / hygiene, each mapped to ATT&amp;CK with a remediation.</p> <p>- CrowdStrike Falcon adapter (ML / IOA / S",
+      "author": "/u/1689erBlueteam"
+    },
+    {
       "source": "Help Net Security",
       "category": "cyber_news_breach_reporting",
       "title": "Veritone introduces Assess to streamline evidence analysis and compliance reviews",
@@ -803,10 +938,10 @@
     {
       "source": "SecurityWeek",
       "category": "cyber_news_breach_reporting",
-      "title": "Cal Water Finds No Evidence of OT Activity After Hackers Claimed They Could Disrupt Water Supply",
+      "title": "Cal Water Says No OT Systems Breached in Iranian Handala Cyberattack",
       "link": "https://www.securityweek.com/cal-water-finds-no-evidence-of-ot-activity-after-hackers-claimed-they-could-disrupt-water-supply/",
       "published": "2026-06-25T12:07:00+00:00",
-      "summary": "<p>Mandiant has helped the California water utility investigate the cyberattack launched by Iranian hacker group Handala.</p>\n<p>The post <a href=\"https://www.securityweek.com/cal-water-finds-no-evidence-of-ot-activity-after-hackers-claimed-they-could-disrupt-water-supply/\">Cal Water Finds No Evidence of OT Activity After Hackers Claimed They Could Disrupt Water Supply</a> appeared first on <a href=\"https://www.securityweek.com\">SecurityWeek</a>.</p>",
+      "summary": "<p>Mandiant has helped the California water utility investigate the cyberattack launched by Iranian hacker group Handala.</p>\n<p>The post <a href=\"https://www.securityweek.com/cal-water-finds-no-evidence-of-ot-activity-after-hackers-claimed-they-could-disrupt-water-supply/\">Cal Water Says No OT Systems Breached in Iranian Handala Cyberattack</a> appeared first on <a href=\"https://www.securityweek.com\">SecurityWeek</a>.</p>",
       "author": "Eduard Kovacs"
     },
     {
@@ -835,15 +970,6 @@
       "published": "2026-06-25T11:59:34+00:00",
       "summary": "Wiz now layers runtime signals into the Security Graph, exposing hidden attack paths to give security teams a complete picture of risk.",
       "author": "Hila Ramati"
-    },
-    {
-      "source": "Reddit r/netsec",
-      "category": "reddit_practitioner_osint",
-      "title": "CargoWise WebTracker - The keys were in the cargo",
-      "link": "https://www.reddit.com/r/netsec/comments/1uf7h8g/cargowise_webtracker_the_keys_were_in_the_cargo/",
-      "published": "2026-06-25T11:34:42+00:00",
-      "summary": "&#32; submitted by &#32; <a href=\"https://www.reddit.com/user/Mempodipper\"> /u/Mempodipper </a> <br /> <span><a href=\"https://slcyber.io/research-center/cargowise-webtracker-the-keys-were-in-the-cargo/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/netsec/comments/1uf7h8g/cargowise_webtracker_the_keys_were_in_the_cargo/\">[comments]</a></span>",
-      "author": "/u/Mempodipper"
     },
     {
       "source": "Infosecurity Magazine",
@@ -981,6 +1107,15 @@
       "author": "info@thehackernews.com (The Hacker News)"
     },
     {
+      "source": "SecurityWeek",
+      "category": "cyber_news_breach_reporting",
+      "title": "SecurityWeek ICS Cybersecurity Conference Heads to Nashville for Special 25-Year Anniversary Edition",
+      "link": "https://www.securityweek.com/securityweek-ics-cybersecurity-conference-heads-to-nashville-for-special-25-year-anniversary-edition/",
+      "published": "2026-06-25T09:00:00+00:00",
+      "summary": "<p>The 2026 Industrial Control Systems (ICS) Cybersecurity Conference takes place October 6-8, 2026, at the W Nashville.</p>\n<p>The post <a href=\"https://www.securityweek.com/securityweek-ics-cybersecurity-conference-heads-to-nashville-for-special-25-year-anniversary-edition/\">SecurityWeek ICS Cybersecurity Conference Heads to Nashville for Special 25-Year Anniversary Edition</a> appeared first on <a href=\"https://www.securityweek.com\">SecurityWeek</a>.</p>",
+      "author": "Mike Lennon"
+    },
+    {
       "source": "CyberScoop",
       "category": "cyber_news_breach_reporting",
       "title": "Why patch directives only go so far",
@@ -1049,8 +1184,17 @@
       "title": "Large Workflows with Local LLMs",
       "link": "https://trustedsec.com/blog/large-workflows-with-local-llms",
       "published": "2026-06-25T04:00:00+00:00",
-      "summary": "&lt;p&gt;As it turns out, local LLMs have a few opinions about large workflows. In this blog, we walk through the scaling challenges of local LLMs and the custom Python library he built to wrangle them.&lt;/p&gt;",
+      "summary": "&lt;p&gt;As it turns out, local LLMs have a few opinions about large workflows. In this blog, we walk through the scaling challenges of local LLMs and the custom Python library built to wrangle them.&lt;/p&gt;",
       "author": "Kevin Haubris"
+    },
+    {
+      "source": "Recorded Future",
+      "category": "threat_research_primary",
+      "title": "Where Expertise Meets Algorithm: The Insikt Group® Intelligence Edge",
+      "link": "https://www.recordedfuture.com/blog/expertise-meets-algorithm-intelligence-edge",
+      "published": "2026-06-25T00:00:00+00:00",
+      "summary": "Discover how Recorded Future’s Insikt Group combines human expertise with automated analysis to turn raw data into actionable, industry-leading threat intelligence.",
+      "author": ""
     },
     {
       "source": "Recorded Future",
@@ -1059,6 +1203,15 @@
       "link": "https://www.recordedfuture.com/research/mexico-new-cybersecurity-plan-evaluation",
       "published": "2026-06-25T00:00:00+00:00",
       "summary": "Explore an analysis of Mexico’s 2025–2030 National Cybersecurity Plan. Discover how Mexico is addressing critical threats like ransomware, organized crime, and AI-driven attacks while preparing its digital infrastructure for the 2026 FIFA World Cup and beyond",
+      "author": ""
+    },
+    {
+      "source": "Sysdig",
+      "category": "detection_response_operations",
+      "title": "The FulcrumSec playbook: How to detect and stop the group behind the Novo Nordisk breach",
+      "link": "https://webflow.sysdig.com/blog/the-fulcrumsec-playbook-how-to-detect-and-stop-the-group-behind-the-novo-nordisk-breach",
+      "published": "2026-06-25T00:00:00+00:00",
+      "summary": "The FulcrumSec threat actor group recently claimed to have stolen more than a terabyte of data from global pharmaceutical company Novo Nordisk, the manufacturer of Ozempic and Wegovy. News of the breach is making headlines worldwide, and this isn’t the first time this year they have breached a major organization. However, despite the group’s recent “success,” FulcrumSec’s playbook has shown a few definitive patterns. And where patterns exist, defenders have an opportunity to get ahead.",
       "author": ""
     },
     {
@@ -1134,15 +1287,6 @@
       "author": "Jai Vijayan"
     },
     {
-      "source": "BleepingComputer",
-      "category": "cyber_news_breach_reporting",
-      "title": "Malicious Edge extension abuses Native Messaging as bridge to malware",
-      "link": "https://www.bleepingcomputer.com/news/security/malicious-edge-extension-abuses-native-messaging-as-bridge-to-malware/",
-      "published": "2026-06-24T20:58:22+00:00",
-      "summary": "A malicious Microsoft Edge extension dubbed 'Edgecution' has been used in a ransomware attack to escape the browser sandbox and deploy a Python-based backdoor. [...]",
-      "author": "Bill Toulas"
-    },
-    {
       "source": "Dark Reading",
       "category": "cyber_news_breach_reporting",
       "title": "2026 FIFA World Cup Faces Surge in Cyber Threats",
@@ -1179,12 +1323,21 @@
       "author": ""
     },
     {
+      "source": "Reddit r/blueteamsec",
+      "category": "reddit_practitioner_osint",
+      "title": "Using Bitwarden for indirect C2",
+      "link": "https://www.reddit.com/r/blueteamsec/comments/1uenr9r/using_bitwarden_for_indirect_c2/",
+      "published": "2026-06-24T19:43:19+00:00",
+      "summary": "<!-- SC_OFF --><div class=\"md\"><p>While it's fixed there's some good things in here to consider :)</p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/Splinters_io\"> /u/Splinters_io </a> <br /> <span><a href=\"https://thecontractor.io/bitwarden-c2/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/blueteamsec/comments/1uenr9r/using_bitwarden_for_indirect_c2/\">[comments]</a></span>",
+      "author": "/u/Splinters_io"
+    },
+    {
       "source": "Dark Reading",
       "category": "cyber_news_breach_reporting",
       "title": "Do CISOs Need a Code of Ethics?",
       "link": "https://www.darkreading.com/cybersecurity-operations/ciso-code-of-ethics",
       "published": "2026-06-24T19:10:17+00:00",
-      "summary": "Dark Reading Confidential Episode 19: Kickbacks, no-show jobs, &quot;dirty&quot; VCs, and shelf ware — industry expert Robert &quot;RSnake&quot; Hansen explains why he thinks its time for a CISO code of ethics to ensure cybersecurity bosses aren't engaged in self-dealing that could risk enterprise, and even national, security.",
+      "summary": "Dark Reading Confidential Episode 19: Kickbacks, no-show jobs, &quot;dirty&quot; VCs, and shelf ware — industry expert Robert &quot;RSnake&quot; Hansen explains why he thinks it's time for a CISO code of ethics. It could ensure cybersecurity bosses aren't engaged in self-dealing that could risk enterprise, and even national, security.",
       "author": "Dark Reading Editorial Team"
     },
     {
@@ -1213,6 +1366,15 @@
       "published": "2026-06-24T18:47:17+00:00",
       "summary": "<p>Mandiant detailed the incident in a blog post Wednesday, but it’s unclear who was behind it or if they managed to get broad visibility into the victim’s internal traffic. </p>\n<p>The post <a href=\"https://cyberscoop.com/cisco-sd-wan-zero-day-exploit-communications-provider/\">Malicious hackers exploit Cisco zero-day for highest access level at communications service provider</a> appeared first on <a href=\"https://cyberscoop.com\">CyberScoop</a>.</p>",
       "author": "Tim Starks"
+    },
+    {
+      "source": "Reddit r/blueteamsec",
+      "category": "reddit_practitioner_osint",
+      "title": "Reconnaissance Scanning Tools Used by Chinese Threat Actors and Those Available in Open Source",
+      "link": "https://www.reddit.com/r/blueteamsec/comments/1uem43j/reconnaissance_scanning_tools_used_by_chinese/",
+      "published": "2026-06-24T18:44:11+00:00",
+      "summary": "&#32; submitted by &#32; <a href=\"https://www.reddit.com/user/digicat\"> /u/digicat </a> <br /> <span><a href=\"https://open.substack.com/pub/nattothoughts/p/reconnaissance-scanning-tools-used?utm_source=share&amp;utm_medium=android&amp;r=q9u24\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/blueteamsec/comments/1uem43j/reconnaissance_scanning_tools_used_by_chinese/\">[comments]</a></span>",
+      "author": "/u/digicat"
     },
     {
       "source": "Simon Willison",
@@ -1251,6 +1413,15 @@
       "author": "info@thehackernews.com (The Hacker News)"
     },
     {
+      "source": "Reddit r/blueteamsec",
+      "category": "reddit_practitioner_osint",
+      "title": "Inside Eastern Europe's C2 Sprawl: 3,900+ Servers, 302 Providers, One Host Doing Half the Work",
+      "link": "https://www.reddit.com/r/blueteamsec/comments/1uejfny/inside_eastern_europes_c2_sprawl_3900_servers_302/",
+      "published": "2026-06-24T17:07:45+00:00",
+      "summary": "<!-- SC_OFF --><div class=\"md\"><p><a href=\"http://Hunt.io\">Hunt.io</a> mapped malicious infrastructure across 10 Eastern European countries (BY, BG, CZ, HU, PL, MD, RO, RU, SK, UA) over a three-month window and found more than 3,900 active C2 servers across 302 hosting providers, with Friendhosting in Bulgaria accounting for 2,100 of them on its own. We also tied specific infrastructure back to Cloud Atlas, ShinyHunters' PeopleSoft exploitation, and Nemesys ransomware in the same provider pool.",
+      "author": "/u/Straight-Practice-99"
+    },
+    {
       "source": "Google Cloud Security",
       "category": "cloud_identity_infrastructure",
       "title": "Enhanced data resilience with cross-region backups in Backup and DR Service",
@@ -1276,15 +1447,6 @@
       "published": "2026-06-24T16:49:39+00:00",
       "summary": "Security leaders don't buy red teaming—they buy confidence. Learn why exploitability, not security activities, should drive prioritization, remediation, and risk decisions.",
       "author": "Stephen Gates"
-    },
-    {
-      "source": "Reddit r/netsec",
-      "category": "reddit_practitioner_osint",
-      "title": "Exploiting vulnerabilities in Johnson & Johnson web apps",
-      "link": "https://www.reddit.com/r/netsec/comments/1ueiif9/exploiting_vulnerabilities_in_johnson_johnson_web/",
-      "published": "2026-06-24T16:34:14+00:00",
-      "summary": "&#32; submitted by &#32; <a href=\"https://www.reddit.com/user/EatonZ\"> /u/EatonZ </a> <br /> <span><a href=\"https://eaton-works.com/2026/06/24/jnj-webapp-hacks/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/netsec/comments/1ueiif9/exploiting_vulnerabilities_in_johnson_johnson_web/\">[comments]</a></span>",
-      "author": "/u/EatonZ"
     },
     {
       "source": "Google DeepMind Blog",
@@ -1338,42 +1500,6 @@
       "link": "https://www.infosecurity-magazine.com/news/operation-endgame-stealc-amadey/",
       "published": "2026-06-24T15:25:00+00:00",
       "summary": "Operation Endgame seized around 50 domains and nearly 200 active IP-based servers associated with the infostealers",
-      "author": ""
-    },
-    {
-      "source": "SecurityWeek",
-      "category": "cyber_news_breach_reporting",
-      "title": "Microsoft and Allies Smash Shared Infrastructure of Amadey and StealC Malware",
-      "link": "https://www.securityweek.com/microsoft-and-allies-smash-shared-infrastructure-of-amadey-and-stealc-malware/",
-      "published": "2026-06-24T15:02:07+00:00",
-      "summary": "<p>Hundreds of C&#038;C servers were disrupted in an operation involving law enforcement and several cybersecurity companies.</p>\n<p>The post <a href=\"https://www.securityweek.com/microsoft-and-allies-smash-shared-infrastructure-of-amadey-and-stealc-malware/\">Microsoft and Allies Smash Shared Infrastructure of Amadey and StealC Malware</a> appeared first on <a href=\"https://www.securityweek.com\">SecurityWeek</a>.</p>",
-      "author": "Eduard Kovacs"
-    },
-    {
-      "source": "BleepingComputer",
-      "category": "cyber_news_breach_reporting",
-      "title": "CISA warns of max severity Ubiquiti flaws exploited in attacks",
-      "link": "https://www.bleepingcomputer.com/news/security/cisa-warns-of-max-severity-ubiquiti-flaws-exploited-in-attacks/",
-      "published": "2026-06-24T14:35:15+00:00",
-      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) is warning of hackers actively exploiting flaws in Ubiquity UniFi OS and Lantronix serial-to-ethernet servers. [...]",
-      "author": "Bill Toulas"
-    },
-    {
-      "source": "BleepingComputer",
-      "category": "cyber_news_breach_reporting",
-      "title": "Amadey, StealC malware operations disrupted in Operation Endgame action",
-      "link": "https://www.bleepingcomputer.com/news/security/amadey-stealc-malware-operations-disrupted-in-operation-endgame-action/",
-      "published": "2026-06-24T14:35:11+00:00",
-      "summary": "Microsoft, Europol, and international partners have disrupted infrastructure used by the Amadey and StealC malware operations as part of Operation Endgame, which targets cybercriminal services and ransomware gangs. [...]",
-      "author": "Lawrence Abrams"
-    },
-    {
-      "source": "The Record",
-      "category": "cyber_news_breach_reporting",
-      "title": "German rail services resume after wireless communications outage",
-      "link": "https://therecord.media/deutsche-bahn-railroad-gsmr-outage",
-      "published": "2026-06-24T14:15:37+00:00",
-      "summary": "Deutsche Bahn said a nationwide disruption of railway services was tied to a malfunction in its 2G-based GSM-R communications system.",
       "author": ""
     },
     {
@@ -1449,7 +1575,7 @@
       "author": "Ryan Goodman"
     },
     {
-      "source": "Microsoft Threat Intelligence",
+      "source": "Microsoft Security Blog",
       "category": "threat_research_primary",
       "title": "StealC and Amadey: Breaking down infostealers and the cybercrime services that deliver them",
       "link": "https://www.microsoft.com/en-us/security/blog/2026/06/24/stealc-and-amadey-breaking-down-infostealers-and-the-cybercrime-services-that-deliver-them/",
@@ -1458,7 +1584,7 @@
       "author": "Microsoft Threat Intelligence, Microsoft Defender Security Research Team and Microsoft Digital Crimes Unit"
     },
     {
-      "source": "Microsoft Security Blog",
+      "source": "Microsoft Threat Intelligence",
       "category": "threat_research_primary",
       "title": "StealC and Amadey: Breaking down infostealers and the cybercrime services that deliver them",
       "link": "https://www.microsoft.com/en-us/security/blog/2026/06/24/stealc-and-amadey-breaking-down-infostealers-and-the-cybercrime-services-that-deliver-them/",
@@ -1548,6 +1674,15 @@
       "author": "Mandiant"
     },
     {
+      "source": "Reddit r/blueteamsec",
+      "category": "reddit_practitioner_osint",
+      "title": "GitHub - onhexgroup/TABPE: A monthly Windows PE baseline dataset for Cyber security researchers",
+      "link": "https://www.reddit.com/r/blueteamsec/comments/1ue99fv/github_onhexgrouptabpe_a_monthly_windows_pe/",
+      "published": "2026-06-24T10:02:27+00:00",
+      "summary": "&#32; submitted by &#32; <a href=\"https://www.reddit.com/user/seyyid_\"> /u/seyyid_ </a> <br /> <span><a href=\"https://github.com/onhexgroup/TABPE\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/blueteamsec/comments/1ue99fv/github_onhexgrouptabpe_a_monthly_windows_pe/\">[comments]</a></span>",
+      "author": "/u/seyyid_"
+    },
+    {
       "source": "Kaspersky Securelist",
       "category": "threat_research_primary",
       "title": "StrikeShark: investigating a new campaign delivering Cobalt Strike through SharkLoader",
@@ -1564,6 +1699,15 @@
       "published": "2026-06-24T09:00:00+00:00",
       "summary": "<p>A diffuse landscape, fruitful targets, companies not stepping up, AI’s influence and flagging U.S. government efforts all figure into a shifting threat.</p>\n<p>The post <a href=\"https://cyberscoop.com/open-source-software-security-crisis/\">Open-source security is posing challenges governments can&#8217;t easily solve</a> appeared first on <a href=\"https://cyberscoop.com\">CyberScoop</a>.</p>",
       "author": "Tim Starks"
+    },
+    {
+      "source": "Reddit r/blueteamsec",
+      "category": "reddit_practitioner_osint",
+      "title": "SindriKit: A foundational C library for building operationally credible offensive capabilities",
+      "link": "https://www.reddit.com/r/blueteamsec/comments/1ue77nc/sindrikit_a_foundational_c_library_for_building/",
+      "published": "2026-06-24T08:00:15+00:00",
+      "summary": "&#32; submitted by &#32; <a href=\"https://www.reddit.com/user/digicat\"> /u/digicat </a> <br /> <span><a href=\"https://github.com/youssefnoob003/SindriKit\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/blueteamsec/comments/1ue77nc/sindrikit_a_foundational_c_library_for_building/\">[comments]</a></span>",
+      "author": "/u/digicat"
     },
     {
       "source": "Huntress",
@@ -1591,6 +1735,15 @@
       "published": "2026-06-24T06:20:28+00:00",
       "summary": "The FortiBleed hacks are worse than a credentials leak, a new White House executive order sets out a hard 2031 post quantum cryptography deadline, Meta leaks employee keystroke data, and a third of Samsung and LG TVs act as proxies.",
       "author": ""
+    },
+    {
+      "source": "Reddit r/blueteamsec",
+      "category": "reddit_practitioner_osint",
+      "title": "CVE-2026-41089: CVE-2026-41089 PoC — Netlogon CLDAP stack buffer overflow (CVSS 9.8 CRITICAL) - only a Denial of Service PoC not RCE",
+      "link": "https://www.reddit.com/r/blueteamsec/comments/1ue59ub/cve202641089_cve202641089_poc_netlogon_cldap/",
+      "published": "2026-06-24T06:05:55+00:00",
+      "summary": "&#32; submitted by &#32; <a href=\"https://www.reddit.com/user/digicat\"> /u/digicat </a> <br /> <span><a href=\"https://github.com/0xABCD01/CVE-2026-41089\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/blueteamsec/comments/1ue59ub/cve202641089_cve202641089_poc_netlogon_cldap/\">[comments]</a></span>",
+      "author": "/u/digicat"
     },
     {
       "source": "Cloudflare Security",
@@ -1730,10 +1883,10 @@
     {
       "source": "Cloudflare Security",
       "category": "cloud_identity_infrastructure",
-      "title": "The post-quantum EO is an important milestone. Now it’s time to get to work",
+      "title": "The White House's post-quantum executive order is an important milestone. It’s time to get to work",
       "link": "https://blog.cloudflare.com/post-quantum-eo-2026/",
       "published": "2026-06-23T18:25:18+00:00",
-      "summary": "The new post-quantum executive order sets a 2030 migration deadline and establishes a powerful foundation for post-quantum resilience. We look at what it gets right, where it can go further, and our migration playbook for government and industry.",
+      "summary": "The new executive order sets a 2030 migration deadline and establishes a powerful foundation for post-quantum resilience. We look at what it gets right, where it can go further, and our migration playbook for government and industry.",
       "author": "Vincent Voci"
     },
     {
@@ -1827,15 +1980,6 @@
       "author": "Devonte Grant"
     },
     {
-      "source": "Dark Reading",
-      "category": "cyber_news_breach_reporting",
-      "title": "FortiBleed Attackers Turn Firewalls Into Credential Stealers as Heists Persist",
-      "link": "https://www.darkreading.com/cyberattacks-data-breaches/fortibleed-attackers-firewalls-credentials-stealers",
-      "published": "2026-06-23T12:34:54+00:00",
-      "summary": "The threat actors engineered a Golang-based sniffer to target 430,000 FortiGate firewalls and identify 110 million credentials in the ongoing global campaign.",
-      "author": "Elizabeth Montalbano"
-    },
-    {
       "source": "Wiz Research",
       "category": "cloud_identity_infrastructure",
       "title": "AI Threat Readiness Pillar 4: Detect and contain threats in real-time",
@@ -1870,24 +2014,6 @@
       "published": "2026-06-23T11:03:07+00:00",
       "summary": "<p>Fable 5 is the supposed safe version of Anthropic&#8217;s Mythos Preview, with guardrails to ensure that it can&#8217;t be used to create cyberattacks.</p>\n<p>Well, that restriction was <a href=\"https://cybersecuritynews.com/anthropics-claude-fable-5-jailbroken/\">bypassed</a> within days.</p>",
       "author": "Bruce Schneier"
-    },
-    {
-      "source": "Reddit r/netsec",
-      "category": "reddit_practitioner_osint",
-      "title": "Cloudflare patches Copy-Fail across every server in two days",
-      "link": "https://www.reddit.com/r/netsec/comments/1udd811/cloudflare_patches_copyfail_across_every_server/",
-      "published": "2026-06-23T10:18:55+00:00",
-      "summary": "<!-- SC_OFF --><div class=\"md\"><p>Kind of crazy to look at the graph in this blog. CVE drops on 04/29, they develop a patch on 4/30, and deploy it across all of their servers on 05/01. Obviously they have the engineers to write BPF-LSM patches, but I think it points to a future where they can (almost) keep up with vulnerability disclosures.</p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/xmull1gan\"> /u/xmull1gan </a> <br /> <span><a href=\"https://blog.cloud",
-      "author": "/u/xmull1gan"
-    },
-    {
-      "source": "Reddit r/netsec",
-      "category": "reddit_practitioner_osint",
-      "title": "New Cisco RCE was fixed",
-      "link": "https://www.reddit.com/r/netsec/comments/1udcrb8/new_cisco_rce_was_fixed/",
-      "published": "2026-06-23T09:52:01+00:00",
-      "summary": "<!-- SC_OFF --><div class=\"md\"><p>A vulnerability in Cisco Unified Communications Manager allows unauthenticated attackers to arbitrarily write files in the server which could be used to run arbitrary commands or code on the server.</p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/SSDisclosure\"> /u/SSDisclosure </a> <br /> <span><a href=\"https://ssd-disclosure.com/cisco-unified-communications-manager-arbitrary-file-write-to-rce/\">[link]</a></span> &#32; <spa",
-      "author": "/u/SSDisclosure"
     },
     {
       "source": "Risky Business News",
@@ -1962,15 +2088,6 @@
       "author": ""
     },
     {
-      "source": "CyberScoop",
-      "category": "cyber_news_breach_reporting",
-      "title": "Court rules SAVE database illegal, orders it dismantled",
-      "link": "https://cyberscoop.com/court-rules-save-database-illegal-orders-dismantling/",
-      "published": "2026-06-22T22:07:46+00:00",
-      "summary": "<p>A judge said the administration’s database violates the Privacy Act, the Social Security Act and the Administrative Procedures Act.</p>\n<p>The post <a href=\"https://cyberscoop.com/court-rules-save-database-illegal-orders-dismantling/\">Court rules SAVE database illegal, orders it dismantled</a> appeared first on <a href=\"https://cyberscoop.com\">CyberScoop</a>.</p>",
-      "author": "djohnson"
-    },
-    {
       "source": "Unit 42",
       "category": "threat_research_primary",
       "title": "The Global Namespace Risk: Universal Bucket Hijacking Technique for Cloud Data Exfiltration",
@@ -1989,15 +2106,6 @@
       "author": ""
     },
     {
-      "source": "CyberScoop",
-      "category": "cyber_news_breach_reporting",
-      "title": "Trump executive orders speed up post-quantum migration, boost industry",
-      "link": "https://cyberscoop.com/trump-executive-order-post-quantum-encryption-deadline/",
-      "published": "2026-06-22T19:56:46+00:00",
-      "summary": "<p>The orders accelerate the federal government’s transition to post-quantum encryption and will boost the domestic quantum computing industry. </p>\n<p>The post <a href=\"https://cyberscoop.com/trump-executive-order-post-quantum-encryption-deadline/\">Trump executive orders speed up post-quantum migration, boost industry</a> appeared first on <a href=\"https://cyberscoop.com\">CyberScoop</a>.</p>",
-      "author": "djohnson"
-    },
-    {
       "source": "Microsoft Security Blog",
       "category": "threat_research_primary",
       "title": "Guarding AI memory",
@@ -2005,15 +2113,6 @@
       "published": "2026-06-22T19:07:28+00:00",
       "summary": "<p>What happens when threat actors target what AI remembers? Microsoft breaks down the risks and the defenses.</p>\n<p>The post <a href=\"https://www.microsoft.com/en-us/security/blog/2026/06/22/guarding-ai-memory/\">Guarding AI memory</a> appeared first on <a href=\"https://www.microsoft.com/en-us/security/blog\">Microsoft Security Blog</a>.</p>",
       "author": "Natalie Isak and Sarah Cooley"
-    },
-    {
-      "source": "Reddit r/netsec",
-      "category": "reddit_practitioner_osint",
-      "title": "CVE-2026-25860 turn XSS to RCE",
-      "link": "https://www.reddit.com/r/netsec/comments/1ucsrw0/cve202625860_turn_xss_to_rce/",
-      "published": "2026-06-22T18:31:27+00:00",
-      "summary": "&#32; submitted by &#32; <a href=\"https://www.reddit.com/user/AlbatrossMaximum4489\"> /u/AlbatrossMaximum4489 </a> <br /> <span><a href=\"https://www.partywave.site/show/research/cve-2026-25860-openclinic-ga-xss-to-rce\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/netsec/comments/1ucsrw0/cve202625860_turn_xss_to_rce/\">[comments]</a></span>",
-      "author": "/u/AlbatrossMaximum4489"
     },
     {
       "source": "Orca Security Research",
@@ -2169,15 +2268,6 @@
       "author": ""
     },
     {
-      "source": "Reddit r/netsec",
-      "category": "reddit_practitioner_osint",
-      "title": "Exploiting Auth0 Defaults in XSS Attacks - elttam",
-      "link": "https://www.reddit.com/r/netsec/comments/1uccgi1/exploiting_auth0_defaults_in_xss_attacks_elttam/",
-      "published": "2026-06-22T06:06:05+00:00",
-      "summary": "&#32; submitted by &#32; <a href=\"https://www.reddit.com/user/AnimalStrange\"> /u/AnimalStrange </a> <br /> <span><a href=\"https://www.elttam.com/blog/exploiting-auth0-defaults-in-xss-attacks\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/netsec/comments/1uccgi1/exploiting_auth0_defaults_in_xss_attacks_elttam/\">[comments]</a></span>",
-      "author": "/u/AnimalStrange"
-    },
-    {
       "source": "Risky Business News",
       "category": "practitioner_analysis",
       "title": "Risky Bulletin: Klue breach impacts security firms",
@@ -2232,13 +2322,13 @@
       "author": ""
     },
     {
-      "source": "Reddit r/netsec",
+      "source": "Reddit r/blueteamsec",
       "category": "reddit_practitioner_osint",
-      "title": "Scanning malicious websites with 'infinite' number of VPN tunnels (Part 1)",
-      "link": "https://www.reddit.com/r/netsec/comments/1ubvd13/scanning_malicious_websites_with_infinite_number/",
-      "published": "2026-06-21T17:07:55+00:00",
-      "summary": "&#32; submitted by &#32; <a href=\"https://www.reddit.com/user/moonlightelite\"> /u/moonlightelite </a> <br /> <span><a href=\"https://discounttimu.substack.com/p/scanning-malicious-websites-with\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/netsec/comments/1ubvd13/scanning_malicious_websites_with_infinite_number/\">[comments]</a></span>",
-      "author": "/u/moonlightelite"
+      "title": "CTO at NCSC Summary: week ending June 21st",
+      "link": "https://www.reddit.com/r/blueteamsec/comments/1uarbt4/cto_at_ncsc_summary_week_ending_june_21st/",
+      "published": "2026-06-20T08:32:44+00:00",
+      "summary": "&#32; submitted by &#32; <a href=\"https://www.reddit.com/user/digicat\"> /u/digicat </a> <br /> <span><a href=\"https://ctoatncsc.substack.com/p/cto-at-ncsc-summary-week-ending-june-dcb\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/blueteamsec/comments/1uarbt4/cto_at_ncsc_summary_week_ending_june_21st/\">[comments]</a></span>",
+      "author": "/u/digicat"
     },
     {
       "source": "Unit 42",
@@ -2295,15 +2385,6 @@
       "author": "Google Cloud Content & Editorial"
     },
     {
-      "source": "Orca Security Research",
-      "category": "cloud_identity_infrastructure",
-      "title": "What Is Application Security Testing? Tools and Types",
-      "link": "https://orca.security/resources/blog/what-is-application-security-testing/",
-      "published": "2026-06-19T15:50:00+00:00",
-      "summary": "Key takeaways Application security testing (AST) is how organizations identify security weaknesses before attackers can exploit them. It includes activities such as threat modeling and automated techniques like SAST, SCA, DAST, and IAST. AST belongs in the same program as shift-left security, while DevSecOps practices help route findings to the right owners for remediation. AST [&#8230;]",
-      "author": "John Lewis"
-    },
-    {
       "source": "Graham Cluley",
       "category": "practitioner_analysis",
       "title": "Apple’s Hide My Email tweak leaves privacy fans fuming",
@@ -2338,15 +2419,6 @@
       "published": "2026-06-19T13:02:47+00:00",
       "summary": "This post was originally an op-ed co-authored with Kevin Xu of Interconnected for a general, non-technical audience.",
       "author": "Nathan Lambert"
-    },
-    {
-      "source": "Orca Security Research",
-      "category": "cloud_identity_infrastructure",
-      "title": "What Is Managed Cloud Security? A Practical Guide",
-      "link": "https://orca.security/resources/blog/what-is-managed-cloud-security/",
-      "published": "2026-06-19T12:50:00+00:00",
-      "summary": "Key Takeaways Managed cloud security is contracted operations work: a provider runs all or part of monitoring, triage, incident coordination, vulnerability workflows, compliance reporting, and sometimes architecture review using your cloud accounts and tools. You keep ownership of accounts, data, and policy. The vendor supplies staffing, runbooks, and integrations so alerts and posture gaps are [&#8230;]",
-      "author": "John Lewis"
     },
     {
       "source": "Schneier on Security",
@@ -2504,19 +2576,19 @@
     {
       "source": "NCSC UK",
       "category": "government_authoritative",
-      "title": "The 'vibe coding spectrum' approach to AI-assisted software development",
-      "link": "https://www.ncsc.gov.uk/blogs/the-vibe-coding-spectrum-approach-to-ai-assisted-software-development",
+      "title": "Alert: NCSC issues advice following global targeting of Fortinet firewalls and VPN gateways",
+      "link": "https://www.ncsc.gov.uk/news/advice-following-global-targeting-of-fortinet-firewalls-and-vpn-gateways",
       "published": "2026-06-18T12:00:00+00:00",
-      "summary": "Different code deserves different levels of oversight, so calibrate your approach to ‘vibe coding’ accordingly.",
+      "summary": "Organisations using Fortinet services are being urged to take action following a campaign affecting firewalls and VPN gateways.",
       "author": ""
     },
     {
       "source": "NCSC UK",
       "category": "government_authoritative",
-      "title": "Alert: NCSC issues advice following global targeting of Fortinet firewalls and VPN gateways",
-      "link": "https://www.ncsc.gov.uk/news/advice-following-global-targeting-of-fortinet-firewalls-and-vpn-gateways",
+      "title": "The 'vibe coding spectrum' approach to AI-assisted software development",
+      "link": "https://www.ncsc.gov.uk/blogs/the-vibe-coding-spectrum-approach-to-ai-assisted-software-development",
       "published": "2026-06-18T12:00:00+00:00",
-      "summary": "Organisations using Fortinet services are being urged to take action following a campaign affecting firewalls and VPN gateways.",
+      "summary": "Different code deserves different levels of oversight, so calibrate your approach to ‘vibe coding’ accordingly.",
       "author": ""
     },
     {
@@ -2592,7 +2664,7 @@
       "author": "Luke Bremer"
     },
     {
-      "source": "Microsoft Threat Intelligence",
+      "source": "Microsoft Security Blog",
       "category": "threat_research_primary",
       "title": "From package to postinstall payload: Inside the Mastra npm supply chain compromise by Sapphire Sleet",
       "link": "https://www.microsoft.com/en-us/security/blog/2026/06/17/postinstall-payload-inside-mastra-npm-supply-chain-compromise/",
@@ -2601,7 +2673,7 @@
       "author": "Microsoft Defender Security Research Team and Microsoft Threat Intelligence"
     },
     {
-      "source": "Microsoft Security Blog",
+      "source": "Microsoft Threat Intelligence",
       "category": "threat_research_primary",
       "title": "From package to postinstall payload: Inside the Mastra npm supply chain compromise by Sapphire Sleet",
       "link": "https://www.microsoft.com/en-us/security/blog/2026/06/17/postinstall-payload-inside-mastra-npm-supply-chain-compromise/",
@@ -2671,15 +2743,6 @@
       "published": "2026-06-17T19:15:12+00:00",
       "summary": "<p>Senior legal advisor Siena Anstis and senior researcher John Scott-Railton spoke with Forbes about the lagging safeguards that let spyware proliferate. </p>\n<p>The post <a href=\"https://citizenlab.ca/how-freedom-tech-is-pushing-back-against-digital-authoritarianism/\">How Freedom Tech Is Pushing Back Against Digital Authoritarianism</a> appeared first on <a href=\"https://citizenlab.ca\">The Citizen Lab</a>.</p>",
       "author": "Anna Mackay"
-    },
-    {
-      "source": "Microsoft Security Blog",
-      "category": "threat_research_primary",
-      "title": "​​Forrester names Microsoft a Leader in the 2026 Extended Detection and Response Platforms Wave™ report",
-      "link": "https://www.microsoft.com/en-us/security/blog/2026/06/17/forrester-names-microsoft-a-leader-in-the-2026-extended-detection-and-response-platforms-wave-report/",
-      "published": "2026-06-17T18:30:00+00:00",
-      "summary": "<p>Microsoft has been named a Leader in The Forrester Wave™: Extended Detection and Response Platforms, Q2 2026.</p>\n<p>The post <a href=\"https://www.microsoft.com/en-us/security/blog/2026/06/17/forrester-names-microsoft-a-leader-in-the-2026-extended-detection-and-response-platforms-wave-report/\">​​Forrester names Microsoft a Leader in the 2026 Extended Detection and Response Platforms Wave™ report</a> appeared first on <a href=\"https://www.microsoft.com/en-us/security/blog\">Microsoft Security B",
-      "author": "Rob Lefferts"
     },
     {
       "source": "Chainalysis",
@@ -2835,21 +2898,21 @@
       "author": ""
     },
     {
-      "source": "Sysdig",
-      "category": "detection_response_operations",
-      "title": "LLMjacking evolved: Attackers are using stolen AI compute to build offensive agentic tools",
-      "link": "https://webflow.sysdig.com/blog/llmjacking-evolved-attackers-are-using-stolen-ai-compute-to-build-offensive-agentic-tools",
-      "published": "2026-06-17T00:00:00+00:00",
-      "summary": "",
-      "author": ""
-    },
-    {
       "source": "Sophos X-Ops",
       "category": "detection_response_operations",
       "title": "AI in the underground: Curiosity, claims, and concerns",
       "link": "https://www.sophos.com/en-us/blog/ai-in-the-underground-curiosity-claims-and-concerns",
       "published": "2026-06-17T00:00:00+00:00",
       "summary": "<p>Amid discussions about how artificial intelligence can facilitate cybercrime, some threat actors remain skeptical</p><p><strong>Categories:</strong> Threat Research</p><p><strong>Tags:</strong> AI, Dark Web, underground</p>",
+      "author": ""
+    },
+    {
+      "source": "Sysdig",
+      "category": "detection_response_operations",
+      "title": "LLMjacking evolved: Attackers are using stolen AI compute to build offensive agentic tools",
+      "link": "https://webflow.sysdig.com/blog/llmjacking-evolved-attackers-are-using-stolen-ai-compute-to-build-offensive-agentic-tools",
+      "published": "2026-06-17T00:00:00+00:00",
+      "summary": "",
       "author": ""
     },
     {
@@ -3132,15 +3195,6 @@
       "author": "Graham Cluley"
     },
     {
-      "source": "Schneier on Security",
-      "category": "practitioner_analysis",
-      "title": "The FCC Wants to Eliminate Burner Phones",
-      "link": "https://www.schneier.com/blog/archives/2026/06/the-fcc-wants-to-eliminate-burner-phones.html",
-      "published": "2026-06-15T11:01:05+00:00",
-      "summary": "<p>A proposed FCC rule would <a href=\"https://www.404media.co/fcc-wants-to-kill-burner-phones-by-forcing-telecoms-to-get-all-customers-ids/\">kill</a> burner phones: phones whose accounts are not attached to a particular person.</p>\n<blockquote><p>The FCC plans to do this by legally forcing the country&#8217;s telecoms to store a wealth of personal information about essentially all phone customers, including a government issued identification number and their physical address, alarming privacy ad",
-      "author": "Bruce Schneier"
-    },
-    {
       "source": "ESET WeLiveSecurity",
       "category": "threat_research_primary",
       "title": "EvilTokens: A phishing attack that doesn’t steal your password",
@@ -3168,21 +3222,21 @@
       "author": "Troy Hunt"
     },
     {
-      "source": "Sysdig",
-      "category": "detection_response_operations",
-      "title": "How attackers are jailbreaking LLMs with CTF framing and how to catch them",
-      "link": "https://webflow.sysdig.com/blog/how-attackers-are-jailbreaking-llms-with-ctf-framing-and-how-to-catch-them",
-      "published": "2026-06-15T00:00:00+00:00",
-      "summary": "",
-      "author": ""
-    },
-    {
       "source": "Datadog Security Labs",
       "category": "cloud_identity_infrastructure",
       "title": "Holding blobs for ransom: Four methods for Azure Storage ransomware",
       "link": "https://securitylabs.datadoghq.com/articles/azure-blob-storage-ransomware-four-methods/",
       "published": "2026-06-15T00:00:00+00:00",
       "summary": "This post explores four vectors for threat actors to abuse Azure Storage to maliciously encrypt victim blobs, including step-by-step explanations and event codes for detection.",
+      "author": ""
+    },
+    {
+      "source": "Sysdig",
+      "category": "detection_response_operations",
+      "title": "How attackers are jailbreaking LLMs with CTF framing and how to catch them",
+      "link": "https://webflow.sysdig.com/blog/how-attackers-are-jailbreaking-llms-with-ctf-framing-and-how-to-catch-them",
+      "published": "2026-06-15T00:00:00+00:00",
+      "summary": "",
       "author": ""
     },
     {
@@ -3519,21 +3573,21 @@
       "author": ""
     },
     {
-      "source": "Datadog Security Labs",
-      "category": "cloud_identity_infrastructure",
-      "title": "Entra Agent ID: The blueprint blast radius",
-      "link": "https://securitylabs.datadoghq.com/articles/agent-id-blueprint-blast-radius/",
-      "published": "2026-06-11T00:00:00+00:00",
-      "summary": "Entra Agent ID is an extension of Entra's application model that provides identities for AI agents. Unlike applications, the agent identity model allows linking a single app registration (blueprint) to multiple identities and their associated privileges, increasing the potential blast radius of a compromised agent.",
-      "author": ""
-    },
-    {
       "source": "Sophos X-Ops",
       "category": "detection_response_operations",
       "title": "June Patch Tuesday smashes past 500-CVE mark",
       "link": "https://www.sophos.com/en-us/blog/june-2026-patch-tuesday",
       "published": "2026-06-11T00:00:00+00:00",
       "summary": "<p>209 patches + 388 advisories = welcome to summer 2026</p><p><strong>Categories:</strong> Threat Research</p><p><strong>Tags:</strong> x-ops, Patch Tuesday, MICROSOFT PATCH TUESDAY</p>",
+      "author": ""
+    },
+    {
+      "source": "Datadog Security Labs",
+      "category": "cloud_identity_infrastructure",
+      "title": "Entra Agent ID: The blueprint blast radius",
+      "link": "https://securitylabs.datadoghq.com/articles/agent-id-blueprint-blast-radius/",
+      "published": "2026-06-11T00:00:00+00:00",
+      "summary": "Entra Agent ID is an extension of Entra's application model that provides identities for AI agents. Unlike applications, the agent identity model allows linking a single app registration (blueprint) to multiple identities and their associated privileges, increasing the potential blast radius of a compromised agent.",
       "author": ""
     },
     {
@@ -3807,15 +3861,6 @@
       "author": "Megan Nilsen"
     },
     {
-      "source": "Recorded Future",
-      "category": "threat_research_primary",
-      "title": "Russia’s Defense-Based Economy Risks Forcing Putin to Fight Wars",
-      "link": "https://www.recordedfuture.com/research/russia-defense-base-economy-risks-wars",
-      "published": "2026-06-09T00:00:00+00:00",
-      "summary": "Western sanctions have tied Russia's elite patronage to the defense sector. Learn why this creates a domestic imperative for Putin to pursue perpetual war",
-      "author": ""
-    },
-    {
       "source": "Unit 42",
       "category": "threat_research_primary",
       "title": "When “Hi, This Is IT” Comes Through Microsoft Teams",
@@ -4023,21 +4068,21 @@
       "author": ""
     },
     {
-      "source": "Sysdig",
-      "category": "detection_response_operations",
-      "title": "Agentic threat actor hits the orchestration plane: AI agent-driven container escape",
-      "link": "https://webflow.sysdig.com/blog/agentic-threat-actor-hits-the-orchestration-plane-ai-agent-driven-container-escape",
-      "published": "2026-06-04T00:00:00+00:00",
-      "summary": "",
-      "author": ""
-    },
-    {
       "source": "Sophos X-Ops",
       "category": "detection_response_operations",
       "title": "You do surprise me.exe: An unexpected executable in Hola Browser",
       "link": "https://www.sophos.com/en-us/blog/you-do-surprise-me-exe-an-unexpected-executable-in-hola-browser",
       "published": "2026-06-04T00:00:00+00:00",
       "summary": "<p>&lt;p&gt;Following a certification test, Sophos X-Ops found an unexpected guest had hitched a ride&lt;/p&gt;</p><p><strong>Categories:</strong> Threat Research</p><p><strong>Tags:</strong> Crypto mining, Supply chain</p>",
+      "author": ""
+    },
+    {
+      "source": "Sysdig",
+      "category": "detection_response_operations",
+      "title": "Agentic threat actor hits the orchestration plane: AI agent-driven container escape",
+      "link": "https://webflow.sysdig.com/blog/agentic-threat-actor-hits-the-orchestration-plane-ai-agent-driven-container-escape",
+      "published": "2026-06-04T00:00:00+00:00",
+      "summary": "",
       "author": ""
     },
     {
@@ -4185,21 +4230,21 @@
       "author": "Chris Camejo"
     },
     {
+      "source": "Sophos X-Ops",
+      "category": "detection_response_operations",
+      "title": "Pointing a Cursor at evading detection",
+      "link": "https://www.sophos.com/en-us/blog/pointing-a-cursor-at-evading-detection",
+      "published": "2026-06-02T00:00:00+00:00",
+      "summary": "<p>AI accelerated tool development and testing, but humans drove the workflow</p><p><strong>Categories:</strong> Threat Research</p><p><strong>Tags:</strong> AI, EDR</p>",
+      "author": ""
+    },
+    {
       "source": "Elastic Security Labs",
       "category": "detection_response_operations",
       "title": "From API key to live threat detections in minutes: how Elastic Security ingests Google Threat Intelligence",
       "link": "https://www.elastic.co/security-labs/elastic-security-google-threat-intelligence",
       "published": "2026-06-02T00:00:00+00:00",
       "summary": "Find out how Elastic Security ingests Google Threat Intelligence for continuous detection and uses AI-driven workflows to enrich alerts in real time, from API key to live detections in minutes.",
-      "author": ""
-    },
-    {
-      "source": "Sysdig",
-      "category": "detection_response_operations",
-      "title": "Security briefing: May 2026",
-      "link": "https://webflow.sysdig.com/blog/security-briefing-may-2026",
-      "published": "2026-06-02T00:00:00+00:00",
-      "summary": "",
       "author": ""
     },
     {
@@ -4212,12 +4257,12 @@
       "author": ""
     },
     {
-      "source": "Sophos X-Ops",
+      "source": "Sysdig",
       "category": "detection_response_operations",
-      "title": "Pointing a Cursor at evading detection",
-      "link": "https://www.sophos.com/en-us/blog/pointing-a-cursor-at-evading-detection",
+      "title": "Security briefing: May 2026",
+      "link": "https://webflow.sysdig.com/blog/security-briefing-may-2026",
       "published": "2026-06-02T00:00:00+00:00",
-      "summary": "<p>AI accelerated tool development and testing, but humans drove the workflow</p><p><strong>Categories:</strong> Threat Research</p><p><strong>Tags:</strong> AI, EDR</p>",
+      "summary": "",
       "author": ""
     },
     {
@@ -4255,15 +4300,6 @@
       "published": "2026-06-01T14:43:11+00:00",
       "summary": "<p>For the latest discoveries in cyber research for the week of 1st June, please download our Threat Intelligence Bulletin. TOP ATTACKS AND BREACHES Carnival Corporation, a global cruise line operator, has confirmed a data breach affecting nearly 6 million people after attackers used social engineering to compromise an employee account. Exposed information may include names, contact [&#8230;]</p>\n<p>The post <a href=\"https://research.checkpoint.com/2026/1st-june-threat-intelligence-report/\">1st",
       "author": "urias"
-    },
-    {
-      "source": "Reddit r/netsec",
-      "category": "reddit_practitioner_osint",
-      "title": "r/netsec monthly discussion & tool thread",
-      "link": "https://www.reddit.com/r/netsec/comments/1tts9ly/rnetsec_monthly_discussion_tool_thread/",
-      "published": "2026-06-01T13:29:06+00:00",
-      "summary": "<!-- SC_OFF --><div class=\"md\"><p>Questions regarding netsec and discussion related directly to netsec are welcome here, as is sharing tool links.</p> <h1>Rules &amp; Guidelines</h1> <ul> <li>Always maintain civil discourse. Be awesome to one another - moderator intervention will occur if necessary.</li> <li>Avoid NSFW content unless absolutely necessary. If used, mark it as being NSFW. If left unmarked, the comment will be removed entirely.</li> <li>If linking to classified content, mark it as",
-      "author": "/u/albinowax"
     },
     {
       "source": "Red Canary",
@@ -4374,15 +4410,6 @@
       "author": "OpenSSF"
     },
     {
-      "source": "Citizen Lab",
-      "category": "threat_research_primary",
-      "title": "Researchers Uncover Espionage in Mobile Networks",
-      "link": "https://citizenlab.ca/researchers-uncover-espionage-in-mobile-networks/",
-      "published": "2026-05-29T15:20:32+00:00",
-      "summary": "<p>Swantje Lange spoke with the Hasso Plattner Institut about sophisticated surveillance campaigns being used to exploit mobile networks.</p>\n<p>The post <a href=\"https://citizenlab.ca/researchers-uncover-espionage-in-mobile-networks/\">Researchers Uncover Espionage in Mobile Networks</a> appeared first on <a href=\"https://citizenlab.ca\">The Citizen Lab</a>.</p>",
-      "author": "Claire Posno"
-    },
-    {
       "source": "Permiso Security",
       "category": "cloud_identity_infrastructure",
       "title": "ChatGPhish: The Page Is the Payload",
@@ -4480,15 +4507,6 @@
       "published": "2026-05-28T13:13:04+00:00",
       "summary": "Defenders don’t need to detect every adversary action to prevent a threat. Here’s a more realistic, optimized approach to testing.",
       "author": "Brian Donohue"
-    },
-    {
-      "source": "Cisco Talos",
-      "category": "threat_research_primary",
-      "title": "DICOM, Pydicom, GDCM, and Orthanc: A technical tour of what really happens in the heap",
-      "link": "https://blog.talosintelligence.com/dicom-pydicom-gdcm-and-orthanc-a-technical-tour-of-what-really-happens-in-the-heap/",
-      "published": "2026-05-28T10:00:52+00:00",
-      "summary": "This white paper presents a concrete case study demonstrating the creation of a heap overflow vulnerability through the exploitation of the DICOM file format.",
-      "author": "Emmanuel Tacheau"
     },
     {
       "source": "Kaspersky Securelist",
@@ -4623,15 +4641,6 @@
       "link": "https://www.elastic.co/security-labs/tycoon-2fa-aitm-detection-engineering",
       "published": "2026-05-26T00:00:00+00:00",
       "summary": "Tycoon 2FA bypasses MFA on Entra ID and Google Workspace. We map telemetry fingerprints across both platforms, ship detection rules for both tiers, and contain incidents in under 10 seconds with Elastic Workflows.",
-      "author": ""
-    },
-    {
-      "source": "Sysdig",
-      "category": "detection_response_operations",
-      "title": "AI agent at the wheel: How an attacker used LLMs to move from a CVE to an internal database in 4 pivots",
-      "link": "https://webflow.sysdig.com/blog/ai-agent-at-the-wheel-how-an-attacker-used-llms-to-move-from-a-cve-to-an-internal-database-in-4-pivots",
-      "published": "2026-05-26T00:00:00+00:00",
-      "summary": "",
       "author": ""
     },
     {
@@ -4804,15 +4813,6 @@
       "published": "2026-05-21T13:19:41+00:00",
       "summary": "Let&#8217;s not skip the hard work of AI governance",
       "author": "Sayash Kapoor"
-    },
-    {
-      "source": "OpenSSF Blog",
-      "category": "ai_security_agentic_risk",
-      "title": "OpenSSF Notes Quarter of Growth with New Members, Added AI Security Resources, and Growing Community",
-      "link": "https://openssf.org/press-release/2026/05/21/openssf-notes-quarter-of-growth-with-new-members-added-ai-security-resources-and-growing-community/",
-      "published": "2026-05-21T09:55:57+00:00",
-      "summary": "",
-      "author": "OpenSSF"
     },
     {
       "source": "TrustedSec",
@@ -5103,21 +5103,21 @@
       "author": ""
     },
     {
-      "source": "Elastic Security Labs",
-      "category": "detection_response_operations",
-      "title": "Elastic Security MCP App: Interactive security operations inside your AI Tools",
-      "link": "https://www.elastic.co/security-labs/elastic-security-mcp-app",
-      "published": "2026-05-12T00:00:00+00:00",
-      "summary": "Elastic Security is the first security vendor to ship an interactive UI in AI tools. Triage alerts, hunt threats, correlate attack chains, and open cases, all from inside your AI conversation.",
-      "author": ""
-    },
-    {
       "source": "Sophos X-Ops",
       "category": "detection_response_operations",
       "title": "Inside the lethal trifecta: Blast radius reduction in AI agent deployments",
       "link": "https://www.sophos.com/en-us/blog/inside-the-lethal-trifecta-blast-radius-reduction-in-ai-agent-deployments",
       "published": "2026-05-12T00:00:00+00:00",
       "summary": "<p>&lt;p&gt;Seven things security teams can start doing today to reduce risk&lt;/p&gt;</p><p><strong>Categories:</strong> Threat Research</p><p><strong>Tags:</strong> AI, CISO, risk</p>",
+      "author": ""
+    },
+    {
+      "source": "Elastic Security Labs",
+      "category": "detection_response_operations",
+      "title": "Elastic Security MCP App: Interactive security operations inside your AI Tools",
+      "link": "https://www.elastic.co/security-labs/elastic-security-mcp-app",
+      "published": "2026-05-12T00:00:00+00:00",
+      "summary": "Elastic Security is the first security vendor to ship an interactive UI in AI tools. Triage alerts, hunt threats, correlate attack chains, and open cases, all from inside your AI conversation.",
       "author": ""
     },
     {
@@ -5202,21 +5202,21 @@
       "author": "Alex Delamotte"
     },
     {
-      "source": "Elastic Security Labs",
-      "category": "detection_response_operations",
-      "title": "TCLBANKER: Brazilian Banking Trojan Spreading via WhatsApp and Outlook",
-      "link": "https://www.elastic.co/security-labs/tclbanker-brazilian-banking-trojan",
-      "published": "2026-05-07T00:00:00+00:00",
-      "summary": "REF3076 uses a trojanized Logitech installer to deploy TCLBANKER, a Brazilian banking trojan with environment-gated payloads, WPF fraud overlays, and self-propagating WhatsApp and Outlook worm modules.",
-      "author": ""
-    },
-    {
       "source": "Sophos X-Ops",
       "category": "detection_response_operations",
       "title": "Donuts and Beagles: Fake Claude site spreads backdoor",
       "link": "https://www.sophos.com/en-us/blog/donuts-and-beagles-fake-claude-site-spreads-backdoor",
       "published": "2026-05-07T00:00:00+00:00",
       "summary": "<p>&lt;p&gt;A malicious imitation of&amp;nbsp;Anthropic’s&amp;nbsp;Claude&amp;nbsp;site leads to&amp;nbsp;DLL sideloading&amp;nbsp;– and&amp;nbsp;a backdoor&lt;/p&gt;</p><p><strong>Categories:</strong> Threat Research</p><p><strong>Tags:</strong> Claude, Beagle, Backdoor, malvertising, AI, DONUT, DLL sideloading, Sophos X-Ops</p>",
+      "author": ""
+    },
+    {
+      "source": "Elastic Security Labs",
+      "category": "detection_response_operations",
+      "title": "TCLBANKER: Brazilian Banking Trojan Spreading via WhatsApp and Outlook",
+      "link": "https://www.elastic.co/security-labs/tclbanker-brazilian-banking-trojan",
+      "published": "2026-05-07T00:00:00+00:00",
+      "summary": "REF3076 uses a trojanized Logitech installer to deploy TCLBANKER, a Brazilian banking trojan with environment-gated payloads, WPF fraud overlays, and self-propagating WhatsApp and Outlook worm modules.",
       "author": ""
     },
     {
@@ -5868,6 +5868,15 @@
       "author": "Aditya Vats"
     },
     {
+      "source": "Reddit r/blueteamsec",
+      "category": "reddit_practitioner_osint",
+      "title": "Daily BlueTeamSec Briefing Archive - daily AI generated podcast of the last 24hours of posts",
+      "link": "https://www.reddit.com/r/blueteamsec/comments/1rowtkz/daily_blueteamsec_briefing_archive_daily_ai/",
+      "published": "2026-03-09T10:43:26+00:00",
+      "summary": "&#32; submitted by &#32; <a href=\"https://www.reddit.com/user/digicat\"> /u/digicat </a> <br /> <span><a href=\"https://briefing.workshop1.net/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/blueteamsec/comments/1rowtkz/daily_blueteamsec_briefing_archive_daily_ai/\">[comments]</a></span>",
+      "author": "/u/digicat"
+    },
+    {
       "source": "Google Project Zero",
       "category": "offensive_vulnerability_research",
       "title": "On the Effectiveness of Mutational Grammar Fuzzing",
@@ -6019,15 +6028,6 @@
       "published": "2026-01-26T14:00:00+00:00",
       "summary": "The last quarter of 2025 brought several notable disruptions to Internet connectivity. Cloudflare Radar data reveals the impact of cable cuts, power outages, extreme weather, technical problems, and more.",
       "author": "David Belson"
-    },
-    {
-      "source": "Reddit r/netsec",
-      "category": "reddit_practitioner_osint",
-      "title": "/r/netsec's Q1 2026 Information Security Hiring Thread",
-      "link": "https://www.reddit.com/r/netsec/comments/1qn22ig/rnetsecs_q1_2026_information_security_hiring/",
-      "published": "2026-01-26T01:29:14+00:00",
-      "summary": "<!-- SC_OFF --><div class=\"md\"><p><strong>Overview</strong></p> <p>If you have open positions at your company for information security professionals and would like to hire from the <a href=\"https://www.reddit.com/r/netsec\">/r/netsec</a> user base, please leave a comment detailing any open job listings at your company.</p> <p>We would also like to encourage you to post internship positions as well. Many of our readers are currently in school or are just finishing their education.</p> <p>Please re",
-      "author": "/u/netsec_burn"
     },
     {
       "source": "Google Project Zero",
