@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-29T16:40:02.643762+00:00",
+  "generated_at": "2026-06-29T20:52:59.045849+00:00",
   "total_items": 705,
   "cohorts": {
     "threat_research_primary": {
@@ -48,14 +48,14 @@
     }
   },
   "feed_status": {
-    "ESET WeLiveSecurity": {
-      "url": "https://www.welivesecurity.com/en/rss/feed/",
+    "Unit 42": {
+      "url": "https://unit42.paloaltonetworks.com/feed/",
       "cohort": "threat_research_primary",
       "status": "ok",
       "item_count": 10
     },
-    "Unit 42": {
-      "url": "https://unit42.paloaltonetworks.com/feed/",
+    "ESET WeLiveSecurity": {
+      "url": "https://www.welivesecurity.com/en/rss/feed/",
       "cohort": "threat_research_primary",
       "status": "ok",
       "item_count": 10
@@ -72,14 +72,14 @@
       "status": "ok",
       "item_count": 10
     },
-    "Recorded Future": {
-      "url": "https://www.recordedfuture.com/feed",
+    "Cisco Talos": {
+      "url": "https://feeds.feedburner.com/feedburner/Talos",
       "cohort": "threat_research_primary",
       "status": "ok",
       "item_count": 10
     },
-    "Microsoft Threat Intelligence": {
-      "url": "https://www.microsoft.com/en-us/security/blog/topic/threat-intelligence/feed/",
+    "Microsoft Security Blog": {
+      "url": "https://www.microsoft.com/en-us/security/blog/feed/",
       "cohort": "threat_research_primary",
       "status": "ok",
       "item_count": 10
@@ -90,21 +90,27 @@
       "status": "ok",
       "item_count": 10
     },
+    "Microsoft Threat Intelligence": {
+      "url": "https://www.microsoft.com/en-us/security/blog/topic/threat-intelligence/feed/",
+      "cohort": "threat_research_primary",
+      "status": "ok",
+      "item_count": 10
+    },
     "Trend Micro Research": {
       "url": "https://newsroom.trendmicro.com/news-releases?pagetemplate=rss&category=787",
       "cohort": "threat_research_primary",
       "status": "ok",
       "item_count": 10
     },
-    "Cisco Talos": {
-      "url": "https://feeds.feedburner.com/feedburner/Talos",
+    "Recorded Future": {
+      "url": "https://www.recordedfuture.com/feed",
       "cohort": "threat_research_primary",
       "status": "ok",
       "item_count": 10
     },
-    "Microsoft Security Blog": {
-      "url": "https://www.microsoft.com/en-us/security/blog/feed/",
-      "cohort": "threat_research_primary",
+    "NCSC UK": {
+      "url": "https://www.ncsc.gov.uk/api/1/services/v1/all-rss-feed.xml",
+      "cohort": "government_authoritative",
       "status": "ok",
       "item_count": 10
     },
@@ -120,12 +126,6 @@
       "status": "parse_error",
       "item_count": 0
     },
-    "NCSC UK": {
-      "url": "https://www.ncsc.gov.uk/api/1/services/v1/all-rss-feed.xml",
-      "cohort": "government_authoritative",
-      "status": "ok",
-      "item_count": 10
-    },
     "Volexity": {
       "url": "https://www.volexity.com/feed/",
       "cohort": "threat_research_primary",
@@ -138,8 +138,20 @@
       "status": "ok",
       "item_count": 10
     },
+    "Sekoia": {
+      "url": "https://blog.sekoia.io/feed/",
+      "cohort": "threat_research_primary",
+      "status": "parse_error",
+      "item_count": 0
+    },
     "PortSwigger Research": {
       "url": "https://portswigger.net/research/rss",
+      "cohort": "offensive_vulnerability_research",
+      "status": "ok",
+      "item_count": 10
+    },
+    "Assetnote": {
+      "url": "https://www.assetnote.io/resources/research/rss.xml",
       "cohort": "offensive_vulnerability_research",
       "status": "ok",
       "item_count": 10
@@ -156,9 +168,9 @@
       "status": "ok",
       "item_count": 10
     },
-    "Kaspersky Securelist": {
-      "url": "https://securelist.com/feed/",
-      "cohort": "threat_research_primary",
+    "Red Canary": {
+      "url": "https://redcanary.com/feed/",
+      "cohort": "detection_response_operations",
       "status": "ok",
       "item_count": 10
     },
@@ -174,38 +186,14 @@
       "status": "ok",
       "item_count": 10
     },
-    "Red Canary": {
-      "url": "https://redcanary.com/feed/",
-      "cohort": "detection_response_operations",
+    "Kaspersky Securelist": {
+      "url": "https://securelist.com/feed/",
+      "cohort": "threat_research_primary",
       "status": "ok",
       "item_count": 10
     },
     "The DFIR Report": {
       "url": "https://thedfirreport.com/feed/",
-      "cohort": "detection_response_operations",
-      "status": "ok",
-      "item_count": 10
-    },
-    "Assetnote": {
-      "url": "https://www.assetnote.io/resources/research/rss.xml",
-      "cohort": "offensive_vulnerability_research",
-      "status": "ok",
-      "item_count": 10
-    },
-    "Rapid7": {
-      "url": "https://www.rapid7.com/blog/rss/",
-      "cohort": "offensive_vulnerability_research",
-      "status": "ok",
-      "item_count": 10
-    },
-    "Google Cloud Threat Intelligence": {
-      "url": "https://feeds.feedburner.com/threatintelligence/pvexyqv7v0v",
-      "cohort": "threat_research_primary",
-      "status": "ok",
-      "item_count": 10
-    },
-    "SpecterOps": {
-      "url": "https://medium.com/feed/specter-ops-posts",
       "cohort": "detection_response_operations",
       "status": "ok",
       "item_count": 10
@@ -216,27 +204,15 @@
       "status": "ok",
       "item_count": 10
     },
-    "Sekoia": {
-      "url": "https://blog.sekoia.io/feed/",
-      "cohort": "threat_research_primary",
-      "status": "parse_error",
-      "item_count": 0
-    },
-    "Elastic Security Labs": {
-      "url": "https://www.elastic.co/security-labs/rss/feed.xml",
+    "SpecterOps": {
+      "url": "https://medium.com/feed/specter-ops-posts",
       "cohort": "detection_response_operations",
       "status": "ok",
       "item_count": 10
     },
-    "Proofpoint Threat Insight": {
-      "url": "https://www.proofpoint.com/us/rss.xml",
-      "cohort": "detection_response_operations",
-      "status": "ok",
-      "item_count": 10
-    },
-    "Huntress": {
-      "url": "https://www.huntress.com/blog/rss.xml",
-      "cohort": "detection_response_operations",
+    "Rapid7": {
+      "url": "https://www.rapid7.com/blog/rss/",
+      "cohort": "offensive_vulnerability_research",
       "status": "ok",
       "item_count": 10
     },
@@ -252,21 +228,45 @@
       "status": "ok",
       "item_count": 10
     },
+    "Proofpoint Threat Insight": {
+      "url": "https://www.proofpoint.com/us/rss.xml",
+      "cohort": "detection_response_operations",
+      "status": "ok",
+      "item_count": 10
+    },
     "Sophos X-Ops": {
       "url": "https://news.sophos.com/en-us/category/threat-research/feed/",
       "cohort": "detection_response_operations",
       "status": "ok",
       "item_count": 10
     },
-    "Datadog Security Labs": {
-      "url": "https://securitylabs.datadoghq.com/rss/feed.xml",
-      "cohort": "cloud_identity_infrastructure",
+    "Elastic Security Labs": {
+      "url": "https://www.elastic.co/security-labs/rss/feed.xml",
+      "cohort": "detection_response_operations",
+      "status": "ok",
+      "item_count": 10
+    },
+    "Huntress": {
+      "url": "https://www.huntress.com/blog/rss.xml",
+      "cohort": "detection_response_operations",
       "status": "ok",
       "item_count": 10
     },
     "Sysdig": {
       "url": "https://sysdig.com/feed/",
       "cohort": "detection_response_operations",
+      "status": "ok",
+      "item_count": 10
+    },
+    "Google Cloud Threat Intelligence": {
+      "url": "https://feeds.feedburner.com/threatintelligence/pvexyqv7v0v",
+      "cohort": "threat_research_primary",
+      "status": "ok",
+      "item_count": 10
+    },
+    "Datadog Security Labs": {
+      "url": "https://securitylabs.datadoghq.com/rss/feed.xml",
+      "cohort": "cloud_identity_infrastructure",
       "status": "ok",
       "item_count": 10
     },
@@ -288,15 +288,15 @@
       "status": "ok",
       "item_count": 10
     },
-    "Protect AI": {
-      "url": "https://protectai.com/blog/rss.xml",
-      "cohort": "ai_security_agentic_risk",
-      "status": "ok",
-      "item_count": 10
-    },
     "GreyNoise": {
       "url": "https://www.greynoise.io/blog/rss.xml",
       "cohort": "cloud_identity_infrastructure",
+      "status": "ok",
+      "item_count": 10
+    },
+    "Protect AI": {
+      "url": "https://protectai.com/blog/rss.xml",
+      "cohort": "ai_security_agentic_risk",
       "status": "ok",
       "item_count": 10
     },
@@ -318,33 +318,15 @@
       "status": "ok",
       "item_count": 10
     },
-    "Embrace the Red": {
-      "url": "https://embracethered.com/blog/index.xml",
-      "cohort": "ai_security_agentic_risk",
-      "status": "ok",
-      "item_count": 10
-    },
     "Cloudflare Security": {
       "url": "https://blog.cloudflare.com/tag/security/rss/",
       "cohort": "cloud_identity_infrastructure",
       "status": "ok",
       "item_count": 10
     },
-    "Black Hills Information Security": {
-      "url": "https://www.blackhillsinfosec.com/feed/",
-      "cohort": "detection_response_operations",
-      "status": "ok",
-      "item_count": 10
-    },
-    "OpenSSF Blog": {
-      "url": "https://openssf.org/feed/",
+    "Embrace the Red": {
+      "url": "https://embracethered.com/blog/index.xml",
       "cohort": "ai_security_agentic_risk",
-      "status": "ok",
-      "item_count": 10
-    },
-    "Cloudflare Radar": {
-      "url": "https://blog.cloudflare.com/tag/cloudflare-radar/rss/",
-      "cohort": "cloud_identity_infrastructure",
       "status": "ok",
       "item_count": 10
     },
@@ -354,21 +336,33 @@
       "status": "ok",
       "item_count": 10
     },
+    "OpenSSF Blog": {
+      "url": "https://openssf.org/feed/",
+      "cohort": "ai_security_agentic_risk",
+      "status": "ok",
+      "item_count": 10
+    },
+    "Black Hills Information Security": {
+      "url": "https://www.blackhillsinfosec.com/feed/",
+      "cohort": "detection_response_operations",
+      "status": "ok",
+      "item_count": 10
+    },
     "Coveware": {
       "url": "https://www.coveware.com/blog?format=rss",
       "cohort": "ransomware_ecrime_financial_crime",
       "status": "parse_error",
       "item_count": 0
     },
-    "Team Cymru": {
-      "url": "https://www.team-cymru.com/post/rss.xml",
-      "cohort": "ransomware_ecrime_financial_crime",
+    "Cloudflare Radar": {
+      "url": "https://blog.cloudflare.com/tag/cloudflare-radar/rss/",
+      "cohort": "cloud_identity_infrastructure",
       "status": "ok",
       "item_count": 10
     },
-    "Interconnects": {
-      "url": "https://www.interconnects.ai/feed",
-      "cohort": "ai_security_agentic_risk",
+    "Team Cymru": {
+      "url": "https://www.team-cymru.com/post/rss.xml",
+      "cohort": "ransomware_ecrime_financial_crime",
       "status": "ok",
       "item_count": 10
     },
@@ -384,15 +378,9 @@
       "status": "ok",
       "item_count": 5
     },
-    "Google Cloud Security": {
-      "url": "https://cloudblog.withgoogle.com/rss/",
-      "cohort": "cloud_identity_infrastructure",
-      "status": "ok",
-      "item_count": 10
-    },
-    "Help Net Security": {
-      "url": "https://www.helpnetsecurity.com/feed/",
-      "cohort": "cyber_news_breach_reporting",
+    "Interconnects": {
+      "url": "https://www.interconnects.ai/feed",
+      "cohort": "ai_security_agentic_risk",
       "status": "ok",
       "item_count": 10
     },
@@ -420,9 +408,15 @@
       "status": "ok",
       "item_count": 10
     },
-    "Infosecurity Magazine": {
-      "url": "https://www.infosecurity-magazine.com/rss/news/",
+    "Help Net Security": {
+      "url": "https://www.helpnetsecurity.com/feed/",
       "cohort": "cyber_news_breach_reporting",
+      "status": "ok",
+      "item_count": 10
+    },
+    "Google Cloud Security": {
+      "url": "https://cloudblog.withgoogle.com/rss/",
+      "cohort": "cloud_identity_infrastructure",
       "status": "ok",
       "item_count": 10
     },
@@ -432,26 +426,26 @@
       "status": "ok",
       "item_count": 10
     },
-    "Troy Hunt": {
-      "url": "https://www.troyhunt.com/rss/",
-      "cohort": "practitioner_analysis",
-      "status": "ok",
-      "item_count": 10
-    },
-    "AI Snake Oil": {
-      "url": "https://www.aisnakeoil.com/feed",
-      "cohort": "ai_security_agentic_risk",
-      "status": "ok",
-      "item_count": 10
-    },
     "Schneier on Security": {
       "url": "https://www.schneier.com/feed/atom/",
       "cohort": "practitioner_analysis",
       "status": "ok",
       "item_count": 10
     },
-    "Risky Business News": {
-      "url": "https://risky.biz/feeds/risky-business-news/",
+    "Infosecurity Magazine": {
+      "url": "https://www.infosecurity-magazine.com/rss/news/",
+      "cohort": "cyber_news_breach_reporting",
+      "status": "ok",
+      "item_count": 10
+    },
+    "Graham Cluley": {
+      "url": "https://grahamcluley.com/feed/",
+      "cohort": "practitioner_analysis",
+      "status": "ok",
+      "item_count": 10
+    },
+    "Troy Hunt": {
+      "url": "https://www.troyhunt.com/rss/",
       "cohort": "practitioner_analysis",
       "status": "ok",
       "item_count": 10
@@ -462,9 +456,9 @@
       "status": "ok",
       "item_count": 10
     },
-    "Graham Cluley": {
-      "url": "https://grahamcluley.com/feed/",
-      "cohort": "practitioner_analysis",
+    "AI Snake Oil": {
+      "url": "https://www.aisnakeoil.com/feed",
+      "cohort": "ai_security_agentic_risk",
       "status": "ok",
       "item_count": 10
     },
@@ -486,6 +480,18 @@
       "status": "ok",
       "item_count": 0
     },
+    "Risky Business News": {
+      "url": "https://risky.biz/feeds/risky-business-news/",
+      "cohort": "practitioner_analysis",
+      "status": "ok",
+      "item_count": 10
+    },
+    "Reddit r/msp": {
+      "url": "https://www.reddit.com/r/msp/.rss",
+      "cohort": "reddit_practitioner_osint",
+      "status": "ok",
+      "item_count": 0
+    },
     "Reddit r/netsecstudents": {
       "url": "https://www.reddit.com/r/netsecstudents/.rss",
       "cohort": "reddit_practitioner_osint",
@@ -494,12 +500,6 @@
     },
     "Reddit r/AskNetsec": {
       "url": "https://www.reddit.com/r/AskNetsec/.rss",
-      "cohort": "reddit_practitioner_osint",
-      "status": "ok",
-      "item_count": 0
-    },
-    "Reddit r/msp": {
-      "url": "https://www.reddit.com/r/msp/.rss",
       "cohort": "reddit_practitioner_osint",
       "status": "ok",
       "item_count": 0
@@ -516,20 +516,182 @@
       "status": "ok",
       "item_count": 10
     },
-    "Google Project Zero": {
-      "url": "https://googleprojectzero.blogspot.com/feeds/posts/default",
-      "cohort": "offensive_vulnerability_research",
-      "status": "ok",
-      "item_count": 10
-    },
     "Just Security": {
       "url": "https://www.justsecurity.org/feed/",
       "cohort": "policy_strategy_geopolitics",
       "status": "ok",
       "item_count": 10
+    },
+    "Google Project Zero": {
+      "url": "https://googleprojectzero.blogspot.com/feeds/posts/default",
+      "cohort": "offensive_vulnerability_research",
+      "status": "ok",
+      "item_count": 10
     }
   },
   "items": [
+    {
+      "source": "BleepingComputer",
+      "category": "cyber_news_breach_reporting",
+      "title": "Nissan discloses employee data breach linked to Oracle zero-day attacks",
+      "link": "https://www.bleepingcomputer.com/news/security/nissan-discloses-employee-data-breach-linked-to-oracle-zero-day-attacks/",
+      "published": "2026-06-29T20:40:44+00:00",
+      "summary": "Nissan is warning that it suffered a data breach affecting current and former employees after threat actors exploited an Oracle PeopleSoft vulnerability in data theft attacks previously linked to the ShinyHunters extortion group. [...]",
+      "author": "Lawrence Abrams"
+    },
+    {
+      "source": "BleepingComputer",
+      "category": "cyber_news_breach_reporting",
+      "title": "NAIC says public data stolen in ShinyHunters' PeopleSoft breach",
+      "link": "https://www.bleepingcomputer.com/news/security/naic-says-public-data-stolen-in-shinyhunters-peoplesoft-breach/",
+      "published": "2026-06-29T20:30:28+00:00",
+      "summary": "The National Association of Insurance Commissioners (NAIC) says the ShinyHunters extortion group stole only publicly available data, outdated logs, and configuration files after breaching its systems by exploiting a zero-day vulnerability in an Oracle PeopleSoft server. [...]",
+      "author": "Bill Toulas"
+    },
+    {
+      "source": "Risky Business News",
+      "category": "practitioner_analysis",
+      "title": "Between Two Nerds: Set cyberspace ablaze",
+      "link": "https://risky.biz/BTN172/",
+      "published": "2026-06-29T20:18:18+00:00",
+      "summary": "In this edition of Between Two Nerds, Tom Uren and The Grugq discuss whether cyber organisations should actually be separated from Signals Intelligence organisations. The Grugq argues that having cyber expertise subordinate to intelligence collection means that many opportunities are never explored.\n\nThis episode is also available on YouTube.",
+      "author": ""
+    },
+    {
+      "source": "Dark Reading",
+      "category": "cyber_news_breach_reporting",
+      "title": "Can Clothes Make You Invisible to Facial Recognition?",
+      "link": "https://www.darkreading.com/cyber-risk/clothes-invisible-facial-recognition",
+      "published": "2026-06-29T19:38:04+00:00",
+      "summary": "Does life feel Orwellian sometimes? One researcher has a solution for you: graphic tees that confuse the neural networks in surveillance cameras.",
+      "author": "Nate Nelson"
+    },
+    {
+      "source": "AWS Security Blog",
+      "category": "cloud_identity_infrastructure",
+      "title": "What the June 2026 Threat Technique Catalog update means for your AWS environment",
+      "link": "https://aws.amazon.com/blogs/security/what-the-june-2026-threat-technique-catalog-update-means-for-your-aws-environment/",
+      "published": "2026-06-29T19:30:59+00:00",
+      "summary": "The AWS Customer Incident Response Team (AWS CIRT) encounters patterns that repeat across engagements when helping customers respond to security incidents. We’re passionate about making sure that information is accessible so that everyone can improve their security posture and their organization’s resilience to disruption. The primary method we use to share this information is the […]",
+      "author": "Shannon Brazil"
+    },
+    {
+      "source": "Reddit r/netsec",
+      "category": "reddit_practitioner_osint",
+      "title": "Enterprise Tech In, Shell Out (Progress Kemp LoadMaster Uninitialized Heap to Pre-Auth RCE CVE-2026-8037) - watchTowr Labs",
+      "link": "https://www.reddit.com/r/netsec/comments/1uj2a4w/enterprise_tech_in_shell_out_progress_kemp/",
+      "published": "2026-06-29T19:27:02+00:00",
+      "summary": "&#32; submitted by &#32; <a href=\"https://www.reddit.com/user/dx7r__\"> /u/dx7r__ </a> <br /> <span><a href=\"https://labs.watchtowr.com/enterprise-tech-in-shell-out-progress-kemp-loadmaster-uninitialized-heap-to-pre-auth-rce-cve-2026-8037/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/netsec/comments/1uj2a4w/enterprise_tech_in_shell_out_progress_kemp/\">[comments]</a></span>",
+      "author": "/u/dx7r__"
+    },
+    {
+      "source": "watchTowr Labs",
+      "category": "offensive_vulnerability_research",
+      "title": "Enterprise Tech In, Shell Out (Progress Kemp LoadMaster Uninitialized Heap to Pre-Auth RCE CVE-2026-8037)",
+      "link": "https://labs.watchtowr.com/enterprise-tech-in-shell-out-progress-kemp-loadmaster-uninitialized-heap-to-pre-auth-rce-cve-2026-8037/",
+      "published": "2026-06-29T19:24:54+00:00",
+      "summary": "<p>Welcome back to another watchTowr Labs blog post.</p><p>This time, we&apos;re looking at Progress Kemp LoadMaster, a load balancer that sits at the edge of a lot of enterprise networks. Edge appliances have a habit of becoming the way in rather than the thing keeping people out, and</p>",
+      "author": "Sina Kheirkhah (@SinSinology)"
+    },
+    {
+      "source": "Dark Reading",
+      "category": "cyber_news_breach_reporting",
+      "title": "Iran, Russia, China Target Water Systems for Sabotage",
+      "link": "https://www.darkreading.com/ics-ot-security/iran-russia-china-target-water-systems-sabotage",
+      "published": "2026-06-29T19:12:08+00:00",
+      "summary": "Nation-state attackers breach water systems through weak passwords, exposed PLCs, and poor segmentation — not sophisticated malware.",
+      "author": "Alexander Culafi"
+    },
+    {
+      "source": "The Record",
+      "category": "cyber_news_breach_reporting",
+      "title": "Justices rule that cellphone location histories are protected by the Fourth Amendment",
+      "link": "https://therecord.media/supreme-court-geofencing-ruling-fourth-amendment",
+      "published": "2026-06-29T18:50:00+00:00",
+      "summary": "Police must get a warrant to request geofence data involving individual cellphones, the U.S. Supreme Court ruled in what represents a victory for privacy advocates.",
+      "author": ""
+    },
+    {
+      "source": "The Hacker News",
+      "category": "cyber_news_breach_reporting",
+      "title": "Malicious Perplexity Chrome Extension Intercepted Searches and Address Bar Input",
+      "link": "https://thehackernews.com/2026/06/malicious-perplexity-chrome-extension.html",
+      "published": "2026-06-29T18:40:09+00:00",
+      "summary": "Microsoft has found a malicious Chrome extension that posed as the AI search engine Perplexity and quietly logged what people searched for. It routed every query and every character typed into the address bar through an attacker-controlled server before redirecting users to real results.\n\nMicrosoft says Google removed it from the store after responsible disclosure. The extension was called \"",
+      "author": "info@thehackernews.com (The Hacker News)"
+    },
+    {
+      "source": "Simon Willison",
+      "category": "ai_security_agentic_risk",
+      "title": "Count the number of Safari tabs",
+      "link": "https://simonwillison.net/2026/Jun/29/safari-tab-count/#atom-everything",
+      "published": "2026-06-29T18:36:18+00:00",
+      "summary": "<p>Tiniest TIL, using AppleScript to count the number of open browser tabs in Safari:</p>\n<pre><code>osascript -e 'tell application \"Safari\" to count tabs of every window'\n</code></pre>\n<p><img alt=\"I ran it in a terminal window and got back 370.\" src=\"https://static.simonwillison.net/static/2026/tab-shame.jpg\" /></p>\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/safari\">safari</a>, <a href=\"https://simonwillison.net/tags/til\">til</a>, <a href=\"https://simonwillison.net/tags/applescript\"",
+      "author": ""
+    },
+    {
+      "source": "BleepingComputer",
+      "category": "cyber_news_breach_reporting",
+      "title": "WhatsApp rolls out usernames to help users hide their phone number",
+      "link": "https://www.bleepingcomputer.com/news/security/whatsapp-rolls-out-usernames-to-help-users-hide-their-phone-number/",
+      "published": "2026-06-29T17:48:28+00:00",
+      "summary": "WhatsApp is finally allowing users to reserve usernames, a privacy feature that lets them hide their phone numbers from people not in their contact list. [...]",
+      "author": "Sergiu Gatlan"
+    },
+    {
+      "source": "CyberScoop",
+      "category": "cyber_news_breach_reporting",
+      "title": "Supreme Court approves mail-in ballots that arrive after Election Day",
+      "link": "https://cyberscoop.com/supreme-court-rules-legal-mail-in-ballots-after-election-day/",
+      "published": "2026-06-29T17:31:44+00:00",
+      "summary": "<p>The ruling is a victory for election advocates who say the evidence overwhelmingly shows that voter fraud is rare and not tied to mail voting in general. </p>\n<p>The post <a href=\"https://cyberscoop.com/supreme-court-rules-legal-mail-in-ballots-after-election-day/\">Supreme Court approves mail-in ballots that arrive after Election Day </a> appeared first on <a href=\"https://cyberscoop.com\">CyberScoop</a>.</p>",
+      "author": "djohnson"
+    },
+    {
+      "source": "Orca Security Research",
+      "category": "cloud_identity_infrastructure",
+      "title": "Kubernetes Compliance Tools: Automating CIS Benchmarks",
+      "link": "https://orca.security/resources/blog/kubernetes-compliance-tools-automating-cis-benchmarks/",
+      "published": "2026-06-29T17:19:10+00:00",
+      "summary": "Kubernetes compliance tools automate the enforcement of CIS Benchmarks, enabling teams to continuously validate cluster configurations against industry-accepted security baselines without slowing release velocity. The right tooling replaces manual audits with policy-driven checks that run across the CI/CD pipeline, from build to runtime, catching misconfigurations before they reach production. Maintaining multi-cloud compliance across dozens or [&#8230;]",
+      "author": "Devonte Grant"
+    },
+    {
+      "source": "CyberScoop",
+      "category": "cyber_news_breach_reporting",
+      "title": "Supreme Court delivers ‘major win’ for tech privacy in Chatrie ruling",
+      "link": "https://cyberscoop.com/supreme-court-geofence-warrant-ruling-phone-privacy-chatrie/",
+      "published": "2026-06-29T17:12:09+00:00",
+      "summary": "<p>Dissenting justices who criticized the ruling said it would have “seismic” implications for the Fourth Amendment.</p>\n<p>The post <a href=\"https://cyberscoop.com/supreme-court-geofence-warrant-ruling-phone-privacy-chatrie/\">Supreme Court delivers ‘major win’ for tech privacy in Chatrie ruling</a> appeared first on <a href=\"https://cyberscoop.com\">CyberScoop</a>.</p>",
+      "author": "Tim Starks"
+    },
+    {
+      "source": "BleepingComputer",
+      "category": "cyber_news_breach_reporting",
+      "title": "Microsoft extends Windows Server 2022 hotpatching until October 2027",
+      "link": "https://www.bleepingcomputer.com/news/microsoft/microsoft-extends-windows-server-2022-hotpatching-until-october-2027/",
+      "published": "2026-06-29T17:11:15+00:00",
+      "summary": "Microsoft has extended Windows Server 2022 hotpatching until October 2027, one year after the mainstream end date of October 2026. [...]",
+      "author": "Sergiu Gatlan"
+    },
+    {
+      "source": "The Record",
+      "category": "cyber_news_breach_reporting",
+      "title": "US racks up about 400 wins over illegal World Cup streaming sites",
+      "link": "https://therecord.media/us-takes-down-hundreds-world-cup-streaming-sites",
+      "published": "2026-06-29T17:10:00+00:00",
+      "summary": "The World Cup’s organizing body, FIFA, helped identify hundreds of  domains taken down in an action organized by the U.S., along with the help of U.S. broadcaster NBC Universal and other entities.",
+      "author": ""
+    },
+    {
+      "source": "Microsoft Security Blog",
+      "category": "threat_research_primary",
+      "title": "Chromium extension uses AI‑related branding to redirect browser search",
+      "link": "https://www.microsoft.com/en-us/security/blog/2026/06/29/chromium-extension-uses-airelated-branding-redirect-browser-search/",
+      "published": "2026-06-29T16:27:46+00:00",
+      "summary": "<p>A malicious Chromium-based extension that spoofs the AI-powered answer engine Perplexity AI redirects browser search traffic using MV3 APIs and intermediary infrastructure.</p>\n<p>The post <a href=\"https://www.microsoft.com/en-us/security/blog/2026/06/29/chromium-extension-uses-airelated-branding-redirect-browser-search/\">Chromium extension uses AI‑related branding to redirect browser search</a> appeared first on <a href=\"https://www.microsoft.com/en-us/security/blog\">Microsoft Security Blog<",
+      "author": "Microsoft Defender Security Research Team"
+    },
     {
       "source": "Team Cymru",
       "category": "ransomware_ecrime_financial_crime",
@@ -610,6 +772,15 @@
       "published": "2026-06-29T16:00:00+00:00",
       "summary": "<div class=\"block-paragraph_advanced\"><p><span style=\"vertical-align: baseline;\">We recently announced the preview of the BigQuery </span><a href=\"https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-ai-agg\"><code style=\"text-decoration: underline; vertical-align: baseline;\">AI.AGG()</code></a><span style=\"vertical-align: baseline;\"> function. With </span><code style=\"vertical-align: baseline;\">AI.AGG()</code><span style=\"vertical-align: baseline;\">, you can use n",
       "author": "Alicia Williams"
+    },
+    {
+      "source": "Google Cloud Security",
+      "category": "cloud_identity_infrastructure",
+      "title": "Cloud CISO Perspectives: How Google Cloud Security uses AI internally",
+      "link": "https://cloud.google.com/blog/products/identity-security/cloud-ciso-perspectives-how-google-cloud-security-uses-ai-internally/",
+      "published": "2026-06-29T16:00:00+00:00",
+      "summary": "<div class=\"block-paragraph\"><p>Welcome to the second Cloud CISO Perspectives for June 2026. Today, we’re discussing how we use AI to chart a path to autonomous software development lifecycle security.</p><p>As with all Cloud CISO Perspectives, the contents of this newsletter are posted to the <a href=\"https://cloud.google.com/blog/products/identity-security/\">Google Cloud blog</a>. If you’re reading this on the website and you’d like to receive the email version, you can <a href=\"https://cloud.",
+      "author": "Ruchi Shah"
     },
     {
       "source": "Horizon3 Attack Research",
@@ -889,6 +1060,15 @@
       "published": "2026-06-29T11:57:28+00:00",
       "summary": "<p>Signup to receive the Early Edition in your inbox here. A curated guide to major news and developments over the weekend. Here’s today’s news: VENEZUELA QUAKE &#8211; TOLL AND RESCUE A 4.8-magnitude earthquake struck off Venezuela’s coast on Saturday, according to U.S. Geological Survey data. Officials said the region has recorded more than 430 aftershocks since [&#8230;]</p>\n<p>The post <a href=\"https://www.justsecurity.org/144806/early-edition-june-29-2026/\">Early Edition: June 29, 2026</a>",
       "author": "Elisabeth Jennings"
+    },
+    {
+      "source": "Dark Reading",
+      "category": "cyber_news_breach_reporting",
+      "title": "Amazon Q VS Extension Flaw Leads to Cloud Credential Theft",
+      "link": "https://www.darkreading.com/cloud-security/amazon-q-vs-extension-flaw-leads-cloud-credential-theft",
+      "published": "2026-06-29T11:44:42+00:00",
+      "summary": "Adversaries could plant a malicious repository that can execute arbitrary code and steal cloud credentials by exploiting the vulnerability, which showcases growing MCP risk.",
+      "author": "Elizabeth Montalbano"
     },
     {
       "source": "The Hacker News",
@@ -1179,15 +1359,6 @@
       "author": "Lucas Guttentag"
     },
     {
-      "source": "BleepingComputer",
-      "category": "cyber_news_breach_reporting",
-      "title": "Data breach exposes up to 14.2 million email logins at six ISPs",
-      "link": "https://www.bleepingcomputer.com/news/security/data-breach-exposes-up-to-142-million-email-logins-at-six-isps/",
-      "published": "2026-06-28T14:13:46+00:00",
-      "summary": "Japanese telecommunications operator KDDI Corporation disclosed a data breach where threat actors gained access to one of its email systems used by five other internet service providers (ISPs) in the country. [...]",
-      "author": "Bill Toulas"
-    },
-    {
       "source": "Reddit r/netsec",
       "category": "reddit_practitioner_osint",
       "title": "I tried a Local AI model (Qwen 3.6 27b) for security research and it works surprisingly well.",
@@ -1224,15 +1395,6 @@
       "author": ""
     },
     {
-      "source": "The Hacker News",
-      "category": "cyber_news_breach_reporting",
-      "title": "Ukraine Says Russian Intelligence Used Fake Support Texts to Steal Messaging Credentials",
-      "link": "https://thehackernews.com/2026/06/ukraine-says-russian-intelligence-used.html",
-      "published": "2026-06-27T17:27:11+00:00",
-      "summary": "The Security Service of Ukraine (SSU) said it, together with the U.S. Federal Bureau of Investigation (FBI), uncovered a long-running campaign orchestrated by Russian intelligence services to break into the messaging accounts of government officials, military personnel, politicians, and activists in Ukraine, Europe, and the U.S.\n\nThe systematic cyber attacks aimed at stealing sensitive",
-      "author": "info@thehackernews.com (The Hacker News)"
-    },
-    {
       "source": "Reddit r/netsec",
       "category": "reddit_practitioner_osint",
       "title": "A peek into Reddit's anti-spam internals",
@@ -1240,15 +1402,6 @@
       "published": "2026-06-27T17:03:25+00:00",
       "summary": "&#32; submitted by &#32; <a href=\"https://www.reddit.com/user/rebane2001\"> /u/rebane2001 </a> <br /> <span><a href=\"https://lyra.horse/blog/2026/06/reddit-spam-internals/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/netsec/comments/1uh7zpx/a_peek_into_reddits_antispam_internals/\">[comments]</a></span>",
       "author": "/u/rebane2001"
-    },
-    {
-      "source": "BleepingComputer",
-      "category": "cyber_news_breach_reporting",
-      "title": "Clean GitHub repo tricks AI coding agents into running malware",
-      "link": "https://www.bleepingcomputer.com/news/security/clean-github-repo-tricks-ai-coding-agents-into-running-malware/",
-      "published": "2026-06-27T14:22:36+00:00",
-      "summary": "An agentic coding tool tasked with cloning and setting up a seemingly benign GitHub repository could execute a malicious payload that remains invisible to security scanners, AI agents, and human reviewers. [...]",
-      "author": "Bill Toulas"
     },
     {
       "source": "SecurityWeek",
@@ -1278,15 +1431,6 @@
       "author": ""
     },
     {
-      "source": "BleepingComputer",
-      "category": "cyber_news_breach_reporting",
-      "title": "FBI: Russian hackers now target Signal backup recovery keys",
-      "link": "https://www.bleepingcomputer.com/news/security/fbi-russian-hackers-now-target-signal-backup-recovery-keys/",
-      "published": "2026-06-26T22:06:17+00:00",
-      "summary": "The FBI and CISA are warning that a phishing campaign targeting Signal users tied to Russian intelligence services has evolved to steal Signal Backup Recovery Keys, allowing attackers to access victims' historical messages. [...]",
-      "author": "Lawrence Abrams"
-    },
-    {
       "source": "Simon Willison",
       "category": "ai_security_agentic_risk",
       "title": "Quoting Timothy B. Lee",
@@ -1303,15 +1447,6 @@
       "published": "2026-06-26T20:57:04+00:00",
       "summary": "<p>Chinese companies control nearly <a href=\"https://www.seafoodsource.com/news/environment-sustainability/chinese-companies-control-nearly-two-thirds-of-argentina-s-own-squid-fleet-according-to-new-iuu-expos\">two-thirds</a> of Argentina’s own squid fleet.</p>",
       "author": "Bruce Schneier"
-    },
-    {
-      "source": "BleepingComputer",
-      "category": "cyber_news_breach_reporting",
-      "title": "CISA sets urgent deadline to fix Cisco flaw exploited in attacks",
-      "link": "https://www.bleepingcomputer.com/news/security/cisa-sets-urgent-deadline-to-fix-cisco-flaw-exploited-in-attacks/",
-      "published": "2026-06-26T19:43:06+00:00",
-      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) is giving federal agencies until Sunday to patch a vulnerability in Cisco Unified Communications Manager Server that is being actively exploited. [...]",
-      "author": "Bill Toulas"
     },
     {
       "source": "Rapid7",
@@ -1494,15 +1629,6 @@
       "author": ""
     },
     {
-      "source": "The Record",
-      "category": "cyber_news_breach_reporting",
-      "title": "Turla group adds more malware to Russia’s espionage efforts against Ukraine",
-      "link": "https://therecord.media/russia-turla-espionage-ukraine-stockstay-malware",
-      "published": "2026-06-26T13:30:00+00:00",
-      "summary": "Threat intelligence researchers at Google described StockStay, the latest malware developed by the Russian cyber-espionage group known as Turla.",
-      "author": ""
-    },
-    {
       "source": "Dark Reading",
       "category": "cyber_news_breach_reporting",
       "title": "Meeting Trump's 2030 Quantum Deadline Will be Expensive, Complex",
@@ -1510,15 +1636,6 @@
       "published": "2026-06-26T13:30:00+00:00",
       "summary": "Getting accurate visibility into IT and OT systems will be compounded by multivendor environments, misaligned update life cycles, and interoperability gaps.",
       "author": "Alexander Culafi"
-    },
-    {
-      "source": "The Record",
-      "category": "cyber_news_breach_reporting",
-      "title": "Russia used social engineering to breach prominent messaging accounts, Ukraine says",
-      "link": "https://therecord.media/russia-ukraine-social-engineering-messaging-accounts",
-      "published": "2026-06-26T13:10:00+00:00",
-      "summary": "Ukraine's SBU described a long-running Russian operation that used fake tech-support workers to persuade people to hand over credentials to their messaging apps.",
-      "author": ""
     },
     {
       "source": "Just Security",
@@ -1638,15 +1755,6 @@
       "author": ""
     },
     {
-      "source": "Datadog Security Labs",
-      "category": "cloud_identity_infrastructure",
-      "title": "Introducing GuardDog 3.0: A new rules engine, transparent sandboxing, and more",
-      "link": "https://securitylabs.datadoghq.com/articles/guarddog-3-0-release/",
-      "published": "2026-06-26T00:00:00+00:00",
-      "summary": "Release of GuardDog 3.0, an open-source tool to identify malicious packages, featuring a new YARA-based rules engine, a risk scoring engine, and built-in sandboxing.",
-      "author": ""
-    },
-    {
       "source": "Sysdig",
       "category": "detection_response_operations",
       "title": "Understanding Langflow CVE-2026-55255, and why higher CVSS vulnerabilities aren't always the most exploited",
@@ -1656,13 +1764,13 @@
       "author": ""
     },
     {
-      "source": "Dark Reading",
-      "category": "cyber_news_breach_reporting",
-      "title": "Robinhood Cuts Access Approval Time to Support High-Velocity Development",
-      "link": "https://www.darkreading.com/application-security/robinhood-reengineered-access-approvals-for-high-velocity-development",
-      "published": "2026-06-25T22:42:36+00:00",
-      "summary": "The fintech company's engineering-first application security team reengineered the process for granting system access, making it easier and more secure for developers working on their projects. Here are the lessons learned from Robinhood's experience.",
-      "author": "Ericka Chickowski"
+      "source": "Datadog Security Labs",
+      "category": "cloud_identity_infrastructure",
+      "title": "Introducing GuardDog 3.0: A new rules engine, transparent sandboxing, and more",
+      "link": "https://securitylabs.datadoghq.com/articles/guarddog-3-0-release/",
+      "published": "2026-06-26T00:00:00+00:00",
+      "summary": "Release of GuardDog 3.0, an open-source tool to identify malicious packages, featuring a new YARA-based rules engine, a risk scoring engine, and built-in sandboxing.",
+      "author": ""
     },
     {
       "source": "Microsoft Security Blog",
@@ -1690,24 +1798,6 @@
       "published": "2026-06-25T22:00:52+00:00",
       "summary": "<p>Government entities and critical infrastructure were targeted for espionage in SE Asia by attackers using a hybrid toolkit, including custom TinyRCT backdoor. </p>\n<p>The post <a href=\"https://unit42.paloaltonetworks.com/cl-sta-1062-tinyrct-backdoor/\">CL-STA-1062 Targets Southeast Asian Governments and Critical Infrastructure</a> appeared first on <a href=\"https://unit42.paloaltonetworks.com\">Unit 42</a>.</p>",
       "author": "Unit 42"
-    },
-    {
-      "source": "Dark Reading",
-      "category": "cyber_news_breach_reporting",
-      "title": "In Less Than 24 Hours, Attackers Weaponize Cisco CUCM Flaw",
-      "link": "https://www.darkreading.com/cyberattacks-data-breaches/less-than-24-hours-attackers-weaponize-cisco-cucm-flaw",
-      "published": "2026-06-25T21:54:34+00:00",
-      "summary": "The flaw enables server-side request forgery (SSRF) and escalates privileges to root, impacting Cisco Unified CM and Unified CM SME deployments.",
-      "author": "Jai Vijayan"
-    },
-    {
-      "source": "Dark Reading",
-      "category": "cyber_news_breach_reporting",
-      "title": "Russian APT 'Gamaredon' Upgrades Its Arsenal, Requiring New Defenses",
-      "link": "https://www.darkreading.com/threat-intelligence/russia-apt-gamaredon-arsenal-defense",
-      "published": "2026-06-25T21:12:01+00:00",
-      "summary": "The FSB state-sponsored operation has gotten a lot better at loading its malware and hiding its servers.",
-      "author": "Nate Nelson"
     },
     {
       "source": "CyberScoop",
@@ -1762,15 +1852,6 @@
       "published": "2026-06-25T17:26:08+00:00",
       "summary": "<p>Senior research associate Emile Dirks has been elected to serve as a member of PEN Canada's board of directors. </p>\n<p>The post <a href=\"https://citizenlab.ca/emile-dirks-elected-to-pen-canadas-board-of-directors/\">Emile Dirks Elected to PEN Canada’s Board of Directors</a> appeared first on <a href=\"https://citizenlab.ca\">The Citizen Lab</a>.</p>",
       "author": "Anna Mackay"
-    },
-    {
-      "source": "Simon Willison",
-      "category": "ai_security_agentic_risk",
-      "title": "datasette-export-database 0.3a2",
-      "link": "https://simonwillison.net/2026/Jun/25/datasette-export-database/#atom-everything",
-      "published": "2026-06-25T17:21:09+00:00",
-      "summary": "<p><strong>Release:</strong> <a href=\"https://github.com/datasette/datasette-export-database/releases/tag/0.3a2\">datasette-export-database 0.3a2</a></p>\n        <p>An embarrassingly tiny release. The <code>pyproject.toml</code> had pinned to <code>datasette==1.0a27</code>, inadvertently making this plugin incompatible with all other Datasette versions. It's now <code>datasette&gt;=1.0a27</code> instead.</p>\n    \n    \n        <p>Tags: <a href=\"https://simonwillison.net/tags/datasette\">datasette</",
-      "author": ""
     },
     {
       "source": "Schneier on Security",
@@ -1845,15 +1926,6 @@
       "author": ""
     },
     {
-      "source": "Google Cloud Threat Intelligence",
-      "category": "threat_research_primary",
-      "title": "STOCKSTAY Another Day: The Latest Addition to Turla’s Intelligence Gathering Apparatus",
-      "link": "https://cloud.google.com/blog/topics/threat-intelligence/stockstay-turla-intelligence-gathering/",
-      "published": "2026-06-25T14:00:00+00:00",
-      "summary": "<div class=\"block-paragraph_advanced\"><p>Written by: Jordan Jones</p>\n<hr /></div>\n<div class=\"block-paragraph_advanced\"><h3><span style=\"vertical-align: baseline;\">Introduction</span><strong style=\"vertical-align: baseline;\"> </strong></h3>\n<p><span style=\"vertical-align: baseline;\">Google Threat Intelligence Group (GTIG) has conducted an in-depth analysis of a .NET backdoor, tracked as STOCKSTAY, that has been continually developed and deployed by the Russia-linked threat actor Turla (aka SUMM",
-      "author": "Google Threat Intelligence Group"
-    },
-    {
       "source": "Huntress",
       "category": "detection_response_operations",
       "title": "How to Spot a Client in the DoD Industrial Base That Handles CUI",
@@ -1861,6 +1933,15 @@
       "published": "2026-06-25T14:00:00+00:00",
       "summary": "Learn how MSPs/MSSPs can identify if a client is a DoD contractor handling CUI.",
       "author": ""
+    },
+    {
+      "source": "Google Cloud Threat Intelligence",
+      "category": "threat_research_primary",
+      "title": "STOCKSTAY Another Day: The Latest Addition to Turla’s Intelligence Gathering Apparatus",
+      "link": "https://cloud.google.com/blog/topics/threat-intelligence/stockstay-turla-intelligence-gathering/",
+      "published": "2026-06-25T14:00:00+00:00",
+      "summary": "<div class=\"block-paragraph_advanced\"><p>Written by: Jordan Jones</p>\n<hr /></div>\n<div class=\"block-paragraph_advanced\"><h3><span style=\"vertical-align: baseline;\">Introduction</span><strong style=\"vertical-align: baseline;\"> </strong></h3>\n<p><span style=\"vertical-align: baseline;\">Google Threat Intelligence Group (GTIG) has conducted an in-depth analysis of a .NET backdoor, tracked as STOCKSTAY, that has been continually developed and deployed by the Russia-linked threat actor Turla (aka SUMM",
+      "author": "Google Threat Intelligence Group"
     },
     {
       "source": "Google Cloud Security",
@@ -2196,15 +2277,6 @@
       "author": ""
     },
     {
-      "source": "Microsoft Threat Intelligence",
-      "category": "threat_research_primary",
-      "title": "StealC and Amadey: Breaking down infostealers and the cybercrime services that deliver them",
-      "link": "https://www.microsoft.com/en-us/security/blog/2026/06/24/stealc-and-amadey-breaking-down-infostealers-and-the-cybercrime-services-that-deliver-them/",
-      "published": "2026-06-24T12:30:00+00:00",
-      "summary": "<p>On June 24, 2026, Microsoft’s Digital Crimes Unit (DCU) facilitated the takedown, suspension, and blocking of domains that formed the backbone of the StealC and Amadey infrastructure. This blog is a technical breakdown of StealC and Amadey.</p>\n<p>The post <a href=\"https://www.microsoft.com/en-us/security/blog/2026/06/24/stealc-and-amadey-breaking-down-infostealers-and-the-cybercrime-services-that-deliver-them/\">StealC and Amadey: Breaking down infostealers and the cybercrime services that de",
-      "author": "Microsoft Threat Intelligence, Microsoft Defender Security Research Team and Microsoft Digital Crimes Unit"
-    },
-    {
       "source": "Microsoft Security Blog",
       "category": "threat_research_primary",
       "title": "StealC and Amadey: Breaking down infostealers and the cybercrime services that deliver them",
@@ -2214,13 +2286,13 @@
       "author": "Microsoft Threat Intelligence, Microsoft Defender Security Research Team and Microsoft Digital Crimes Unit"
     },
     {
-      "source": "CyberScoop",
-      "category": "cyber_news_breach_reporting",
-      "title": "In a first, a court takedown goes after two cybercrime tools at once",
-      "link": "https://cyberscoop.com/microsoft-amadey-stealc-takedown/",
+      "source": "Microsoft Threat Intelligence",
+      "category": "threat_research_primary",
+      "title": "StealC and Amadey: Breaking down infostealers and the cybercrime services that deliver them",
+      "link": "https://www.microsoft.com/en-us/security/blog/2026/06/24/stealc-and-amadey-breaking-down-infostealers-and-the-cybercrime-services-that-deliver-them/",
       "published": "2026-06-24T12:30:00+00:00",
-      "summary": "<p>Microsoft, with law enforcement and industry partners, disrupted more than 200 command and control servers for Amadey and StealC, often used in conjunction.</p>\n<p>The post <a href=\"https://cyberscoop.com/microsoft-amadey-stealc-takedown/\">In a first, a court takedown goes after two cybercrime tools at once</a> appeared first on <a href=\"https://cyberscoop.com\">CyberScoop</a>.</p>",
-      "author": "Tim Starks"
+      "summary": "<p>On June 24, 2026, Microsoft’s Digital Crimes Unit (DCU) facilitated the takedown, suspension, and blocking of domains that formed the backbone of the StealC and Amadey infrastructure. This blog is a technical breakdown of StealC and Amadey.</p>\n<p>The post <a href=\"https://www.microsoft.com/en-us/security/blog/2026/06/24/stealc-and-amadey-breaking-down-infostealers-and-the-cybercrime-services-that-deliver-them/\">StealC and Amadey: Breaking down infostealers and the cybercrime services that de",
+      "author": "Microsoft Threat Intelligence, Microsoft Defender Security Research Team and Microsoft Digital Crimes Unit"
     },
     {
       "source": "Wiz Research",
@@ -2250,15 +2322,6 @@
       "author": "Mandiant"
     },
     {
-      "source": "Google Cloud Security",
-      "category": "cloud_identity_infrastructure",
-      "title": "Zero-Day Exploitation of Vulnerability (CVE-2026-20245) in Cisco Catalyst SD-WAN Manager",
-      "link": "https://cloud.google.com/blog/topics/threat-intelligence/zero-day-exploitation-cisco-catalyst-sd-wan-manager/",
-      "published": "2026-06-24T11:00:00+00:00",
-      "summary": "<div class=\"block-paragraph_advanced\"><p>Written by: Chester Sng, Pete Boonyakarn, Logeswaran Nadarajan, Lukasz Lamparski</p>\n<hr /></div>\n<div class=\"block-paragraph_advanced\"><h3><span style=\"vertical-align: baseline;\">Introduction</span><strong style=\"vertical-align: baseline;\"> </strong></h3>\n<p><span style=\"vertical-align: baseline;\">In early 2026, Mandiant identified a threat actor targeting SD-WAN infrastructure at a service provider. After gaining initial access, the threat actor exploit",
-      "author": "Mandiant"
-    },
-    {
       "source": "Kaspersky Securelist",
       "category": "threat_research_primary",
       "title": "StrikeShark: investigating a new campaign delivering Cobalt Strike through SharkLoader",
@@ -2266,15 +2329,6 @@
       "published": "2026-06-24T10:00:03+00:00",
       "summary": "Kaspersky researchers analyze a new global campaign dubbed StrikeShark that delivers Cobalt Strike Beacon via custom SharkLoader malware.",
       "author": "Fareed Radzi"
-    },
-    {
-      "source": "CyberScoop",
-      "category": "cyber_news_breach_reporting",
-      "title": "Open-source security is posing challenges governments can’t easily solve",
-      "link": "https://cyberscoop.com/open-source-software-security-crisis/",
-      "published": "2026-06-24T09:00:00+00:00",
-      "summary": "<p>A diffuse landscape, fruitful targets, companies not stepping up, AI’s influence and flagging U.S. government efforts all figure into a shifting threat.</p>\n<p>The post <a href=\"https://cyberscoop.com/open-source-software-security-crisis/\">Open-source security is posing challenges governments can&#8217;t easily solve</a> appeared first on <a href=\"https://cyberscoop.com\">CyberScoop</a>.</p>",
-      "author": "Tim Starks"
     },
     {
       "source": "Huntress",
@@ -2421,15 +2475,6 @@
       "author": "BrianKrebs"
     },
     {
-      "source": "Orca Security Research",
-      "category": "cloud_identity_infrastructure",
-      "title": "Join Orca Security at Black Hat USA 2026",
-      "link": "https://orca.security/resources/blog/join-orca-security-black-hat-usa-2026/",
-      "published": "2026-06-23T12:50:00+00:00",
-      "summary": "Black Hat USA 2026 is almost here, and we&#8217;re excited to connect with the security community in Las Vegas! Whether you&#8217;re struggling with AI sprawl, cloud blind spots, or just too many alerts and not enough signal, we&#8217;re here to show you what it looks like when security actually fits the way your organization builds. [&#8230;]",
-      "author": "Devonte Grant"
-    },
-    {
       "source": "Wiz Research",
       "category": "cloud_identity_infrastructure",
       "title": "AI Threat Readiness Pillar 4: Detect and contain threats in real-time",
@@ -2464,15 +2509,6 @@
       "published": "2026-06-23T10:18:55+00:00",
       "summary": "<!-- SC_OFF --><div class=\"md\"><p>Kind of crazy to look at the graph in this blog. CVE drops on 04/29, they develop a patch on 4/30, and deploy it across all of their servers on 05/01. Obviously they have the engineers to write BPF-LSM patches, but I think it points to a future where they can (almost) keep up with vulnerability disclosures.</p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/xmull1gan\"> /u/xmull1gan </a> <br /> <span><a href=\"https://blog.cloud",
       "author": "/u/xmull1gan"
-    },
-    {
-      "source": "Reddit r/netsec",
-      "category": "reddit_practitioner_osint",
-      "title": "New Cisco RCE was fixed",
-      "link": "https://www.reddit.com/r/netsec/comments/1udcrb8/new_cisco_rce_was_fixed/",
-      "published": "2026-06-23T09:52:01+00:00",
-      "summary": "<!-- SC_OFF --><div class=\"md\"><p>A vulnerability in Cisco Unified Communications Manager allows unauthenticated attackers to arbitrarily write files in the server which could be used to run arbitrary commands or code on the server.</p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/SSDisclosure\"> /u/SSDisclosure </a> <br /> <span><a href=\"https://ssd-disclosure.com/cisco-unified-communications-manager-arbitrary-file-write-to-rce/\">[link]</a></span> &#32; <spa",
-      "author": "/u/SSDisclosure"
     },
     {
       "source": "Risky Business News",
@@ -2943,15 +2979,6 @@
       "author": ""
     },
     {
-      "source": "Risky Business News",
-      "category": "practitioner_analysis",
-      "title": "Srsly Risky Biz: Anthropic has artificial, but not emotional, intelligence",
-      "link": "https://risky.biz/SRB171/",
-      "published": "2026-06-18T06:17:55+00:00",
-      "summary": "Tom Uren and James Wilson talk about Anthropic rolling out its latest models only to have them effectively banned by the US government within days. Although the administration’s process for assessing new models is, ahem, amorphous, Anthropic is doing itself no favours by dismissing its concerns. The company needs to show some emotional intelligence and learn how to manage upwards.\n\nThey also discuss Section 702 Foreign Intelligence Surveillance Act collection. The law authorising it has lapsed a",
-      "author": ""
-    },
-    {
       "source": "TrustedSec",
       "category": "detection_response_operations",
       "title": "Modern Web Application Content Discovery",
@@ -2961,7 +2988,7 @@
       "author": "Luke Bremer"
     },
     {
-      "source": "Microsoft Threat Intelligence",
+      "source": "Microsoft Security Blog",
       "category": "threat_research_primary",
       "title": "From package to postinstall payload: Inside the Mastra npm supply chain compromise by Sapphire Sleet",
       "link": "https://www.microsoft.com/en-us/security/blog/2026/06/17/postinstall-payload-inside-mastra-npm-supply-chain-compromise/",
@@ -2970,7 +2997,7 @@
       "author": "Microsoft Defender Security Research Team and Microsoft Threat Intelligence"
     },
     {
-      "source": "Microsoft Security Blog",
+      "source": "Microsoft Threat Intelligence",
       "category": "threat_research_primary",
       "title": "From package to postinstall payload: Inside the Mastra npm supply chain compromise by Sapphire Sleet",
       "link": "https://www.microsoft.com/en-us/security/blog/2026/06/17/postinstall-payload-inside-mastra-npm-supply-chain-compromise/",
@@ -2986,15 +3013,6 @@
       "published": "2026-06-18T00:00:00+00:00",
       "summary": "Continuing our Agent ID series, this post demonstrates how a privileged agent could be compromised through its third-party blueprint. This leads to a cross-tenant incident similar to Midnight Blizzard, since an attacker with control over an agent blueprint can authenticate as any agent associated with that blueprint.",
       "author": ""
-    },
-    {
-      "source": "Microsoft Security Blog",
-      "category": "threat_research_primary",
-      "title": "Crypto Clipper uses Tor and worm-like propagation for persistence and control",
-      "link": "https://www.microsoft.com/en-us/security/blog/2026/06/17/crypto-clipper-uses-tor-worm-like-propagation-for-persistence-control/",
-      "published": "2026-06-17T23:11:43+00:00",
-      "summary": "<p>Microsoft Threat Intelligence analyzed a cryptocurrency clipper campaign that combines clipboard theft, wallet replacement, Tor-based communications, and worm-like propagation. Beyond stealing cryptocurrency transactions, the malware establishes persistent access and enables follow-on activity through a lightweight backdoor capability.</p>\n<p>The post <a href=\"https://www.microsoft.com/en-us/security/blog/2026/06/17/crypto-clipper-uses-tor-worm-like-propagation-for-persistence-control/\">Crypt",
-      "author": "Microsoft Defender Security Research Team and Microsoft Defender Experts"
     },
     {
       "source": "Graham Cluley",
@@ -3375,15 +3393,6 @@
       "author": "Rapid7"
     },
     {
-      "source": "Google Cloud Threat Intelligence",
-      "category": "threat_research_primary",
-      "title": "Public and Private Medical Community Targeted by China-Nexus Threat Actor Pursuing Artificial Intelligence, Cyber, Medical, and National Defense Research",
-      "link": "https://cloud.google.com/blog/topics/threat-intelligence/prc-targets-us-medical-research/",
-      "published": "2026-06-15T14:00:00+00:00",
-      "summary": "<div class=\"block-paragraph_advanced\"><p>Written by: Patrick Whitsell, John McGuiness</p>\n<hr /></div>\n<div class=\"block-paragraph_advanced\"><p><span style=\"vertical-align: baseline;\">Google Threat Intelligence Group (GTIG) has identified a sophisticated campaign attributed to UNC6508, a People's Republic of China (PRC)-nexus threat actor, targeting institutions in the North American academic, medical, and military research community. While remaining undetected for over a year, the threat actor",
-      "author": "Google Threat Intelligence Group"
-    },
-    {
       "source": "Huntress",
       "category": "detection_response_operations",
       "title": "The Devil, Eight Million Emails, and a Whole Lot of Milk | Phishing Stager Exposed",
@@ -3391,6 +3400,15 @@
       "published": "2026-06-15T14:00:00+00:00",
       "summary": "A compromised terminal server became a phishing stager. A fake Boots survey aimed at 8.9 million inboxes, with the payload on a hacked Bolivian government site.",
       "author": ""
+    },
+    {
+      "source": "Google Cloud Threat Intelligence",
+      "category": "threat_research_primary",
+      "title": "Public and Private Medical Community Targeted by China-Nexus Threat Actor Pursuing Artificial Intelligence, Cyber, Medical, and National Defense Research",
+      "link": "https://cloud.google.com/blog/topics/threat-intelligence/prc-targets-us-medical-research/",
+      "published": "2026-06-15T14:00:00+00:00",
+      "summary": "<div class=\"block-paragraph_advanced\"><p>Written by: Patrick Whitsell, John McGuiness</p>\n<hr /></div>\n<div class=\"block-paragraph_advanced\"><p><span style=\"vertical-align: baseline;\">Google Threat Intelligence Group (GTIG) has identified a sophisticated campaign attributed to UNC6508, a People's Republic of China (PRC)-nexus threat actor, targeting institutions in the North American academic, medical, and military research community. While remaining undetected for over a year, the threat actor",
+      "author": "Google Threat Intelligence Group"
     },
     {
       "source": "Check Point Research",
@@ -3429,21 +3447,21 @@
       "author": "Troy Hunt"
     },
     {
-      "source": "Datadog Security Labs",
-      "category": "cloud_identity_infrastructure",
-      "title": "Holding blobs for ransom: Four methods for Azure Storage ransomware",
-      "link": "https://securitylabs.datadoghq.com/articles/azure-blob-storage-ransomware-four-methods/",
-      "published": "2026-06-15T00:00:00+00:00",
-      "summary": "This post explores four vectors for threat actors to abuse Azure Storage to maliciously encrypt victim blobs, including step-by-step explanations and event codes for detection.",
-      "author": ""
-    },
-    {
       "source": "Sysdig",
       "category": "detection_response_operations",
       "title": "How attackers are jailbreaking LLMs with CTF framing and how to catch them",
       "link": "https://webflow.sysdig.com/blog/how-attackers-are-jailbreaking-llms-with-ctf-framing-and-how-to-catch-them",
       "published": "2026-06-15T00:00:00+00:00",
       "summary": "",
+      "author": ""
+    },
+    {
+      "source": "Datadog Security Labs",
+      "category": "cloud_identity_infrastructure",
+      "title": "Holding blobs for ransom: Four methods for Azure Storage ransomware",
+      "link": "https://securitylabs.datadoghq.com/articles/azure-blob-storage-ransomware-four-methods/",
+      "published": "2026-06-15T00:00:00+00:00",
+      "summary": "This post explores four vectors for threat actors to abuse Azure Storage to maliciously encrypt victim blobs, including step-by-step explanations and event codes for detection.",
       "author": ""
     },
     {
@@ -4086,15 +4104,6 @@
       "author": ""
     },
     {
-      "source": "AWS Security Blog",
-      "category": "cloud_identity_infrastructure",
-      "title": "Amazon Cognito unlocks advanced capabilities with next-generation infrastructure",
-      "link": "https://aws.amazon.com/blogs/security/amazon-cognito-unlocks-advanced-capabilities-with-next-generation-infrastructure/",
-      "published": "2026-06-04T21:45:42+00:00",
-      "summary": "Amazon Cognito recently introduced high-throughput performance for demanding workloads, customer-managed keys for full control over data encryption at rest, and multi- Region replication for business continuity improvement. These capabilities were made possible through a next-generation storage infrastructure designed for extensibility and scale. To deliver this, we migrated hundreds of millions of user profiles, and you […]",
-      "author": "Howie Li"
-    },
-    {
       "source": "Volexity",
       "category": "threat_research_primary",
       "title": "VerdantBamboo: Just Another BRICKSTORM in the Firewall",
@@ -4329,21 +4338,21 @@
       "author": "Chris Camejo"
     },
     {
-      "source": "Elastic Security Labs",
-      "category": "detection_response_operations",
-      "title": "From API key to live threat detections in minutes: how Elastic Security ingests Google Threat Intelligence",
-      "link": "https://www.elastic.co/security-labs/elastic-security-google-threat-intelligence",
-      "published": "2026-06-02T00:00:00+00:00",
-      "summary": "Find out how Elastic Security ingests Google Threat Intelligence for continuous detection and uses AI-driven workflows to enrich alerts in real time, from API key to live detections in minutes.",
-      "author": ""
-    },
-    {
       "source": "Sophos X-Ops",
       "category": "detection_response_operations",
       "title": "Pointing a Cursor at evading detection",
       "link": "https://www.sophos.com/en-us/blog/pointing-a-cursor-at-evading-detection",
       "published": "2026-06-02T00:00:00+00:00",
       "summary": "<p>AI accelerated tool development and testing, but humans drove the workflow</p><p><strong>Categories:</strong> Threat Research</p><p><strong>Tags:</strong> AI, EDR</p>",
+      "author": ""
+    },
+    {
+      "source": "Elastic Security Labs",
+      "category": "detection_response_operations",
+      "title": "From API key to live threat detections in minutes: how Elastic Security ingests Google Threat Intelligence",
+      "link": "https://www.elastic.co/security-labs/elastic-security-google-threat-intelligence",
+      "published": "2026-06-02T00:00:00+00:00",
+      "summary": "Find out how Elastic Security ingests Google Threat Intelligence for continuous detection and uses AI-driven workflows to enrich alerts in real time, from API key to live detections in minutes.",
       "author": ""
     },
     {
@@ -5148,21 +5157,21 @@
       "author": ""
     },
     {
-      "source": "Elastic Security Labs",
-      "category": "detection_response_operations",
-      "title": "Elastic Security MCP App: Interactive security operations inside your AI Tools",
-      "link": "https://www.elastic.co/security-labs/elastic-security-mcp-app",
-      "published": "2026-05-12T00:00:00+00:00",
-      "summary": "Elastic Security is the first security vendor to ship an interactive UI in AI tools. Triage alerts, hunt threats, correlate attack chains, and open cases, all from inside your AI conversation.",
-      "author": ""
-    },
-    {
       "source": "Sophos X-Ops",
       "category": "detection_response_operations",
       "title": "Inside the lethal trifecta: Blast radius reduction in AI agent deployments",
       "link": "https://www.sophos.com/en-us/blog/inside-the-lethal-trifecta-blast-radius-reduction-in-ai-agent-deployments",
       "published": "2026-05-12T00:00:00+00:00",
       "summary": "<p>&lt;p&gt;Seven things security teams can start doing today to reduce risk&lt;/p&gt;</p><p><strong>Categories:</strong> Threat Research</p><p><strong>Tags:</strong> AI, CISO, risk</p>",
+      "author": ""
+    },
+    {
+      "source": "Elastic Security Labs",
+      "category": "detection_response_operations",
+      "title": "Elastic Security MCP App: Interactive security operations inside your AI Tools",
+      "link": "https://www.elastic.co/security-labs/elastic-security-mcp-app",
+      "published": "2026-05-12T00:00:00+00:00",
+      "summary": "Elastic Security is the first security vendor to ship an interactive UI in AI tools. Triage alerts, hunt threats, correlate attack chains, and open cases, all from inside your AI conversation.",
       "author": ""
     },
     {
@@ -5247,21 +5256,21 @@
       "author": "Alex Delamotte"
     },
     {
-      "source": "Elastic Security Labs",
-      "category": "detection_response_operations",
-      "title": "TCLBANKER: Brazilian Banking Trojan Spreading via WhatsApp and Outlook",
-      "link": "https://www.elastic.co/security-labs/tclbanker-brazilian-banking-trojan",
-      "published": "2026-05-07T00:00:00+00:00",
-      "summary": "REF3076 uses a trojanized Logitech installer to deploy TCLBANKER, a Brazilian banking trojan with environment-gated payloads, WPF fraud overlays, and self-propagating WhatsApp and Outlook worm modules.",
-      "author": ""
-    },
-    {
       "source": "Sophos X-Ops",
       "category": "detection_response_operations",
       "title": "Donuts and Beagles: Fake Claude site spreads backdoor",
       "link": "https://www.sophos.com/en-us/blog/donuts-and-beagles-fake-claude-site-spreads-backdoor",
       "published": "2026-05-07T00:00:00+00:00",
       "summary": "<p>&lt;p&gt;A malicious imitation of&amp;nbsp;Anthropic’s&amp;nbsp;Claude&amp;nbsp;site leads to&amp;nbsp;DLL sideloading&amp;nbsp;– and&amp;nbsp;a backdoor&lt;/p&gt;</p><p><strong>Categories:</strong> Threat Research</p><p><strong>Tags:</strong> Claude, Beagle, Backdoor, malvertising, AI, DONUT, DLL sideloading, Sophos X-Ops</p>",
+      "author": ""
+    },
+    {
+      "source": "Elastic Security Labs",
+      "category": "detection_response_operations",
+      "title": "TCLBANKER: Brazilian Banking Trojan Spreading via WhatsApp and Outlook",
+      "link": "https://www.elastic.co/security-labs/tclbanker-brazilian-banking-trojan",
+      "published": "2026-05-07T00:00:00+00:00",
+      "summary": "REF3076 uses a trojanized Logitech installer to deploy TCLBANKER, a Brazilian banking trojan with environment-gated payloads, WPF fraud overlays, and self-propagating WhatsApp and Outlook worm modules.",
       "author": ""
     },
     {
@@ -5902,15 +5911,6 @@
       "published": "2026-03-03T15:04:52+00:00",
       "summary": "<div class=\"hs-featured-image-wrapper\"> \n <a class=\"hs-featured-image-link\" href=\"https://permiso.io/blog/permiso-sc-awards-2026-best-threat-detection-technology\" title=\"\"> <img alt=\"Permiso Security Named 2026 SC Awards Finalist for Best Threat Detection Technology\" class=\"hs-featured-image\" src=\"https://permiso.io/hubfs/PR.png\" style=\"width: auto !important; float: left; margin: 0 15px 15px 0;\" /> </a> \n</div> \n<p><span style=\"font-weight: bold;\">Permiso Security has been named a finalist for",
       "author": "Aditya Vats"
-    },
-    {
-      "source": "watchTowr Labs",
-      "category": "offensive_vulnerability_research",
-      "title": "Sometimes, You Can Just Feel The Security In The Design (Juniper Junos Evolved CVE-2026-21902 Pre-Auth RCE)",
-      "link": "https://labs.watchtowr.com/sometimes-you-can-just-feel-the-security-in-the-design-junos-os-evolved-cve-2026-21902-rce/",
-      "published": "2026-03-03T14:15:18+00:00",
-      "summary": "<p>On today&#x2019;s &#x2018;good news disguised as other things&#x2019; segment, we&#x2019;re turning our gaze to CVE-2026-21902 - a recently disclosed &#x201c;Incorrect Permission Assignment for Critical Resource&#x201d; vulnerability affecting Juniper&#x2019;s Junos OS Evolved platform. This vulnerability affects only Juniper&#x2019;s</p>",
-      "author": "McCaulay Hudson"
     },
     {
       "source": "Cloudflare Radar",
