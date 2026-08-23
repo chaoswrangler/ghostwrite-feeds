@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-22T19:28:02.977165+00:00",
+  "generated_at": "2026-08-23T13:37:27.039348+00:00",
   "total_items": 675,
   "cohorts": {
     "threat_research_primary": {
@@ -48,6 +48,12 @@
     }
   },
   "feed_status": {
+    "ESET WeLiveSecurity": {
+      "url": "https://www.welivesecurity.com/en/rss/feed/",
+      "cohort": "threat_research_primary",
+      "status": "ok",
+      "item_count": 10
+    },
     "Unit 42": {
       "url": "https://unit42.paloaltonetworks.com/feed/",
       "cohort": "threat_research_primary",
@@ -60,8 +66,8 @@
       "status": "ok",
       "item_count": 10
     },
-    "ESET WeLiveSecurity": {
-      "url": "https://www.welivesecurity.com/en/rss/feed/",
+    "Microsoft Threat Intelligence": {
+      "url": "https://www.microsoft.com/en-us/security/blog/topic/threat-intelligence/feed/",
       "cohort": "threat_research_primary",
       "status": "ok",
       "item_count": 10
@@ -72,26 +78,8 @@
       "status": "ok",
       "item_count": 10
     },
-    "Microsoft Threat Intelligence": {
-      "url": "https://www.microsoft.com/en-us/security/blog/topic/threat-intelligence/feed/",
-      "cohort": "threat_research_primary",
-      "status": "ok",
-      "item_count": 10
-    },
     "Microsoft Security Blog": {
       "url": "https://www.microsoft.com/en-us/security/blog/feed/",
-      "cohort": "threat_research_primary",
-      "status": "ok",
-      "item_count": 10
-    },
-    "Recorded Future": {
-      "url": "https://www.recordedfuture.com/feed",
-      "cohort": "threat_research_primary",
-      "status": "ok",
-      "item_count": 10
-    },
-    "Check Point Research": {
-      "url": "https://research.checkpoint.com/feed/",
       "cohort": "threat_research_primary",
       "status": "ok",
       "item_count": 10
@@ -102,14 +90,14 @@
       "status": "ok",
       "item_count": 10
     },
-    "Cisco Talos": {
-      "url": "https://feeds.feedburner.com/feedburner/Talos",
+    "Check Point Research": {
+      "url": "https://research.checkpoint.com/feed/",
       "cohort": "threat_research_primary",
       "status": "ok",
       "item_count": 10
     },
-    "Citizen Lab": {
-      "url": "https://citizenlab.ca/feed/",
+    "Recorded Future": {
+      "url": "https://www.recordedfuture.com/feed",
       "cohort": "threat_research_primary",
       "status": "ok",
       "item_count": 10
@@ -120,9 +108,33 @@
       "status": "ok",
       "item_count": 10
     },
+    "Google Threat Analysis Group": {
+      "url": "https://blog.google/threat-analysis-group/rss/",
+      "cohort": "threat_research_primary",
+      "status": "parse_error",
+      "item_count": 0
+    },
+    "Citizen Lab": {
+      "url": "https://citizenlab.ca/feed/",
+      "cohort": "threat_research_primary",
+      "status": "ok",
+      "item_count": 10
+    },
     "SANS Internet Storm Center": {
       "url": "https://isc.sans.edu/rssfeed_full.xml",
       "cohort": "government_authoritative",
+      "status": "ok",
+      "item_count": 10
+    },
+    "Cisco Talos": {
+      "url": "https://feeds.feedburner.com/feedburner/Talos",
+      "cohort": "threat_research_primary",
+      "status": "ok",
+      "item_count": 10
+    },
+    "PortSwigger Research": {
+      "url": "https://portswigger.net/research/rss",
+      "cohort": "offensive_vulnerability_research",
       "status": "ok",
       "item_count": 10
     },
@@ -132,15 +144,9 @@
       "status": "ok",
       "item_count": 10
     },
-    "Google Threat Analysis Group": {
-      "url": "https://blog.google/threat-analysis-group/rss/",
+    "Kaspersky Securelist": {
+      "url": "https://securelist.com/feed/",
       "cohort": "threat_research_primary",
-      "status": "parse_error",
-      "item_count": 0
-    },
-    "PortSwigger Research": {
-      "url": "https://portswigger.net/research/rss",
-      "cohort": "offensive_vulnerability_research",
       "status": "ok",
       "item_count": 10
     },
@@ -150,9 +156,9 @@
       "status": "ok",
       "item_count": 10
     },
-    "Kaspersky Securelist": {
-      "url": "https://securelist.com/feed/",
-      "cohort": "threat_research_primary",
+    "GitHub Security Lab": {
+      "url": "https://github.blog/category/security/feed/",
+      "cohort": "offensive_vulnerability_research",
       "status": "ok",
       "item_count": 10
     },
@@ -161,12 +167,6 @@
       "cohort": "threat_research_primary",
       "status": "parse_error",
       "item_count": 0
-    },
-    "Google Cloud Threat Intelligence": {
-      "url": "https://feeds.feedburner.com/threatintelligence/pvexyqv7v0v",
-      "cohort": "threat_research_primary",
-      "status": "ok",
-      "item_count": 10
     },
     "Exploit-DB": {
       "url": "https://www.exploit-db.com/rss.xml",
@@ -186,27 +186,9 @@
       "status": "ok",
       "item_count": 10
     },
-    "GitHub Security Lab": {
-      "url": "https://github.blog/category/security/feed/",
-      "cohort": "offensive_vulnerability_research",
-      "status": "ok",
-      "item_count": 10
-    },
     "The DFIR Report": {
       "url": "https://thedfirreport.com/feed/",
       "cohort": "detection_response_operations",
-      "status": "ok",
-      "item_count": 10
-    },
-    "Assetnote": {
-      "url": "https://www.assetnote.io/resources/research/rss.xml",
-      "cohort": "offensive_vulnerability_research",
-      "status": "parse_error",
-      "item_count": 0
-    },
-    "Rapid7": {
-      "url": "https://www.rapid7.com/blog/rss/",
-      "cohort": "offensive_vulnerability_research",
       "status": "ok",
       "item_count": 10
     },
@@ -215,6 +197,18 @@
       "cohort": "detection_response_operations",
       "status": "parse_error",
       "item_count": 0
+    },
+    "Trail of Bits": {
+      "url": "https://blog.trailofbits.com/feed/",
+      "cohort": "offensive_vulnerability_research",
+      "status": "ok",
+      "item_count": 10
+    },
+    "Active Countermeasures": {
+      "url": "https://www.activecountermeasures.com/feed/",
+      "cohort": "detection_response_operations",
+      "status": "ok",
+      "item_count": 10
     },
     "TrustedSec": {
       "url": "https://www.trustedsec.com/feed/",
@@ -228,11 +222,11 @@
       "status": "ok",
       "item_count": 10
     },
-    "Trail of Bits": {
-      "url": "https://blog.trailofbits.com/feed/",
+    "Assetnote": {
+      "url": "https://www.assetnote.io/resources/research/rss.xml",
       "cohort": "offensive_vulnerability_research",
-      "status": "ok",
-      "item_count": 10
+      "status": "parse_error",
+      "item_count": 0
     },
     "Proofpoint Threat Insight": {
       "url": "https://www.proofpoint.com/us/rss.xml",
@@ -240,9 +234,9 @@
       "status": "ok",
       "item_count": 10
     },
-    "Active Countermeasures": {
-      "url": "https://www.activecountermeasures.com/feed/",
-      "cohort": "detection_response_operations",
+    "Rapid7": {
+      "url": "https://www.rapid7.com/blog/rss/",
+      "cohort": "offensive_vulnerability_research",
       "status": "ok",
       "item_count": 10
     },
@@ -252,14 +246,38 @@
       "status": "ok",
       "item_count": 10
     },
-    "Huntress": {
-      "url": "https://www.huntress.com/blog/rss.xml",
-      "cohort": "detection_response_operations",
+    "Google Cloud Threat Intelligence": {
+      "url": "https://feeds.feedburner.com/threatintelligence/pvexyqv7v0v",
+      "cohort": "threat_research_primary",
+      "status": "ok",
+      "item_count": 10
+    },
+    "Datadog Security Labs": {
+      "url": "https://securitylabs.datadoghq.com/rss/feed.xml",
+      "cohort": "cloud_identity_infrastructure",
+      "status": "ok",
+      "item_count": 10
+    },
+    "Orca Security Research": {
+      "url": "https://orca.security/resources/blog/feed/",
+      "cohort": "cloud_identity_infrastructure",
       "status": "ok",
       "item_count": 10
     },
     "Sophos X-Ops": {
       "url": "https://news.sophos.com/en-us/category/threat-research/feed/",
+      "cohort": "detection_response_operations",
+      "status": "ok",
+      "item_count": 10
+    },
+    "Permiso Security": {
+      "url": "https://permiso.io/blog/rss.xml",
+      "cohort": "cloud_identity_infrastructure",
+      "status": "ok",
+      "item_count": 10
+    },
+    "Huntress": {
+      "url": "https://www.huntress.com/blog/rss.xml",
       "cohort": "detection_response_operations",
       "status": "ok",
       "item_count": 10
@@ -276,14 +294,8 @@
       "status": "ok",
       "item_count": 10
     },
-    "Orca Security Research": {
-      "url": "https://orca.security/resources/blog/feed/",
-      "cohort": "cloud_identity_infrastructure",
-      "status": "ok",
-      "item_count": 10
-    },
-    "Datadog Security Labs": {
-      "url": "https://securitylabs.datadoghq.com/rss/feed.xml",
+    "GreyNoise": {
+      "url": "https://www.greynoise.io/blog/rss.xml",
       "cohort": "cloud_identity_infrastructure",
       "status": "ok",
       "item_count": 10
@@ -294,15 +306,9 @@
       "status": "ok",
       "item_count": 10
     },
-    "Permiso Security": {
-      "url": "https://permiso.io/blog/rss.xml",
-      "cohort": "cloud_identity_infrastructure",
-      "status": "ok",
-      "item_count": 10
-    },
-    "GreyNoise": {
-      "url": "https://www.greynoise.io/blog/rss.xml",
-      "cohort": "cloud_identity_infrastructure",
+    "Google DeepMind Blog": {
+      "url": "https://deepmind.google/blog/rss.xml",
+      "cohort": "ai_security_agentic_risk",
       "status": "ok",
       "item_count": 10
     },
@@ -312,23 +318,11 @@
       "status": "ok",
       "item_count": 10
     },
-    "Google DeepMind Blog": {
-      "url": "https://deepmind.google/blog/rss.xml",
-      "cohort": "ai_security_agentic_risk",
-      "status": "ok",
-      "item_count": 10
-    },
     "Simon Willison": {
       "url": "https://simonwillison.net/atom/everything/",
       "cohort": "ai_security_agentic_risk",
       "status": "ok",
       "item_count": 10
-    },
-    "Protect AI": {
-      "url": "https://protectai.com/blog/rss.xml",
-      "cohort": "ai_security_agentic_risk",
-      "status": "parse_error",
-      "item_count": 0
     },
     "Embrace the Red": {
       "url": "https://embracethered.com/blog/index.xml",
@@ -342,15 +336,15 @@
       "status": "ok",
       "item_count": 10
     },
+    "Protect AI": {
+      "url": "https://protectai.com/blog/rss.xml",
+      "cohort": "ai_security_agentic_risk",
+      "status": "parse_error",
+      "item_count": 0
+    },
     "Cloudflare Radar": {
       "url": "https://blog.cloudflare.com/tag/cloudflare-radar/rss/",
       "cohort": "cloud_identity_infrastructure",
-      "status": "ok",
-      "item_count": 10
-    },
-    "Interconnects": {
-      "url": "https://www.interconnects.ai/feed",
-      "cohort": "ai_security_agentic_risk",
       "status": "ok",
       "item_count": 10
     },
@@ -360,9 +354,21 @@
       "status": "ok",
       "item_count": 10
     },
+    "BleepingComputer": {
+      "url": "https://www.bleepingcomputer.com/feed/",
+      "cohort": "cyber_news_breach_reporting",
+      "status": "ok",
+      "item_count": 10
+    },
     "Team Cymru": {
       "url": "https://www.team-cymru.com/post/rss.xml",
       "cohort": "ransomware_ecrime_financial_crime",
+      "status": "ok",
+      "item_count": 10
+    },
+    "Interconnects": {
+      "url": "https://www.interconnects.ai/feed",
+      "cohort": "ai_security_agentic_risk",
       "status": "ok",
       "item_count": 10
     },
@@ -372,33 +378,15 @@
       "status": "ok",
       "item_count": 5
     },
-    "BleepingComputer": {
-      "url": "https://www.bleepingcomputer.com/feed/",
-      "cohort": "cyber_news_breach_reporting",
-      "status": "ok",
-      "item_count": 10
-    },
-    "The Hacker News": {
-      "url": "https://feeds.feedburner.com/TheHackersNews",
-      "cohort": "cyber_news_breach_reporting",
-      "status": "ok",
-      "item_count": 10
-    },
-    "AI Snake Oil": {
-      "url": "https://www.aisnakeoil.com/feed",
-      "cohort": "ai_security_agentic_risk",
-      "status": "ok",
-      "item_count": 10
+    "Coveware": {
+      "url": "https://www.coveware.com/blog?format=rss",
+      "cohort": "ransomware_ecrime_financial_crime",
+      "status": "parse_error",
+      "item_count": 0
     },
     "Help Net Security": {
       "url": "https://www.helpnetsecurity.com/feed/",
       "cohort": "cyber_news_breach_reporting",
-      "status": "ok",
-      "item_count": 10
-    },
-    "Google Cloud Security": {
-      "url": "https://cloudblog.withgoogle.com/rss/",
-      "cohort": "cloud_identity_infrastructure",
       "status": "ok",
       "item_count": 10
     },
@@ -414,11 +402,17 @@
       "status": "ok",
       "item_count": 10
     },
-    "Coveware": {
-      "url": "https://www.coveware.com/blog?format=rss",
+    "Intel 471": {
+      "url": "https://intel471.com/blog/feed",
       "cohort": "ransomware_ecrime_financial_crime",
-      "status": "parse_error",
-      "item_count": 0
+      "status": "ok",
+      "item_count": 10
+    },
+    "The Hacker News": {
+      "url": "https://feeds.feedburner.com/TheHackersNews",
+      "cohort": "cyber_news_breach_reporting",
+      "status": "ok",
+      "item_count": 10
     },
     "Dark Reading": {
       "url": "https://www.darkreading.com/rss.xml",
@@ -426,9 +420,9 @@
       "status": "ok",
       "item_count": 10
     },
-    "Intel 471": {
-      "url": "https://intel471.com/blog/feed",
-      "cohort": "ransomware_ecrime_financial_crime",
+    "Google Cloud Security": {
+      "url": "https://cloudblog.withgoogle.com/rss/",
+      "cohort": "cloud_identity_infrastructure",
       "status": "ok",
       "item_count": 10
     },
@@ -438,8 +432,8 @@
       "status": "ok",
       "item_count": 10
     },
-    "Krebs on Security": {
-      "url": "https://krebsonsecurity.com/feed/",
+    "Graham Cluley": {
+      "url": "https://grahamcluley.com/feed/",
       "cohort": "practitioner_analysis",
       "status": "ok",
       "item_count": 10
@@ -447,12 +441,6 @@
     "Infosecurity Magazine": {
       "url": "https://www.infosecurity-magazine.com/rss/news/",
       "cohort": "cyber_news_breach_reporting",
-      "status": "ok",
-      "item_count": 10
-    },
-    "Graham Cluley": {
-      "url": "https://grahamcluley.com/feed/",
-      "cohort": "practitioner_analysis",
       "status": "ok",
       "item_count": 10
     },
@@ -468,11 +456,11 @@
       "status": "ok",
       "item_count": 0
     },
-    "Risky Business News": {
-      "url": "https://risky.biz/feeds/risky-business-news/",
-      "cohort": "practitioner_analysis",
+    "Reddit r/blueteamsec": {
+      "url": "https://www.reddit.com/r/blueteamsec/.rss",
+      "cohort": "reddit_practitioner_osint",
       "status": "ok",
-      "item_count": 10
+      "item_count": 0
     },
     "Reddit r/sysadmin": {
       "url": "https://www.reddit.com/r/sysadmin/.rss",
@@ -480,20 +468,32 @@
       "status": "ok",
       "item_count": 0
     },
-    "Reddit r/blueteamsec": {
-      "url": "https://www.reddit.com/r/blueteamsec/.rss",
-      "cohort": "reddit_practitioner_osint",
+    "Risky Business News": {
+      "url": "https://risky.biz/feeds/risky-business-news/",
+      "cohort": "practitioner_analysis",
       "status": "ok",
-      "item_count": 0
-    },
-    "Reddit r/netsecstudents": {
-      "url": "https://www.reddit.com/r/netsecstudents/.rss",
-      "cohort": "reddit_practitioner_osint",
-      "status": "ok",
-      "item_count": 0
+      "item_count": 10
     },
     "Reddit r/msp": {
       "url": "https://www.reddit.com/r/msp/.rss",
+      "cohort": "reddit_practitioner_osint",
+      "status": "ok",
+      "item_count": 0
+    },
+    "Krebs on Security": {
+      "url": "https://krebsonsecurity.com/feed/",
+      "cohort": "practitioner_analysis",
+      "status": "ok",
+      "item_count": 10
+    },
+    "AI Snake Oil": {
+      "url": "https://www.aisnakeoil.com/feed",
+      "cohort": "ai_security_agentic_risk",
+      "status": "ok",
+      "item_count": 10
+    },
+    "Reddit r/netsecstudents": {
+      "url": "https://www.reddit.com/r/netsecstudents/.rss",
       "cohort": "reddit_practitioner_osint",
       "status": "ok",
       "item_count": 0
@@ -510,6 +510,12 @@
       "status": "ok",
       "item_count": 10
     },
+    "Google Project Zero": {
+      "url": "https://googleprojectzero.blogspot.com/feeds/posts/default",
+      "cohort": "offensive_vulnerability_research",
+      "status": "ok",
+      "item_count": 10
+    },
     "tl;dr sec": {
       "url": "https://tldrsec.com/feed.xml",
       "cohort": "practitioner_analysis",
@@ -521,15 +527,36 @@
       "cohort": "policy_strategy_geopolitics",
       "status": "ok",
       "item_count": 10
-    },
-    "Google Project Zero": {
-      "url": "https://googleprojectzero.blogspot.com/feeds/posts/default",
-      "cohort": "offensive_vulnerability_research",
-      "status": "ok",
-      "item_count": 10
     }
   },
   "items": [
+    {
+      "source": "Help Net Security",
+      "category": "cyber_news_breach_reporting",
+      "title": "Week in review: Records allegedly stolen from Azure tenants, Medusa ransomware hits 500+ orgs",
+      "link": "https://www.helpnetsecurity.com/2026/08/23/week-in-review-records-allegedly-stolen-from-azure-tenants-medusa-ransomware-hits-500-orgs/",
+      "published": "2026-08-23T08:00:00+00:00",
+      "summary": "<p>Here’s an overview of some of last week’s most interesting news, articles, interviews and videos: Windows 11’s strongest security defenses can be bypassed without a screwdriver Researchers from the University of Birmingham and Durham University have found a way to knock down some of the toughest protections in Windows 11 without physically opening or modifying the target machine. The attack assumes the attacker has already gained privileged access to the system. Police bust cybercrime ring &#",
+      "author": "Help Net Security"
+    },
+    {
+      "source": "Troy Hunt",
+      "category": "practitioner_analysis",
+      "title": "Welcoming the Sri Lankan Government to Have I Been Pwned",
+      "link": "https://www.troyhunt.com/welcoming-the-sri-lankan-government-to-have-i-been-pwned/",
+      "published": "2026-08-23T06:39:45+00:00",
+      "summary": "<p>Today, we welcome the 48th government onboarded to Have I Been Pwned&#x2019;s free gov service: Sri Lanka. Sri Lanka CERT now has access to monitor Sri Lankan government domains against the data in HIBP, helping identify exposed government accounts and respond when they appear in new data breaches.</p>",
+      "author": "Troy Hunt"
+    },
+    {
+      "source": "Simon Willison",
+      "category": "ai_security_agentic_risk",
+      "title": "Quoting Linus Torvalds",
+      "link": "https://simonwillison.net/2026/Aug/22/linus-torvalds/",
+      "published": "2026-08-22T21:04:26+00:00",
+      "summary": "<blockquote cite=\"https://github.com/torvalds/linux/commit/818bebeb63dd6bf5f4e07e145f6cdbace520a34c\"><p>And this was a debug session from hell, enormously helped by an AI doing much of the grunt-work.</p>\n<p>I'd like to call it my tireless helper, but the AI several times stated flat out that this was impossible and unsolvable and that we should just write a report about it.</p>\n<p>I suspect those things have been trained by people who may not be quite as stubborn as I am.</p>\n<p>But while the A",
+      "author": ""
+    },
     {
       "source": "Simon Willison",
       "category": "ai_security_agentic_risk",
@@ -610,6 +637,15 @@
       "published": "2026-08-21T21:07:20+00:00",
       "summary": "<p>The neon flying squid can <a href=\"https://www.theguardian.com/environment/2026/aug/12/like-an-alien-invasion-the-neon-flying-squid-that-can-fly-in-formation-above-the-ocean\">fly</a> in formation.</p>\n<blockquote><p>The shoal of about 100 squid rose unexpectedly from a patch of the Pacific Ocean around 370 miles from Tokyo and glided near the boat for about 30 metres. The astonished researchers were the first to capture photographs of such a thing, which looked like the early stages of an ali",
       "author": "Bruce Schneier"
+    },
+    {
+      "source": "Dark Reading",
+      "category": "cyber_news_breach_reporting",
+      "title": "How an Emerging Industrial Protocol Family Could Put OT at Risk",
+      "link": "https://www.darkreading.com/ics-ot-security/how-emerging-industrial-protocol-family-put-ot-at-risk",
+      "published": "2026-08-21T20:24:42+00:00",
+      "summary": "New research shows how attacks against some unprotected TSN protocols could allow attackers to disrupt or manipulate physical processes",
+      "author": "Ericka Chickowski"
     },
     {
       "source": "The Record",
@@ -880,6 +916,15 @@
       "published": "2026-08-21T13:30:00+00:00",
       "summary": "The new AI security controls follow the Hugging Face incident last month, though many of these additions perhaps should have been in place prior to the frontier models escaping.",
       "author": "Alexander Culafi"
+    },
+    {
+      "source": "Dark Reading",
+      "category": "cyber_news_breach_reporting",
+      "title": "Hardware Makers Implement Post-Quantum Cryptography as Security Threats Near",
+      "link": "https://www.darkreading.com/cyber-risk/hardware-makers-implement-post-quantum-cryptography",
+      "published": "2026-08-21T13:10:33+00:00",
+      "summary": "The coming threat of super-powerful computers capable of cracking today’s algorithms requires upgrading encryption now. Tech companies have begun building defenses.",
+      "author": "Agam Shah"
     },
     {
       "source": "Just Security",
@@ -1370,20 +1415,20 @@
     {
       "source": "Google Cloud Security",
       "category": "cloud_identity_infrastructure",
-      "title": "Announcing quantum-safe key import in Cloud KMS",
-      "link": "https://cloud.google.com/blog/products/identity-security/announcing-quantum-safe-key-import-in-cloud-kms/",
-      "published": "2026-08-20T16:00:00+00:00",
-      "summary": "<div class=\"block-paragraph_advanced\"><p><span style=\"vertical-align: baseline;\">As enterprises increasingly adopt multicloud architectures, bring your own key (BYOK) has become a fundamental pillar for maintaining data sovereignty and helping protect critical cloud workloads. At the same time, quantum computing has rapidly advanced, and security teams need to re-evaluate how they securely transfer encryption keys across networks.</span></p>\n<p><span style=\"vertical-align: baseline;\">Following o",
-      "author": "Erlander Lo"
-    },
-    {
-      "source": "Google Cloud Security",
-      "category": "cloud_identity_infrastructure",
       "title": "10 questions every startup should answer before moving to production with their AI prototype",
       "link": "https://cloud.google.com/blog/topics/developers-practitioners/10-questions-for-your-startup-developers/",
       "published": "2026-08-20T16:00:00+00:00",
       "summary": "<div class=\"block-paragraph_advanced\"><p><span style=\"vertical-align: baseline;\">It’s never been easier to start an AI-powered startup on Google Cloud. </span></p>\n<p><span style=\"vertical-align: baseline;\">You grab an API key from </span><a href=\"https://aistudio.google.com/\" rel=\"noopener\" target=\"_blank\"><span style=\"text-decoration: underline; vertical-align: baseline;\">Google AI Studio</span></a><span style=\"vertical-align: baseline;\"> at breakfast, paste it into Antigravity, and by lunch y",
       "author": "Sergio Villani"
+    },
+    {
+      "source": "Google Cloud Security",
+      "category": "cloud_identity_infrastructure",
+      "title": "Announcing quantum-safe key import in Cloud KMS",
+      "link": "https://cloud.google.com/blog/products/identity-security/announcing-quantum-safe-key-import-in-cloud-kms/",
+      "published": "2026-08-20T16:00:00+00:00",
+      "summary": "<div class=\"block-paragraph_advanced\"><p><span style=\"vertical-align: baseline;\">As enterprises increasingly adopt multicloud architectures, bring your own key (BYOK) has become a fundamental pillar for maintaining data sovereignty and helping protect critical cloud workloads. At the same time, quantum computing has rapidly advanced, and security teams need to re-evaluate how they securely transfer encryption keys across networks.</span></p>\n<p><span style=\"vertical-align: baseline;\">Following o",
+      "author": "Erlander Lo"
     },
     {
       "source": "Wiz Research",
@@ -1456,15 +1501,6 @@
       "published": "2026-08-20T13:31:17+00:00",
       "summary": "<p>The designation would unlock a range of federal services, tools and resources for an industry that policymakers view as increasingly tied to national and economic security.</p>\n<p>The post <a href=\"https://cyberscoop.com/ai-critical-infrastructure-designation-cisa-report/\">The push to designate AI as the next critical infrastructure sector</a> appeared first on <a href=\"https://cyberscoop.com\">CyberScoop</a>.</p>",
       "author": "djohnson"
-    },
-    {
-      "source": "Dark Reading",
-      "category": "cyber_news_breach_reporting",
-      "title": "'Grandoreiro' Malware Resurfaces With Mexico Campaign",
-      "link": "https://www.darkreading.com/cyberattacks-data-breaches/grandoreiro-resurfaces-mexico-campaign",
-      "published": "2026-08-20T13:30:00+00:00",
-      "summary": "The banking Trojan, post-law enforcement takedown, is sprucing itself up with features that make detection and analysis harder.",
-      "author": "Jai Vijayan"
     },
     {
       "source": "SANS Internet Storm Center",
@@ -1584,15 +1620,6 @@
       "author": ""
     },
     {
-      "source": "Help Net Security",
-      "category": "cyber_news_breach_reporting",
-      "title": "Fake Gemini installer delivers Vidar infostealer via Google Colab lure",
-      "link": "https://www.helpnetsecurity.com/2026/08/20/fake-google-gemini-installer-vidar-infostealer/",
-      "published": "2026-08-20T10:46:49+00:00",
-      "summary": "<p>A malicious executable masquerading as a Google Gemini installer was used to deliver the Vidar infostealer on a company network in the EMEA region, according to Darktrace researchers who investigated the incident. “During the initial analysis, it was noted that the top search result for the suspicious filename associated pointed to a file hosted on Google Colab, a cloud-based Jupyter notebook platform, commonly used by developers, researchers, and data scientists to run code and machine &#823",
-      "author": "Sinisa Markovic"
-    },
-    {
       "source": "Cisco Talos",
       "category": "threat_research_primary",
       "title": "UAT-10147 deploys SPECTRE: A cross-platform implant with Linux rootkit and BYOVD capabilities",
@@ -1690,24 +1717,6 @@
       "published": "2026-08-19T23:10:23+00:00",
       "summary": "At Black Hat this month, a group of security researchers took a $9,000 robot dog, plugged Google's AI into its brain, and jailbroke it by telling it - with a completely straight face - that it was a Pokemon. What followed involved a wall, a blue ice chest, and anyone in the room wearing white shoes. Oh, and did we mention you can buy a flamethrower attachment?\n\nMeanwhile, in Salzburg, 280 gold statuettes of Mozart have vanished from the streets. This has happened to the same artist before. Organ",
       "author": "Graham Cluley"
-    },
-    {
-      "source": "Simon Willison",
-      "category": "ai_security_agentic_risk",
-      "title": "Quoting Jeremy Morrell",
-      "link": "https://simonwillison.net/2026/Aug/19/jeremy-morrell/",
-      "published": "2026-08-19T22:56:31+00:00",
-      "summary": "<blockquote cite=\"https://jeremymorrell.dev/blog/extensible-software-in-the-age-of-llms/\"><p>My hypothesis is that <strong>there is a new opportunity for Extensible Software on the web</strong>. LLMs radically lower the cost of authoring extensions, and modern sandbox primitives lower the deployment cost and provide good security boundaries. We can build our app as a solid, accountable core, and allow users to safely extend it in many directions by having LLMs fill in the missing pieces. <strong",
-      "author": ""
-    },
-    {
-      "source": "Dark Reading",
-      "category": "cyber_news_breach_reporting",
-      "title": "No-Filter 'Kriminal' AI Platform Raises Cybercrime Concerns",
-      "link": "https://www.darkreading.com/application-security/no-filter-kriminal-ai-platform-cybercrime-concerns",
-      "published": "2026-08-19T20:32:09+00:00",
-      "summary": "The AI company officially forbids illicit use, while offering guardrail-free social engineering, offensive cybercrime, and OSINT scanning to anyone with a bit of cryptocurrency.",
-      "author": "Alexander Culafi"
     },
     {
       "source": "CyberScoop",
@@ -1962,21 +1971,21 @@
       "author": ""
     },
     {
-      "source": "Sophos X-Ops",
-      "category": "detection_response_operations",
-      "title": "Fake AI, real malware: Attackers impersonating AI brands",
-      "link": "https://www.sophos.com/en-us/blog/fake-ai-real-malware-attackers-impersonating-ai-brands",
-      "published": "2026-08-19T00:00:00+00:00",
-      "summary": "<p>&lt;p&gt;A year of MDR casework shows attackers repeatedly exploiting demand for AI tools&lt;/p&gt;</p><p><strong>Categories:</strong> Threat Research</p><p><strong>Tags:</strong> AI, malvertising, infostealer, Sophos X-Ops</p>",
-      "author": ""
-    },
-    {
       "source": "Datadog Security Labs",
       "category": "cloud_identity_infrastructure",
       "title": "Putting models to the secure coding test: Plan vs default mode",
       "link": "https://securitylabs.datadoghq.com/articles/putting-models-to-the-secure-coding-test-plan-vs-default-mode/",
       "published": "2026-08-19T00:00:00+00:00",
       "summary": "We tested Sonnet 5, Composer 2.5, and GPT 5.5 in plan mode and default mode to see whether plan mode produces measurably more secure code.",
+      "author": ""
+    },
+    {
+      "source": "Sophos X-Ops",
+      "category": "detection_response_operations",
+      "title": "Fake AI, real malware: Attackers impersonating AI brands",
+      "link": "https://www.sophos.com/en-us/blog/fake-ai-real-malware-attackers-impersonating-ai-brands",
+      "published": "2026-08-19T00:00:00+00:00",
+      "summary": "<p>&lt;p&gt;A year of MDR casework shows attackers repeatedly exploiting demand for AI tools&lt;/p&gt;</p><p><strong>Categories:</strong> Threat Research</p><p><strong>Tags:</strong> AI, malvertising, infostealer, Sophos X-Ops</p>",
       "author": ""
     },
     {
@@ -3852,6 +3861,15 @@
       "author": ""
     },
     {
+      "source": "Datadog Security Labs",
+      "category": "cloud_identity_infrastructure",
+      "title": "Worm compromises hundreds of popular npm packages",
+      "link": "https://securitylabs.datadoghq.com/articles/npm-worm-compromises-popular-npm-packages/",
+      "published": "2026-08-04T00:00:00+00:00",
+      "summary": "On August 4, 2026, several popular npm packages, including 'keyv', were compromised to deliver malware.",
+      "author": ""
+    },
+    {
       "source": "Sophos X-Ops",
       "category": "detection_response_operations",
       "title": "2608-volatility-interlock",
@@ -3894,15 +3912,6 @@
       "link": "https://webflow.sysdig.com/blog/introducing-sysdig-secure-ai",
       "published": "2026-08-04T00:00:00+00:00",
       "summary": "Sysdig Secure AI puts expert AI agents to work investigating, prioritizing, and acting on cloud security risk in real time, grounded in Sysdig's runtime intelligence. Teams choose how to use it across Agentic AI, Headless Cloud Security, and the GenAI Assistant, as security shifts from human-speed operators to machine-speed orchestration.",
-      "author": ""
-    },
-    {
-      "source": "Datadog Security Labs",
-      "category": "cloud_identity_infrastructure",
-      "title": "Worm compromises hundreds of popular npm packages",
-      "link": "https://securitylabs.datadoghq.com/articles/npm-worm-compromises-popular-npm-packages/",
-      "published": "2026-08-04T00:00:00+00:00",
-      "summary": "On August 4, 2026, several popular npm packages, including 'keyv', were compromised to deliver malware.",
       "author": ""
     },
     {
@@ -4401,21 +4410,21 @@
       "author": ""
     },
     {
-      "source": "Sophos X-Ops",
-      "category": "detection_response_operations",
-      "title": "2607-secai",
-      "link": "https://www.sophos.com/en-us/blog/2607-secai",
-      "published": "2026-07-27T00:00:00+00:00",
-      "summary": "<p>&lt;p&gt;What that means for Customer Protections&amp;nbsp;&lt;/p&gt;</p><p><strong>Categories:</strong> Threat Research, AI Research</p>",
-      "author": ""
-    },
-    {
       "source": "Datadog Security Labs",
       "category": "cloud_identity_infrastructure",
       "title": "Detection primitives for eBPF rootkits",
       "link": "https://securitylabs.datadoghq.com/articles/detection-primitives-for-ebpf-rootkits/",
       "published": "2026-07-27T00:00:00+00:00",
       "summary": "We analyze how VoidLink, LinkPro, and Atomic Arch abuse eBPF helpers to hide from defenders, and show how to detect them at load time, before they can act.",
+      "author": ""
+    },
+    {
+      "source": "Sophos X-Ops",
+      "category": "detection_response_operations",
+      "title": "2607-secai",
+      "link": "https://www.sophos.com/en-us/blog/2607-secai",
+      "published": "2026-07-27T00:00:00+00:00",
+      "summary": "<p>&lt;p&gt;What that means for Customer Protections&amp;nbsp;&lt;/p&gt;</p><p><strong>Categories:</strong> Threat Research, AI Research</p>",
       "author": ""
     },
     {
@@ -5281,15 +5290,6 @@
       "published": "2026-06-30T19:35:58+00:00",
       "summary": "<p>Well, well, well - once again, the cat has dragged us in and spat us out.</p><p>Today, we find ourselves questioning the reality we sit within. Must it be so predictable, and why us? &#x201c;But watchTowr, what do you mean?&#x201d;</p><p>Well, if you&#x2019;re here, you likely fit</p>",
       "author": "Aliz Hammond"
-    },
-    {
-      "source": "Troy Hunt",
-      "category": "practitioner_analysis",
-      "title": "Weekly Update 510: Live From Mallorca with Scott Helme",
-      "link": "https://www.troyhunt.com/weekly-update-510/",
-      "published": "2026-06-30T15:42:54+00:00",
-      "summary": "<p>How&apos;s the view?! Back to business, it&apos;s now 8 years ago that Scott and I thought it would be a cool idea to build <a href=\"https://www.troyhunt.com/why-no-https-heres-the-worlds-largest-websites-not-redirecting-insecure-requests/\" rel=\"noreferrer\">Why no HTTPS?</a> We used the site to shame companies for not implementing their transport later security property, and to make it</p>",
-      "author": "Troy Hunt"
     },
     {
       "source": "Red Canary",
