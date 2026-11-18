@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-17T21:38:54.166806+00:00",
-  "total_items": 695,
+  "generated_at": "2026-11-18T01:33:25.528854+00:00",
+  "total_items": 685,
   "cohorts": {
     "threat_research_primary": {
       "description": "Primary vendor and research-team intelligence with strong technical depth.",
@@ -60,14 +60,14 @@
       "status": "ok",
       "item_count": 10
     },
-    "ESET WeLiveSecurity": {
-      "url": "https://www.welivesecurity.com/en/rss/feed/",
+    "Microsoft Threat Intelligence": {
+      "url": "https://www.microsoft.com/en-us/security/blog/topic/threat-intelligence/feed/",
       "cohort": "threat_research_primary",
       "status": "ok",
       "item_count": 10
     },
-    "Microsoft Threat Intelligence": {
-      "url": "https://www.microsoft.com/en-us/security/blog/topic/threat-intelligence/feed/",
+    "ESET WeLiveSecurity": {
+      "url": "https://www.welivesecurity.com/en/rss/feed/",
       "cohort": "threat_research_primary",
       "status": "ok",
       "item_count": 10
@@ -84,14 +84,20 @@
       "status": "ok",
       "item_count": 10
     },
-    "Recorded Future": {
-      "url": "https://www.recordedfuture.com/feed",
+    "Check Point Research": {
+      "url": "https://research.checkpoint.com/feed/",
       "cohort": "threat_research_primary",
       "status": "ok",
       "item_count": 10
     },
-    "Check Point Research": {
-      "url": "https://research.checkpoint.com/feed/",
+    "Trend Micro Research": {
+      "url": "https://newsroom.trendmicro.com/news-releases?pagetemplate=rss&category=787",
+      "cohort": "threat_research_primary",
+      "status": "ok",
+      "item_count": 10
+    },
+    "Recorded Future": {
+      "url": "https://www.recordedfuture.com/feed",
       "cohort": "threat_research_primary",
       "status": "ok",
       "item_count": 10
@@ -108,21 +114,15 @@
       "status": "ok",
       "item_count": 10
     },
-    "Google Threat Analysis Group": {
-      "url": "https://blog.google/threat-analysis-group/rss/",
-      "cohort": "threat_research_primary",
-      "status": "parse_error",
-      "item_count": 0
-    },
-    "Trend Micro Research": {
-      "url": "https://newsroom.trendmicro.com/news-releases?pagetemplate=rss&category=787",
+    "Citizen Lab": {
+      "url": "https://citizenlab.ca/feed/",
       "cohort": "threat_research_primary",
       "status": "ok",
       "item_count": 10
     },
-    "Citizen Lab": {
-      "url": "https://citizenlab.ca/feed/",
-      "cohort": "threat_research_primary",
+    "SANS Internet Storm Center": {
+      "url": "https://isc.sans.edu/rssfeed_full.xml",
+      "cohort": "government_authoritative",
       "status": "ok",
       "item_count": 10
     },
@@ -138,33 +138,15 @@
       "status": "ok",
       "item_count": 10
     },
-    "Sekoia": {
-      "url": "https://blog.sekoia.io/feed/",
+    "Google Threat Analysis Group": {
+      "url": "https://blog.google/threat-analysis-group/rss/",
       "cohort": "threat_research_primary",
-      "status": "ok",
-      "item_count": 10
-    },
-    "SANS Internet Storm Center": {
-      "url": "https://isc.sans.edu/rssfeed_full.xml",
-      "cohort": "government_authoritative",
-      "status": "ok",
-      "item_count": 10
+      "status": "parse_error",
+      "item_count": 0
     },
     "Horizon3 Attack Research": {
       "url": "https://horizon3.ai/feed/",
       "cohort": "offensive_vulnerability_research",
-      "status": "ok",
-      "item_count": 10
-    },
-    "Kaspersky Securelist": {
-      "url": "https://securelist.com/feed/",
-      "cohort": "threat_research_primary",
-      "status": "ok",
-      "item_count": 10
-    },
-    "Google Cloud Threat Intelligence": {
-      "url": "https://feeds.feedburner.com/threatintelligence/pvexyqv7v0v",
-      "cohort": "threat_research_primary",
       "status": "ok",
       "item_count": 10
     },
@@ -174,8 +156,14 @@
       "status": "ok",
       "item_count": 10
     },
-    "Exploit-DB": {
-      "url": "https://www.exploit-db.com/rss.xml",
+    "Sekoia": {
+      "url": "https://blog.sekoia.io/feed/",
+      "cohort": "threat_research_primary",
+      "status": "ok",
+      "item_count": 10
+    },
+    "watchTowr Labs": {
+      "url": "https://labs.watchtowr.com/rss/",
       "cohort": "offensive_vulnerability_research",
       "status": "ok",
       "item_count": 10
@@ -186,9 +174,21 @@
       "status": "ok",
       "item_count": 10
     },
-    "watchTowr Labs": {
-      "url": "https://labs.watchtowr.com/rss/",
+    "Kaspersky Securelist": {
+      "url": "https://securelist.com/feed/",
+      "cohort": "threat_research_primary",
+      "status": "ok",
+      "item_count": 10
+    },
+    "Exploit-DB": {
+      "url": "https://www.exploit-db.com/rss.xml",
       "cohort": "offensive_vulnerability_research",
+      "status": "ok",
+      "item_count": 10
+    },
+    "Google Cloud Threat Intelligence": {
+      "url": "https://feeds.feedburner.com/threatintelligence/pvexyqv7v0v",
+      "cohort": "threat_research_primary",
       "status": "ok",
       "item_count": 10
     },
@@ -204,44 +204,14 @@
       "status": "ok",
       "item_count": 10
     },
-    "Black Hills Information Security": {
-      "url": "https://www.blackhillsinfosec.com/feed/",
-      "cohort": "detection_response_operations",
-      "status": "ok",
-      "item_count": 10
-    },
-    "SpecterOps": {
-      "url": "https://medium.com/feed/specter-ops-posts",
-      "cohort": "detection_response_operations",
-      "status": "ok",
-      "item_count": 10
-    },
     "Trail of Bits": {
       "url": "https://blog.trailofbits.com/feed/",
       "cohort": "offensive_vulnerability_research",
       "status": "ok",
       "item_count": 10
     },
-    "GitHub Security Lab": {
-      "url": "https://github.blog/category/security/feed/",
-      "cohort": "offensive_vulnerability_research",
-      "status": "ok",
-      "item_count": 10
-    },
-    "Proofpoint Threat Insight": {
-      "url": "https://www.proofpoint.com/us/rss.xml",
-      "cohort": "detection_response_operations",
-      "status": "ok",
-      "item_count": 10
-    },
-    "Sophos X-Ops": {
-      "url": "https://news.sophos.com/en-us/category/threat-research/feed/",
-      "cohort": "detection_response_operations",
-      "status": "ok",
-      "item_count": 10
-    },
-    "Sysdig": {
-      "url": "https://sysdig.com/feed/",
+    "Black Hills Information Security": {
+      "url": "https://www.blackhillsinfosec.com/feed/",
       "cohort": "detection_response_operations",
       "status": "ok",
       "item_count": 10
@@ -252,15 +222,51 @@
       "status": "ok",
       "item_count": 10
     },
-    "Datadog Security Labs": {
-      "url": "https://securitylabs.datadoghq.com/rss/feed.xml",
-      "cohort": "cloud_identity_infrastructure",
+    "Proofpoint Threat Insight": {
+      "url": "https://www.proofpoint.com/us/rss.xml",
+      "cohort": "detection_response_operations",
+      "status": "ok",
+      "item_count": 10
+    },
+    "SpecterOps": {
+      "url": "https://medium.com/feed/specter-ops-posts",
+      "cohort": "detection_response_operations",
+      "status": "ok",
+      "item_count": 10
+    },
+    "TrustedSec": {
+      "url": "https://www.trustedsec.com/feed/",
+      "cohort": "detection_response_operations",
+      "status": "ok",
+      "item_count": 10
+    },
+    "Sysdig": {
+      "url": "https://sysdig.com/feed/",
+      "cohort": "detection_response_operations",
+      "status": "ok",
+      "item_count": 10
+    },
+    "GitHub Security Lab": {
+      "url": "https://github.blog/category/security/feed/",
+      "cohort": "offensive_vulnerability_research",
+      "status": "ok",
+      "item_count": 10
+    },
+    "Sophos X-Ops": {
+      "url": "https://news.sophos.com/en-us/category/threat-research/feed/",
+      "cohort": "detection_response_operations",
       "status": "ok",
       "item_count": 10
     },
     "Google Project Zero": {
       "url": "https://googleprojectzero.blogspot.com/feeds/posts/default",
       "cohort": "offensive_vulnerability_research",
+      "status": "ok",
+      "item_count": 10
+    },
+    "Datadog Security Labs": {
+      "url": "https://securitylabs.datadoghq.com/rss/feed.xml",
+      "cohort": "cloud_identity_infrastructure",
       "status": "ok",
       "item_count": 10
     },
@@ -282,33 +288,9 @@
       "status": "ok",
       "item_count": 10
     },
-    "Active Countermeasures": {
-      "url": "https://www.activecountermeasures.com/feed/",
-      "cohort": "detection_response_operations",
-      "status": "ok",
-      "item_count": 10
-    },
-    "TrustedSec": {
-      "url": "https://www.trustedsec.com/feed/",
-      "cohort": "detection_response_operations",
-      "status": "ok",
-      "item_count": 10
-    },
-    "Cloudflare Security": {
-      "url": "https://blog.cloudflare.com/tag/security/rss/",
-      "cohort": "cloud_identity_infrastructure",
-      "status": "ok",
-      "item_count": 10
-    },
     "GreyNoise": {
       "url": "https://www.greynoise.io/blog/rss.xml",
       "cohort": "cloud_identity_infrastructure",
-      "status": "ok",
-      "item_count": 10
-    },
-    "Google DeepMind Blog": {
-      "url": "https://deepmind.google/blog/rss.xml",
-      "cohort": "ai_security_agentic_risk",
       "status": "ok",
       "item_count": 10
     },
@@ -318,11 +300,23 @@
       "status": "ok",
       "item_count": 10
     },
-    "Protect AI": {
-      "url": "https://protectai.com/blog/rss.xml",
+    "Active Countermeasures": {
+      "url": "https://www.activecountermeasures.com/feed/",
+      "cohort": "detection_response_operations",
+      "status": "ok",
+      "item_count": 10
+    },
+    "Google DeepMind Blog": {
+      "url": "https://deepmind.google/blog/rss.xml",
       "cohort": "ai_security_agentic_risk",
-      "status": "parse_error",
-      "item_count": 0
+      "status": "ok",
+      "item_count": 10
+    },
+    "Cloudflare Security": {
+      "url": "https://blog.cloudflare.com/tag/security/rss/",
+      "cohort": "cloud_identity_infrastructure",
+      "status": "ok",
+      "item_count": 10
     },
     "Cloudflare Radar": {
       "url": "https://blog.cloudflare.com/tag/cloudflare-radar/rss/",
@@ -342,21 +336,15 @@
       "status": "ok",
       "item_count": 10
     },
+    "Protect AI": {
+      "url": "https://protectai.com/blog/rss.xml",
+      "cohort": "ai_security_agentic_risk",
+      "status": "parse_error",
+      "item_count": 0
+    },
     "OpenSSF Blog": {
       "url": "https://openssf.org/feed/",
       "cohort": "ai_security_agentic_risk",
-      "status": "ok",
-      "item_count": 10
-    },
-    "Chainalysis": {
-      "url": "https://www.chainalysis.com/blog/feed/",
-      "cohort": "ransomware_ecrime_financial_crime",
-      "status": "ok",
-      "item_count": 10
-    },
-    "Team Cymru": {
-      "url": "https://www.team-cymru.com/post/rss.xml",
-      "cohort": "ransomware_ecrime_financial_crime",
       "status": "ok",
       "item_count": 10
     },
@@ -366,27 +354,21 @@
       "status": "ok",
       "item_count": 10
     },
-    "The Record": {
-      "url": "https://therecord.media/feed",
-      "cohort": "cyber_news_breach_reporting",
-      "status": "ok",
-      "item_count": 5
-    },
     "BleepingComputer": {
       "url": "https://www.bleepingcomputer.com/feed/",
       "cohort": "cyber_news_breach_reporting",
       "status": "ok",
       "item_count": 10
     },
-    "Coveware": {
-      "url": "https://www.coveware.com/blog?format=rss",
-      "cohort": "ransomware_ecrime_financial_crime",
-      "status": "parse_error",
-      "item_count": 0
-    },
-    "CyberScoop": {
-      "url": "https://cyberscoop.com/feed/",
+    "The Record": {
+      "url": "https://therecord.media/feed",
       "cohort": "cyber_news_breach_reporting",
+      "status": "ok",
+      "item_count": 5
+    },
+    "Team Cymru": {
+      "url": "https://www.team-cymru.com/post/rss.xml",
+      "cohort": "ransomware_ecrime_financial_crime",
       "status": "ok",
       "item_count": 10
     },
@@ -396,8 +378,20 @@
       "status": "ok",
       "item_count": 10
     },
-    "Help Net Security": {
-      "url": "https://www.helpnetsecurity.com/feed/",
+    "Coveware": {
+      "url": "https://www.coveware.com/blog?format=rss",
+      "cohort": "ransomware_ecrime_financial_crime",
+      "status": "parse_error",
+      "item_count": 0
+    },
+    "Intel 471": {
+      "url": "https://intel471.com/blog/feed",
+      "cohort": "ransomware_ecrime_financial_crime",
+      "status": "ok",
+      "item_count": 10
+    },
+    "CyberScoop": {
+      "url": "https://cyberscoop.com/feed/",
       "cohort": "cyber_news_breach_reporting",
       "status": "ok",
       "item_count": 10
@@ -408,9 +402,9 @@
       "status": "ok",
       "item_count": 10
     },
-    "Intel 471": {
-      "url": "https://intel471.com/blog/feed",
-      "cohort": "ransomware_ecrime_financial_crime",
+    "Help Net Security": {
+      "url": "https://www.helpnetsecurity.com/feed/",
+      "cohort": "cyber_news_breach_reporting",
       "status": "ok",
       "item_count": 10
     },
@@ -420,9 +414,9 @@
       "status": "ok",
       "item_count": 10
     },
-    "Dark Reading": {
-      "url": "https://www.darkreading.com/rss.xml",
-      "cohort": "cyber_news_breach_reporting",
+    "AI Snake Oil": {
+      "url": "https://www.aisnakeoil.com/feed",
+      "cohort": "ai_security_agentic_risk",
       "status": "ok",
       "item_count": 10
     },
@@ -438,33 +432,9 @@
       "status": "ok",
       "item_count": 10
     },
-    "Reddit r/netsec": {
-      "url": "https://www.reddit.com/r/netsec/.rss",
-      "cohort": "reddit_practitioner_osint",
-      "status": "ok",
-      "item_count": 0
-    },
-    "Troy Hunt": {
-      "url": "https://www.troyhunt.com/rss/",
-      "cohort": "practitioner_analysis",
-      "status": "ok",
-      "item_count": 10
-    },
-    "Reddit r/cybersecurity": {
-      "url": "https://www.reddit.com/r/cybersecurity/.rss",
-      "cohort": "reddit_practitioner_osint",
-      "status": "ok",
-      "item_count": 0
-    },
-    "Risky Business News": {
-      "url": "https://risky.biz/feeds/risky-business-news/",
-      "cohort": "practitioner_analysis",
-      "status": "ok",
-      "item_count": 10
-    },
-    "AI Snake Oil": {
-      "url": "https://www.aisnakeoil.com/feed",
-      "cohort": "ai_security_agentic_risk",
+    "Dark Reading": {
+      "url": "https://www.darkreading.com/rss.xml",
+      "cohort": "cyber_news_breach_reporting",
       "status": "ok",
       "item_count": 10
     },
@@ -474,20 +444,32 @@
       "status": "ok",
       "item_count": 10
     },
-    "Graham Cluley": {
-      "url": "https://grahamcluley.com/feed/",
+    "Troy Hunt": {
+      "url": "https://www.troyhunt.com/rss/",
       "cohort": "practitioner_analysis",
       "status": "ok",
       "item_count": 10
     },
-    "Reddit r/sysadmin": {
-      "url": "https://www.reddit.com/r/sysadmin/.rss",
+    "Reddit r/blueteamsec": {
+      "url": "https://www.reddit.com/r/blueteamsec/.rss",
       "cohort": "reddit_practitioner_osint",
       "status": "ok",
       "item_count": 0
     },
-    "Reddit r/netsecstudents": {
-      "url": "https://www.reddit.com/r/netsecstudents/.rss",
+    "Reddit r/netsec": {
+      "url": "https://www.reddit.com/r/netsec/.rss",
+      "cohort": "reddit_practitioner_osint",
+      "status": "ok",
+      "item_count": 0
+    },
+    "Reddit r/cybersecurity": {
+      "url": "https://www.reddit.com/r/cybersecurity/.rss",
+      "cohort": "reddit_practitioner_osint",
+      "status": "ok",
+      "item_count": 0
+    },
+    "Reddit r/sysadmin": {
+      "url": "https://www.reddit.com/r/sysadmin/.rss",
       "cohort": "reddit_practitioner_osint",
       "status": "ok",
       "item_count": 0
@@ -498,8 +480,14 @@
       "status": "ok",
       "item_count": 0
     },
-    "Reddit r/blueteamsec": {
-      "url": "https://www.reddit.com/r/blueteamsec/.rss",
+    "Graham Cluley": {
+      "url": "https://grahamcluley.com/feed/",
+      "cohort": "practitioner_analysis",
+      "status": "ok",
+      "item_count": 10
+    },
+    "Reddit r/netsecstudents": {
+      "url": "https://www.reddit.com/r/netsecstudents/.rss",
       "cohort": "reddit_practitioner_osint",
       "status": "ok",
       "item_count": 0
@@ -509,6 +497,12 @@
       "cohort": "reddit_practitioner_osint",
       "status": "ok",
       "item_count": 0
+    },
+    "Risky Business News": {
+      "url": "https://risky.biz/feeds/risky-business-news/",
+      "cohort": "practitioner_analysis",
+      "status": "ok",
+      "item_count": 10
     },
     "tl;dr sec": {
       "url": "https://tldrsec.com/feed.xml",
@@ -527,17 +521,113 @@
       "cohort": "policy_strategy_geopolitics",
       "status": "ok",
       "item_count": 10
+    },
+    "Chainalysis": {
+      "url": "https://www.chainalysis.com/blog/feed/",
+      "cohort": "ransomware_ecrime_financial_crime",
+      "status": "fetch_error",
+      "item_count": 0
     }
   },
   "items": [
     {
-      "source": "The Record",
-      "category": "cyber_news_breach_reporting",
-      "title": "Uber says nearly 150,000 impacted by third-party breach",
-      "link": "https://therecord.media/uber-says-150000-impacted-third-party-breach",
-      "published": "2026-11-18T01:20:00+00:00",
-      "summary": "In breach notification letters, the rideshare company said it was notified by a third party service provider on October 9 that internal credentials were stolen and used to access Uber’s account.",
+      "source": "Horizon3 Attack Research",
+      "category": "offensive_vulnerability_research",
+      "title": "CVE-2026-114938 | Oracle Java SE and OpenJDK Base64 Decoder Heap Buffer Overflow Vulnerability (Java4Shell)",
+      "link": "https://horizon3.ai/attack-research/vulnerabilities/cve-2026-114938/",
+      "published": "2026-11-18T00:31:13+00:00",
+      "summary": "CVE-2026-114938, known as Java4Shell, is a high-severity heap buffer overflow in the Java runtime's optimized Base64 decoder, affecting Oracle Java SE and OpenJDK builds on x86-64 systems with AVX-512.",
+      "author": "Horizon3"
+    },
+    {
+      "source": "Google Cloud Security",
+      "category": "cloud_identity_infrastructure",
+      "title": "How to Build Durable Agentic Systems with Google Antigravity: From Instructions to Loops",
+      "link": "https://cloud.google.com/blog/topics/developers-practitioners/how-to-build-durable-agentic-systems-with-google-antigravity-from-instructions-to-loops/",
+      "published": "2026-11-18T00:11:00+00:00",
+      "summary": "<div class=\"block-paragraph_advanced\"><p><span style=\"vertical-align: baseline;\">I watched the discussion on agentic loops grow louder over the past few months. But for me, the reality is simpler: prompt engineering has shifted from individual tasks to systems design, and the harness around the model (not the model itself) is now my primary constraint in software engineering. In this article, I'll show you how to build and verify those harnesses so you can move from single-turn instructions to d",
+      "author": "Alex Astrum"
+    },
+    {
+      "source": "GreyNoise",
+      "category": "cloud_identity_infrastructure",
+      "title": "Global Event: Java4Shell (CVE-2026-114938) Live Activity Report",
+      "link": "https://www.greynoise.io/blog/global-event-java4shell-cve-2026-114938-live-activity-report",
+      "published": "2026-11-18T00:00:00+00:00",
+      "summary": "GreyNoise is monitoring scanning and exploitation attempts against CVE-2026-114938, also known as \"Java4Shell,\" a memory-corruption vulnerability in OpenJDK's Base64 decoder.",
       "author": ""
+    },
+    {
+      "source": "AWS Security Blog",
+      "category": "cloud_identity_infrastructure",
+      "title": "Introducing simplified onboarding for AWS WAF Bot Control at the targeted inspection level",
+      "link": "https://aws.amazon.com/blogs/security/introducing-simplified-onboarding-for-aws-waf-bot-control-at-the-targeted-inspection-level/",
+      "published": "2026-11-17T23:15:03+00:00",
+      "summary": "Today, we’re announcing simplified onboarding and bot confidence levels for AWS WAF Bot Control at the targeted inspection level, which we refer to as Targeted bot control in this post, matching the console. Bot confidence levels and the new LATEST rule group version are available for the resource types that AWS WAF protects: you act […]",
+      "author": "Pengfei Shao"
+    },
+    {
+      "source": "BleepingComputer",
+      "category": "cyber_news_breach_reporting",
+      "title": "Critical Java4Shell flaw allows RCE attacks on major Java applications",
+      "link": "https://www.bleepingcomputer.com/news/security/critical-java4shell-flaw-allows-rce-attacks-on-major-java-applications/",
+      "published": "2026-11-17T23:04:21+00:00",
+      "summary": "A critical vulnerability dubbed Java4Shell in OpenJDK, the open-source implementation of Java, can allow unauthenticated attackers to remotely execute code on popular enterprise applications, including Jenkins, Atlassian Jira, Confluence, and Keycloak. [...]",
+      "author": "Lawrence Abrams"
+    },
+    {
+      "source": "Simon Willison",
+      "category": "ai_security_agentic_risk",
+      "title": "External sandboxes for coding agents",
+      "link": "https://simonwillison.net/2026/Nov/17/external-sandboxes-for-coding-agents/",
+      "published": "2026-11-17T22:52:29+00:00",
+      "summary": "<p><strong><a href=\"https://blog.primeradiant.com/external-sandboxes-for-coding-agents/\">External sandboxes for coding agents</a></strong></p>\nI've been exploring new ways to sandbox code that is executed by agents, with a focus on making it safer to try out local models without worrying that a mistake or prompt injection attack might cause them to take damaging actions on a machine.</p>\n<p>I worked on this project with <a href=\"https://primeradiant.com\">Prime Radiant</a>, the AI research lab be",
+      "author": ""
+    },
+    {
+      "source": "Simon Willison",
+      "category": "ai_security_agentic_risk",
+      "title": "GPT‑6.2 Astra and GPT‑6.2 Sol",
+      "link": "https://simonwillison.net/2026/Nov/17/gpt62-astra-and-sol/",
+      "published": "2026-11-17T22:38:52+00:00",
+      "summary": "<p><strong><a href=\"https://openai.com/index/introducing-gpt-6-2-astra-sol/\">GPT‑6.2 Astra and GPT‑6.2 Sol</a></strong></p>\nOpenAI:</p>\n<blockquote>\n<p>We’re introducing GPT‑6.2 Astra, our new frontier model for your hardest projects, and GPT‑6.2 Sol, our efficient, versatile model for everyday work.</p>\n</blockquote>\n<p>They're available in the API as <code>gpt-6.2-astra</code> and <code>gpt-6.2-sol</code>. I shipped <a href=\"https://llm.datasette.io/en/stable/changelog.html#v0-38\">LLM 0.38</a>",
+      "author": ""
+    },
+    {
+      "source": "Dark Reading",
+      "category": "cyber_news_breach_reporting",
+      "title": "Optimizely Malware Attacks Highlight Third-Party Vendor Risks",
+      "link": "https://www.darkreading.com/cyber-risk/optimizely-malware-attacks-third-party-vendor-risks",
+      "published": "2026-11-17T22:34:22+00:00",
+      "summary": "At least 178 organizations, including several major brands, unwittingly exposed website visitors to hydra-like malware via a third-party platform.",
+      "author": "Jai Vijayan"
+    },
+    {
+      "source": "Wiz Research",
+      "category": "cloud_identity_infrastructure",
+      "title": "CVE-2026-114938 RCE in OpenJDK: Everything You Need to Know",
+      "link": "https://www.wiz.io/blog/cve-2026-114938-rce-java4shell-openjdk",
+      "published": "2026-11-17T22:29:57+00:00",
+      "summary": "Detect and mitigate Java4Shell (CVE-2026-114938), a critical 9.2 RCE vulnerability affecting OpenJDK and major Java-based applications.",
+      "author": "Merav Bar"
+    },
+    {
+      "source": "CyberScoop",
+      "category": "cyber_news_breach_reporting",
+      "title": "A vulnpocalypse bug worthy of attention: Researchers disclose critical flaw in Java with help of AI",
+      "link": "https://cyberscoop.com/java4shell-critical-java-flaw-openjdk/",
+      "published": "2026-11-17T22:24:39+00:00",
+      "summary": "<p>Oracle shipped a patch this week for the flaw, which a short string of letters can trigger to corrupt memory in Java and hand attackers control of the servers running it.</p>\n<p>The post <a href=\"https://cyberscoop.com/java4shell-critical-java-flaw-openjdk/\">A vulnpocalypse bug worthy of attention: Researchers disclose critical flaw in Java with help of AI</a> appeared first on <a href=\"https://cyberscoop.com\">CyberScoop</a>.</p>",
+      "author": "Greg Otto"
+    },
+    {
+      "source": "Wiz Research",
+      "category": "cloud_identity_infrastructure",
+      "title": "Microsoft agent-framework Compromised: Credential Stealer Targets Azure and CI Pipelines",
+      "link": "https://www.wiz.io/blog/malicious-version-of-microsofts-agent-framework-published-to-pypi",
+      "published": "2026-11-17T22:03:37+00:00",
+      "summary": "On November 17, 2026 at 20:35 UTC, versions 1.26.1 & 1.26.2 of the Microsoft PyPI package agent-framework were published with an added credential stealer.  The package gets almost 200k downloads a month. The malicious versions have since been quarantined.",
+      "author": "Benjamin Read"
     },
     {
       "source": "BleepingComputer",
@@ -776,20 +866,20 @@
     {
       "source": "Google Cloud Security",
       "category": "cloud_identity_infrastructure",
-      "title": "Congratulations to our 2026 Google Cloud Partner All-stars",
-      "link": "https://cloud.google.com/blog/topics/partners/2026-google-cloud-partner-all-stars-winners/",
-      "published": "2026-11-17T17:00:00+00:00",
-      "summary": "<div class=\"block-paragraph_advanced\"><p><span style=\"vertical-align: baseline;\">The Google Cloud partner ecosystem plays an essential role in driving customer success. As we enter a transformative new era, our partners are instrumental in helping move AI from early pilots into true production-grade deployment. Closing that gap takes far more than technology alone. It requires skilled practitioners who can rethink workflows, navigate organizational change, and deliver impact. Operating across ev",
-      "author": "Kevin Ichhpurani"
-    },
-    {
-      "source": "Google Cloud Security",
-      "category": "cloud_identity_infrastructure",
       "title": "The visual evolution of Looker: Modern design for enterprise data storytelling",
       "link": "https://cloud.google.com/blog/products/business-intelligence/modern-data-visualizations-and-custom-charts-in-looker/",
       "published": "2026-11-17T17:00:00+00:00",
       "summary": "<div class=\"block-paragraph_advanced\"><p><span style=\"vertical-align: baseline;\">Over the past year, we’ve focused on making </span><a href=\"http://cloud.google.com/looker\"><span style=\"text-decoration: underline; vertical-align: baseline;\">Looker</span></a><span style=\"vertical-align: baseline;\"> easier to use for every business user. We started by redesigning the exploration experience with </span><a href=\"https://cloud.google.com/blog/products/business-intelligence/looker-explore-ai-and-inter",
       "author": "Minhaz Kazi"
+    },
+    {
+      "source": "Google Cloud Security",
+      "category": "cloud_identity_infrastructure",
+      "title": "Congratulations to our 2026 Google Cloud Partner All-stars",
+      "link": "https://cloud.google.com/blog/topics/partners/2026-google-cloud-partner-all-stars-winners/",
+      "published": "2026-11-17T17:00:00+00:00",
+      "summary": "<div class=\"block-paragraph_advanced\"><p><span style=\"vertical-align: baseline;\">The Google Cloud partner ecosystem plays an essential role in driving customer success. As we enter a transformative new era, our partners are instrumental in helping move AI from early pilots into true production-grade deployment. Closing that gap takes far more than technology alone. It requires skilled practitioners who can rethink workflows, navigate organizational change, and deliver impact. Operating across ev",
+      "author": "Kevin Ichhpurani"
     },
     {
       "source": "Simon Willison",
@@ -798,6 +888,15 @@
       "link": "https://simonwillison.net/2026/Nov/17/datasette-lite/",
       "published": "2026-11-17T16:48:33+00:00",
       "summary": "<p><a href=\"https://lite.datasette.io/\">Datasette Lite</a> is my port of the <a href=\"https://datasette.io/\">Datasette</a> Python application to run directly in the browser using WebAssembly and <a href=\"https://pyodide.org/\">Pyodide</a>. I've released a complete rewrite of Datasette Lite using service workers, and it's now almost indistinguishable from the real server-side application.</p>\n<p>You can now do all of the following, using a carefully crafted URL to <strong>lite.datasette.io</strong",
+      "author": ""
+    },
+    {
+      "source": "The Record",
+      "category": "cyber_news_breach_reporting",
+      "title": "NSA Net, agency’s classified internal network, faces unspecified disruptions",
+      "link": "https://therecord.media/nsa-net-disruptions",
+      "published": "2026-11-17T16:21:00+00:00",
+      "summary": "The NSA has ordered staggered arrivals at its headquarters at Fort Meade, Maryland, as technicians work to fully restore the classified internal network NSA Net.",
       "author": ""
     },
     {
@@ -963,15 +1062,6 @@
       "author": "Mandiant"
     },
     {
-      "source": "CyberScoop",
-      "category": "cyber_news_breach_reporting",
-      "title": "Pakistani hackers are spying on defense workers with fake job sites",
-      "link": "https://cyberscoop.com/pakistani-hackers-defense-workers-fake-job-sites/",
-      "published": "2026-11-17T14:00:00+00:00",
-      "summary": "<p>The perpetrators targeted job seekers in India, mostly, but some of the effort could be more broadly targeting defense contractors and military personnel.</p>\n<p>The post <a href=\"https://cyberscoop.com/pakistani-hackers-defense-workers-fake-job-sites/\">Pakistani hackers are spying on defense workers with fake job sites</a> appeared first on <a href=\"https://cyberscoop.com\">CyberScoop</a>.</p>",
-      "author": "Tim Starks"
-    },
-    {
       "source": "Google Cloud Security",
       "category": "cloud_identity_infrastructure",
       "title": "COLD RELIC: A Case Study in Impersonation and Compromise",
@@ -981,6 +1071,15 @@
       "author": "Mandiant"
     },
     {
+      "source": "CyberScoop",
+      "category": "cyber_news_breach_reporting",
+      "title": "Pakistani hackers are spying on defense workers with fake job sites",
+      "link": "https://cyberscoop.com/pakistani-hackers-defense-workers-fake-job-sites/",
+      "published": "2026-11-17T14:00:00+00:00",
+      "summary": "<p>The perpetrators targeted job seekers in India, mostly, but some of the effort could be more broadly targeting defense contractors and military personnel.</p>\n<p>The post <a href=\"https://cyberscoop.com/pakistani-hackers-defense-workers-fake-job-sites/\">Pakistani hackers are spying on defense workers with fake job sites</a> appeared first on <a href=\"https://cyberscoop.com\">CyberScoop</a>.</p>",
+      "author": "Tim Starks"
+    },
+    {
       "source": "SecurityWeek",
       "category": "cyber_news_breach_reporting",
       "title": "Pretxt Emerges Stealth With $5M Seed and an AI Supervision Tool",
@@ -988,15 +1087,6 @@
       "published": "2026-11-17T14:00:00+00:00",
       "summary": "<p>Pretxt provides technology to prevent AI agents escaping their guardrails and causing unintended harm.</p>\n<p>The post <a href=\"https://www.securityweek.com/pretxt-emerges-stealth-with-5m-seed-and-an-ai-supervision-tool/\">Pretxt Emerges Stealth With $5M Seed and an AI Supervision Tool</a> appeared first on <a href=\"https://www.securityweek.com\">SecurityWeek</a>.</p>",
       "author": "Kevin Townsend"
-    },
-    {
-      "source": "Chainalysis",
-      "category": "ransomware_ecrime_financial_crime",
-      "title": "Refugees, ATMs, and Tax Shifts: What’s Driving Crypto in Eastern Europe",
-      "link": "https://www.chainalysis.com/blog/eastern-europe-crypto-adoption-2026/",
-      "published": "2026-11-17T13:55:51+00:00",
-      "summary": "<p>Summary Eastern Europe&#8217;s crypto economy fell 7.9% to $642.1 billion, the weakest performance of any region we study. Countries with&#8230;</p>\n<p>The post <a href=\"https://www.chainalysis.com/blog/eastern-europe-crypto-adoption-2026/\">Refugees, ATMs, and Tax Shifts: What’s Driving Crypto in Eastern Europe</a> appeared first on <a href=\"https://www.chainalysis.com\">Chainalysis</a>.</p>",
-      "author": "Chainalysis Team"
     },
     {
       "source": "Just Security",
@@ -1078,6 +1168,15 @@
       "published": "2026-11-17T13:03:59+00:00",
       "summary": "<p>A Kazakh national charged in a ransomware and extortion conspiracy targeting U.S. hospitals and schools was also charged with violating the TAKE IT DOWN Act. </p>\n<p>The post <a href=\"https://cyberscoop.com/roman-khlynovskiy-ransomware-extradition/\">Alleged ransomware group member extradited from Italy to face US charges in hospital, school extortion case</a> appeared first on <a href=\"https://cyberscoop.com\">CyberScoop</a>.</p>",
       "author": "Greg Otto"
+    },
+    {
+      "source": "Just Security",
+      "category": "policy_strategy_geopolitics",
+      "title": "Litigation Tracker: Legal Challenges to Trump Administration Actions",
+      "link": "https://www.justsecurity.org/107087/tracker-litigation-legal-challenges-trump-administration/?utm_source=rss&utm_medium=rss&utm_campaign=tracker-litigation-legal-challenges-trump-administration",
+      "published": "2026-11-17T13:00:19+00:00",
+      "summary": "<p>A public resource tracking all the legal challenges to the Trump administration's executive orders and actions.</p>\n<p>The post <a href=\"https://www.justsecurity.org/107087/tracker-litigation-legal-challenges-trump-administration/\">Litigation Tracker: Legal Challenges to Trump Administration Actions</a> appeared first on <a href=\"https://www.justsecurity.org\">Just Security</a>.</p>",
+      "author": "Just Security"
     },
     {
       "source": "Infosecurity Magazine",
@@ -1278,15 +1377,6 @@
       "author": "Sinisa Markovic"
     },
     {
-      "source": "BleepingComputer",
-      "category": "cyber_news_breach_reporting",
-      "title": "Uber notifies drivers of data breach affecting nearly 150,000 people",
-      "link": "https://www.bleepingcomputer.com/news/security/uber-notifies-drivers-of-data-breach-affecting-nearly-150-000-people/",
-      "published": "2026-11-17T08:35:42+00:00",
-      "summary": "Ride-hailing company Uber is notifying nearly 150,000 drivers that attackers stole their data after breaching AI infrastructure provider Fireworks in early October. [...]",
-      "author": "Sergiu Gatlan"
-    },
-    {
       "source": "Google Cloud Security",
       "category": "cloud_identity_infrastructure",
       "title": "Building Sovereign AI in Europe, With Europe: Our New Startup Accelerator",
@@ -1368,6 +1458,15 @@
       "author": "Rob Simon"
     },
     {
+      "source": "Intel 471",
+      "category": "ransomware_ecrime_financial_crime",
+      "title": "Meet Agent471: AI That Gives Your Security Team Time Back",
+      "link": "https://www.intel471.com/blog/meet-agent471-ai-that-gives-your-security-team-time-back",
+      "published": "2026-11-17T02:50:36+00:00",
+      "summary": "Agent471, the AI agent built into the Verity471 cyber intelligence platform, is now available. It tackles the research behind every request, with analyst tradecraft built in, so your Security team gets time back for the analysis and judgment that only they can provide.",
+      "author": ""
+    },
+    {
       "source": "SANS Internet Storm Center",
       "category": "government_authoritative",
       "title": "ISC Stormcast For Tuesday, November 17th, 2026 https://isc.sans.edu/podcastdetail/10182, (Tue, Nov 17th)",
@@ -1413,12 +1512,21 @@
       "author": ""
     },
     {
+      "source": "Sophos X-Ops",
+      "category": "detection_response_operations",
+      "title": "'Java4Shell' vulnerability (CVE-2026-114938) could allow remote code execution",
+      "link": "https://www.sophos.com/en-us/blog/java4shell-could-allow-remote-code-execution",
+      "published": "2026-11-17T00:00:00+00:00",
+      "summary": "<p><strong>Categories:</strong> Threat Research</p><p><strong>Tags:</strong> advisory, vulnerability, Oracle, Java</p>",
+      "author": ""
+    },
+    {
       "source": "Datadog Security Labs",
       "category": "cloud_identity_infrastructure",
       "title": "Java4Shell: Remote Code Execution in OpenJDK (CVE-2026-114938)",
       "link": "https://securitylabs.datadoghq.com/articles/java4shell-remote-code-execution-in-openjdk-cve-2026-114938/",
       "published": "2026-11-17T00:00:00+00:00",
-      "summary": "A remote code execution vulnerability, dubbed Java4Shell, has been found in OpenJDK",
+      "summary": "Learn how CVE-2026-114938 corrupts memory in OpenJDK’s AVX-512 Base64 decoder, which deployments are affected, and how to mitigate it.",
       "author": ""
     },
     {
@@ -1746,15 +1854,6 @@
       "author": ""
     },
     {
-      "source": "Just Security",
-      "category": "policy_strategy_geopolitics",
-      "title": "Litigation Tracker: Legal Challenges to Trump Administration Actions",
-      "link": "https://www.justsecurity.org/107087/tracker-litigation-legal-challenges-trump-administration/?utm_source=rss&utm_medium=rss&utm_campaign=tracker-litigation-legal-challenges-trump-administration",
-      "published": "2026-11-16T13:00:19+00:00",
-      "summary": "<p>A public resource tracking all the legal challenges to the Trump administration's executive orders and actions.</p>\n<p>The post <a href=\"https://www.justsecurity.org/107087/tracker-litigation-legal-challenges-trump-administration/\">Litigation Tracker: Legal Challenges to Trump Administration Actions</a> appeared first on <a href=\"https://www.justsecurity.org\">Just Security</a>.</p>",
-      "author": "Just Security"
-    },
-    {
       "source": "Infosecurity Magazine",
       "category": "cyber_news_breach_reporting",
       "title": "Google Project Zero to Cut Disclosure Deadline to 30 Days by 2028",
@@ -1798,15 +1897,6 @@
       "published": "2026-11-16T09:55:00+00:00",
       "summary": "Sometimes we have no choice but to share some of our most sensitive identification documents and biometrics with third-party services. Here’s how to minimize the risk.",
       "author": ""
-    },
-    {
-      "source": "Google Cloud Security",
-      "category": "cloud_identity_infrastructure",
-      "title": "Google is a Leader in the 2026 Gartner® Magic Quadrant™ for Cloud Operational Database Management Systems",
-      "link": "https://cloud.google.com/blog/products/databases/2026-gartner-mq-cloud-operational-databases-management-systems/",
-      "published": "2026-11-16T08:30:00+00:00",
-      "summary": "<div class=\"block-paragraph_advanced\"><p><span style=\"vertical-align: baseline;\">Google has been recognized as a Leader and positioned furthest in vision in the 2026 Gartner® Magic Quadrant™ for Cloud Operational Database Management Systems (Cloud ODBMS).</span></p></div>\n<div class=\"block-image_full_width\">\n\n\n\n\n\n\n  \n    <div class=\"article-module h-c-page\">\n      <div class=\"h-c-grid\">\n  \n\n    <figure class=\"article-image--large\n      \n      \n        h-c-grid__col\n        h-c-grid__col--6 h-c-g",
-      "author": "Raj Pai"
     },
     {
       "source": "Sekoia",
@@ -1917,24 +2007,6 @@
       "author": ""
     },
     {
-      "source": "Simon Willison",
-      "category": "ai_security_agentic_risk",
-      "title": "datasette-llm 0.1a11",
-      "link": "https://simonwillison.net/2026/Nov/14/datasette-llm/",
-      "published": "2026-11-14T23:59:28+00:00",
-      "summary": "<p><strong>Release:</strong> <a href=\"https://github.com/datasette/datasette-llm/releases/tag/0.1a11\">datasette-llm 0.1a11</a></p>\n        <p><code>datasette-llm</code> is the intermediate plugin for Datasette that supports configuring LLMs for use with other Datasette plugins.</p>\n<p>This release adds support for OpenAI-compatible endpoints, so you can configure Datasette to use an LLM hosted anywhere that talks the OpenAI pseudo-standard web protocol.</p>\n<p>This means that if you're running l",
-      "author": ""
-    },
-    {
-      "source": "Simon Willison",
-      "category": "ai_security_agentic_risk",
-      "title": "datasette-vega 0.7",
-      "link": "https://simonwillison.net/2026/Nov/14/datasette-vega/",
-      "published": "2026-11-14T17:09:09+00:00",
-      "summary": "<p><strong>Release:</strong> <a href=\"https://github.com/simonw/datasette-vega/releases/tag/0.7\">datasette-vega 0.7</a></p>\n        <p>A new release of Datasette's longest untouched plugin, for rendering charts (using <a href=\"https://vega.github.io/vega-lite/\">Vega-Lite</a>) against data in a table or custom query. The last release was in July 2018!</p>\n<p>I finally bumped it for compatibility with the latest Datasette alphas, plus some cosmetic tweaks to make it work better with <a href=\"https",
-      "author": ""
-    },
-    {
       "source": "Schneier on Security",
       "category": "practitioner_analysis",
       "title": "Upcoming Speaking Engagements",
@@ -1998,15 +2070,6 @@
       "author": "Jeremiah Jasmin"
     },
     {
-      "source": "CyberScoop",
-      "category": "cyber_news_breach_reporting",
-      "title": "Researchers continue to find serious vulnerabilities in internet connected refrigerators",
-      "link": "https://cyberscoop.com/copeland-dixell-refrigeration-vulnerabilities/",
-      "published": "2026-11-13T21:20:51+00:00",
-      "summary": "<p>VulnCheck disclosed 14 vulnerabilities in Dixell refrigeration units that give an attacker root access, while online honeypots are being flooded with hacks and malicious probes.</p>\n<p>The post <a href=\"https://cyberscoop.com/copeland-dixell-refrigeration-vulnerabilities/\">Researchers continue to find serious vulnerabilities in internet connected refrigerators</a> appeared first on <a href=\"https://cyberscoop.com\">CyberScoop</a>.</p>",
-      "author": "djohnson"
-    },
-    {
       "source": "Cisco Talos",
       "category": "threat_research_primary",
       "title": "ARTEX and beyond: AI-enabled penetration testing platforms",
@@ -2023,15 +2086,6 @@
       "published": "2026-11-13T20:26:42+00:00",
       "summary": "From Oct. 3 to Nov. 5, 2026, Amazon’s MadPot, a globally distributed network of decoy threat sensors, captured requests from AI agents that included operating memory from offensive campaigns that threat actors ran on ARTEX, an open-source agentic AI penetration testing framework. The ARTEX agents sent these requests to MadPot sensors configured to present as […]",
       "author": "CJ Moses"
-    },
-    {
-      "source": "Dark Reading",
-      "category": "cyber_news_breach_reporting",
-      "title": "ArcticRAT Cybercrime Gang Profiles Victim Finances With AI",
-      "link": "https://www.darkreading.com/mobile-security/arcticrat-cybercrime-gang-profiles-victim-finances-ai",
-      "published": "2026-11-13T20:20:27+00:00",
-      "summary": "The Android malware has expanded from focusing on cryptocurrency theft to full device control, and the attackers have added advanced analysis of stolen information.",
-      "author": "Jai Vijayan"
     },
     {
       "source": "Cloudflare Security",
@@ -2077,15 +2131,6 @@
       "published": "2026-11-13T15:27:20+00:00",
       "summary": "A CyberStrikeAI server spent 16 days in four AWS accounts using eight identities, and the CloudTrail record shows why six detection rules each caught only part of it.",
       "author": "Samir Bousseaden,Bryan Porras Blanch,Terrance DeJesus"
-    },
-    {
-      "source": "Chainalysis",
-      "category": "ransomware_ecrime_financial_crime",
-      "title": "FinCEN Bars U.S. Institutions From Moving Funds for MEXC Global",
-      "link": "https://www.chainalysis.com/blog/fincen-mexc-global-november-2026/",
-      "published": "2026-11-13T15:19:15+00:00",
-      "summary": "<p>Summary Under Operation Economic Outcast, the Financial Crimes Enforcement Network (FinCEN) issued an order blocking U.S. financial institutions from sending&#8230;</p>\n<p>The post <a href=\"https://www.chainalysis.com/blog/fincen-mexc-global-november-2026/\">FinCEN Bars U.S. Institutions From Moving Funds for MEXC Global</a> appeared first on <a href=\"https://www.chainalysis.com\">Chainalysis</a>.</p>",
-      "author": "Chainalysis Team"
     },
     {
       "source": "Huntress",
@@ -2714,7 +2759,7 @@
       "title": "Git security vulnerabilities announced",
       "link": "https://github.blog/open-source/git/git-security-vulnerabilities-announced-7/",
       "published": "2026-11-10T18:00:00+00:00",
-      "summary": "<p>Git is releasing updates addressing six security vulnerabilities affecting recursive clones, reference handling, merges, binary patches, and imports. Here is what users need to know.</p>\n<p>The post <a href=\"https://github.blog/open-source/git/git-security-vulnerabilities-announced-7/\">Git security vulnerabilities announced</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>",
+      "summary": "<p>Git is releasing updates addressing six security vulnerabilities affecting clones, reference handling, merges, binary patches, and imports. Here is what users need to know.</p>\n<p>The post <a href=\"https://github.blog/open-source/git/git-security-vulnerabilities-announced-7/\">Git security vulnerabilities announced</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>",
       "author": "Elijah Newren"
     },
     {
@@ -2743,15 +2788,6 @@
       "published": "2026-11-10T16:03:25+00:00",
       "summary": "A tutorial for building a benchmark for offensive agents, based on how we built the Wiz Cyber Model Arena",
       "author": "Jay Tenenbaum"
-    },
-    {
-      "source": "Chainalysis",
-      "category": "ransomware_ecrime_financial_crime",
-      "title": "The Shadow Market Behind China’s AI Model Distillation Boom",
-      "link": "https://www.chainalysis.com/blog/chinese-ai-proxy-services/",
-      "published": "2026-11-10T16:02:36+00:00",
-      "summary": "<p>Summary A shadow market is helping Chinese users sidestep U.S. AI export controls. Proxy services provide access to restricted frontier&#8230;</p>\n<p>The post <a href=\"https://www.chainalysis.com/blog/chinese-ai-proxy-services/\">The Shadow Market Behind China’s AI Model Distillation Boom</a> appeared first on <a href=\"https://www.chainalysis.com\">Chainalysis</a>.</p>",
-      "author": "Chainalysis Team"
     },
     {
       "source": "Rapid7",
@@ -2988,15 +3024,6 @@
       "author": ""
     },
     {
-      "source": "Chainalysis",
-      "category": "ransomware_ecrime_financial_crime",
-      "title": "Sanctioned Canadian Crypto OTCs Served Iran and Drug Cartels",
-      "link": "https://www.chainalysis.com/blog/ofac-canadian-otcs/",
-      "published": "2026-11-09T18:35:38+00:00",
-      "summary": "<p>Summary A group of Canadian OTCs have helped move millions for Iranian illicit financial networks: On Friday, OFAC designated eight&#8230;</p>\n<p>The post <a href=\"https://www.chainalysis.com/blog/ofac-canadian-otcs/\">Sanctioned Canadian Crypto OTCs Served Iran and Drug Cartels</a> appeared first on <a href=\"https://www.chainalysis.com\">Chainalysis</a>.</p>",
-      "author": "Chainalysis Team"
-    },
-    {
       "source": "OpenSSF Blog",
       "category": "ai_security_agentic_risk",
       "title": "The AI Security Gap Hiding in Routine Maintenance",
@@ -3004,15 +3031,6 @@
       "published": "2026-11-09T17:42:25+00:00",
       "summary": "AI coding tools are speeding up software development and adding external dependencies faster than teams can review them. Discover why routine maintenance and component updates have become the hidden security gap for organizations today.",
       "author": "OpenSSF"
-    },
-    {
-      "source": "Chainalysis",
-      "category": "ransomware_ecrime_financial_crime",
-      "title": "Western Europe’s $2 Trillion Crypto Economy Holds Firm",
-      "link": "https://www.chainalysis.com/blog/western-europe-crypto-adoption-2026/",
-      "published": "2026-11-09T17:21:46+00:00",
-      "summary": "<p>Summary Western Europe’s $2.08 trillion crypto economy held firm despite a global downturn. The region grew 1.2% between July 2025&#8230;</p>\n<p>The post <a href=\"https://www.chainalysis.com/blog/western-europe-crypto-adoption-2026/\">Western Europe’s $2 Trillion Crypto Economy Holds Firm</a> appeared first on <a href=\"https://www.chainalysis.com\">Chainalysis</a>.</p>",
-      "author": "Chainalysis Team"
     },
     {
       "source": "Horizon3 Attack Research",
@@ -3040,15 +3058,6 @@
       "published": "2026-11-09T16:15:41+00:00",
       "summary": "<p>For the latest discoveries in cyber research for the week of 9th November, please download our Threat Intelligence Bulletin. TOP ATTACKS AND BREACHES Queens Public Library, a New York City public library system serving approximately 2.3 million residents, was struck by a ransomware attack that encrypted its systems. The incident disrupted public computers, Wi-Fi, checkout [&#8230;]</p>\n<p>The post <a href=\"https://research.checkpoint.com/2026/9th-november-threat-intelligence-report/\">9th Nove",
       "author": "urias@checkpoint.com"
-    },
-    {
-      "source": "AWS Security Blog",
-      "category": "cloud_identity_infrastructure",
-      "title": "Simplify cross-partition access with AWS IAM outbound identity federation",
-      "link": "https://aws.amazon.com/blogs/security/simplify-cross-partition-access-with-aws-iam-outbound-identity-federation/",
-      "published": "2026-11-09T16:08:30+00:00",
-      "summary": "You can now use tokens from AWS Identity and Access Management (IAM) outbound federation to assume roles in other Amazon Web Services (AWS) partitions. When your workloads run across AWS partitions such as Commercial, China, GovCloud (US), and European Sovereign Cloud, a workload in one partition might need to access resources or communicate with AWS […]",
-      "author": "Bill Wells"
     },
     {
       "source": "OpenSSF Blog",
@@ -3591,15 +3600,6 @@
       "author": "Terrance DeJesus,Jason Pappalexis,Andrew Pease"
     },
     {
-      "source": "Chainalysis",
-      "category": "ransomware_ecrime_financial_crime",
-      "title": "DPRK Hackers Perfected Their Fake Interview Playbook Over Dozens of Attacks Before Binance",
-      "link": "https://www.chainalysis.com/blog/binance-hack-dprk-employment-fraud/",
-      "published": "2026-11-03T19:43:21+00:00",
-      "summary": "<p>Summary Binance disclosed that a DPRK fake employment scheme was behind its $6 billion hack: Attackers used a fabricated job&#8230;</p>\n<p>The post <a href=\"https://www.chainalysis.com/blog/binance-hack-dprk-employment-fraud/\">DPRK Hackers Perfected Their Fake Interview Playbook Over Dozens of Attacks Before Binance</a> appeared first on <a href=\"https://www.chainalysis.com\">Chainalysis</a>.</p>",
-      "author": "Chainalysis Team"
-    },
-    {
       "source": "OpenSSF Blog",
       "category": "ai_security_agentic_risk",
       "title": "The PHP Security Wake-Up Call: Fixes Are Only the Beginning",
@@ -3744,15 +3744,6 @@
       "author": "Lakeith Collins"
     },
     {
-      "source": "Horizon3 Attack Research",
-      "category": "offensive_vulnerability_research",
-      "title": "AI-Powered Penetration Testing: How Autonomous Offensive Security Works",
-      "link": "https://horizon3.ai/downloads/whitepapers/ai-powered-penetration-testing-sans-spotlight/",
-      "published": "2026-11-03T04:57:09+00:00",
-      "summary": "Your Environment Changes Every Day. Can Your Penetration Testing Keep Up? Traditional penetration tests provide valuable insights, but their findings reflect a moment in time. As applications, identities, infrastructure, and attacker techniques evolve, yesterday&#8217;s assessment may no longer reflect today&#8217;s exposure. This SANS Spotlight paper explores how AI-powered penetration testing makes continuous offensive validation practical. [&#8230;]",
-      "author": "Horizon3"
-    },
-    {
       "source": "Krebs on Security",
       "category": "practitioner_analysis",
       "title": "Tech Firms Dismantle Botnet That Turned 1.3M TV Boxes Into Proxies",
@@ -3778,15 +3769,6 @@
       "published": "2026-11-02T23:00:45+00:00",
       "summary": "<p>Unit 42 details recent threat intelligence, highlighting cyberespionage, financial extortion, and the rapid adoption of AI across offensive workflows.</p>\n<p>The post <a href=\"https://unit42.paloaltonetworks.com/u42-threat-intelligence-highlights-oct-2026/\">Unit 42 Threat Intelligence Highlights - Nov. 2, 2026</a> appeared first on <a href=\"https://unit42.paloaltonetworks.com\">Unit 42</a>.</p>",
       "author": "Unit 42"
-    },
-    {
-      "source": "Chainalysis",
-      "category": "ransomware_ecrime_financial_crime",
-      "title": "Disrupting the Mercado Bitcoin Attack: How Chainalysis Led the Freeze of Nearly $10M in Stolen Funds",
-      "link": "https://www.chainalysis.com/blog/chainalysis-response-mercado-bitcoin/",
-      "published": "2026-11-02T22:59:13+00:00",
-      "summary": "<p>Early this morning Mercado Bitcoin, Brazil’s largest crypto exchange, suffered a security incident that resulted in approximately $49 million in&#8230;</p>\n<p>The post <a href=\"https://www.chainalysis.com/blog/chainalysis-response-mercado-bitcoin/\">Disrupting the Mercado Bitcoin Attack: How Chainalysis Led the Freeze of Nearly $10M in Stolen Funds</a> appeared first on <a href=\"https://www.chainalysis.com\">Chainalysis</a>.</p>",
-      "author": "Chainalysis Team"
     },
     {
       "source": "Team Cymru",
@@ -3823,15 +3805,6 @@
       "published": "2026-11-02T14:00:00+00:00",
       "summary": "<div class=\"block-paragraph_advanced\"><p><span style=\"vertical-align: baseline;\">Written by: </span><span>Christopher Romano, Codi Starks, Garrett Mahoney, John Wolfram, Josh Murchie, K Singh, Mathew Potaczek, Mike Lombardi, Rik Dolfing</span></p>\n<hr />\n<h3><span style=\"vertical-align: baseline;\">Introduction</span><strong style=\"vertical-align: baseline;\"> </strong></h3>\n<p><span style=\"vertical-align: baseline;\">Mandiant responded to multiple incidents in 2026 in which threat actors hijacked",
       "author": "Mandiant"
-    },
-    {
-      "source": "Wiz Research",
-      "category": "cloud_identity_infrastructure",
-      "title": "From Reactive to Proactive: Empowering SOC Teams with the Wiz Red and Blue Agents",
-      "link": "https://www.wiz.io/blog/soc-alerts-red-and-blue-agents",
-      "published": "2026-11-02T13:13:46+00:00",
-      "summary": "Red Agent gives SOC teams validated pre-breach alerts, while Blue Agent investigates active threats at machine speed, helping teams stay ahead in the AI threat era.",
-      "author": "Shaked Rotlevi"
     },
     {
       "source": "Trail of Bits",
@@ -3877,24 +3850,6 @@
       "published": "2026-10-31T12:00:00+00:00",
       "summary": "The self-deleting VOLTA infostealer steals credentials, sessions, and cryptocurrency wallets. Then, it uses LLMs to profile victims and rank their most valuable assets.",
       "author": "Ryan Fetterman"
-    },
-    {
-      "source": "Wiz Research",
-      "category": "cloud_identity_infrastructure",
-      "title": "“Black October” for AI Developer Platforms",
-      "link": "https://www.wiz.io/blog/black-october-for-ai-developer-platforms",
-      "published": "2026-10-30T22:51:44+00:00",
-      "summary": "A series of agentic attacks on AI Developer Platforms has been leading to LLMJacking at scale.",
-      "author": "Rami McCarthy"
-    },
-    {
-      "source": "Chainalysis",
-      "category": "ransomware_ecrime_financial_crime",
-      "title": "Updated Nov 10: Chainalysis Security Incident Information",
-      "link": "https://www.chainalysis.com/blog/security-incident-october-30/",
-      "published": "2026-10-30T21:14:00+00:00",
-      "summary": "<p>For more information and ongoing updates, please see our incident page. Tuesday Nov 10, 2026 3:00 A.M. EST Update: Data&#8230;</p>\n<p>The post <a href=\"https://www.chainalysis.com/blog/security-incident-october-30/\">Updated Nov 10: Chainalysis Security Incident Information</a> appeared first on <a href=\"https://www.chainalysis.com\">Chainalysis</a>.</p>",
-      "author": "Chainalysis Team"
     },
     {
       "source": "Intel 471",
@@ -3958,15 +3913,6 @@
       "published": "2026-10-30T10:33:50+00:00",
       "summary": "The US Department of Homeland Security has had the details of more than 41,000 staff, including ICE and CBP agents, published online. Not ideal for an organisation with \"Security\" in its name.\n\nRead more in my article on the Hot for Security blog.",
       "author": "Graham Cluley"
-    },
-    {
-      "source": "Chainalysis",
-      "category": "ransomware_ecrime_financial_crime",
-      "title": "The $6.4 Billion Binance Hack: Tracing the North Korea Link",
-      "link": "https://www.chainalysis.com/blog/binance-exploit-latest-findings-and-response/",
-      "published": "2026-10-30T09:34:29+00:00",
-      "summary": "<p>Key takeaways Around 4:20 p.m. ET on October 29, 2026, funds began leaving Binance hot wallets across multiple blockchains. Unauthorized&#8230;</p>\n<p>The post <a href=\"https://www.chainalysis.com/blog/binance-exploit-latest-findings-and-response/\">The $6.4 Billion Binance Hack: Tracing the North Korea Link</a> appeared first on <a href=\"https://www.chainalysis.com\">Chainalysis</a>.</p>",
-      "author": "Chainalysis Team"
     },
     {
       "source": "Sophos X-Ops",
@@ -4075,15 +4021,6 @@
       "published": "2026-10-29T08:00:00+00:00",
       "summary": "The malware that topped ESET’s infostealer detections in Latin America in the first half of 2026 is an example of how cybercrime has professionalized",
       "author": ""
-    },
-    {
-      "source": "Chainalysis",
-      "category": "ransomware_ecrime_financial_crime",
-      "title": "South Africa Leads Sub-Saharan Africa’s 13.4% Crypto Growth",
-      "link": "https://www.chainalysis.com/blog/sub-saharan-africa-crypto-adoption-2026/",
-      "published": "2026-10-29T06:55:01+00:00",
-      "summary": "<p>Summary Everyday financial needs are driving Sub-Saharan Africa’s crypto growth. The region’s crypto economy grew 13.4% to $101 billion, making&#8230;</p>\n<p>The post <a href=\"https://www.chainalysis.com/blog/sub-saharan-africa-crypto-adoption-2026/\">South Africa Leads Sub-Saharan Africa’s 13.4% Crypto Growth</a> appeared first on <a href=\"https://www.chainalysis.com\">Chainalysis</a>.</p>",
-      "author": "Chainalysis Team"
     },
     {
       "source": "Graham Cluley",
@@ -4230,15 +4167,6 @@
       "author": ""
     },
     {
-      "source": "Sophos X-Ops",
-      "category": "detection_response_operations",
-      "title": "Node2Shell (CVE-2026-111497) in active exploitation",
-      "link": "https://www.sophos.com/en-us/blog/node2shell-cve-2026-111497-in-active-exploitation",
-      "published": "2026-10-28T00:00:00+00:00",
-      "summary": "<p><strong>Categories:</strong> Threat Research</p><p><strong>Tags:</strong> advisory, vulnerability, Node2Shell, Brotli</p>",
-      "author": ""
-    },
-    {
       "source": "Sysdig",
       "category": "detection_response_operations",
       "title": "Node2Shell (CVE-2026-111497): Detecting the Node.js Brotli RCE",
@@ -4263,6 +4191,15 @@
       "link": "https://webflow.sysdig.com/blog/php2shell-cve-2026-109618-and-cve-2026-109619-detecting-unauthenticated-remote-code-execution-in-php-core",
       "published": "2026-10-28T00:00:00+00:00",
       "summary": "PHP2Shell (CVE-2026-109618 and CVE-2026-109619) lets an unauthenticated attacker run code on a PHP server with HTTP requests alone. The Sysdig Threat Research Team analyzed the exploitation and outlines affected versions, mitigations, and how to detect post-exploitation activity at runtime with Sysdig Secure and open source Falco.",
+      "author": ""
+    },
+    {
+      "source": "Sophos X-Ops",
+      "category": "detection_response_operations",
+      "title": "Node2Shell (CVE-2026-111497) in active exploitation",
+      "link": "https://www.sophos.com/en-us/blog/node2shell-cve-2026-111497-in-active-exploitation",
+      "published": "2026-10-28T00:00:00+00:00",
+      "summary": "<p><strong>Categories:</strong> Threat Research</p><p><strong>Tags:</strong> advisory, vulnerability, Node2Shell, Brotli</p>",
       "author": ""
     },
     {
@@ -4840,15 +4777,6 @@
       "published": "2026-10-19T06:47:58+00:00",
       "summary": "<p>I have this sense that we&apos;ve passed the point where &quot;vibe coding&quot; is a derogatory term. I have no empirical evidence for this; it&apos;s more a feeling that those weaponising the term have now accepted the inevitability and are just getting with the program.</p>",
       "author": "Troy Hunt"
-    },
-    {
-      "source": "Sophos X-Ops",
-      "category": "detection_response_operations",
-      "title": "ConnectWise Cloud Backup application abused in cross-tenant token sweep",
-      "link": "https://www.sophos.com/en-us/blog/connectwise-cloud-backup-application-abused-in-token-sweep",
-      "published": "2026-10-19T00:00:00+00:00",
-      "summary": "<p>&lt;p&gt;Automated sign-ins used the vendor&apos;s Entra application identity to request Microsoft Graph tokens across consenting tenants&lt;/p&gt;</p><p><strong>Categories:</strong> Threat Research</p><p><strong>Tags:</strong> connectwise</p>",
-      "author": ""
     },
     {
       "source": "Datadog Security Labs",
@@ -5607,15 +5535,6 @@
       "author": "Sayash Kapoor"
     },
     {
-      "source": "Intel 471",
-      "category": "ransomware_ecrime_financial_crime",
-      "title": "Follow the Money: The Financial Sector's Threat Landscape in 2026",
-      "link": "https://www.intel471.com/blog/follow-the-money-the-financial-sectors-threat-landscape-in-2026",
-      "published": "2026-09-10T18:45:00+00:00",
-      "summary": "The financial sector moves trillions of dollars a day, making it one of the most heavily targeted industries in the world. Intel 471's latest report breaks down the threat landscape facing financial institutions, from ransomware and extortion groups to initial access brokers, nation-state activity and insider risks.",
-      "author": ""
-    },
-    {
       "source": "tl;dr sec",
       "category": "practitioner_analysis",
       "title": "[tl;dr sec] #345 - Bug Rumors → Exploits, Version Control DFIR, Agentic Worms",
@@ -5641,15 +5560,6 @@
       "published": "2026-09-09T13:09:42+00:00",
       "summary": "While SOAR isn’t a “silver bullet” by any means, the operational impacts are real because of the power it gives a SOC to optimize workflows, centralize security alert management, and\nminimize threat response time (or mean time to resolution).",
       "author": "Hayden Covington"
-    },
-    {
-      "source": "GreyNoise",
-      "category": "cloud_identity_infrastructure",
-      "title": "Agents Gone Wild: An AI-Orchestrated Global Campaign Against PaperCut NG/MF",
-      "link": "https://www.greynoise.io/blog/ai-orchestrated-campaign-against-papercut-ng-mf",
-      "published": "2026-09-09T00:00:00+00:00",
-      "summary": "11 organizations compromised in 26 seconds. GreyNoise breaks down the AI-enabled campaign against PaperCut that hit 440 instances across 48 countries.",
-      "author": ""
     },
     {
       "source": "Google Project Zero",
